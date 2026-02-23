@@ -14,6 +14,8 @@
       "disabled": true,
       "name": "Home Hero Banner",
       "settings": {
+        "image": "shopify://shop_images/magic_banner_french.jpg",
+        "mobile_image": "shopify://shop_images/magic_banner_mobile_french.jpg",
         "link": ""
       }
     },
@@ -57,7 +59,7 @@
       "name": "Image and Text",
       "settings": {
         "background_color": "#000000",
-        "bg_image": "shopify://shop_images/ChatGPT_Image_Feb_3_2026_04_24_58_PM.png",
+        "bg_image": "shopify://shop_images/magic_banner_french.jpg",
         "bg_mobile_image": "shopify://shop_images/ChatGPT_Image_Feb_3_2026_04_34_48_PM.png",
         "rounded_image": true,
         "image_placement": "1",
