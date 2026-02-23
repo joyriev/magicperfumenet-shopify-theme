@@ -11,12 +11,11 @@
   "sections": {
     "home_hero_banner_YetQDJ": {
       "type": "home-hero-banner",
-      "disabled": true,
       "name": "Home Hero Banner",
       "settings": {
         "image": "shopify://shop_images/magic_banner_french.jpg",
         "mobile_image": "shopify://shop_images/magic_banner_mobile_french.jpg",
-        "link": ""
+        "link": "shopify://collections/meilleures-ventes"
       }
     },
     "image_and_text_nj4mfM": {
@@ -56,6 +55,7 @@
         "text_VJRcpx",
         "button_rGwjWF"
       ],
+      "disabled": true,
       "name": "Image and Text",
       "settings": {
         "background_color": "#000000",
