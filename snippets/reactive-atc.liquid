@@ -5,16 +5,20 @@
 
 {% if product.metafields.custom.inspiration != blank %}
   <div class="flex items-center gap-2 mb-3">
-    <img
-      class="object-contain object-center bg-white"
-      src="{{ product.metafields.custom.inspiration.value.image |  image_url }}"
-      alt="{{ product.metafields.custom.inspiration.value.image.alt | escape }}"
-      width="45"
-      height="45">
-    <div>
-      <p class="text-sm my-0">Inspiré de:</p>
-      <h4 class="font-semibold my-0 line-clamp-1">{{ product.metafields.custom.inspiration.value.name }}</h4>
-    </div>
+    {% if product.metafields.custom.inspiration.value.image != blank %}
+      <img
+        class="object-contain object-center bg-white"
+        src="{{ product.metafields.custom.inspiration.value.image |  image_url }}"
+        alt="{{ product.metafields.custom.inspiration.value.image.alt | escape }}"
+        width="45"
+        height="45">
+    {% endif %}
+    {% if product.metafields.custom.inspiration.value.name != blank %}
+      <div>
+        <p class="text-sm my-0">Inspiré de:</p>
+        <h4 class="font-semibold my-0 line-clamp-1">{{ product.metafields.custom.inspiration.value.name }}</h4>
+      </div>
+    {% endif %}
   </div>
 {% endif %}
 <div>
@@ -35,15 +39,15 @@
   {% endif %}</div>
 
 {% comment %} <div>
-    <div class="inline-flex items-center gap-2 px-2 py-1 rounded-full bg-white font-semibold">
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg"
-        alt="🇪🇺"
-        height="20"
-        width="20"
-        class="object-cover size-5 rounded-full">
-      <span>Fabriqué dans l'UE</span>
-    </div>
+          <div class="inline-flex items-center gap-2 px-2 py-1 rounded-full bg-white font-semibold">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg"
+              alt="🇪🇺"
+              height="20"
+              width="20"
+              class="object-cover size-5 rounded-full">
+            <span>Fabriqué dans l'UE</span>
+          </div>
 </div> {% endcomment %}
 
 {% assign selling_points = product.metafields.custom.bullets.value %}
