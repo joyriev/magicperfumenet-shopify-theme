@@ -810,9 +810,9 @@
       "name": "Massive Review",
       "settings": {
         "background_color": "#fcfbf9",
-        "heading": "Kundenrezensionen",
-        "review_text": "4,7/5 Sternen basierend auf über 10.400 Bewertungen",
-        "button_text": "Weitere Bewertungen anzeigen",
+        "heading": "Avis clients",
+        "review_text": "Note de 4,7/5 étoiles basée sur plus de 10 400 avis.",
+        "button_text": "Voir plus d'avis",
         "button_link": "",
         "padding_top": 72,
         "padding_bottom": 72
