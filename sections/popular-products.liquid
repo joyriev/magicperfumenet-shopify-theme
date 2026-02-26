@@ -11,7 +11,7 @@
     loading = true;
     const button = document.getElementById('load-more-btn');
     const originalText = button.innerHTML;
-    setButtonState('Laden...', true);
+    setButtonState('Chargement...', true);
 
     try {
       const response = await fetch(`/collections/${collectionHandle}/products.json?page=${currentPage + 1}&limit=4`);
@@ -28,18 +28,18 @@
         currentPage++;
         
         if (data.products.length < productsPerPage) {
-          setButtonState('Keine weiteren Produkte', true);
+          setButtonState('Aucun produit supplémentaire', true);
           hasMoreProducts = false;
         } else {
-          setButtonState('Weitere Produkte laden', false);
+          setButtonState('Charger plus de produits', false);
         }
       } else {
-        setButtonState('Keine weiteren Produkte', true);
+        setButtonState('Aucun produit supplémentaire', true);
         hasMoreProducts = false;
       }
     } catch (error) {
       console.error('Error loading more products:', error);
-      setButtonState('Fehler beim Laden', false);
+      setButtonState('Erreur de chargement', false);
       setTimeout(() => setButtonState(originalText, false), 2000);
     }
     
@@ -76,7 +76,7 @@
     if (product.tags && product.tags.includes('bestseller')) {
       badges = '<div class="absolute top-3 left-4 flex gap-4"><div class="bg-blue-50 text-blue-600 px-2 py-1 text-xs rounded-full flex items-center gap-1"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><span>Bestseller</span></div></div>';
     } else if (product.tags && product.tags.includes('onsale') && hasSale) {
-      badges = '<div class="absolute top-3 left-4 flex gap-4"><div class="bg-red-50 text-red-600 px-2 py-1 text-xs rounded-full">⚡ ' + discountPercent + '% Aus</div></div>';
+      badges = '<div class="absolute top-3 left-4 flex gap-4"><div class="bg-red-50 text-red-600 px-2 py-1 text-xs rounded-full">⚡ ' + discountPercent + '% de réduction</div></div>';
     }
     
     const priceDisplay = hasSale 
@@ -84,7 +84,7 @@
       : '<span>' + (price / 100).toFixed(2) + '€</span>';
     
     const imageUrl = image.src || 'https://cdn.shopify.com/s/files/1/0553/5072/files/placeholder-image.png?v=1';
-    const productTitle = product.title || 'Produkt';
+    const productTitle = product.title || 'Produit';
     const productHandle = product.handle || '#';
     
     return '<div class="flex flex-col bg-white p-4 shadow-sm rounded-lg relative">' +
@@ -99,7 +99,7 @@
         '<div class="price--large">' + priceDisplay + '</div>' +
       '</div>' +
       '<div class="mt-auto">' +
-        '<a class="bg-black text-white uppercase text-sm font-semibold tracking-[2px] py-3 px-4 rounded-lg no-underline w-full text-center block" href="/products/' + productHandle + '">Alle anzeigen</a>' +
+        '<a class="bg-black text-white uppercase text-sm font-semibold tracking-[2px] py-3 px-4 rounded-lg no-underline w-full text-center block" href="/products/' + productHandle + '">Achetez maintenant</a>' +
       '</div>' +
     '</div>';
   }
@@ -171,7 +171,7 @@
           </div>
           <div class="mt-auto">
             <a class="bg-black text-white uppercase text-sm font-semibold tracking-[2px] py-3 px-4 rounded-lg no-underline w-full text-center block" href="{{ product.url }}">
-              Alle anzeigen
+              Achetez maintenant
             </a>
           </div>
         </div>
@@ -179,7 +179,7 @@
     </div>
     <div class="text-center pt-14">
       <button id="load-more-btn" onclick="loadMoreProducts()" class="px-5 py-2 border border-solid border-gray-400 rounded-lg text-slate-900 font-bold text-sm uppercase tracking-wide bg-white hover:bg-slate-900 hover:text-white transition-colors cursor-pointer">
-        Weitere Produkte laden
+        Charger plus de produits
       </button>
     </div>
   </div>
@@ -221,7 +221,7 @@
         "type": "text",
         "id": "show_all_button_text",
         "label": "Show Button Text",
-        "default": "Alle Bestseller ansehen"
+        "default": "Voir tous les bestsellers"
       },
       {
         "type": "url",
