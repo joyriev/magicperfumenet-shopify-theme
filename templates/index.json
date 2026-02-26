@@ -133,6 +133,8 @@
         "heading": "Meilleures Ventes",
         "subheading": "",
         "collection": "meilleures-ventes",
+        "show_all_button_text": "Alle Bestseller ansehen",
+        "show_all_button_url": "",
         "padding_top": 72,
         "padding_bottom": 72
       }
@@ -226,21 +228,27 @@
           "type": "collection",
           "settings": {
             "tab_title": "🔥Meilleuresventes",
-            "collection": "meilleures-ventes"
+            "collection": "meilleures-ventes",
+            "show_all_button_text": "Voir tous les best-sellers",
+            "show_all_button_url": ""
           }
         },
         "collection_xgUpzQ": {
           "type": "collection",
           "settings": {
             "tab_title": "Pour Femme",
-            "collection": "pour-les-femmes"
+            "collection": "pour-les-femmes",
+            "show_all_button_text": "Voir tous les best-sellers",
+            "show_all_button_url": ""
           }
         },
         "collection_3WBTm3": {
           "type": "collection",
           "settings": {
             "tab_title": "Pour Homme",
-            "collection": "pour-hommes"
+            "collection": "pour-hommes",
+            "show_all_button_text": "Voir tous les best-sellers",
+            "show_all_button_url": ""
           }
         }
       },
@@ -747,9 +755,9 @@
       "name": "Massive Review",
       "settings": {
         "background_color": "#fcfbf9",
-        "heading": "Kundenrezensionen",
-        "review_text": "4,7/5 Sternen basierend auf über 10.400 Bewertungen",
-        "button_text": "Weitere Bewertungen anzeigen",
+        "heading": "Avis clients",
+        "review_text": "Note de 4,7/5 étoiles basée sur plus de 10 400 avis.",
+        "button_text": "Voir plus d'avis",
         "button_link": "",
         "padding_top": 72,
         "padding_bottom": 72
