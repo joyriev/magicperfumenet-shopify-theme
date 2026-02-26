@@ -378,6 +378,431 @@
         "mobile_padding_bottom": 40
       }
     },
+    "massive_review_FpYjMJ": {
+      "type": "massive-review",
+      "blocks": {
+        "review_jdVYPH": {
+          "type": "review",
+          "settings": {
+            "content": "<p>\"C'est mon premier achat et je suis ravie. Je n'achèterai plus jamais mon parfum ailleurs. Je n'avais encore jamais trouvé une alternative de parfum qui sente vraiment authentique et constante.\"</p>",
+            "author": "Killian P.",
+            "date": "Il y a 1 jour",
+            "rating": 5,
+            "show_verified_badge": true,
+            "product": ""
+          }
+        },
+        "review_p4kT3x": {
+          "type": "review",
+          "settings": {
+            "content": "<p>\"C'est le meilleur parfum que j'ai senti depuis très longtemps, les notes me rendent fou de bonheur. Je garderai celui-ci dans ma rotation pour toujours.\"</p>",
+            "author": "Jenniffer W.",
+            "date": "Il y a 2 jours",
+            "rating": 4,
+            "show_verified_badge": true,
+            "product": ""
+          }
+        },
+        "review_TDTAgc": {
+          "type": "review",
+          "settings": {
+            "content": "<p>\"Les trois parfums que j'ai reçus sont très bons. Ils durent longtemps et sentent comme ils le devraient. J'étais seulement insatisfaite du temps que cela a pris pour les recevoir. Mais honnêtement, j'ai passé une deuxième commande, donc attendez-vous simplement à un délai. Haha !<br/>\"</p>",
+            "author": "Clara P.",
+            "date": "Il y a 2 jours",
+            "rating": 5,
+            "show_verified_badge": true,
+            "product": ""
+          }
+        },
+        "review_W6iqyp": {
+          "type": "review",
+          "settings": {
+            "content": "<p>\"J'avais essayé en vain de trouver des parfums qui sentent cher et durent longtemps. C'est exactement ce que je cherchais.\"</p>",
+            "author": "Tiana N.",
+            "date": "Il y a 2 jours",
+            "rating": 4,
+            "show_verified_badge": true,
+            "product": ""
+          }
+        },
+        "review_qFpFAn": {
+          "type": "review",
+          "settings": {
+            "content": "<p>\"Je ne savais pas trop à quoi m'attendre, mais cela m'a vraiment impressionné. Ça sent super frais et honnêtement assez proche d'Aventus. Il tient bien et le prix est bien meilleur.\"</p>",
+            "author": "Michael T.",
+            "date": "Il y a 2 jours",
+            "rating": 4,
+            "show_verified_badge": true,
+            "product": ""
+          }
+        },
+        "review_jkPPyh": {
+          "type": "review",
+          "settings": {
+            "content": "<p>\"L'un de mes parfums préférés. Il m'est parvenu vraiment rapidement. Ça sent si bon.\"</p>",
+            "author": "Alex W.",
+            "date": "Il y a 2 jours",
+            "rating": 5,
+            "show_verified_badge": true,
+            "product": ""
+          }
+        },
+        "review_ehm4FR": {
+          "type": "review",
+          "settings": {
+            "content": "<p>\"J'aaaadore ces parfums !!! Chacun que j'ai reçu sent divinement bon. Certains, je dirais, sont meilleurs que l'original.\"</p>",
+            "author": "Christine N.",
+            "date": "Il y a 5 jours",
+            "rating": 4,
+            "show_verified_badge": false,
+            "product": ""
+          }
+        },
+        "review_i4EQEp": {
+          "type": "review",
+          "settings": {
+            "content": "<p>\"Au début j'étais inquiet car la livraison a pris un peu de retard, mais quand je l'ai reçu, j'ai été époustouflé par l'odeur une fois qu'il s'est posé — mon Dieu, c'est tout simplement fantastique.\"</p>",
+            "author": "Lionel M.",
+            "date": "Il y a 7 jours",
+            "rating": 5,
+            "show_verified_badge": true,
+            "product": ""
+          }
+        },
+        "review_F6dUwG": {
+          "type": "review",
+          "settings": {
+            "content": "<p>\"Ça sent très bon, mais ça ne dure pas aussi longtemps que ça devrait.\"</p>",
+            "author": "Terence M.",
+            "date": "Il y a 2 mois",
+            "rating": 5,
+            "show_verified_badge": false,
+            "product": ""
+          }
+        },
+        "review_e6mHad": {
+          "type": "review",
+          "settings": {
+            "content": "<p>\"C'est parfait et magnifique 🥰🥰🥰\"</p>",
+            "author": "Lidis A.",
+            "date": "Il y a 2 mois",
+            "rating": 5,
+            "show_verified_badge": true,
+            "product": ""
+          }
+        },
+        "review_aPhrjH": {
+          "type": "review",
+          "settings": {
+            "content": "<p>\"Ça sent très bon, j'en suis fasciné.\"</p>",
+            "author": "Castillo B.",
+            "date": "Il y a 3 mois",
+            "rating": 5,
+            "show_verified_badge": true,
+            "product": ""
+          }
+        },
+        "review_6VhX4P": {
+          "type": "review",
+          "settings": {
+            "content": "<p>\"Des parfums aux senteurs parfaites, les fragrances durent très longtemps, excellente qualité.\"</p>",
+            "author": "Kamila G.",
+            "date": "Il y a 3 mois",
+            "rating": 5,
+            "show_verified_badge": true,
+            "product": ""
+          }
+        },
+        "review_WwBbT4": {
+          "type": "review",
+          "settings": {
+            "content": "<p>\"Ça sent exactement comme Luna Rossa Carbon, mais bien moins cher. Je n'arrive pas à croire à quel point c'est proche.\"</p>",
+            "author": "Robinson D.",
+            "date": "Il y a 4 mois",
+            "rating": 4,
+            "show_verified_badge": false,
+            "product": ""
+          }
+        },
+        "review_GJQQ4h": {
+          "type": "review",
+          "settings": {
+            "content": "<p>\"C'est le genre de parfum qui vous fait vous sentir soigné. Pas écrasant, juste ce qu'il faut. 👌\"</p>",
+            "author": "Michael R.",
+            "date": "Il y a 4 mois",
+            "rating": 5,
+            "show_verified_badge": true,
+            "product": ""
+          }
+        },
+        "review_ycDihd": {
+          "type": "review",
+          "settings": {
+            "content": "<p>\"Je porte Creed Aventus depuis des années, mais c'est le dupe le plus proche que j'ai trouvé — et pour une fraction du prix. La combinaison ananas-vanille est parfaitement réussie.\"</p>",
+            "author": "Alvarez P.",
+            "date": "Il y a 4 mois",
+            "rating": 4,
+            "show_verified_badge": true,
+            "product": ""
+          }
+        },
+        "review_NTXBtt": {
+          "type": "review",
+          "settings": {
+            "content": "<p>\"Le produit est arrivé bien emballé. Le parfum n'était pas cassé, n'avait pas fui et était en bon état. Le parfum est parfait et ne sentait pas mauvais. Je l'adore, haute qualité.\"</p>",
+            "author": "Anne E.",
+            "date": "Il y a 4 mois",
+            "rating": 4,
+            "show_verified_badge": true,
+            "product": ""
+          }
+        },
+        "review_AEkbF9": {
+          "type": "review",
+          "settings": {
+            "content": "<p>\"Magnifique fragrance. Longue durée. <br/>Doux et chaud. Livraison rapide et efficace. <br/>J'achèterai à nouveau.\"</p>",
+            "author": "Lucy R",
+            "date": "Il y a 4 mois",
+            "rating": 5,
+            "show_verified_badge": true,
+            "product": ""
+          }
+        },
+        "review_MbtUiH": {
+          "type": "review",
+          "settings": {
+            "content": "<p>\"Je suis satisfaite de Magic Perfume. Le parfum sent très similaire à l'original et tient bien. L'emballage est soigné et le flacon est beau. Dans l'ensemble, c'est une excellente option si l'on veut un parfum de qualité à un prix raisonnable.\"</p>",
+            "author": "Alina M",
+            "date": "Il y a 5 mois",
+            "rating": 5,
+            "show_verified_badge": false,
+            "product": ""
+          }
+        },
+        "review_6LRUUm": {
+          "type": "review",
+          "settings": {
+            "content": "<p>\"Leurs produits sont de bonne qualité à un prix très abordable.\"</p>",
+            "author": "Amanda G",
+            "date": "Il y a 5 mois",
+            "rating": 4,
+            "show_verified_badge": true,
+            "product": ""
+          }
+        },
+        "review_ncfFXh": {
+          "type": "review",
+          "settings": {
+            "content": "<p>\"Superbes fragrances, excellents produits, aucun problème.\"</p>",
+            "author": "Alex S.",
+            "date": "Il y a 6 mois",
+            "rating": 5,
+            "show_verified_badge": true,
+            "product": ""
+          }
+        },
+        "review_hxDXQj": {
+          "type": "review",
+          "settings": {
+            "content": "<p>\"Le produit est arrivé bien emballé. Le parfum n'était pas cassé, n'avait pas fui et était en bon état. Le parfum est parfait et ne sentait pas mauvais. Je l'adore, haute qualité.\"</p>",
+            "author": "Roxanne S",
+            "date": "Il y a 5 mois",
+            "rating": 5,
+            "show_verified_badge": true,
+            "product": ""
+          }
+        },
+        "review_xNMzAb": {
+          "type": "review",
+          "settings": {
+            "content": "<p>\"Du service au produit, l'expérience a été phénoménale. Je rachèterai avec plaisir à tout moment.\"</p>",
+            "author": "Benjamin M",
+            "date": "Il y a 5 mois",
+            "rating": 5,
+            "show_verified_badge": false,
+            "product": ""
+          }
+        },
+        "review_HcUmJy": {
+          "type": "review",
+          "settings": {
+            "content": "<p>\"Excellent produit ! Alternative super abordable aux parfums de marque. La fragrance dure longtemps et on en a pour son argent.\"</p>",
+            "author": "EM",
+            "date": "Il y a 4 mois",
+            "rating": 5,
+            "show_verified_badge": true,
+            "product": ""
+          }
+        },
+        "review_RzHDqd": {
+          "type": "review",
+          "settings": {
+            "content": "<p>\"Oh mon Dieu, j'ai adoré. Wow ! Exactement comme l'original et ça tient toute la journée ! ❤️‍🔥❤️‍🔥\"</p>",
+            "author": "شيطانة YT",
+            "date": "Il y a 4 mois",
+            "rating": 4,
+            "show_verified_badge": true,
+            "product": ""
+          }
+        },
+        "review_hfEBbc": {
+          "type": "review",
+          "settings": {
+            "content": "<p>\"Le parfum de ce produit est super riche et j'adore comme le flacon et son design sont beaux. Je l'utiliserais vraiment à nouveau.\"</p>",
+            "author": "Eliannys Y",
+            "date": "Il y a 7 mois",
+            "rating": 5,
+            "show_verified_badge": true,
+            "product": ""
+          }
+        },
+        "review_kehhTK": {
+          "type": "review",
+          "settings": {
+            "content": "<p>\"Je l'aime bien ! J'apprécie cette fragrance. Bonne odeur.\"</p>",
+            "author": "Aleksandra M",
+            "date": "Il y a 7 mois",
+            "rating": 5,
+            "show_verified_badge": false,
+            "product": ""
+          }
+        },
+        "review_REfaAN": {
+          "type": "review",
+          "settings": {
+            "content": "<p>\"Excellent produit, sent fantastiquement bon. J'ai toujours des gens qui me posent des questions sur ma fragrance et ce que j'utilise.\"</p>",
+            "author": "Damario R",
+            "date": "Il y a 7 mois",
+            "rating": 5,
+            "show_verified_badge": true,
+            "product": ""
+          }
+        },
+        "review_xyrFJj": {
+          "type": "review",
+          "settings": {
+            "content": "<p>\"Super marque et excellents produits !\"</p>",
+            "author": "Juliana B",
+            "date": "Il y a 4 mois",
+            "rating": 5,
+            "show_verified_badge": true,
+            "product": ""
+          }
+        },
+        "review_bCJXDK": {
+          "type": "review",
+          "settings": {
+            "content": "<p>\"Après un petit retard, j'ai enfin reçu mes parfums Magic Perfume et ils sont exactement comme il faut ! Je n'arrive presque pas à croire à quel point ils correspondent aux originaux — pour référence, j'ai reçu \"Ylang Ylang Rose Jasmine\" et \"Aldehydes Rose Sandalwood\", ce sont vraiment de belles fragrances.\"</p>",
+            "author": "Gabriella K",
+            "date": "Il y a 7 mois",
+            "rating": 5,
+            "show_verified_badge": true,
+            "product": ""
+          }
+        },
+        "review_C6VNkp": {
+          "type": "review",
+          "settings": {
+            "content": "<p>\"Très bonne marque, j'adore l'emballage et l'arôme.\"</p>",
+            "author": "Rosa B",
+            "date": "Il y a 7 mois",
+            "rating": 5,
+            "show_verified_badge": true,
+            "product": ""
+          }
+        },
+        "review_8ARtrW": {
+          "type": "review",
+          "settings": {
+            "content": "<p>\"Je suis un grand fan d'eau de cologne, donc je suis difficile en matière de clones, mais Magic Perfume m'a complètement convaincu. J'ai commandé le clone de Sauvage sur la page d'accueil et j'ai immédiatement reconnu le parfum en le vaporisant. Je possède maintenant 4 parfums Magic Perfume en tout et je les adore tous. J'en ai 3 autres en route grâce à leurs offres groupées. Si vous voulez quelque chose qui fonctionne avec un petit budget et offre des performances de designer, je ne saurais trop les recommander.\"</p>",
+            "author": "Sean P",
+            "date": "Il y a 4 mois",
+            "rating": 5,
+            "show_verified_badge": true,
+            "product": ""
+          }
+        },
+        "review_mxPDa6": {
+          "type": "review",
+          "settings": {
+            "content": "<p>\"Je suis très satisfait du parfum de cette marque, ils ont un si beau parfum comme l'original et moins cher, je l'achèterai définitivement à nouveau.\"</p>",
+            "author": "Angel",
+            "date": "Il y a 8 mois",
+            "rating": 5,
+            "show_verified_badge": true,
+            "product": ""
+          }
+        },
+        "review_wpQgLp": {
+          "type": "review",
+          "settings": {
+            "content": "<p>\"Cet été, j'ai reçu un échantillon de Creed Aventus en cadeau et j'ai vraiment aimé, mais je ne pouvais pas acheter l'original, alors j'ai cherché des dupes. J'ai trouvé Magic Perfume et commandé \"Pineapple Smoke Vanilla\", il m'est parvenu en environ une semaine et il sent vraiment bon, aussi proche de mon échantillon original, très satisfait du produit, surtout pour le prix.\"</p>",
+            "author": "Hwan H",
+            "date": "Il y a 8 mois",
+            "rating": 5,
+            "show_verified_badge": true,
+            "product": ""
+          }
+        },
+        "review_NiUteA": {
+          "type": "review",
+          "settings": {
+            "content": "<p>\"J'ai essayé leurs échantillons de 7,5 ml et à ma grande surprise, j'ai adoré. J'ai passé une 2e commande, mais cette fois j'ai pris les plus grands flacons. Je dois dire que j'ai reçu mes commandes à temps et qu'ils ont livré les fragrances que j'aime !\"</p>",
+            "author": "Lauri E",
+            "date": "Il y a 8 mois",
+            "rating": 5,
+            "show_verified_badge": true,
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "review_jdVYPH",
+        "review_p4kT3x",
+        "review_TDTAgc",
+        "review_W6iqyp",
+        "review_qFpFAn",
+        "review_jkPPyh",
+        "review_ehm4FR",
+        "review_i4EQEp",
+        "review_F6dUwG",
+        "review_e6mHad",
+        "review_aPhrjH",
+        "review_6VhX4P",
+        "review_WwBbT4",
+        "review_GJQQ4h",
+        "review_ycDihd",
+        "review_NTXBtt",
+        "review_AEkbF9",
+        "review_MbtUiH",
+        "review_6LRUUm",
+        "review_ncfFXh",
+        "review_hxDXQj",
+        "review_xNMzAb",
+        "review_HcUmJy",
+        "review_RzHDqd",
+        "review_hfEBbc",
+        "review_kehhTK",
+        "review_REfaAN",
+        "review_xyrFJj",
+        "review_bCJXDK",
+        "review_C6VNkp",
+        "review_8ARtrW",
+        "review_mxPDa6",
+        "review_wpQgLp",
+        "review_NiUteA"
+      ],
+      "name": "Massive Review",
+      "settings": {
+        "background_color": "#fcfbf9",
+        "heading": "Avis clients",
+        "review_text": "Note de 4,7/5 étoiles basée sur plus de 10 400 avis.",
+        "button_text": "Voir plus d'avis",
+        "button_link": "",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
     "popular_products_BptEUV": {
       "type": "popular-products",
       "disabled": true,
@@ -389,431 +814,6 @@
         "collection": "best-sellers",
         "show_all_button_text": "Alle Bestseller ansehen",
         "show_all_button_url": "",
-        "padding_top": 72,
-        "padding_bottom": 72
-      }
-    },
-    "massive_review_xQhDkP": {
-      "type": "massive-review",
-      "blocks": {
-        "review_CGhLzh": {
-          "type": "review",
-          "settings": {
-            "content": "<p>\"Dies ist mein erster Einkauf und ich bin begeistert. Ich werde nie wieder woanders Parfüm kaufen. Ich konnte nie einen Duft-Dupe finden, der wirklich authentisch und konsistent roch.\"</p>",
-            "author": "Killian P.",
-            "date": "1 day ago",
-            "rating": 5,
-            "show_verified_badge": true,
-            "product": ""
-          }
-        },
-        "review_QzzUUA": {
-          "type": "review",
-          "settings": {
-            "content": "<p>\"Das ist der beste Duft, den ich seit sehr langer Zeit gerochen habe, die Noten machen mich wahnsinnig vor Glück. Ich werde diesen für immer in meiner Rotation behalten.\"</p>",
-            "author": "Jenniffer W.",
-            "date": "2 days ago",
-            "rating": 4,
-            "show_verified_badge": true,
-            "product": ""
-          }
-        },
-        "review_Beinew": {
-          "type": "review",
-          "settings": {
-            "content": "<p>\"Alle drei Düfte, die ich erhalten habe, sind sehr gut. Halten lange und riechen so wie sie sollten. Ich war nur mit der Zeit unzufrieden, die es dauerte, sie zu erhalten. Aber ehrlich gesagt habe ich eine zweite Bestellung aufgegeben, also erwarte einfach eine Wartezeit. Haha!<br/>\"</p>",
-            "author": "Clara P.",
-            "date": "2 days ago",
-            "rating": 5,
-            "show_verified_badge": true,
-            "product": ""
-          }
-        },
-        "review_dfTye7": {
-          "type": "review",
-          "settings": {
-            "content": "<p>\"Ich habe vergeblich versucht, Düfte zu finden, die teuer riechen und lange halten. Die Passform ist genau das, wonach ich gesucht habe.\"</p>",
-            "author": "Tiana N.",
-            "date": "2 days ago",
-            "rating": 4,
-            "show_verified_badge": true,
-            "product": ""
-          }
-        },
-        "review_PNtt4z": {
-          "type": "review",
-          "settings": {
-            "content": "<p>\"Ich war mir nicht sicher, was ich erwarten sollte, aber das hat mich wirklich beeindruckt. Riecht super frisch und ehrlich ziemlich nah an Aventus. Es hält gut und der Preis ist viel besser.\"</p>",
-            "author": "Michael T.",
-            "date": "2 days ago",
-            "rating": 4,
-            "show_verified_badge": true,
-            "product": ""
-          }
-        },
-        "review_wkAn4L": {
-          "type": "review",
-          "settings": {
-            "content": "<p>\"Einer meiner Lieblingsdüfte. Kam wirklich schnell zu mir. Riecht so schön.\"</p>",
-            "author": "Alex W.",
-            "date": "2 days ago",
-            "rating": 5,
-            "show_verified_badge": true,
-            "product": ""
-          }
-        },
-        "review_VPVPkT": {
-          "type": "review",
-          "settings": {
-            "content": "<p>\"Ich liiiebe diese Parfüms!!! Jedes einzelne, das ich bekommen habe, riecht göttlich. Einige würde ich sagen sind besser als das Original.\"</p>",
-            "author": "Christine N.",
-            "date": "5 days ago",
-            "rating": 4,
-            "show_verified_badge": false,
-            "product": ""
-          }
-        },
-        "review_NTbFJi": {
-          "type": "review",
-          "settings": {
-            "content": "<p>\"Zuerst war ich besorgt, dass sich die Lieferung etwas verzögert hat, aber als ich sie erhalten habe, war ich erstaunt über den Geruch, sobald er sich gesetzt hat, meine Güte, es ist einfach fantastisch.\"</p>",
-            "author": "Lionel M.",
-            "date": "7 days ago",
-            "rating": 5,
-            "show_verified_badge": true,
-            "product": ""
-          }
-        },
-        "review_EYCLJq": {
-          "type": "review",
-          "settings": {
-            "content": "<p>\"Es riecht sehr schön, aber hält nicht so lange wie es sollte\"</p>",
-            "author": "Terence M.",
-            "date": "2 Months ago",
-            "rating": 5,
-            "show_verified_badge": false,
-            "product": ""
-          }
-        },
-        "review_Qbcx4t": {
-          "type": "review",
-          "settings": {
-            "content": "<p>\"Ist perfekt und wunderschön 🥰🥰🥰\"</p>",
-            "author": "Lidis A.",
-            "date": "2 Months ago",
-            "rating": 5,
-            "show_verified_badge": true,
-            "product": ""
-          }
-        },
-        "review_3rR47r": {
-          "type": "review",
-          "settings": {
-            "content": "<p>\"Riecht sehr gut, es hat mich fasziniert\"</p>",
-            "author": "Castillo B.",
-            "date": "3 Months ago",
-            "rating": 5,
-            "show_verified_badge": true,
-            "product": ""
-          }
-        },
-        "review_ma3gjJ": {
-          "type": "review",
-          "settings": {
-            "content": "<p>\"Perfekt duftende Parfüms, die Düfte halten sehr lange, hervorragende Qualität\"</p>",
-            "author": "Kamila G.",
-            "date": "3 Months ago",
-            "rating": 5,
-            "show_verified_badge": true,
-            "product": ""
-          }
-        },
-        "review_9PDCrG": {
-          "type": "review",
-          "settings": {
-            "content": "<p>\"Riecht genau wie Luna Rossa Carbon, aber viel günstiger. Kann nicht glauben, wie nah es dran ist.\"</p>",
-            "author": "Robinson D.",
-            "date": "4 Months ago",
-            "rating": 4,
-            "show_verified_badge": false,
-            "product": ""
-          }
-        },
-        "review_7Q4gpj": {
-          "type": "review",
-          "settings": {
-            "content": "<p>\"Das ist die Art von Duft, die einen gepflegt fühlen lässt. Nicht überwältigend, genau richtig. 👌\"</p>",
-            "author": "Michael R.",
-            "date": "4 Months ago",
-            "rating": 5,
-            "show_verified_badge": true,
-            "product": ""
-          }
-        },
-        "review_nVGFJd": {
-          "type": "review",
-          "settings": {
-            "content": "<p>\"Ich trage Creed Aventus seit Jahren, aber das ist der nächste Dupe, den ich gefunden habe – und das zu einem Bruchteil des Preises. Die Ananas-Vanille-Kombination ist perfekt getroffen.\"</p>",
-            "author": "Alvarez P.",
-            "date": "4 Months ago",
-            "rating": 4,
-            "show_verified_badge": true,
-            "product": ""
-          }
-        },
-        "review_9VQhEG": {
-          "type": "review",
-          "settings": {
-            "content": "<p>\"Das Produkt kam schön verpackt an. Das Parfüm war nicht kaputt, ist nicht ausgelaufen und war in gutem Zustand. Der Duft ist perfekt und roch nicht schlecht. Ich liebe es, hohe Qualität\"</p>",
-            "author": "Anne E.",
-            "date": "4 Months ago",
-            "rating": 4,
-            "show_verified_badge": true,
-            "product": ""
-          }
-        },
-        "review_teUz9h": {
-          "type": "review",
-          "settings": {
-            "content": "<p>\"Wunderschöner Duft. Langanhaltend. <br/>Süß und warm. Gute schnelle Lieferung. <br/>Werde wieder kaufen.\"</p>",
-            "author": "Lucy R",
-            "date": "4 Months ago",
-            "rating": 5,
-            "show_verified_badge": true,
-            "product": ""
-          }
-        },
-        "review_f7Bgf8": {
-          "type": "review",
-          "settings": {
-            "content": "<p>\"Ich bin zufrieden mit Magic Perfume. Der Duft riecht dem Original sehr ähnlich und hält gut. Die Verpackung ist ordentlich und die Flasche sieht schön aus. Insgesamt ist es eine großartige Option, wenn man einen Qualitätsduft zu einem vernünftigen Preis möchte.\"</p>",
-            "author": "Alina M",
-            "date": "5 Months ago",
-            "rating": 5,
-            "show_verified_badge": false,
-            "product": ""
-          }
-        },
-        "review_nghmHV": {
-          "type": "review",
-          "settings": {
-            "content": "<p>\"Ihre Produkte sind von guter Qualität zu einem sehr erschwinglichen Preis.\"</p>",
-            "author": "Amanda G",
-            "date": "5 Months ago",
-            "rating": 4,
-            "show_verified_badge": true,
-            "product": ""
-          }
-        },
-        "review_cTa3jE": {
-          "type": "review",
-          "settings": {
-            "content": "<p>\"Tolle Düfte, tolle Produkte, keine Probleme.\"</p>",
-            "author": "Alex S.",
-            "date": "6 Months ago",
-            "rating": 5,
-            "show_verified_badge": true,
-            "product": ""
-          }
-        },
-        "review_HFDJke": {
-          "type": "review",
-          "settings": {
-            "content": "<p>\"Das Produkt kam schön verpackt an. Das Parfüm war nicht kaputt, ist nicht ausgelaufen und war in gutem Zustand. Der Duft ist perfekt und roch nicht schlecht. Ich liebe es, hohe Qualität\"</p>",
-            "author": "Roxanne S",
-            "date": "5 Months ago",
-            "rating": 5,
-            "show_verified_badge": true,
-            "product": ""
-          }
-        },
-        "review_qFgGCb": {
-          "type": "review",
-          "settings": {
-            "content": "<p>\"Vom Service bis zum Produkt war die Erfahrung phänomenal. Kaufe gerne jederzeit wieder.\"</p>",
-            "author": "Benjamin M",
-            "date": "5 Months ago",
-            "rating": 5,
-            "show_verified_badge": false,
-            "product": ""
-          }
-        },
-        "review_q7tMe4": {
-          "type": "review",
-          "settings": {
-            "content": "<p>\"Großartiges Produkt! Super erschwingliche Alternative zu den Markenparfüms. Der Duft hält lange und man bekommt viel für sein Geld\"</p>",
-            "author": "EM",
-            "date": "4 Months ago",
-            "rating": 5,
-            "show_verified_badge": true,
-            "product": ""
-          }
-        },
-        "review_fYfUH6": {
-          "type": "review",
-          "settings": {
-            "content": "<p>\"Omg ich liebte es Wow! Genau wie das Original und es hält den ganzen Tag!❤️‍🔥❤️‍🔥\"</p>",
-            "author": "شيطانة YT",
-            "date": "4 Months ago",
-            "rating": 4,
-            "show_verified_badge": true,
-            "product": ""
-          }
-        },
-        "review_D8Kihj": {
-          "type": "review",
-          "settings": {
-            "content": "<p>\"Der Duft dieses Parfüms ist super reichhaltig und ich liebe wie schön die Flasche und ihr Design ist.. Ich würde es wirklich wieder verwenden.\"</p>",
-            "author": "Eliannys Y",
-            "date": "7 Months ago",
-            "rating": 5,
-            "show_verified_badge": true,
-            "product": ""
-          }
-        },
-        "review_nJkdHr": {
-          "type": "review",
-          "settings": {
-            "content": "<p>\"Ich mag es! Mag diesen Duft. Guter Duft\"</p>",
-            "author": "Aleksandra M",
-            "date": "7 Months ago",
-            "rating": 5,
-            "show_verified_badge": false,
-            "product": ""
-          }
-        },
-        "review_bwPbWf": {
-          "type": "review",
-          "settings": {
-            "content": "<p>\"Tolles Produkt, riecht fantastisch. Ich bekomme immer Leute, die mir Fragen zu meinem Duft stellen und was ich benutze\"</p>",
-            "author": "Damario R",
-            "date": "7 Months ago",
-            "rating": 5,
-            "show_verified_badge": true,
-            "product": ""
-          }
-        },
-        "review_hgkJM8": {
-          "type": "review",
-          "settings": {
-            "content": "<p>\"Tolle Marke und tolle Produkte!\"</p>",
-            "author": "Juliana B",
-            "date": "4 Months ago",
-            "rating": 5,
-            "show_verified_badge": true,
-            "product": ""
-          }
-        },
-        "review_nBaidA": {
-          "type": "review",
-          "settings": {
-            "content": "<p>\"Nach einer kleinen Verzögerung habe ich endlich meine Magic Perfume-Parfüms und sie sind genau richtig! Ich kann fast nicht glauben, wie genau sie den Originalen entsprechen, zur Referenz habe ich \"Ylang Ylang Rose Jasmine\" und \"Aldehydes Rose Sandalwood\" bekommen, es sind wirklich schöne Düfte\"</p>",
-            "author": "Gabriella K",
-            "date": "7 Months ago",
-            "rating": 5,
-            "show_verified_badge": true,
-            "product": ""
-          }
-        },
-        "review_n6hGqN": {
-          "type": "review",
-          "settings": {
-            "content": "<p>\"Sehr gute Marke, ich liebe die Verpackung und das Aroma\"</p>",
-            "author": "Rosa B",
-            "date": "7 Months ago",
-            "rating": 5,
-            "show_verified_badge": true,
-            "product": ""
-          }
-        },
-        "review_NdggfY": {
-          "type": "review",
-          "settings": {
-            "content": "<p>\"Ich bin ein großer Kölnisch-Wasser-Fan, also bin ich ein wählerischer Typ, wenn es um Klone geht, aber Magic Perfume hat mich komplett überzeugt. Ich habe ursprünglich den Sauvage-Klon auf der Homepage bestellt und den Duft beim Sprühen sofort erkannt. Ich besitze jetzt insgesamt 4 Magic Perfume-Düfte und ich liebe sie alle. Habe dank ihrer Bundle-Angebote 3 weitere auf dem Weg. Wenn du etwas willst, das mit kleinem Budget funktioniert und Designer-Leistung liefert, könnte ich sie nicht mehr empfehlen.\"</p>",
-            "author": "Sean P",
-            "date": "4 Months ago",
-            "rating": 5,
-            "show_verified_badge": true,
-            "product": ""
-          }
-        },
-        "review_DLNcRK": {
-          "type": "review",
-          "settings": {
-            "content": "<p>\"Ich bin sehr zufrieden mit dem Parfüm von dieser Marke, sie haben einen so schönen Duft wie das Original und günstiger, ich werde es definitiv wieder kaufen\"</p>",
-            "author": "Angel",
-            "date": "8 Months ago",
-            "rating": 5,
-            "show_verified_badge": true,
-            "product": ""
-          }
-        },
-        "review_itaFnE": {
-          "type": "review",
-          "settings": {
-            "content": "<p>\"Diesen Sommer bekam ich eine Probe von Creed Aventus als Geschenk und ich mochte es wirklich, aber ich konnte das Original nicht kaufen, also suchte ich nach Dupes. Ich fand Magic Perfume und bestellte \"Pineapple Smoke Vanilla\", es kam in etwa einer Woche zu mir und es riecht wirklich gut, auch nah an meiner Originalprobe, sehr zufrieden mit dem Produkt, besonders für den Preis\"</p>",
-            "author": "Hwan H",
-            "date": "8 Months ago",
-            "rating": 5,
-            "show_verified_badge": true,
-            "product": ""
-          }
-        },
-        "review_qLtLjT": {
-          "type": "review",
-          "settings": {
-            "content": "<p>\"Ich habe ihre 7,5ml Proben-Düfte ausprobiert und zu meiner Überraschung mochte ich sie. Habe eine 2. Bestellung aufgegeben, aber dieses Mal habe ich die größeren Flaschen genommen. Ich muss sagen, ich bekam meine Bestellungen pünktlich und sie lieferten die Düfte, die ich mag!\"</p>",
-            "author": "Lauri E",
-            "date": "8 Months ago",
-            "rating": 5,
-            "show_verified_badge": true,
-            "product": ""
-          }
-        }
-      },
-      "block_order": [
-        "review_CGhLzh",
-        "review_QzzUUA",
-        "review_Beinew",
-        "review_dfTye7",
-        "review_PNtt4z",
-        "review_wkAn4L",
-        "review_VPVPkT",
-        "review_NTbFJi",
-        "review_EYCLJq",
-        "review_Qbcx4t",
-        "review_3rR47r",
-        "review_ma3gjJ",
-        "review_9PDCrG",
-        "review_7Q4gpj",
-        "review_nVGFJd",
-        "review_9VQhEG",
-        "review_teUz9h",
-        "review_f7Bgf8",
-        "review_nghmHV",
-        "review_cTa3jE",
-        "review_HFDJke",
-        "review_qFgGCb",
-        "review_q7tMe4",
-        "review_fYfUH6",
-        "review_D8Kihj",
-        "review_nJkdHr",
-        "review_bwPbWf",
-        "review_hgkJM8",
-        "review_nBaidA",
-        "review_n6hGqN",
-        "review_NdggfY",
-        "review_DLNcRK",
-        "review_itaFnE",
-        "review_qLtLjT"
-      ],
-      "name": "Massive Review",
-      "settings": {
-        "background_color": "#fcfbf9",
-        "heading": "Avis clients",
-        "review_text": "Note de 4,7/5 étoiles basée sur plus de 10 400 avis.",
-        "button_text": "Voir plus d'avis",
-        "button_link": "",
         "padding_top": 72,
         "padding_bottom": 72
       }
@@ -831,8 +831,8 @@
     "scent_breakdown_pqKDL9",
     "stacks_up_WR4y4d",
     "image_and_text_EFE4gB",
+    "massive_review_FpYjMJ",
     "popular_products_BptEUV",
-    "massive_review_xQhDkP",
     "1770288371f70b6dc1"
   ]
 }
