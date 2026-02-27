@@ -19,6 +19,8 @@
         "subtitle": "3 achetés + 1 GRATUIT",
         "button_text": "POUR HOMMES",
         "button_link": "shopify://collections/pour-hommes",
+        "second_button_text": "POUR LES FEMMES",
+        "second_button_link": "shopify://collections/pour-les-femmes",
         "padding_top": 36,
         "padding_bottom": 36
       }
