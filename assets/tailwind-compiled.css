@@ -601,6 +601,10 @@
     align-items: stretch
 }
 
+.justify-start {
+    justify-content: flex-start
+}
+
 .justify-end {
     justify-content: flex-end
 }
@@ -1755,6 +1759,14 @@
 
     .md\:items-end {
         align-items: flex-end
+    }
+
+    .md\:justify-start {
+        justify-content: flex-start
+    }
+
+    .md\:justify-center {
+        justify-content: center
     }
 
     .md\:gap-12 {
