@@ -25,6 +25,7 @@
     },
     "home_hero_banner_YetQDJ": {
       "type": "home-hero-banner",
+      "disabled": true,
       "name": "Home Hero Banner",
       "settings": {
         "image": "shopify://shop_images/magic_banner_french.jpg",
