@@ -28,7 +28,7 @@
   {% if product.metafields.custom.scent_intensity != blank %}
     <div class="flex items-center gap-[5px]">
       Intensité du Parfum:
-      <span class="text-highlight leading-4">Statement</span>
+      <span class="text-highlight leading-4">Extrait</span>
       {% assign intensity = product.metafields.custom.scent_intensity.value | times: 1 %}
       <div class="flex gap-[5px] items-center justify-center ml-1">
         {% for i in (1..3) %}
