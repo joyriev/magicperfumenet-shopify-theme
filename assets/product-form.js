@@ -32,7 +32,6 @@ if (!customElements.get("product-form")) {
 
         const config = fetchConfig("javascript");
         config.headers["X-Requested-With"] = "XMLHttpRequest";
-        delete config.headers["Content-Type"];
 
         const formData = new FormData(this.form);
         if (this.cart) {
