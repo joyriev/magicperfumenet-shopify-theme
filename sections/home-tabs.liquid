@@ -84,6 +84,11 @@
         {% else %}
           <p class="text-gray-500">No products found in this collection.</p>
         {% endif %}
+        <div class="text-center pt-14">
+          <a href="{{ block.settings.collection.url }}" class="px-4 py-2 border-2 border-solid border-black bg-white font-bold text-sm uppercase tracking-wide hover:bg-black text-black hover:text-white transition-colors cursor-pointer inline-block no-underline">
+            {{ block.settings.button_text }}
+          </a>
+        </div>
       </div>
     {% endfor %}
   </div>
@@ -182,14 +187,9 @@
            },
           {
             "type": "text",
-            "id": "show_all_button_text",
-            "label": "Show All Button Text",
-            "default": "Voir tous les best-sellers"
-          },
-          {
-            "type": "url",
-            "id": "show_all_button_url",
-            "label": "Show All Button URL"
+            "id": "button_text",
+            "label": "Button Text",
+            "default": "Afficher tout"
           }
         ]
       }
