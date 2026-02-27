@@ -9,6 +9,20 @@
  */
 {
   "sections": {
+    "home_hero_UyHN7k": {
+      "type": "home-hero",
+      "name": "Homepage Hero",
+      "settings": {
+        "background_color": "#161616",
+        "background_image": "shopify://shop_images/Gemini_Generated_Image_kxe5abkxe5abkxe5.png",
+        "title": "Le Scandale du Parfum.Le Luxe. Sans Majoration.",
+        "subtitle": "3 achetés + 1 GRATUIT",
+        "button_text": "POUR HOMMES",
+        "button_link": "shopify://collections/pour-hommes",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "home_hero_banner_YetQDJ": {
       "type": "home-hero-banner",
       "name": "Home Hero Banner",
@@ -16,64 +30,6 @@
         "image": "shopify://shop_images/magic_banner_french.jpg",
         "mobile_image": "shopify://shop_images/magic_banner_mobile_french.jpg",
         "link": "shopify://collections/meilleures-ventes"
-      }
-    },
-    "image_and_text_nj4mfM": {
-      "type": "image-and-text",
-      "blocks": {
-        "heading_c6chEf": {
-          "type": "heading",
-          "settings": {
-            "content": "L’odeur d’un parfum à 200 € — pas le prix.",
-            "heading_type": "h2",
-            "font_size": 28,
-            "mobile_font_size": 20,
-            "text_color": "#ffffff"
-          }
-        },
-        "text_VJRcpx": {
-          "type": "text",
-          "settings": {
-            "content": "<p>Des fragrances inspirées des grands parfums, reconnaissables et remarquées, à un prix accessible au quotidien — sans les marges du luxe.</p>",
-            "mobile_content": "",
-            "font_size": 18,
-            "text_color": "#eff0f5"
-          }
-        },
-        "button_rGwjWF": {
-          "type": "button",
-          "settings": {
-            "button_text": "Tout découvrir",
-            "button_url": "shopify://collections",
-            "button_color": "#ffffff",
-            "text_color": "#000000"
-          }
-        }
-      },
-      "block_order": [
-        "heading_c6chEf",
-        "text_VJRcpx",
-        "button_rGwjWF"
-      ],
-      "disabled": true,
-      "name": "Image and Text",
-      "settings": {
-        "background_color": "#000000",
-        "bg_image": "shopify://shop_images/magic_banner_french.jpg",
-        "bg_mobile_image": "shopify://shop_images/ChatGPT_Image_Feb_3_2026_04_34_48_PM.png",
-        "rounded_image": true,
-        "image_placement": "1",
-        "mobile_image_placement": "under_heading",
-        "button_text": "",
-        "button_url": "",
-        "columns_gap": 40,
-        "rows_gap": 20,
-        "content_alignment": "center",
-        "blocks_gap": 24,
-        "padding_top": 300,
-        "padding_bottom": 88,
-        "mobile_padding_top": 40,
-        "mobile_padding_bottom": 328
       }
     },
     "feature_heighlights_EpJcyT": {
@@ -340,7 +296,7 @@
     },
     "massive_review_kTc3WW": {
       "type": "massive-review",
-"blocks": {
+      "blocks": {
         "review_8jw9Px": {
           "type": "review",
           "settings": {
@@ -765,8 +721,8 @@
     }
   },
   "order": [
+    "home_hero_UyHN7k",
     "home_hero_banner_YetQDJ",
-    "image_and_text_nj4mfM",
     "feature_heighlights_EpJcyT",
     "popular_products_3gqnEi",
     "image_and_text_TQajG3",
