@@ -17,7 +17,7 @@
         "background_image": "shopify://shop_images/Gemini_Generated_Image_kxe5abkxe5abkxe5.png",
         "mobile_background_image": "shopify://shop_images/Gemini_Generated_Image_5jbsc75jbsc75jbs.png",
         "title": "Le Scandale du Parfum.Le Luxe. Sans Majoration.",
-        "subtitle": "3 achetés + 1 GRATUIT",
+        "subtitle": "3 achetés = le 4e offert",
         "button_text": "POUR HOMMES",
         "button_link": "shopify://collections/pour-hommes",
         "second_button_text": "POUR LES FEMMES",
@@ -94,7 +94,6 @@
         "subheading": "",
         "collection": "meilleures-ventes",
         "show_all_button_text": "Alle Bestseller ansehen",
-        "show_all_button_url": "",
         "padding_top": 72,
         "padding_bottom": 72
       }
@@ -189,8 +188,7 @@
           "settings": {
             "tab_title": "🔥Meilleuresventes",
             "collection": "meilleures-ventes",
-            "show_all_button_text": "Voir tous les best-sellers",
-            "show_all_button_url": ""
+            "button_text": "Afficher tout"
           }
         },
         "collection_xgUpzQ": {
@@ -198,8 +196,7 @@
           "settings": {
             "tab_title": "Pour Femme",
             "collection": "pour-les-femmes",
-            "show_all_button_text": "Voir tous les best-sellers",
-            "show_all_button_url": ""
+            "button_text": "Afficher tout"
           }
         },
         "collection_3WBTm3": {
@@ -207,8 +204,7 @@
           "settings": {
             "tab_title": "Pour Homme",
             "collection": "pour-hommes",
-            "show_all_button_text": "Voir tous les best-sellers",
-            "show_all_button_url": ""
+            "button_text": "Afficher tout"
           }
         }
       },
