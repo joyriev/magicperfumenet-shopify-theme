@@ -488,16 +488,16 @@
     max-width: 250px
 }
 
+.max-w-\[550px\] {
+    max-width: 550px
+}
+
 .max-w-\[600px\] {
     max-width: 600px
 }
 
 .max-w-\[60px\] {
     max-width: 60px
-}
-
-.max-w-\[700px\] {
-    max-width: 700px
 }
 
 .flex-1 {
@@ -1824,6 +1824,11 @@
     .md\:text-4xl {
         font-size: 36px;
         line-height: 40px
+    }
+
+    .md\:text-5xl {
+        font-size: 48px;
+        line-height: 1
     }
 
     .md\:text-6xl {
