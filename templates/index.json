@@ -237,9 +237,9 @@
         "collapsible_row_rCVDnP": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Ist es ein parfümiertes Wasser?",
+            "heading": "Est-ce de l'eau parfumée?",
             "icon": "none",
-            "row_content": "<p>Ja, es ist ein parfümiertes Wasser – es enthält bis zu 19 % Essenz. Eau de Toilette zum Beispiel hat zwischen 5 und 8 % und die Essenz liegt bei 41 % aufwärts.</p>",
+            "row_content": "<p>Oui, c'est une eau parfumée – elle contient jusqu'à 19 % d'essence. L'eau de toilette, par exemple, contient entre 5 et 8 % d'essence, et la concentration en essence est de 41 % et plus.</p>",
             "page": ""
           }
         },
