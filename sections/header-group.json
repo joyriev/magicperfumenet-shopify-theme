@@ -17,7 +17,7 @@
       "settings": {
         "background_color": "#000000",
         "background_color_2": "#e32402",
-        "prepend_text": "Soldes de la Saint-Patrick:",
+        "prepend_text": "Zahltagsverkauf.",
         "link_text": "3 achetés, 1 offert",
         "append_text": "",
         "link": "shopify://collections/meilleures-ventes"
