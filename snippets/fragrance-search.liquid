@@ -849,10 +849,21 @@
 
 <script>
 (function() {
-  // ===== LOAD CATALOG DATA =====
+  // ===== WAIT FOR CATALOG TO LOAD =====
   let allPerfumes = [];
+  let inspiredProducts = [];
+  let catalogReady = false;
   
-  if (window.PerfumeCatalog) {
+  function initializeCatalog() {
+    if (!window.PerfumeCatalog) {
+      console.warn('⏳ Attente du catalogue...');
+      setTimeout(initializeCatalog, 100);
+      return;
+    }
+    
+    console.log('✓ Catalogue détecté, initialisation en cours...');
+    
+    // Load all perfumes from catalog
     for (let brandKey in window.PerfumeCatalog) {
       if (brandKey.startsWith('_')) continue;
       const perfumes = window.PerfumeCatalog[brandKey];
@@ -861,34 +872,30 @@
       }
     }
     console.log('✓ Catalogue chargé:', allPerfumes.length, 'parfums');
-  } else {
-    console.warn('⚠️ Catalogue non trouvé');
-  }
-  
-  // ===== YOUR SHOPIFY PRODUCTS - DYNAMICALLY GENERATED FROM CATALOG =====
-  let inspiredProducts = [];
-  
-  // Generate inspired products from the catalog's shopifyProduct data
-  if (allPerfumes.length > 0) {
-    inspiredProducts = allPerfumes.map(perfume => {
-      if (perfume.shopifyProduct) {
-        return {
-          id: perfume.id,
-          title: perfume.shopifyProduct.title,
-          image: perfume.shopifyProduct.image,
-          url: perfume.shopifyProduct.url,
-          price: 1199, // €11.99 in cents
-          brand: perfume.brand,
-          number: perfume.productNumbers ? perfume.productNumbers[0] : null,
-          gender: perfume.gender,
-          inspiredBy: perfume.name
-        };
-      }
-    }).filter(p => p !== undefined);
     
-    console.log('✓ Produits inspirés générés:', inspiredProducts.length);
-  } else {
-    console.warn('⚠️ Aucun produit shopify trouvé dans le catalogue');
+    // Generate inspired products from the catalog's shopifyProduct data
+    if (allPerfumes.length > 0) {
+      inspiredProducts = allPerfumes.map(perfume => {
+        if (perfume.shopifyProduct) {
+          return {
+            id: perfume.id,
+            title: perfume.shopifyProduct.title,
+            image: perfume.shopifyProduct.image,
+            url: perfume.shopifyProduct.url,
+            price: 1199, // €11.99 in cents
+            brand: perfume.brand,
+            number: perfume.productNumbers ? perfume.productNumbers[0] : null,
+            gender: perfume.gender,
+            inspiredBy: perfume.name
+          };
+        }
+      }).filter(p => p !== undefined);
+      
+      console.log('✓ Produits inspirés générés:', inspiredProducts.length);
+      catalogReady = true;
+    } else {
+      console.warn('⚠️ Aucun produit shopify trouvé dans le catalogue');
+    }
   }
 
   // ===== ADVANCED FUZZY SEARCH =====
@@ -1259,6 +1266,11 @@
   
   // ===== DETAILED VIEW =====
   window.fcShowPerfumeDetail = function(perfumeId) {
+    if (!catalogReady) {
+      console.warn('Catalogue non prêt');
+      return;
+    }
+    
     const perfume = allPerfumes.find(p => p.id === perfumeId);
     if (!perfume) return;
     
@@ -1358,6 +1370,12 @@
   
   function performSearch(query) {
     const contentEl = document.getElementById('fcContent');
+    
+    if (!catalogReady) {
+      contentEl.innerHTML = '<div class="fc-loading">Chargement du catalogue...</div>';
+      return;
+    }
+    
     contentEl.innerHTML = '<div class="fc-loading">Recherche en cours...</div>';
     
     setTimeout(() => {
@@ -1381,6 +1399,11 @@
   function handleSearch() {
     const query = document.getElementById('fcSearchInput').value.trim();
     const stepsEl = document.getElementById('fcSteps');
+    
+    if (!catalogReady) {
+      document.getElementById('fcContent').innerHTML = '<div class="fc-loading">Chargement du catalogue...</div>';
+      return;
+    }
     
     if (query.length < 1) {
       stepsEl.style.display = 'block';
@@ -1521,6 +1544,9 @@
   
   // ===== INITIALIZATION =====
   document.addEventListener('DOMContentLoaded', function() {
+    // Initialize catalog first
+    initializeCatalog();
+    
     const searchInput = document.getElementById('fcSearchInput');
     const clearSearch = document.getElementById('fcClearSearch');
     const searchPopup = document.getElementById('fcSearchPopup');
@@ -1555,7 +1581,7 @@
     
     if (searchPopup) searchPopup.addEventListener('click', function(e) { e.stopPropagation(); });
     
-    console.log('✓ Recherche initialisée avec', allPerfumes.length, 'parfums');
+    console.log('✓ Recherche initialisée');
   });
 })();
 </script>
