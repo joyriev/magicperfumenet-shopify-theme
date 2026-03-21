@@ -1,7 +1,8 @@
 {% comment %}
   FRAGRANCE CODE SEARCH POPUP - PREMIUM DESIGN
-  - INTEGRATED WITH PERFUME CATALOG
-  - Shows detailed notes, descriptions, and recommendations
+  - Shows detailed catalog information FIRST
+  - Then shows inspired products from your Shopify store
+  - Smart recommendations based on brand and gender
 {% endcomment %}
 
 <style>
@@ -57,7 +58,7 @@
   position: fixed;
   bottom: 110px;
   right: 30px;
-  width: 480px;
+  width: 520px;
   max-height: 85vh;
   background: #FFFFFF;
   border-radius: 24px;
@@ -135,7 +136,6 @@
 .fc-offer-banner.qualified {
   background: linear-gradient(135deg, #E8F5E9, #C8E6C9);
   border-color: #2E7D32;
-  box-shadow: 0 8px 15px -5px rgba(46, 125, 50, 0.2);
 }
 
 .fc-offer-left {
@@ -156,7 +156,6 @@
   justify-content: center;
   color: white;
   box-shadow: 0 5px 10px rgba(196, 30, 58, 0.3);
-  transition: background 0.3s ease;
   flex-shrink: 0;
 }
 
@@ -175,8 +174,6 @@
   font-weight: 800;
   margin-bottom: 2px;
   letter-spacing: 0.3px;
-  transition: color 0.3s ease;
-  line-height: 1.3;
 }
 
 .fc-offer-banner.qualified .fc-offer-text strong {
@@ -198,8 +195,6 @@
   font-weight: 700;
   padding: 6px 14px;
   border-radius: 30px;
-  box-shadow: 0 4px 8px rgba(196, 30, 58, 0.2);
-  transition: all 0.3s ease;
   min-width: 65px;
   text-align: center;
   white-space: nowrap;
@@ -210,7 +205,6 @@
   background: #2E7D32;
 }
 
-/* Progress bar */
 .fc-offer-progress-container {
   padding: 0 20px 15px 20px;
 }
@@ -266,6 +260,7 @@
   gap: 15px;
   cursor: pointer;
   transition: opacity 0.2s ease;
+  text-decoration: none;
 }
 
 .fc-logo-section:hover {
@@ -411,7 +406,7 @@
 
 /* ===== SECTION TITLES ===== */
 .fc-section-title {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 800;
   color: #C41E3A;
   margin: 20px 20px 15px 20px;
@@ -419,6 +414,63 @@
   border-bottom: 2px solid #EDE5DC;
   text-transform: uppercase;
   letter-spacing: 0.8px;
+}
+
+.fc-subsection-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #2C2420;
+  margin: 15px 20px 10px 20px;
+}
+
+/* ===== CATALOG RESULT ITEM ===== */
+.fc-catalog-item {
+  background: #FFFFFF;
+  padding: 15px 20px;
+  margin: 0;
+  border-bottom: 1px solid #F0E8E0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  transition: background 0.2s ease;
+}
+
+.fc-catalog-item:hover {
+  background: #FEF9F5;
+}
+
+.fc-catalog-image {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #FFFFFF;
+  padding: 5px;
+  border: 1px solid #EDE5DC;
+}
+
+.fc-catalog-info {
+  flex: 1;
+}
+
+.fc-catalog-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #2C2420;
+  margin-bottom: 4px;
+}
+
+.fc-catalog-brand {
+  font-size: 14px;
+  color: #C41E3A;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.fc-catalog-year {
+  font-size: 12px;
+  color: #8A7A70;
 }
 
 /* ===== PRODUCT GRID ===== */
@@ -519,57 +571,6 @@
   color: #C41E3A;
 }
 
-/* ===== PRODUCT LIST ITEMS ===== */
-.fc-product-item {
-  background: #FFFFFF;
-  padding: 15px 20px;
-  margin: 0;
-  border-bottom: 1px solid #F0E8E0;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  transition: background 0.2s ease;
-}
-
-.fc-product-item:hover {
-  background: #FEF9F5;
-}
-
-.fc-product-image-small {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-  border-radius: 12px;
-  background: #FFFFFF;
-  padding: 5px;
-  border: 1px solid #EDE5DC;
-}
-
-.fc-product-info {
-  flex: 1;
-}
-
-.fc-product-name {
-  font-size: 16px;
-  font-weight: 700;
-  color: #2C2420;
-  margin-bottom: 4px;
-}
-
-.fc-product-brand {
-  font-size: 14px;
-  color: #C41E3A;
-  font-weight: 600;
-  margin-bottom: 2px;
-}
-
-.fc-product-price-small {
-  font-size: 13px;
-  color: #4A3F39;
-  font-weight: 600;
-}
-
 /* ===== DETAILED VIEW ===== */
 .fc-detailed-view {
   background: #FEFCF9;
@@ -626,30 +627,29 @@
 }
 
 .fc-detailed-name {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 800;
   color: #2C2420;
   margin-bottom: 6px;
 }
 
 .fc-detailed-brand {
-  font-size: 14px;
+  font-size: 15px;
   color: #C41E3A;
   font-weight: 700;
   margin-bottom: 4px;
 }
 
-.fc-detailed-number {
+.fc-detailed-year {
   font-size: 13px;
   color: #8A7A70;
   margin-bottom: 4px;
 }
 
-.fc-detailed-price {
-  font-size: 18px;
-  font-weight: 800;
-  color: #C41E3A;
-  margin-top: 8px;
+.fc-detailed-gender {
+  font-size: 13px;
+  color: #8A7A70;
+  margin-bottom: 8px;
 }
 
 /* ===== NOTES SECTION ===== */
@@ -697,21 +697,6 @@
   color: #4A3F39;
 }
 
-.fc-meta-info {
-  margin-top: 15px;
-  padding-top: 15px;
-  border-top: 1px solid #EDE5DC;
-  display: flex;
-  gap: 20px;
-  font-size: 12px;
-  color: #8A7A70;
-}
-
-.fc-meta-info span {
-  font-weight: 600;
-  color: #2C2420;
-}
-
 /* ===== NOTIFICATION ===== */
 .fc-notification {
   position: fixed;
@@ -744,57 +729,6 @@
   border-radius: 20px;
   margin: 20px;
   font-size: 14px;
-}
-
-/* ===== SUGGESTIONS SECTION ===== */
-.fc-suggestions-title {
-  font-size: 16px;
-  font-weight: 700;
-  color: #2C2420;
-  margin: 20px 20px 10px 20px;
-}
-
-.fc-suggestion-item {
-  background: #FFFFFF;
-  padding: 15px 20px;
-  margin: 0;
-  border-bottom: 1px solid #F0E8E0;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  transition: background 0.2s ease;
-}
-
-.fc-suggestion-item:hover {
-  background: #FEF9F5;
-}
-
-.fc-suggestion-image {
-  width: 50px;
-  height: 50px;
-  object-fit: contain;
-  border-radius: 10px;
-  background: #FFFFFF;
-  padding: 5px;
-  border: 1px solid #EDE5DC;
-}
-
-.fc-suggestion-info {
-  flex: 1;
-}
-
-.fc-suggestion-name {
-  font-size: 14px;
-  font-weight: 600;
-  color: #2C2420;
-  margin-bottom: 2px;
-}
-
-.fc-suggestion-price {
-  font-size: 13px;
-  font-weight: 600;
-  color: #C41E3A;
 }
 
 /* ===== RESPONSIVE ===== */
@@ -885,7 +819,7 @@
         <input type="text" 
                id="fcSearchInput" 
                class="fc-search-field" 
-               placeholder="Search by name, brand, or number..."
+               placeholder="Search by perfume name, brand, or notes..."
                autocomplete="off">
         <button class="fc-clear-search" id="fcClearSearch">✕</button>
       </div>
@@ -919,19 +853,24 @@
 
 <script>
 (function() {
-  // ===== LOAD CATALOG DATA =====
+  // ===== LOAD CATALOG DATA FROM perfume-catalog-french.js =====
   let catalogPerfumes = [];
-  let catalogMap = new Map(); // Map by product number
+  let catalogMap = new Map(); // Map by name and brand for quick lookup
   
-  // Try to load from window.PerfumeCatalog
+  // Try to load from window.PerfumeCatalog (your catalog file)
   if (typeof window.PerfumeCatalog !== 'undefined') {
     for (let brand in window.PerfumeCatalog) {
       if (Array.isArray(window.PerfumeCatalog[brand])) {
         catalogPerfumes.push(...window.PerfumeCatalog[brand]);
       }
     }
-    // Create map for quick lookup by product number
+    // Create map for quick lookup
     catalogPerfumes.forEach(perfume => {
+      // Map by lowercase name
+      catalogMap.set(perfume.name.toLowerCase(), perfume);
+      // Map by lowercase brand + name
+      catalogMap.set(`${perfume.brand.toLowerCase()}_${perfume.name.toLowerCase()}`, perfume);
+      // Map by product numbers if available
       if (perfume.productNumbers && perfume.productNumbers.length) {
         perfume.productNumbers.forEach(num => {
           catalogMap.set(num, perfume);
@@ -939,63 +878,99 @@
         });
       }
     });
-    console.log('✓ Catalog loaded with', catalogPerfumes.length, 'perfumes');
+    console.log('✓ Catalog loaded with', catalogPerfumes.length, 'perfumes from perfume-catalog-french.js');
   } else {
     console.warn('⚠️ PerfumeCatalog not found. Make sure perfume-catalog-french.js is loaded.');
   }
   
-  // ===== YOUR ACTUAL PRODUCTS =====
-  const hardcodedProducts = [
-    { id: "product_113", title: "No. 113— Senteur Inspirée Angel", image: "https://magyx.fr/cdn/shop/files/113W_c.webp?v=1771385180&width=300", url: "https://magyx.fr/products/magic-perfume-no-113w", price: 1199, brand: "Mugler", brandKey: "mugler", number: "113", gender: "female", searchTerms: ["angel", "mugler", "113"] },
-    { id: "product_023", title: "No. 023— Senteur Inspirée LADY MILION", image: "https://magyx.fr/cdn/shop/files/023W_c.webp?v=1771385152&width=300", url: "https://magyx.fr/products/magic-perfume-no-023w", price: 1199, brand: "Paco Rabanne", brandKey: "pacorabanne", number: "023", gender: "female", searchTerms: ["lady million", "paco rabanne", "023"] },
-    { id: "product_132", title: "No. 132— Senteur Inspirée Black Opium", image: "https://magyx.fr/cdn/shop/files/132W_c.webp?v=1771385154&width=300", url: "https://magyx.fr/products/magic-perfume-no-132w", price: 1199, brand: "Yves Saint Laurent", brandKey: "ysl", number: "132", gender: "female", searchTerms: ["black opium", "ysl", "132"] },
-    { id: "product_142", title: "No. 142— Senteur Inspirée Ange Ou Demon", image: "https://magyx.fr/cdn/shop/files/142W_c.webp?v=1771385169&width=300", url: "https://magyx.fr/products/magic-perfume-no-142w", price: 1199, brand: "Givenchy", brandKey: "givenchy", number: "142", gender: "female", searchTerms: ["ange ou demon", "givenchy", "142"] },
-    { id: "product_182", title: "No. 182— Senteur Inspirée Candy", image: "https://magyx.fr/cdn/shop/files/182W_c.webp?v=1771385187&width=300", url: "https://magyx.fr/products/magic-perfume-no-182w", price: 1199, brand: "Prada", brandKey: "prada", number: "182", gender: "female", searchTerms: ["candy", "prada", "182"] },
-    { id: "product_129", title: "No. 129— Senteur Inspirée Si", image: "https://magyx.fr/cdn/shop/files/129W_c.webp?v=1771385148&width=300", url: "https://magyx.fr/products/magic-perfume-no-129w", price: 1199, brand: "Giorgio Armani", brandKey: "armani", number: "129", gender: "female", searchTerms: ["si", "armani", "129"] },
-    { id: "product_077", title: "No. 077— Senteur Inspirée No.5", image: "https://magyx.fr/cdn/shop/files/077W_c.webp?v=1771385150&width=300", url: "https://magyx.fr/products/magic-perfume-no-077w", price: 1199, brand: "Chanel", brandKey: "chanel", number: "077", gender: "female", searchTerms: ["no 5", "chanel", "077"] },
-    { id: "product_053", title: "No. 053 — Senteur Inspirée Vanille Fatale", image: "https://magyx.fr/cdn/shop/files/053W_c.webp?v=1771385216&width=300", url: "https://magyx.fr/products/magic-perfume-no-053w-m", price: 1199, brand: "Tom Ford", brandKey: "tomford", number: "053", gender: "female", searchTerms: ["vanille fatale", "tom ford", "053"] },
-    { id: "product_222", title: "No. 222— Senteur Inspirée Allure Homme Sport", image: "https://magyx.fr/cdn/shop/files/222M_c.webp?v=1771385186&width=300", url: "https://magyx.fr/products/magic-perfume-no-222m", price: 1199, brand: "Chanel", brandKey: "chanel", number: "222", gender: "male", searchTerms: ["allure homme sport", "chanel", "222"] },
-    { id: "product_223", title: "No. 223— Senteur Inspirée Hugo", image: "https://magyx.fr/cdn/shop/files/223M_c.webp?v=1771385167&width=300", url: "https://magyx.fr/products/magic-perfume-no-223m", price: 1199, brand: "Hugo Boss", brandKey: "hugoboss", number: "223", gender: "male", searchTerms: ["hugo", "hugo boss", "223"] },
-    { id: "product_193", title: "No. 193 — Senteur Inspirée Tobacco Vanille", image: "https://magyx.fr/cdn/shop/files/193W_c.webp?v=1771385212&width=300", url: "https://magyx.fr/products/magic-perfume-no-193w", price: 1199, brand: "Tom Ford", brandKey: "tomford", number: "193", gender: "male", searchTerms: ["tobacco vanille", "tom ford", "193"] },
-    { id: "product_141", title: "No. 141 — Senteur Inspirée Tresor", image: "https://magyx.fr/cdn/shop/files/141W_c.webp?v=1771385201&width=300", url: "https://magyx.fr/products/magic-perfume-no-141w", price: 1199, brand: "Lancôme", brandKey: "lancome", number: "141", gender: "female", searchTerms: ["tresor", "lancome", "141"] },
-    { id: "product_134", title: "No. 134 — Senteur Inspirée Laurent Manifesto", image: "https://magyx.fr/cdn/shop/files/134W_c.webp?v=1771385190&width=300", url: "https://magyx.fr/products/magic-perfume-no-134w", price: 1199, brand: "Yves Saint Laurent", brandKey: "ysl", number: "134", gender: "female", searchTerms: ["manifesto", "ysl", "134"] },
-    { id: "product_083", title: "No. 083— Senteur Inspirée Laurent Opium", image: "https://magyx.fr/cdn/shop/files/083W_c.webp?v=1771385185&width=300", url: "https://magyx.fr/products/magic-perfume-no-083w", price: 1199, brand: "Yves Saint Laurent", brandKey: "ysl", number: "083", gender: "female", searchTerms: ["opium", "ysl", "083"] },
-    { id: "product_082", title: "No. 082— Senteur Inspirée Miss Cherie", image: "https://magyx.fr/cdn/shop/files/082W_c.webp?v=1771385151&width=300", url: "https://magyx.fr/products/magic-perfume-no-082w", price: 1199, brand: "Dior", brandKey: "dior", number: "082", gender: "female", searchTerms: ["miss cherie", "dior", "082"] },
-    { id: "product_079", title: "No. 079 — Senteur Inspirée Coco", image: "https://magyx.fr/cdn/shop/files/079W_c.webp?v=1771385207&width=300", url: "https://magyx.fr/products/magic-perfume-no-079w", price: 1199, brand: "Chanel", brandKey: "chanel", number: "079", gender: "female", searchTerms: ["coco", "chanel", "079"] },
-    { id: "product_150", title: "No. 150— Senteur Inspirée Emporio She", image: "https://magyx.fr/cdn/shop/files/150W_c.webp?v=1771385147&width=300", url: "https://magyx.fr/products/magic-perfume-no-150w", price: 1199, brand: "Giorgio Armani", brandKey: "armani", number: "150", gender: "female", searchTerms: ["emporio she", "armani", "150"] },
-    { id: "product_184", title: "No. 184— Senteur Inspirée The Scent", image: "https://magyx.fr/cdn/shop/files/184W_c.webp?v=1771385182&width=300", url: "https://magyx.fr/products/magic-perfume-no-184w", price: 1199, brand: "Hugo Boss", brandKey: "hugoboss", number: "184", gender: "female", searchTerms: ["the scent", "hugo boss", "184"] },
-    { id: "product_140", title: "No. 140 — Senteur Inspirée MY WAY", image: "https://magyx.fr/cdn/shop/files/140W_c.webp?v=1771385219&width=300", url: "https://magyx.fr/products/magic-perfume-no-140w", price: 1199, brand: "Giorgio Armani", brandKey: "armani", number: "140", gender: "female", searchTerms: ["my way", "armani", "140"] },
-    { id: "product_060", title: "No. 060 — Senteur Inspirée Boss Woman", image: "https://magyx.fr/cdn/shop/files/060W_c.webp?v=1771385203&width=300", url: "https://magyx.fr/products/magic-perfume-no-060w", price: 1199, brand: "Hugo Boss", brandKey: "hugoboss", number: "060", gender: "female", searchTerms: ["boss woman", "hugo boss", "060"] },
-    { id: "product_006", title: "No. 006 — Senteur Inspirée Chance", image: "https://magyx.fr/cdn/shop/files/006W_c.webp?v=1771385217&width=300", url: "https://magyx.fr/products/magic-perfume-no-006w", price: 1199, brand: "Chanel", brandKey: "chanel", number: "006", gender: "female", searchTerms: ["chance", "chanel", "006"] },
-    { id: "product_022", title: "No. 022— Senteur Inspirée Deep Red", image: "https://magyx.fr/cdn/shop/files/022W_c.webp?v=1771385163&width=300", url: "https://magyx.fr/products/magic-perfume-no-022w", price: 1199, brand: "Hugo Boss", brandKey: "hugoboss", number: "022", gender: "female", searchTerms: ["deep red", "hugo boss", "022"] },
-    { id: "product_024", title: "No. 024 — Senteur Inspirée ÄQUIVALENT", image: "https://magyx.fr/cdn/shop/files/024W_c.webp?v=1771385208&width=300", url: "https://magyx.fr/products/magic-perfume-no-024w", price: 1199, brand: "Giorgio Armani", brandKey: "armani", number: "024", gender: "female", searchTerms: ["aequivalent", "armani", "024"] },
-    { id: "product_098", title: "No. 098 — Senteur Inspirée Alive", image: "https://magyx.fr/cdn/shop/files/098W_c.webp?v=1771385196&width=300", url: "https://magyx.fr/products/magic-perfume-no-021w", price: 1199, brand: "Hugo Boss", brandKey: "hugoboss", number: "098", gender: "female", searchTerms: ["alive", "hugo boss", "098"] }
+  // ===== YOUR SHOPIFY INSPIRED PRODUCTS =====
+  const inspiredProducts = [
+    { id: "product_113", title: "No. 113— Senteur Inspirée Angel", image: "https://magyx.fr/cdn/shop/files/113W_c.webp?v=1771385180&width=300", url: "https://magyx.fr/products/magic-perfume-no-113w", price: 1199, brand: "Mugler", brandKey: "mugler", number: "113", gender: "female", inspiredBy: "Angel" },
+    { id: "product_023", title: "No. 023— Senteur Inspirée LADY MILION", image: "https://magyx.fr/cdn/shop/files/023W_c.webp?v=1771385152&width=300", url: "https://magyx.fr/products/magic-perfume-no-023w", price: 1199, brand: "Paco Rabanne", brandKey: "pacorabanne", number: "023", gender: "female", inspiredBy: "Lady Million" },
+    { id: "product_132", title: "No. 132— Senteur Inspirée Black Opium", image: "https://magyx.fr/cdn/shop/files/132W_c.webp?v=1771385154&width=300", url: "https://magyx.fr/products/magic-perfume-no-132w", price: 1199, brand: "Yves Saint Laurent", brandKey: "ysl", number: "132", gender: "female", inspiredBy: "Black Opium" },
+    { id: "product_142", title: "No. 142— Senteur Inspirée Ange Ou Demon", image: "https://magyx.fr/cdn/shop/files/142W_c.webp?v=1771385169&width=300", url: "https://magyx.fr/products/magic-perfume-no-142w", price: 1199, brand: "Givenchy", brandKey: "givenchy", number: "142", gender: "female", inspiredBy: "Ange Ou Demon" },
+    { id: "product_182", title: "No. 182— Senteur Inspirée Candy", image: "https://magyx.fr/cdn/shop/files/182W_c.webp?v=1771385187&width=300", url: "https://magyx.fr/products/magic-perfume-no-182w", price: 1199, brand: "Prada", brandKey: "prada", number: "182", gender: "female", inspiredBy: "Candy" },
+    { id: "product_129", title: "No. 129— Senteur Inspirée Si", image: "https://magyx.fr/cdn/shop/files/129W_c.webp?v=1771385148&width=300", url: "https://magyx.fr/products/magic-perfume-no-129w", price: 1199, brand: "Giorgio Armani", brandKey: "armani", number: "129", gender: "female", inspiredBy: "Si" },
+    { id: "product_077", title: "No. 077— Senteur Inspirée No.5", image: "https://magyx.fr/cdn/shop/files/077W_c.webp?v=1771385150&width=300", url: "https://magyx.fr/products/magic-perfume-no-077w", price: 1199, brand: "Chanel", brandKey: "chanel", number: "077", gender: "female", inspiredBy: "No.5" },
+    { id: "product_053", title: "No. 053 — Senteur Inspirée Vanille Fatale", image: "https://magyx.fr/cdn/shop/files/053W_c.webp?v=1771385216&width=300", url: "https://magyx.fr/products/magic-perfume-no-053w-m", price: 1199, brand: "Tom Ford", brandKey: "tomford", number: "053", gender: "female", inspiredBy: "Vanille Fatale" },
+    { id: "product_222", title: "No. 222— Senteur Inspirée Allure Homme Sport", image: "https://magyx.fr/cdn/shop/files/222M_c.webp?v=1771385186&width=300", url: "https://magyx.fr/products/magic-perfume-no-222m", price: 1199, brand: "Chanel", brandKey: "chanel", number: "222", gender: "male", inspiredBy: "Allure Homme Sport" },
+    { id: "product_223", title: "No. 223— Senteur Inspirée Hugo", image: "https://magyx.fr/cdn/shop/files/223M_c.webp?v=1771385167&width=300", url: "https://magyx.fr/products/magic-perfume-no-223m", price: 1199, brand: "Hugo Boss", brandKey: "hugoboss", number: "223", gender: "male", inspiredBy: "Hugo" },
+    { id: "product_193", title: "No. 193 — Senteur Inspirée Tobacco Vanille", image: "https://magyx.fr/cdn/shop/files/193W_c.webp?v=1771385212&width=300", url: "https://magyx.fr/products/magic-perfume-no-193w", price: 1199, brand: "Tom Ford", brandKey: "tomford", number: "193", gender: "male", inspiredBy: "Tobacco Vanille" },
+    { id: "product_141", title: "No. 141 — Senteur Inspirée Tresor", image: "https://magyx.fr/cdn/shop/files/141W_c.webp?v=1771385201&width=300", url: "https://magyx.fr/products/magic-perfume-no-141w", price: 1199, brand: "Lancôme", brandKey: "lancome", number: "141", gender: "female", inspiredBy: "Tresor" },
+    { id: "product_134", title: "No. 134 — Senteur Inspirée Laurent Manifesto", image: "https://magyx.fr/cdn/shop/files/134W_c.webp?v=1771385190&width=300", url: "https://magyx.fr/products/magic-perfume-no-134w", price: 1199, brand: "Yves Saint Laurent", brandKey: "ysl", number: "134", gender: "female", inspiredBy: "Manifesto" },
+    { id: "product_083", title: "No. 083— Senteur Inspirée Laurent Opium", image: "https://magyx.fr/cdn/shop/files/083W_c.webp?v=1771385185&width=300", url: "https://magyx.fr/products/magic-perfume-no-083w", price: 1199, brand: "Yves Saint Laurent", brandKey: "ysl", number: "083", gender: "female", inspiredBy: "Opium" },
+    { id: "product_082", title: "No. 082— Senteur Inspirée Miss Cherie", image: "https://magyx.fr/cdn/shop/files/082W_c.webp?v=1771385151&width=300", url: "https://magyx.fr/products/magic-perfume-no-082w", price: 1199, brand: "Dior", brandKey: "dior", number: "082", gender: "female", inspiredBy: "Miss Cherie" },
+    { id: "product_079", title: "No. 079 — Senteur Inspirée Coco", image: "https://magyx.fr/cdn/shop/files/079W_c.webp?v=1771385207&width=300", url: "https://magyx.fr/products/magic-perfume-no-079w", price: 1199, brand: "Chanel", brandKey: "chanel", number: "079", gender: "female", inspiredBy: "Coco" },
+    { id: "product_150", title: "No. 150— Senteur Inspirée Emporio She", image: "https://magyx.fr/cdn/shop/files/150W_c.webp?v=1771385147&width=300", url: "https://magyx.fr/products/magic-perfume-no-150w", price: 1199, brand: "Giorgio Armani", brandKey: "armani", number: "150", gender: "female", inspiredBy: "Emporio She" },
+    { id: "product_184", title: "No. 184— Senteur Inspirée The Scent", image: "https://magyx.fr/cdn/shop/files/184W_c.webp?v=1771385182&width=300", url: "https://magyx.fr/products/magic-perfume-no-184w", price: 1199, brand: "Hugo Boss", brandKey: "hugoboss", number: "184", gender: "female", inspiredBy: "The Scent" },
+    { id: "product_140", title: "No. 140 — Senteur Inspirée MY WAY", image: "https://magyx.fr/cdn/shop/files/140W_c.webp?v=1771385219&width=300", url: "https://magyx.fr/products/magic-perfume-no-140w", price: 1199, brand: "Giorgio Armani", brandKey: "armani", number: "140", gender: "female", inspiredBy: "My Way" },
+    { id: "product_060", title: "No. 060 — Senteur Inspirée Boss Woman", image: "https://magyx.fr/cdn/shop/files/060W_c.webp?v=1771385203&width=300", url: "https://magyx.fr/products/magic-perfume-no-060w", price: 1199, brand: "Hugo Boss", brandKey: "hugoboss", number: "060", gender: "female", inspiredBy: "Boss Woman" },
+    { id: "product_006", title: "No. 006 — Senteur Inspirée Chance", image: "https://magyx.fr/cdn/shop/files/006W_c.webp?v=1771385217&width=300", url: "https://magyx.fr/products/magic-perfume-no-006w", price: 1199, brand: "Chanel", brandKey: "chanel", number: "006", gender: "female", inspiredBy: "Chance" },
+    { id: "product_022", title: "No. 022— Senteur Inspirée Deep Red", image: "https://magyx.fr/cdn/shop/files/022W_c.webp?v=1771385163&width=300", url: "https://magyx.fr/products/magic-perfume-no-022w", price: 1199, brand: "Hugo Boss", brandKey: "hugoboss", number: "022", gender: "female", inspiredBy: "Deep Red" },
+    { id: "product_024", title: "No. 024 — Senteur Inspirée ÄQUIVALENT", image: "https://magyx.fr/cdn/shop/files/024W_c.webp?v=1771385208&width=300", url: "https://magyx.fr/products/magic-perfume-no-024w", price: 1199, brand: "Giorgio Armani", brandKey: "armani", number: "024", gender: "female", inspiredBy: "Äquivalent" },
+    { id: "product_098", title: "No. 098 — Senteur Inspirée Alive", image: "https://magyx.fr/cdn/shop/files/098W_c.webp?v=1771385196&width=300", url: "https://magyx.fr/products/magic-perfume-no-021w", price: 1199, brand: "Hugo Boss", brandKey: "hugoboss", number: "098", gender: "female", inspiredBy: "Alive" }
   ];
 
-  // ===== HELPER: Get catalog data for a product =====
-  function getCatalogData(product) {
-    if (!product || !product.number) return null;
+  // ===== HELPER: Find catalog perfume by name/brand =====
+  function findCatalogPerfume(searchText, brand = null) {
+    const searchLower = searchText.toLowerCase();
     
-    // Try to find by product number
-    let catalogItem = catalogMap.get(product.number);
-    if (!catalogItem) {
-      catalogItem = catalogMap.get(product.number.padStart(3, '0'));
-    }
+    // First try exact match by name
+    let catalogItem = catalogMap.get(searchLower);
+    if (catalogItem) return catalogItem;
     
-    // If not found, try by brand and name
-    if (!catalogItem) {
-      catalogItem = catalogPerfumes.find(p => 
-        p.brand?.toLowerCase() === product.brand?.toLowerCase() &&
-        (p.name?.toLowerCase().includes(product.searchTerms?.[0]?.toLowerCase()) ||
-         product.title?.toLowerCase().includes(p.name?.toLowerCase()))
+    // Then try partial match
+    return catalogPerfumes.find(p => {
+      const nameMatch = p.name.toLowerCase().includes(searchLower);
+      const brandMatch = brand ? p.brand.toLowerCase().includes(brand.toLowerCase()) : true;
+      return nameMatch && brandMatch;
+    });
+  }
+
+  // ===== HELPER: Get inspired product for a catalog perfume =====
+  function getInspiredProduct(catalogPerfume) {
+    if (!catalogPerfume) return null;
+    
+    // Try to find by brand + name
+    let product = inspiredProducts.find(p => 
+      p.brand.toLowerCase() === catalogPerfume.brand.toLowerCase() &&
+      p.inspiredBy.toLowerCase() === catalogPerfume.name.toLowerCase()
+    );
+    
+    // If not found, try by brand only
+    if (!product) {
+      product = inspiredProducts.find(p => 
+        p.brand.toLowerCase() === catalogPerfume.brand.toLowerCase()
       );
     }
     
-    return catalogItem;
+    return product;
+  }
+
+  // ===== HELPER: Get recommendations (same brand, different product) =====
+  function getRecommendations(catalogPerfume) {
+    if (!catalogPerfume) return [];
+    
+    // Find other catalog perfumes from same brand
+    const sameBrandPerfumes = catalogPerfumes.filter(p => 
+      p.brand.toLowerCase() === catalogPerfume.brand.toLowerCase() &&
+      p.name !== catalogPerfume.name
+    );
+    
+    // For each catalog perfume, find the corresponding inspired product
+    const recommendations = [];
+    for (const perfume of sameBrandPerfumes.slice(0, 1)) {
+      const inspired = getInspiredProduct(perfume);
+      if (inspired) {
+        recommendations.push(inspired);
+      }
+    }
+    
+    return recommendations;
   }
 
   // ===== RENDER FUNCTIONS =====
-  function renderProductCard(product, badge) {
+  function renderInspiredProductCard(product, badge) {
     const priceFormatted = '€' + (product.price / 100).toFixed(2);
     
     return `
@@ -1014,168 +989,153 @@
     `;
   }
 
-  function renderDetailedView(product) {
-    const catalogData = getCatalogData(product);
-    const priceFormatted = '€' + (product.price / 100).toFixed(2);
+  function renderCatalogDetail(catalogPerfume) {
+    if (!catalogPerfume) return '<div class="fc-no-results">Perfume information not available</div>';
+    
+    const inspiredProduct = getInspiredProduct(catalogPerfume);
+    const recommendations = getRecommendations(catalogPerfume);
     
     let html = `
       <button class="fc-back-btn" onclick="window.fcGoBack()">Back</button>
+      
+      <!-- DETAILED CATALOG INFORMATION -->
+      <div class="fc-detailed-view">
+        <div class="fc-detailed-header">
+          <img class="fc-detailed-image" src="${catalogPerfume.image}" alt="${catalogPerfume.name}" loading="lazy" onerror="this.src='https://via.placeholder.com/100x100?text=Perfume'">
+          <div class="fc-detailed-info">
+            <div class="fc-detailed-name">${catalogPerfume.name}</div>
+            <div class="fc-detailed-brand">${catalogPerfume.brand}</div>
+            ${catalogPerfume.year ? `<div class="fc-detailed-year">Year: ${catalogPerfume.year}</div>` : ''}
+            ${catalogPerfume.gender ? `<div class="fc-detailed-gender">For: ${catalogPerfume.gender}</div>` : ''}
+          </div>
+        </div>
     `;
     
-    // Product grid (current + recommendations)
-    html += '<div class="fc-grid-2col">';
-    html += renderProductCard(product, 'Selected');
-    
-    // Find recommendation (same brand, different product)
-    const recommendation = hardcodedProducts.find(p => 
-      p.brandKey === product.brandKey && 
-      p.id !== product.id &&
-      p.gender === product.gender
-    );
-    
-    if (recommendation) {
-      html += renderProductCard(recommendation, 'You might like');
-    } else {
-      html += `<div class="fc-product-card" style="visibility: hidden;"></div>`;
-    }
-    html += '</div>';
-    
-    // Detailed information from catalog
-    if (catalogData) {
-      html += `
-        <div class="fc-detailed-view">
-          <div class="fc-detailed-header">
-            <img class="fc-detailed-image" src="${catalogData.image || product.image}" alt="${catalogData.name}" loading="lazy">
-            <div class="fc-detailed-info">
-              <div class="fc-detailed-name">${catalogData.name}</div>
-              <div class="fc-detailed-brand">${catalogData.brand}</div>
-              <div class="fc-detailed-number">No. ${product.number}</div>
-              <div class="fc-detailed-price">${priceFormatted}</div>
-              ${catalogData.year ? `<div class="fc-detailed-meta" style="margin-top: 5px;">Year: ${catalogData.year}</div>` : ''}
-              ${catalogData.gender ? `<div class="fc-detailed-meta">For: ${catalogData.gender}</div>` : ''}
+    // Notes section
+    if (catalogPerfume.top_notes || catalogPerfume.heart_notes || catalogPerfume.base_notes) {
+      html += `<div class="fc-notes-section">`;
+      
+      if (catalogPerfume.top_notes && catalogPerfume.top_notes.length) {
+        html += `
+          <div class="fc-note-category">
+            <h4>TOP NOTES</h4>
+            <div class="fc-note-tags">
+              ${catalogPerfume.top_notes.map(note => `<span class="fc-note-tag">${note}</span>`).join('')}
             </div>
           </div>
-      `;
-      
-      // Notes section
-      if (catalogData.top_notes || catalogData.heart_notes || catalogData.base_notes) {
-        html += `<div class="fc-notes-section">`;
-        
-        if (catalogData.top_notes && catalogData.top_notes.length) {
-          html += `
-            <div class="fc-note-category">
-              <h4>TOP NOTES</h4>
-              <div class="fc-note-tags">
-                ${catalogData.top_notes.map(note => `<span class="fc-note-tag">${note}</span>`).join('')}
-              </div>
-            </div>
-          `;
-        }
-        
-        if (catalogData.heart_notes && catalogData.heart_notes.length) {
-          html += `
-            <div class="fc-note-category">
-              <h4>HEART NOTES</h4>
-              <div class="fc-note-tags">
-                ${catalogData.heart_notes.map(note => `<span class="fc-note-tag">${note}</span>`).join('')}
-              </div>
-            </div>
-          `;
-        }
-        
-        if (catalogData.base_notes && catalogData.base_notes.length) {
-          html += `
-            <div class="fc-note-category">
-              <h4>BASE NOTES</h4>
-              <div class="fc-note-tags">
-                ${catalogData.base_notes.map(note => `<span class="fc-note-tag">${note}</span>`).join('')}
-              </div>
-            </div>
-          `;
-        }
-        
-        html += `</div>`;
+        `;
       }
       
-      // Description
-      if (catalogData.description) {
-        html += `<div class="fc-description">${catalogData.description}</div>`;
+      if (catalogPerfume.heart_notes && catalogPerfume.heart_notes.length) {
+        html += `
+          <div class="fc-note-category">
+            <h4>HEART NOTES</h4>
+            <div class="fc-note-tags">
+              ${catalogPerfume.heart_notes.map(note => `<span class="fc-note-tag">${note}</span>`).join('')}
+            </div>
+          </div>
+        `;
+      }
+      
+      if (catalogPerfume.base_notes && catalogPerfume.base_notes.length) {
+        html += `
+          <div class="fc-note-category">
+            <h4>BASE NOTES</h4>
+            <div class="fc-note-tags">
+              ${catalogPerfume.base_notes.map(note => `<span class="fc-note-tag">${note}</span>`).join('')}
+            </div>
+          </div>
+        `;
+      }
+      
+      html += `</div>`;
+    }
+    
+    // Description
+    if (catalogPerfume.description) {
+      html += `<div class="fc-description">${catalogPerfume.description}</div>`;
+    }
+    
+    html += `</div>`;
+    
+    // OUR INSPIRED VERSION
+    if (inspiredProduct) {
+      html += `<div class="fc-section-title">OUR INSPIRED VERSION</div>`;
+      html += `<div class="fc-grid-2col">`;
+      html += renderInspiredProductCard(inspiredProduct, 'Inspired by ${catalogPerfume.name}');
+      
+      // YOU MIGHT LIKE IT (recommendations)
+      if (recommendations.length > 0) {
+        html += renderInspiredProductCard(recommendations[0], 'You might like it');
+      } else {
+        // Find any other product from same brand
+        const otherProduct = inspiredProducts.find(p => p.brandKey === inspiredProduct.brandKey && p.id !== inspiredProduct.id);
+        if (otherProduct) {
+          html += renderInspiredProductCard(otherProduct, 'You might like it');
+        } else {
+          html += `<div class="fc-product-card" style="visibility: hidden;"></div>`;
+        }
       }
       
       html += `</div>`;
     } else {
-      // Fallback if no catalog data
-      html += `
-        <div class="fc-detailed-view">
-          <div class="fc-detailed-header">
-            <img class="fc-detailed-image" src="${product.image}" alt="${product.title}" loading="lazy">
-            <div class="fc-detailed-info">
-              <div class="fc-detailed-name">${product.title}</div>
-              <div class="fc-detailed-brand">${product.brand}</div>
-              <div class="fc-detailed-number">No. ${product.number}</div>
-              <div class="fc-detailed-price">${priceFormatted}</div>
-            </div>
-          </div>
-          <div class="fc-description">
-            Inspired by ${product.searchTerms?.[0] || product.title.replace('No. ' + product.number + '— Senteur Inspirée ', '')}
-          </div>
-        </div>
-      `;
+      html += `<div class="fc-section-title">OUR INSPIRED VERSION</div>`;
+      html += `<div class="fc-no-results" style="margin: 0 20px 20px 20px;">Coming soon...</div>`;
     }
     
     return html;
   }
 
-  function renderProductListItem(product) {
-    const priceFormatted = '€' + (product.price / 100).toFixed(2);
-    
+  function renderCatalogListItem(catalogPerfume) {
     return `
-      <div class="fc-product-item" onclick="window.fcViewDetails('${product.url}')">
-        <img class="fc-product-image-small" src="${product.image}" alt="${product.title}" loading="lazy" onerror="this.src='https://via.placeholder.com/60x60?text=Perfume'">
-        <div class="fc-product-info">
-          <div class="fc-product-name">${product.title}</div>
-          <div class="fc-product-brand">${product.brand}</div>
-          <div class="fc-product-price-small">${priceFormatted}</div>
+      <div class="fc-catalog-item" onclick="window.fcShowCatalogDetail('${catalogPerfume.name.replace(/'/g, "\\'")}', '${catalogPerfume.brand.replace(/'/g, "\\'")}')">
+        <img class="fc-catalog-image" src="${catalogPerfume.image}" alt="${catalogPerfume.name}" loading="lazy" onerror="this.src='https://via.placeholder.com/60x60?text=Perfume'">
+        <div class="fc-catalog-info">
+          <div class="fc-catalog-name">${catalogPerfume.name}</div>
+          <div class="fc-catalog-brand">${catalogPerfume.brand}</div>
+          ${catalogPerfume.year ? `<div class="fc-catalog-year">${catalogPerfume.year}</div>` : ''}
         </div>
       </div>
     `;
   }
 
-  // ===== SEARCH FUNCTION =====
-  function searchProducts(query) {
+  // ===== SEARCH FUNCTION - Search in catalog FIRST =====
+  function searchCatalog(query) {
     if (!query || query.length < 1) return [];
     
     const searchLower = query.toLowerCase();
     const results = [];
-    const addedIds = new Set();
+    const addedNames = new Set();
     
-    hardcodedProducts.forEach(product => {
+    catalogPerfumes.forEach(perfume => {
       let score = 0;
       
-      // Exact number match
-      if (product.number === searchLower || product.number.padStart(3, '0') === searchLower) {
+      // Exact name match
+      if (perfume.name.toLowerCase() === searchLower) {
         score = 100;
       }
-      // Number contains search
-      else if (product.number.includes(searchLower)) {
+      // Name contains search
+      else if (perfume.name.toLowerCase().includes(searchLower)) {
         score = 95;
       }
-      // Search terms match
-      else if (product.searchTerms && product.searchTerms.some(term => term.toLowerCase().includes(searchLower))) {
-        score = 90;
-      }
       // Brand match
-      else if (product.brand.toLowerCase().includes(searchLower)) {
+      else if (perfume.brand.toLowerCase().includes(searchLower)) {
         score = 85;
       }
-      // Title match
-      else if (product.title.toLowerCase().includes(searchLower)) {
+      // Notes match
+      else if (perfume.top_notes?.some(n => n.toLowerCase().includes(searchLower)) ||
+               perfume.heart_notes?.some(n => n.toLowerCase().includes(searchLower)) ||
+               perfume.base_notes?.some(n => n.toLowerCase().includes(searchLower))) {
         score = 80;
       }
+      // Description match
+      else if (perfume.description?.toLowerCase().includes(searchLower)) {
+        score = 75;
+      }
       
-      if (score > 30 && !addedIds.has(product.id)) {
-        results.push({ product, score });
-        addedIds.add(product.id);
+      if (score > 30 && !addedNames.has(perfume.name)) {
+        results.push({ perfume, score });
+        addedNames.add(perfume.name);
       }
     });
     
@@ -1194,15 +1154,13 @@
     }
   };
 
-  window.fcViewDetails = function(url) {
-    const product = hardcodedProducts.find(p => p.url === url);
-    if (product) {
+  window.fcShowCatalogDetail = function(name, brand) {
+    const catalogPerfume = findCatalogPerfume(name, brand);
+    if (catalogPerfume) {
       const stepsEl = document.getElementById('fcSteps');
       const contentEl = document.getElementById('fcContent');
       stepsEl.style.display = 'none';
-      contentEl.innerHTML = renderDetailedView(product);
-    } else {
-      window.location.href = url;
+      contentEl.innerHTML = renderCatalogDetail(catalogPerfume);
     }
   };
 
@@ -1322,16 +1280,16 @@
     contentEl.innerHTML = '<div class="fc-loading">Searching...</div>';
     
     setTimeout(() => {
-      const results = searchProducts(query);
+      const catalogResults = searchCatalog(query);
       
-      if (results.length > 0) {
-        let html = `<div class="fc-section-title">Search Results (${results.length})</div>`;
-        results.slice(0, 12).forEach(match => {
-          html += renderProductListItem(match.product);
+      if (catalogResults.length > 0) {
+        let html = `<div class="fc-section-title">FRAGRANCES (${catalogResults.length})</div>`;
+        catalogResults.slice(0, 10).forEach(match => {
+          html += renderCatalogListItem(match.perfume);
         });
         contentEl.innerHTML = html;
       } else {
-        contentEl.innerHTML = '<div class="fc-no-results">No products found for "' + query + '"</div>';
+        contentEl.innerHTML = '<div class="fc-no-results">No fragrances found for "' + query + '"</div>';
       }
     }, 300);
   }
@@ -1385,10 +1343,9 @@
     
     if (searchPopup) searchPopup.addEventListener('click', function(e) { e.stopPropagation(); });
     
-    console.log('✓ Search system initialized with', hardcodedProducts.length, 'products');
-    if (catalogPerfumes.length) {
-      console.log('✓ Catalog data loaded with', catalogPerfumes.length, 'detailed perfumes');
-    }
+    console.log('✓ Search system initialized');
+    console.log('  - Catalog perfumes:', catalogPerfumes.length);
+    console.log('  - Inspired products:', inspiredProducts.length);
   });
 })();
 </script>
