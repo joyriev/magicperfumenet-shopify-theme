@@ -1048,12 +1048,14 @@
     return results.sort((a, b) => b.score - a.score);
   }
   
-  // ===== FIND INSPIRED PRODUCT =====
+  // ===== FIND INSPIRED PRODUCT - IMPROVED =====
   function findInspiredProduct(perfume) {
     if (!perfume) return null;
     
     const perfumeNameNorm = normalizeText(perfume.name);
     const perfumeBrandNorm = normalizeText(perfume.brand);
+    
+    console.log('🔍 Recherche produit inspiré pour:', perfume.name, 'de', perfume.brand);
     
     let bestMatch = null;
     let bestScore = 0;
@@ -1061,22 +1063,28 @@
     inspiredProducts.forEach(product => {
       let score = 0;
       
-      // Brand match
-      if (normalizeText(product.brand).includes(perfumeBrandNorm) || 
-          perfumeBrandNorm.includes(normalizeText(product.brand))) {
-        score += 50;
+      // Brand match (exact or contains)
+      const productBrandNorm = normalizeText(product.brand);
+      const productInspiredByNorm = normalizeText(product.inspiredBy);
+      
+      if (productBrandNorm === perfumeBrandNorm || perfumeBrandNorm.includes(productBrandNorm) || productBrandNorm.includes(perfumeBrandNorm)) {
+        score += 60;
+        console.log('✓ Match marque:', product.brand, 'score:', score);
       }
       
       // Name match
-      if (normalizeText(product.inspiredBy).includes(perfumeNameNorm) ||
-          perfumeNameNorm.includes(normalizeText(product.inspiredBy))) {
-        score += 50;
+      if (productInspiredByNorm === perfumeNameNorm || 
+          perfumeNameNorm.includes(productInspiredByNorm) || 
+          productInspiredByNorm.includes(perfumeNameNorm)) {
+        score += 40;
+        console.log('✓ Match nom:', product.inspiredBy, 'score:', score);
       }
       
       // Number match
       if (product.number && perfume.productNumbers && 
-          perfume.productNumbers.includes(product.number)) {
+          perfume.productNumbers.some(num => num === product.number || num === product.number.padStart(3, '0'))) {
         score = 100;
+        console.log('✓ Match numéro:', product.number);
       }
       
       if (score > bestScore) {
@@ -1085,10 +1093,16 @@
       }
     });
     
+    if (bestMatch) {
+      console.log('✅ Produit inspiré trouvé:', bestMatch.title);
+    } else {
+      console.log('❌ Aucun produit inspiré trouvé pour:', perfume.name);
+    }
+    
     return bestMatch;
   }
   
-  // ===== SMART RECOMMENDATIONS =====
+  // ===== SMART RECOMMENDATIONS - IMPROVED =====
   function getRecommendations(perfume, currentProduct) {
     if (!perfume) return [];
     
@@ -1097,14 +1111,22 @@
     const perfumeGender = perfume.gender?.toLowerCase() || '';
     const perfumeBrandNorm = normalizeText(perfume.brand);
     
+    console.log('🎯 Recherche recommandations pour:', perfume.name, 'Genre:', perfumeGender);
+    
     // STEP 1: Try same brand products
-    const sameBrandProducts = inspiredProducts.filter(p => 
-      normalizeText(p.brand) === perfumeBrandNorm && 
-      p.id !== currentProduct?.id &&
-      (perfumeGender === '' || p.gender?.toLowerCase() === perfumeGender)
-    );
+    const sameBrandProducts = inspiredProducts.filter(p => {
+      const pBrandNorm = normalizeText(p.brand);
+      const isSameBrand = pBrandNorm === perfumeBrandNorm || 
+                          pBrandNorm.includes(perfumeBrandNorm) || 
+                          perfumeBrandNorm.includes(pBrandNorm);
+      const isNotCurrent = p.id !== currentProduct?.id;
+      const genderMatch = perfumeGender === '' || p.gender?.toLowerCase() === perfumeGender;
+      
+      return isSameBrand && isNotCurrent && genderMatch;
+    });
     
     if (sameBrandProducts.length > 0) {
+      console.log('✓ Trouvé', sameBrandProducts.length, 'produits de la même marque');
       return sameBrandProducts.slice(0, 1);
     }
     
@@ -1113,71 +1135,86 @@
       'Homme': {
         woody: ['Dior', 'Tom Ford', 'Chanel', 'Hermès', 'Giorgio Armani'],
         fresh: ['Dior', 'Chanel', 'Hugo Boss', 'Paco Rabanne', 'Davidoff'],
-        oriental: ['Tom Ford', 'Jean Paul Gaultier', 'Joop!', 'Paco Rabanne'],
-        aromatic: ['Hugo Boss', 'Dior', 'Chanel', 'Paco Rabanne']
+        oriental: ['Tom Ford', 'Jean Paul Gaultier', 'Joop!', 'Paco Rabanne', 'Yves Saint Laurent'],
+        aromatic: ['Hugo Boss', 'Dior', 'Chanel', 'Paco Rabanne', 'Jean Paul Gaultier']
       },
       'Femme': {
-        floral: ['Chanel', 'Dior', 'Lancôme', 'Gucci', 'Yves Saint Laurent'],
+        floral: ['Chanel', 'Dior', 'Lancôme', 'Gucci', 'Yves Saint Laurent', 'Givenchy'],
         gourmand: ['Mugler', 'Prada', 'Tom Ford', 'Yves Saint Laurent', 'Carolina Herrera'],
-        oriental: ['Yves Saint Laurent', 'Tom Ford', 'Givenchy', 'Prada'],
-        fresh: ['Dolce & Gabbana', 'Giorgio Armani', 'Hugo Boss', 'Kenzo']
+        oriental: ['Yves Saint Laurent', 'Tom Ford', 'Givenchy', 'Prada', 'Giorgio Armani'],
+        fresh: ['Dolce & Gabbana', 'Giorgio Armani', 'Hugo Boss', 'Kenzo', 'Chanel']
       }
     };
     
     // Determine category based on perfume name and brand
     let category = '';
     const nameLower = perfume.name.toLowerCase();
+    const brandLower = perfume.brand.toLowerCase();
     
     if (perfumeGender === 'homme') {
       if (nameLower.includes('wood') || nameLower.includes('oud') || nameLower.includes('terre')) category = 'woody';
-      else if (nameLower.includes('acqua') || nameLower.includes('water') || nameLower.includes('sport')) category = 'fresh';
-      else if (nameLower.includes('opium') || nameLower.includes('million') || nameLower.includes('le male')) category = 'oriental';
+      else if (nameLower.includes('acqua') || nameLower.includes('water') || nameLower.includes('sport') || nameLower.includes('cool')) category = 'fresh';
+      else if (nameLower.includes('opium') || nameLower.includes('million') || nameLower.includes('male') || nameLower.includes('scandal')) category = 'oriental';
       else category = 'aromatic';
       
       const recommendedBrands = fragranceCategories.Homme[category] || fragranceCategories.Homme.aromatic;
+      console.log('📋 Catégorie homme:', category, 'Marques recommandées:', recommendedBrands);
       
       for (const brand of recommendedBrands) {
         if (recommendations.length >= 1) break;
-        const product = inspiredProducts.find(p => 
-          p.brand === brand && 
-          p.gender?.toLowerCase() === 'homme' &&
-          p.id !== currentProduct?.id
-        );
+        const product = inspiredProducts.find(p => {
+          const pBrand = p.brand.toLowerCase();
+          const isBrandMatch = pBrand === brand.toLowerCase() || pBrand.includes(brand.toLowerCase());
+          const genderMatch = p.gender?.toLowerCase() === 'homme';
+          const isNotCurrent = p.id !== currentProduct?.id;
+          return isBrandMatch && genderMatch && isNotCurrent;
+        });
         if (product && !addedIds.has(product.id)) {
+          console.log('✅ Recommandation trouvée:', product.title);
           recommendations.push(product);
           addedIds.add(product.id);
         }
       }
     } 
     else if (perfumeGender === 'femme') {
-      if (nameLower.includes('rose') || nameLower.includes('flower') || nameLower.includes('jasmine')) category = 'floral';
-      else if (nameLower.includes('vanille') || nameLower.includes('candy') || nameLower.includes('cherry')) category = 'gourmand';
-      else if (nameLower.includes('opium') || nameLower.includes('paradoxe')) category = 'oriental';
+      if (nameLower.includes('rose') || nameLower.includes('flower') || nameLower.includes('jasmine') || nameLower.includes('coco')) category = 'floral';
+      else if (nameLower.includes('vanille') || nameLower.includes('candy') || nameLower.includes('cherry') || nameLower.includes('angel')) category = 'gourmand';
+      else if (nameLower.includes('opium') || nameLower.includes('paradoxe') || nameLower.includes('good girl')) category = 'oriental';
       else category = 'floral';
       
       const recommendedBrands = fragranceCategories.Femme[category] || fragranceCategories.Femme.floral;
+      console.log('📋 Catégorie femme:', category, 'Marques recommandées:', recommendedBrands);
       
       for (const brand of recommendedBrands) {
         if (recommendations.length >= 1) break;
-        const product = inspiredProducts.find(p => 
-          p.brand === brand && 
-          p.gender?.toLowerCase() === 'femme' &&
-          p.id !== currentProduct?.id
-        );
+        const product = inspiredProducts.find(p => {
+          const pBrand = p.brand.toLowerCase();
+          const isBrandMatch = pBrand === brand.toLowerCase() || pBrand.includes(brand.toLowerCase());
+          const genderMatch = p.gender?.toLowerCase() === 'femme';
+          const isNotCurrent = p.id !== currentProduct?.id;
+          return isBrandMatch && genderMatch && isNotCurrent;
+        });
         if (product && !addedIds.has(product.id)) {
+          console.log('✅ Recommandation trouvée:', product.title);
           recommendations.push(product);
           addedIds.add(product.id);
         }
       }
     }
     
-    // STEP 3: Fallback to popular products
+    // STEP 3: Fallback to popular products of same gender
     if (recommendations.length === 0) {
-      const popularProducts = inspiredProducts.filter(p => 
-        p.gender?.toLowerCase() === perfumeGender &&
-        p.id !== currentProduct?.id
-      ).slice(0, 1);
-      return popularProducts;
+      console.log('⚠️ Aucune recommandation spécifique, fallback aux produits populaires');
+      const popularProducts = inspiredProducts.filter(p => {
+        const genderMatch = perfumeGender === '' || p.gender?.toLowerCase() === perfumeGender;
+        const isNotCurrent = p.id !== currentProduct?.id;
+        return genderMatch && isNotCurrent;
+      }).slice(0, 1);
+      
+      if (popularProducts.length > 0) {
+        console.log('✅ Recommandation fallback:', popularProducts[0].title);
+        return popularProducts;
+      }
     }
     
     return recommendations.slice(0, 1);
