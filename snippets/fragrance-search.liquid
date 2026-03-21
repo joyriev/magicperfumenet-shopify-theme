@@ -1342,6 +1342,30 @@
     const recommendations = getRecommendationsForProduct(product);
     const priceFormatted = '€' + (product.price / 100).toFixed(2);
     
+    // Try to find matching catalog product for enriched data
+    let catalogData = product.catalogData;
+    if (!catalogData && product.number) {
+      // Search for this product in the catalog by product number
+      if (typeof PerfumeCatalog !== 'undefined') {
+        for (const brandKey in PerfumeCatalog) {
+          const brandProducts = PerfumeCatalog[brandKey];
+          if (Array.isArray(brandProducts)) {
+            const found = brandProducts.find(p => p.productNumbers && p.productNumbers.includes(product.number));
+            if (found) {
+              catalogData = {
+                topNotes: found.top_notes || [],
+                heartNotes: found.heart_notes || [],
+                baseNotes: found.base_notes || [],
+                description: found.description || '',
+                year: found.year || ''
+              };
+              break;
+            }
+          }
+        }
+      }
+    }
+    
     let html = `
       <button class="fc-back-btn" onclick="window.fcGoBack()">Back</button>
       <div class="fc-subsection-title" style="margin: 0 20px 15px 20px;">${product.title}</div>
@@ -1373,44 +1397,44 @@
         </div>`;
     
     // Add catalog data if available
-    if (product.catalogData) {
-      if (product.catalogData.description) {
+    if (catalogData) {
+      if (catalogData.description) {
         detailsHtml += `
           <div style="border-top: 1px solid #EDE5DC; padding-top: 15px; margin-bottom: 15px;">
             <div style="font-size: 13px; color: #4A3F39; line-height: 1.6;">
-              ${product.catalogData.description}
+              ${catalogData.description}
             </div>
           </div>`;
       }
       
-      if (product.catalogData.topNotes && product.catalogData.topNotes.length > 0) {
+      if (catalogData.topNotes && catalogData.topNotes.length > 0) {
         detailsHtml += `
           <div style="margin-bottom: 12px;">
-            <div style="font-size: 12px; font-weight: 700; color: #C41E3A; text-transform: uppercase; margin-bottom: 6px;">Top Notes:</div>
-            <div style="font-size: 13px; color: #4A3F39;">${product.catalogData.topNotes.join(', ')}</div>
+            <div style="font-size: 12px; font-weight: 700; color: #C41E3A; text-transform: uppercase; margin-bottom: 6px;">TOP NOTES</div>
+            <div style="font-size: 13px; color: #4A3F39;">${catalogData.topNotes.join(', ')}</div>
           </div>`;
       }
       
-      if (product.catalogData.heartNotes && product.catalogData.heartNotes.length > 0) {
+      if (catalogData.heartNotes && catalogData.heartNotes.length > 0) {
         detailsHtml += `
           <div style="margin-bottom: 12px;">
-            <div style="font-size: 12px; font-weight: 700; color: #C41E3A; text-transform: uppercase; margin-bottom: 6px;">Heart Notes:</div>
-            <div style="font-size: 13px; color: #4A3F39;">${product.catalogData.heartNotes.join(', ')}</div>
+            <div style="font-size: 12px; font-weight: 700; color: #C41E3A; text-transform: uppercase; margin-bottom: 6px;">HEART NOTES</div>
+            <div style="font-size: 13px; color: #4A3F39;">${catalogData.heartNotes.join(', ')}</div>
           </div>`;
       }
       
-      if (product.catalogData.baseNotes && product.catalogData.baseNotes.length > 0) {
+      if (catalogData.baseNotes && catalogData.baseNotes.length > 0) {
         detailsHtml += `
           <div style="margin-bottom: 12px;">
-            <div style="font-size: 12px; font-weight: 700; color: #C41E3A; text-transform: uppercase; margin-bottom: 6px;">Base Notes:</div>
-            <div style="font-size: 13px; color: #4A3F39;">${product.catalogData.baseNotes.join(', ')}</div>
+            <div style="font-size: 12px; font-weight: 700; color: #C41E3A; text-transform: uppercase; margin-bottom: 6px;">BASE NOTES</div>
+            <div style="font-size: 13px; color: #4A3F39;">${catalogData.baseNotes.join(', ')}</div>
           </div>`;
       }
       
-      if (product.catalogData.year) {
+      if (catalogData.year) {
         detailsHtml += `
           <div style="border-top: 1px solid #EDE5DC; padding-top: 12px; margin-top: 12px;">
-            <div style="font-size: 12px; color: #8A7A70;">Year: <strong>${product.catalogData.year}</strong></div>
+            <div style="font-size: 12px; color: #8A7A70;">Year: <strong>${catalogData.year}</strong></div>
           </div>`;
       }
     } else {
