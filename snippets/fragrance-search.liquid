@@ -1055,13 +1055,19 @@
     return bestMatch;
   }
 
-  // ===== GET RECOMMENDATIONS =====
-  function getRecommendations(perfume) {
+  // ===== GET RECOMMENDATIONS (with optional exclusion of already-used products) =====
+  function getRecommendations(perfume, excludeInspiredId = null) {
     if (!perfume) return [];
     
     const recommendations = [];
     const perfumeBrandNorm = normalizeText(perfume.brand);
     const perfumeGender = perfume.gender ? perfume.gender.toLowerCase() : 'unisex';
+    const usedIds = new Set();
+    
+    // Add excluded product to used IDs
+    if (excludeInspiredId) {
+      usedIds.add(excludeInspiredId);
+    }
     
     // Step 1: Find other perfumes from SAME BRAND with same gender
     const sameBrandPerfumes = allPerfumes.filter(p => 
@@ -1071,10 +1077,12 @@
     );
     
     // For each same-brand perfume, find inspired product
-    for (const p of sameBrandPerfumes.slice(0, 1)) {
+    for (const p of sameBrandPerfumes.slice(0, 3)) {
       const inspired = findInspiredProduct(p);
-      if (inspired && inspired.gender === perfumeGender) {
+      if (inspired && inspired.gender === perfumeGender && !usedIds.has(inspired.id)) {
         recommendations.push(inspired);
+        usedIds.add(inspired.id);
+        if (recommendations.length >= 1) break;
       }
     }
     
@@ -1134,10 +1142,11 @@
       });
       
       // Find inspired products for similar perfumes
-      for (const p of similarPerfumes.slice(0, 3)) {
+      for (const p of similarPerfumes.slice(0, 5)) {
         const inspired = findInspiredProduct(p);
-        if (inspired && inspired.gender === perfumeGender && !recommendations.find(r => r.id === inspired.id)) {
+        if (inspired && inspired.gender === perfumeGender && !usedIds.has(inspired.id)) {
           recommendations.push(inspired);
+          usedIds.add(inspired.id);
           if (recommendations.length >= 1) break;
         }
       }
@@ -1192,7 +1201,7 @@
     stepsEl.style.display = 'none';
     
     const inspiredProduct = findInspiredProduct(perfume);
-    const recommendations = getRecommendations(perfume);
+    const recommendations = getRecommendations(perfume, inspiredProduct ? inspiredProduct.id : null);
     
     let html = `
       <button class="fc-back-btn" onclick="window.fcGoBack()">Retour</button>
@@ -1204,9 +1213,10 @@
       html += `<div class="fc-grid-2col">`;
       html += renderInspiredCard(inspiredProduct, `Inspiré de ${perfume.name}`);
       
-      // Recommendations
-      if (recommendations.length > 0) {
-        html += renderInspiredCard(recommendations[0], 'Vous pourriez aimer');
+      // Recommendations - EXCLUDE the main inspired product
+      const filteredRecommendations = recommendations.filter(r => r.id !== inspiredProduct.id);
+      if (filteredRecommendations.length > 0) {
+        html += renderInspiredCard(filteredRecommendations[0], 'Vous pourriez aimer');
       } else {
         html += `<div class="fc-product-card" style="visibility: hidden;"></div>`;
       }
