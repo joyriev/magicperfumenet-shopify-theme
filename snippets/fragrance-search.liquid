@@ -1131,22 +1131,6 @@
       <button class="fc-back-btn" onclick="window.fcGoBack()">Retour</button>
     `;
     
-    // ===== INSPIRED PRODUCTS SECTION - MOVED TO TOP =====
-    if (inspiredProduct) {
-      html += `<div class="fc-section-title">NOTRE VERSION INSPIRÉE</div>`;
-      html += `<div class="fc-grid-2col">`;
-      html += renderInspiredCard(inspiredProduct, `Inspiré de ${perfume.name}`);
-      
-      // Recommendations
-      if (recommendations.length > 0) {
-        html += renderInspiredCard(recommendations[0], 'Vous pourriez aimer');
-      } else {
-        html += `<div class="fc-product-card" style="visibility: hidden;"></div>`;
-      }
-      
-      html += `</div>`;
-    }
-    
     // Detailed catalog information
     html += `
       <div class="fc-detailed-view">
@@ -1207,6 +1191,22 @@
     }
     
     html += `</div>`;
+    
+    // Inspired version section
+    if (inspiredProduct) {
+      html += `<div class="fc-section-title">NOTRE VERSION INSPIRÉE</div>`;
+      html += `<div class="fc-grid-2col">`;
+      html += renderInspiredCard(inspiredProduct, `Inspiré de ${perfume.name}`);
+      
+      // Recommendations
+      if (recommendations.length > 0) {
+        html += renderInspiredCard(recommendations[0], 'Vous pourriez aimer');
+      } else {
+        html += `<div class="fc-product-card" style="visibility: hidden;"></div>`;
+      }
+      
+      html += `</div>`;
+    }
     
     contentEl.innerHTML = html;
   };
