@@ -1193,10 +1193,10 @@
     html += `</div>`;
     
     // Inspired version section
-    if (inspectedProduct) {
+    if (inspiredProduct) {
       html += `<div class="fc-section-title">NOTRE VERSION INSPIRÉE</div>`;
       html += `<div class="fc-grid-2col">`;
-      html += renderInspiredCard(inspiredProduct, 'Inspiré de ${perfume.name}');
+      html += renderInspiredCard(inspiredProduct, `Inspiré de ${perfume.name}`);
       
       // Recommendations
       if (recommendations.length > 0) {
@@ -1415,6 +1415,7 @@
     if (searchPopup) searchPopup.addEventListener('click', function(e) { e.stopPropagation(); });
     
     console.log('✓ Recherche initialisée avec', allPerfumes.length, 'parfums');
+    console.log('✓ Produits inspirés:', inspiredProducts.length);
   });
 })();
 </script>
