@@ -7,7 +7,7 @@
 {% endcomment %}
 
 <!-- Load your French perfume catalog -->
-<script src="{{ 'perfume-catalog-french.js' | asset_url }}"></script>
+<script src="{{ 'perfume-catalog.fr.js' | asset_url }}"></script>
 
 <style>
 /* ===== PREMIUM FRAGRANCE CODE POPUP ===== */
@@ -865,33 +865,31 @@
     console.warn('⚠️ Catalogue non trouvé');
   }
   
-  // ===== YOUR SHOPIFY PRODUCTS =====
-  const inspiredProducts = [
-    { id: "product_113", title: "No. 113— Senteur Inspirée Angel", image: "https://magyx.fr/cdn/shop/files/113W_c.webp?v=1771385180&width=300", url: "https://magyx.fr/products/magic-perfume-no-113w", price: 1199, brand: "Mugler", brandKey: "mugler", number: "113", gender: "female", inspiredBy: "Angel" },
-    { id: "product_023", title: "No. 023— Senteur Inspirée LADY MILION", image: "https://magyx.fr/cdn/shop/files/023W_c.webp?v=1771385152&width=300", url: "https://magyx.fr/products/magic-perfume-no-023w", price: 1199, brand: "Paco Rabanne", brandKey: "pacorabanne", number: "023", gender: "female", inspiredBy: "Lady Million" },
-    { id: "product_132", title: "No. 132— Senteur Inspirée Black Opium", image: "https://magyx.fr/cdn/shop/files/132W_c.webp?v=1771385154&width=300", url: "https://magyx.fr/products/magic-perfume-no-132w", price: 1199, brand: "Yves Saint Laurent", brandKey: "ysl", number: "132", gender: "female", inspiredBy: "Black Opium" },
-    { id: "product_142", title: "No. 142— Senteur Inspirée Ange Ou Demon", image: "https://magyx.fr/cdn/shop/files/142W_c.webp?v=1771385169&width=300", url: "https://magyx.fr/products/magic-perfume-no-142w", price: 1199, brand: "Givenchy", brandKey: "givenchy", number: "142", gender: "female", inspiredBy: "Ange Ou Demon" },
-    { id: "product_182", title: "No. 182— Senteur Inspirée Candy", image: "https://magyx.fr/cdn/shop/files/182W_c.webp?v=1771385187&width=300", url: "https://magyx.fr/products/magic-perfume-no-182w", price: 1199, brand: "Prada", brandKey: "prada", number: "182", gender: "female", inspiredBy: "Candy" },
-    { id: "product_129", title: "No. 129— Senteur Inspirée Si", image: "https://magyx.fr/cdn/shop/files/129W_c.webp?v=1771385148&width=300", url: "https://magyx.fr/products/magic-perfume-no-129w", price: 1199, brand: "Giorgio Armani", brandKey: "armani", number: "129", gender: "female", inspiredBy: "Si" },
-    { id: "product_077", title: "No. 077— Senteur Inspirée No.5", image: "https://magyx.fr/cdn/shop/files/077W_c.webp?v=1771385150&width=300", url: "https://magyx.fr/products/magic-perfume-no-077w", price: 1199, brand: "Chanel", brandKey: "chanel", number: "077", gender: "female", inspiredBy: "No.5" },
-    { id: "product_053", title: "No. 053 — Senteur Inspirée Vanille Fatale", image: "https://magyx.fr/cdn/shop/files/053W_c.webp?v=1771385216&width=300", url: "https://magyx.fr/products/magic-perfume-no-053w-m", price: 1199, brand: "Tom Ford", brandKey: "tomford", number: "053", gender: "female", inspiredBy: "Vanille Fatale" },
-    { id: "product_222", title: "No. 222— Senteur Inspirée Allure Homme Sport", image: "https://magyx.fr/cdn/shop/files/222M_c.webp?v=1771385186&width=300", url: "https://magyx.fr/products/magic-perfume-no-222m", price: 1199, brand: "Chanel", brandKey: "chanel", number: "222", gender: "male", inspiredBy: "Allure Homme Sport" },
-    { id: "product_223", title: "No. 223— Senteur Inspirée Hugo", image: "https://magyx.fr/cdn/shop/files/223M_c.webp?v=1771385167&width=300", url: "https://magyx.fr/products/magic-perfume-no-223m", price: 1199, brand: "Hugo Boss", brandKey: "hugoboss", number: "223", gender: "male", inspiredBy: "Hugo" },
-    { id: "product_193", title: "No. 193 — Senteur Inspirée Tobacco Vanille", image: "https://magyx.fr/cdn/shop/files/193W_c.webp?v=1771385212&width=300", url: "https://magyx.fr/products/magic-perfume-no-193w", price: 1199, brand: "Tom Ford", brandKey: "tomford", number: "193", gender: "male", inspiredBy: "Tobacco Vanille" },
-    { id: "product_141", title: "No. 141 — Senteur Inspirée Tresor", image: "https://magyx.fr/cdn/shop/files/141W_c.webp?v=1771385201&width=300", url: "https://magyx.fr/products/magic-perfume-no-141w", price: 1199, brand: "Lancôme", brandKey: "lancome", number: "141", gender: "female", inspiredBy: "Tresor" },
-    { id: "product_134", title: "No. 134 — Senteur Inspirée Laurent Manifesto", image: "https://magyx.fr/cdn/shop/files/134W_c.webp?v=1771385190&width=300", url: "https://magyx.fr/products/magic-perfume-no-134w", price: 1199, brand: "Yves Saint Laurent", brandKey: "ysl", number: "134", gender: "female", inspiredBy: "Manifesto" },
-    { id: "product_083", title: "No. 083— Senteur Inspirée Laurent Opium", image: "https://magyx.fr/cdn/shop/files/083W_c.webp?v=1771385185&width=300", url: "https://magyx.fr/products/magic-perfume-no-083w", price: 1199, brand: "Yves Saint Laurent", brandKey: "ysl", number: "083", gender: "female", inspiredBy: "Opium" },
-    { id: "product_082", title: "No. 082— Senteur Inspirée Miss Cherie", image: "https://magyx.fr/cdn/shop/files/082W_c.webp?v=1771385151&width=300", url: "https://magyx.fr/products/magic-perfume-no-082w", price: 1199, brand: "Dior", brandKey: "dior", number: "082", gender: "female", inspiredBy: "Miss Cherie" },
-    { id: "product_079", title: "No. 079 — Senteur Inspirée Coco", image: "https://magyx.fr/cdn/shop/files/079W_c.webp?v=1771385207&width=300", url: "https://magyx.fr/products/magic-perfume-no-079w", price: 1199, brand: "Chanel", brandKey: "chanel", number: "079", gender: "female", inspiredBy: "Coco" },
-    { id: "product_150", title: "No. 150— Senteur Inspirée Emporio She", image: "https://magyx.fr/cdn/shop/files/150W_c.webp?v=1771385147&width=300", url: "https://magyx.fr/products/magic-perfume-no-150w", price: 1199, brand: "Giorgio Armani", brandKey: "armani", number: "150", gender: "female", inspiredBy: "Emporio She" },
-    { id: "product_184", title: "No. 184— Senteur Inspirée The Scent", image: "https://magyx.fr/cdn/shop/files/184W_c.webp?v=1771385182&width=300", url: "https://magyx.fr/products/magic-perfume-no-184w", price: 1199, brand: "Hugo Boss", brandKey: "hugoboss", number: "184", gender: "female", inspiredBy: "The Scent" },
-    { id: "product_140", title: "No. 140 — Senteur Inspirée MY WAY", image: "https://magyx.fr/cdn/shop/files/140W_c.webp?v=1771385219&width=300", url: "https://magyx.fr/products/magic-perfume-no-140w", price: 1199, brand: "Giorgio Armani", brandKey: "armani", number: "140", gender: "female", inspiredBy: "My Way" },
-    { id: "product_060", title: "No. 060 — Senteur Inspirée Boss Woman", image: "https://magyx.fr/cdn/shop/files/060W_c.webp?v=1771385203&width=300", url: "https://magyx.fr/products/magic-perfume-no-060w", price: 1199, brand: "Hugo Boss", brandKey: "hugoboss", number: "060", gender: "female", inspiredBy: "Boss Woman" },
-    { id: "product_006", title: "No. 006 — Senteur Inspirée Chance", image: "https://magyx.fr/cdn/shop/files/006W_c.webp?v=1771385217&width=300", url: "https://magyx.fr/products/magic-perfume-no-006w", price: 1199, brand: "Chanel", brandKey: "chanel", number: "006", gender: "female", inspiredBy: "Chance" },
-    { id: "product_022", title: "No. 022— Senteur Inspirée Deep Red", image: "https://magyx.fr/cdn/shop/files/022W_c.webp?v=1771385163&width=300", url: "https://magyx.fr/products/magic-perfume-no-022w", price: 1199, brand: "Hugo Boss", brandKey: "hugoboss", number: "022", gender: "female", inspiredBy: "Deep Red" },
-    { id: "product_024", title: "No. 024 — Senteur Inspirée ÄQUIVALENT", image: "https://magyx.fr/cdn/shop/files/024W_c.webp?v=1771385208&width=300", url: "https://magyx.fr/products/magic-perfume-no-024w", price: 1199, brand: "Giorgio Armani", brandKey: "armani", number: "024", gender: "female", inspiredBy: "Äquivalent" },
-    { id: "product_098", title: "No. 098 — Senteur Inspirée Alive", image: "https://magyx.fr/cdn/shop/files/098W_c.webp?v=1771385196&width=300", url: "https://magyx.fr/products/magic-perfume-no-021w", price: 1199, brand: "Hugo Boss", brandKey: "hugoboss", number: "098", gender: "female", inspiredBy: "Alive" }
-  ];
+  // ===== YOUR SHOPIFY PRODUCTS - DYNAMICALLY GENERATED FROM CATALOG =====
+  let inspiredProducts = [];
+  
+  // Generate inspired products from the catalog's shopifyProduct data
+  if (allPerfumes.length > 0) {
+    inspiredProducts = allPerfumes.map(perfume => {
+      if (perfume.shopifyProduct) {
+        return {
+          id: perfume.id,
+          title: perfume.shopifyProduct.title,
+          image: perfume.shopifyProduct.image,
+          url: perfume.shopifyProduct.url,
+          price: 1199, // €11.99 in cents
+          brand: perfume.brand,
+          number: perfume.productNumbers ? perfume.productNumbers[0] : null,
+          gender: perfume.gender,
+          inspiredBy: perfume.name
+        };
+      }
+    }).filter(p => p !== undefined);
+    
+    console.log('✓ Produits inspirés générés:', inspiredProducts.length);
+  } else {
+    console.warn('⚠️ Aucun produit shopify trouvé dans le catalogue');
+  }
 
   // ===== ADVANCED FUZZY SEARCH =====
   function normalizeText(text) {
