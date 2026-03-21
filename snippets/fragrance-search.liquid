@@ -777,6 +777,8 @@
   </div>
 </div>
 
+<script src="perfume-catalog.fr.js"></script>
+
 <script>
 (function() {
   // ===== YOUR ACTUAL PRODUCTS FROM THE JSON DATA =====
@@ -1072,6 +1074,63 @@
     }
   ];
 
+  // ===== CONVERT CATALOG TO SEARCHABLE FORMAT =====
+  function convertCatalogToProducts() {
+    if (typeof PerfumeCatalog === 'undefined') return [];
+    
+    const catalogProducts = [];
+    const addedIds = new Set();
+    
+    Object.keys(PerfumeCatalog).forEach(brandKey => {
+      const brandProducts = PerfumeCatalog[brandKey];
+      
+      if (Array.isArray(brandProducts)) {
+        brandProducts.forEach(perfume => {
+          // Skip if already in hardcoded products
+          if (addedIds.has(perfume.id)) return;
+          
+          // Build search terms from perfume data
+          const searchTerms = [
+            perfume.name.toLowerCase(),
+            perfume.brand.toLowerCase(),
+            ...(perfume.top_notes || []).map(n => n.toLowerCase()),
+            ...(perfume.heart_notes || []).map(n => n.toLowerCase()),
+            ...(perfume.base_notes || []).map(n => n.toLowerCase())
+          ];
+          
+          const catalogProduct = {
+            id: perfume.id,
+            title: perfume.name,
+            brand: perfume.brand,
+            brandKey: brandKey,
+            image: perfume.image,
+            url: perfume.shopifyProduct?.url || '#',
+            price: 1199,
+            number: perfume.productNumbers?.[0] || '',
+            gender: perfume.gender?.toLowerCase() || 'unisex',
+            searchTerms: [...new Set(searchTerms)],
+            catalogData: {
+              topNotes: perfume.top_notes || [],
+              heartNotes: perfume.heart_notes || [],
+              baseNotes: perfume.base_notes || [],
+              description: perfume.description || '',
+              year: perfume.year || ''
+            }
+          };
+          
+          catalogProducts.push(catalogProduct);
+          addedIds.add(perfume.id);
+        });
+      }
+    });
+    
+    return catalogProducts;
+  }
+
+  // ===== MERGE ALL PRODUCTS =====
+  const catalogProducts = convertCatalogToProducts();
+  const allProducts = [...hardcodedProducts, ...catalogProducts];
+
   // ===== PRODUCT VARIABLES =====
   let currentView = 'search';
   let currentSearchQuery = '';
@@ -1131,7 +1190,7 @@
     const results = [];
     const addedIds = new Set();
     
-    hardcodedProducts.forEach(product => {
+    allProducts.forEach(product => {
       let bestScore = 0;
       
       // Check number match (highest priority)
@@ -1184,7 +1243,7 @@
     if (!product) return [];
     
     // Find other products from the same brand
-    return hardcodedProducts.filter(p => 
+    return allProducts.filter(p => 
       p.brandKey === product.brandKey && 
       p.id !== product.id &&
       p.gender === product.gender
@@ -1192,7 +1251,7 @@
   }
 
   function getPopularSuggestions() {
-    return hardcodedProducts.slice(0, 6);
+    return allProducts.slice(0, 6);
   }
 
   // ===== RENDER FUNCTIONS =====
@@ -1403,7 +1462,7 @@
 
   window.fcViewDetails = function(url) {
     // Find product by URL and show detailed view
-    const product = hardcodedProducts.find(p => p.url === url);
+    const product = allProducts.find(p => p.url === url);
     if (product) {
       showProductDetail(product);
     } else {
@@ -1506,7 +1565,7 @@
       e.stopPropagation();
     });
     
-    console.log('✓ Search system initialized with', hardcodedProducts.length, 'products');
+    console.log('✓ Search system initialized with', allProducts.length, 'products from hardcoded and catalog');
   });
 })();
 </script>
