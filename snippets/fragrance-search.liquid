@@ -1061,18 +1061,85 @@
     
     const recommendations = [];
     const perfumeBrandNorm = normalizeText(perfume.brand);
+    const perfumeGender = perfume.gender ? perfume.gender.toLowerCase() : 'unisex';
     
-    // Find other perfumes from same brand
+    // Step 1: Find other perfumes from SAME BRAND with same gender
     const sameBrandPerfumes = allPerfumes.filter(p => 
       normalizeText(p.brand) === perfumeBrandNorm && 
-      p.name !== perfume.name
+      p.name !== perfume.name &&
+      (!p.gender || p.gender.toLowerCase() === perfumeGender || perfumeGender === 'unisex')
     );
     
-    // For each, find inspired product
-    for (const p of sameBrandPerfumes.slice(0, 2)) {
+    // For each same-brand perfume, find inspired product
+    for (const p of sameBrandPerfumes.slice(0, 1)) {
       const inspired = findInspiredProduct(p);
-      if (inspired) {
+      if (inspired && inspired.gender === perfumeGender) {
         recommendations.push(inspired);
+      }
+    }
+    
+    // Step 2: If not enough recommendations, find from DIFFERENT BRANDS with similar characteristics
+    if (recommendations.length < 1) {
+      // Find perfumes with similar notes and same gender
+      const similarPerfumes = allPerfumes.filter(p => {
+        if (p.name === perfume.name) return false;
+        if (!p.gender || p.gender.toLowerCase() !== perfumeGender) return false;
+        
+        // Check for common notes
+        const perfumeNotes = [
+          ...(perfume.top_notes || []),
+          ...(perfume.heart_notes || []),
+          ...(perfume.base_notes || [])
+        ].map(n => normalizeText(n));
+        
+        const pNotes = [
+          ...(p.top_notes || []),
+          ...(p.heart_notes || []),
+          ...(p.base_notes || [])
+        ].map(n => normalizeText(n));
+        
+        // Count common notes
+        const commonNotes = perfumeNotes.filter(note => 
+          pNotes.some(pNote => pNote.includes(note) || note.includes(pNote))
+        ).length;
+        
+        return commonNotes > 0;
+      });
+      
+      // Sort by number of common notes (descending), then by brand diversity
+      similarPerfumes.sort((a, b) => {
+        const perfumeNotes = [
+          ...(perfume.top_notes || []),
+          ...(perfume.heart_notes || []),
+          ...(perfume.base_notes || [])
+        ].map(n => normalizeText(n));
+        
+        const aCommon = [
+          ...(a.top_notes || []),
+          ...(a.heart_notes || []),
+          ...(a.base_notes || [])
+        ].map(n => normalizeText(n)).filter(note => 
+          perfumeNotes.some(pNote => pNote.includes(note) || note.includes(pNote))
+        ).length;
+        
+        const bCommon = [
+          ...(b.top_notes || []),
+          ...(b.heart_notes || []),
+          ...(b.base_notes || [])
+        ].map(n => normalizeText(n)).filter(note => 
+          perfumeNotes.some(pNote => pNote.includes(note) || note.includes(pNote))
+        ).length;
+        
+        return bCommon - aCommon;
+      });
+      
+      // Find inspired products for similar perfumes
+      for (const p of similarPerfumes.slice(0, 3)) {
+        const inspired = findInspiredProduct(p);
+        if (inspired && inspired.gender === perfumeGender && !recommendations.find(r => r.id === inspired.id)) {
+          recommendations.push(inspired);
+          if (recommendations.length >= 1) break;
+        }
       }
     }
     
@@ -1130,6 +1197,22 @@
     let html = `
       <button class="fc-back-btn" onclick="window.fcGoBack()">Retour</button>
     `;
+    
+    // ===== INSPIRED PRODUCTS SECTION - MOVED TO TOP =====
+    if (inspiredProduct) {
+      html += `<div class="fc-section-title">NOTRE VERSION INSPIRÉE</div>`;
+      html += `<div class="fc-grid-2col">`;
+      html += renderInspiredCard(inspiredProduct, `Inspiré de ${perfume.name}`);
+      
+      // Recommendations
+      if (recommendations.length > 0) {
+        html += renderInspiredCard(recommendations[0], 'Vous pourriez aimer');
+      } else {
+        html += `<div class="fc-product-card" style="visibility: hidden;"></div>`;
+      }
+      
+      html += `</div>`;
+    }
     
     // Detailed catalog information
     html += `
@@ -1191,22 +1274,6 @@
     }
     
     html += `</div>`;
-    
-    // Inspired version section
-    if (inspiredProduct) {
-      html += `<div class="fc-section-title">NOTRE VERSION INSPIRÉE</div>`;
-      html += `<div class="fc-grid-2col">`;
-      html += renderInspiredCard(inspiredProduct, `Inspiré de ${perfume.name}`);
-      
-      // Recommendations
-      if (recommendations.length > 0) {
-        html += renderInspiredCard(recommendations[0], 'Vous pourriez aimer');
-      } else {
-        html += `<div class="fc-product-card" style="visibility: hidden;"></div>`;
-      }
-      
-      html += `</div>`;
-    }
     
     contentEl.innerHTML = html;
   };
