@@ -23,25 +23,6 @@ const PerfumeCatalog = {
         image: "https://magyx.fr/cdn/shop/files/113W_c.webp?v=1771385180&width=300"
       }
     },
-    {
-      id: "mugler_angel_nova",
-      name: "Angel Nova",
-      brand: "Mugler",
-      image: "https://magyx.fr/cdn/shop/files/166W_c.webp?v=1771765712&width=1200",
-      top_notes: ["Litschi", "Raspberry", "Rose"],
-      heart_notes: ["Damaszener-Rose", "Akigalawood"],
-      base_notes: ["Moschus", "Akigalawood", "Patschuli"],
-      description: "Frisch. Fruchtig. Rebellisch. Eine moderne Interpretation des Klassikers mit einer explosiven Mischung aus roten Früchten und Rose.",
-      year: "2021",
-      gender: "Female",
-      productNumbers: ["166"],
-      shopifyProduct: {
-        title: "No. 166— Senteur Inspirée Angel Nova",
-        url: "https://magyx.fr/products/magic-perfume-no-166w",
-        price: "€11.99",
-        image: "https://magyx.fr/cdn/shop/files/166W_c.webp?v=1771765712&width=1200"
-      }
-    }
   ],
 
   // ===== PACO RABANNE =====
