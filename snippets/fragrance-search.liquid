@@ -928,7 +928,7 @@
     { id: "product_140", title: "No. 140 - Senteur Inspirée MY WAY", image: "https://magyx.fr/cdn/shop/files/140W_c.webp?v=1771385219&width=300", url: "https://magyx.fr/products/magic-perfume-no-140w", price: 1199, brand: "Giorgio Armani", brandKey: "armani", number: "140", gender: "female", inspiredBy: "My Way" },
     { id: "product_006", title: "No. 006 - Senteur Inspirée Chance", image: "https://magyx.fr/cdn/shop/files/006W_c.webp?v=1771385217&width=300", url: "https://magyx.fr/products/magic-perfume-no-006w", price: 1199, brand: "Chanel", brandKey: "chanel", number: "006", gender: "female", inspiredBy: "Chance" },
     { id: "product_412", title: "No. 412 - Senteur Inspirée La Belle", image: "https://magyx.fr/cdn/shop/files/412W_c.webp?v=1771385214&width=300", url: "https://magyx.fr/products/magic-perfume-no-412w", price: 1199, brand: "Jean Paul Gaultier", brandKey: "jpg", number: "412", gender: "female", inspiredBy: "La Belle" },
-    { id: "product_024", title: "No. 024 - Senteur Inspirée ÄQUIVALENT", image: "https://magyx.fr/cdn/shop/files/024W_c.webp?v=1771385208&width=300", url: "https://magyx.fr/products/magic-perfume-no-024w", price: 1199, brand: "Giorgio Armani", brandKey: "armani", number: "024", gender: "female", inspiredBy: "Äquivalent" },
+    { id: "product_024", title: "No. 024 — Senteur Inspirée ÄQUIVALENT", image: "https://magyx.fr/cdn/shop/files/024W_c.webp?v=1771385208&width=1200", url: "https://magyx.fr/products/magic-perfume-no-024w", price: 1199, brand: "Giorgio Armani", brandKey: "armani", number: "024", gender: "female", inspiredBy: "Äquivalent", variantId: 48142937292952 },
     { id: "product_060", title: "No. 060 - Senteur Inspirée Boss Woman", image: "https://magyx.fr/cdn/shop/files/060W_c.webp?v=1771385203&width=300", url: "https://magyx.fr/products/magic-perfume-no-060w", price: 1199, brand: "Hugo Boss", brandKey: "hugoboss", number: "060", gender: "female", inspiredBy: "Boss Woman" },
     { id: "product_098", title: "No. 098 - Senteur Inspirée Alive", image: "https://magyx.fr/cdn/shop/files/098W_c.webp?v=1771385196&width=300", url: "https://magyx.fr/products/magic-perfume-no-098w", price: 1199, brand: "Hugo Boss", brandKey: "hugoboss", number: "098", gender: "female", inspiredBy: "Alive" },
     { id: "product_148", title: "No. 148 - Senteur Inspirée Boss Orange", image: "https://magyx.fr/cdn/shop/files/148W_c.webp?v=1771385174&width=300", url: "https://magyx.fr/products/magic-perfume-no-148w", price: 1199, brand: "Hugo Boss", brandKey: "hugoboss", number: "148", gender: "female", inspiredBy: "Boss Orange" },
@@ -997,6 +997,7 @@
     'Alive': ['Boss Woman', 'Deep Red', 'The Scent for Her'],
     'Deep Red': ['Boss Woman', 'Alive', 'Boss Orange'],
     'The Scent for Her': ['Boss Woman', 'Alive', 'The Scent'],
+    'Äquivalent': ['My Way'],
     'Aventus for Her': ['J\'Adore'],
     
     // Male recommendations
@@ -1444,6 +1445,12 @@
         const sauvageElixir = inspiredProducts.find(p => p.number === '366');
         if (sauvageElixir) {
           html += renderInspiredCard(sauvageElixir, 'Vous pourriez aimer', perfume.brand);
+        }
+      } else if (perfume.name === 'Äquivalent') {
+        // HARDCODED: For Äquivalent, show My Way in the same grid
+        const myWay = inspiredProducts.find(p => p.number === '140');
+        if (myWay) {
+          html += renderInspiredCard(myWay, 'Vous pourriez aimer', perfume.brand);
         }
       } else {
         // Show recommendation (exclude the main inspired product)
