@@ -943,7 +943,7 @@ const PerfumeCatalog = {
       id: "mugler_angel",
       name: "Angel",
       brand: "Mugler",
-      image: "https://magyx.fr/cdn/shop/files/113W_c.webp?v=1771385180&width=300",
+      image: "https://magyx.fr/cdn/shop/files/Mugler.jpg?v=1772007545",
       top_notes: ["Bergamote", "Mandarine", "Menthe"],
       heart_notes: ["Jasmin", "Orchidée", "Miel"],
       base_notes: ["Vanille", "Patchouli", "Caramel"],
