@@ -184,7 +184,7 @@ const PerfumeCatalog = {
       id: "chanel_no5",
       name: "No. 5",
       brand: "Chanel",
-      image: "https://magyx.fr/cdn/shop/files/077W_c.webp?v=1771385150&width=300",
+      image: "https://magyx.fr/cdn/shop/files/CHANEL_NO_5_SUBSTITUTE.jpg?v=1772008527",
       top_notes: ["Ylang-Ylang", "Néroli", "Bergamote"],
       heart_notes: ["Iris", "Jasmin", "Rose"],
       base_notes: ["Vanille", "Bois de santal", "Mousse de chêne"],
