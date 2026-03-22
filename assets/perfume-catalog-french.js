@@ -1194,7 +1194,7 @@ const PerfumeCatalog = {
       id: "dolce_the_one",
       name: "The One",
       brand: "Dolce & Gabbana",
-      image: "https://magyx.fr/cdn/shop/files/094W_c.webp?v=1771765712&width=300",
+      image: "https://magyx.fr/cdn/shop/files/The_One.jpg?v=1772009672",
       top_notes: ["Pêche", "Bergamote", "Mandarine"],
       heart_notes: ["Jasmin", "Fleur d'oranger", "Lys"],
       base_notes: ["Vanille", "Ambre", "Musc"],
