@@ -918,7 +918,7 @@ const PerfumeCatalog = {
       id: "jpg_la_belle",
       name: "La Belle",
       brand: "Jean Paul Gaultier",
-      image: "https://magyx.fr/cdn/shop/files/412W_c.webp?v=1771765712&width=300",
+      image: "https://magyx.fr/cdn/shop/files/JPGLaBelle2.webp?v=1772001519",
       top_notes: ["Poire", "Bergamote"],
       heart_notes: ["Jasmin", "Fleur d'oranger"],
       base_notes: ["Vanille", "Ambre", "Vétiver"],
