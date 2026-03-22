@@ -475,11 +475,14 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 18px;
-  padding: 0 20px 20px 20px;
+  padding: 0 20px 30px 20px;
+  margin-bottom: 15px;
 }
 
 .fc-product-card {
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .fc-badge {
@@ -505,6 +508,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .fc-product-inner:hover {
@@ -545,14 +549,24 @@
   font-size: 12px;
   font-weight: 700;
   cursor: pointer;
-  margin-bottom: 6px;
+  margin-bottom: 10px;
   text-transform: uppercase;
   letter-spacing: 0.6px;
   transition: background 0.2s ease;
+  margin-top: auto;
 }
 
 .fc-add-to-cart:hover {
   background: #A51D36;
+}
+
+.fc-view-link-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 8px;
+  border-top: 1px solid #F0E8E0;
+  margin-top: 8px;
 }
 
 .fc-view-link {
@@ -562,6 +576,12 @@
   cursor: pointer;
   font-weight: 500;
   display: inline-block;
+}
+
+.fc-view-link.other-brand::after {
+  content: ' 🔗';
+  margin-left: 4px;
+  opacity: 0.7;
 }
 
 .fc-view-link:hover {
@@ -1050,7 +1070,17 @@
   function findInspiredProduct(perfume) {
     if (!perfume) return null;
     
-    // Try to find by brand + name
+    // STEP 1: EXACT PRODUCT NUMBER MATCH (highest priority)
+    if (perfume.productNumbers && perfume.productNumbers.length > 0) {
+      for (const num of perfume.productNumbers) {
+        const match = inspiredProducts.find(p => 
+          p.number && p.number === num.toString()
+        );
+        if (match) return match;
+      }
+    }
+    
+    // STEP 2: BRAND + INSPIRED BY NAME MATCH
     const perfumeNameNorm = normalizeText(perfume.name);
     const perfumeBrandNorm = normalizeText(perfume.brand);
     
@@ -1060,22 +1090,26 @@
     inspiredProducts.forEach(product => {
       let score = 0;
       
-      // Name match
-      if (normalizeText(product.inspiredBy).includes(perfumeNameNorm) ||
-          perfumeNameNorm.includes(normalizeText(product.inspiredBy))) {
+      // Must match brand key
+      if (!product.brandKey) return;
+      
+      // Check brand key match (e.g., 'tomford', 'chanel', etc.)
+      const catalogBrandKey = perfume.brandKey || perfumeBrandNorm.substring(0, 5);
+      if (normalizeText(product.brandKey) !== normalizeText(catalogBrandKey) &&
+          !perfumeBrandNorm.includes(normalizeText(product.brand))) {
+        return; // Skip if brand doesn't match
+      }
+      
+      score += 30; // Brand matched
+      
+      // Name match (inspired products have "inspiredBy" or "title" field)
+      const productNameNorm = normalizeText(product.inspiredBy || product.title || '');
+      if (productNameNorm.includes(perfumeNameNorm) || 
+          perfumeNameNorm.includes(productNameNorm)) {
         score += 50;
-      }
-      
-      // Brand match
-      if (normalizeText(product.brand).includes(perfumeBrandNorm) || 
-          perfumeBrandNorm.includes(normalizeText(product.brand))) {
-        score += 40;
-      }
-      
-      // Number match
-      if (product.number && perfume.productNumbers && 
-          perfume.productNumbers.includes(product.number)) {
-        score = 100;
+      } else if (productNameNorm.includes(perfumeBrandNorm) || 
+                 perfumeBrandNorm.includes(productNameNorm)) {
+        score += 25;
       }
       
       if (score > bestScore) {
@@ -1087,13 +1121,12 @@
     return bestMatch;
   }
 
-  // ===== GET RECOMMENDATIONS (Hardcoded first, then smart fallback) =====
+  // ===== GET RECOMMENDATIONS (Same brand first, then hardcoded, then fallback) =====
   function getRecommendations(perfume, excludeInspiredId = null) {
     if (!perfume) return [];
     
     const recommendations = [];
     const usedIds = new Set();
-    const perfumeName = perfume.name;
     const perfumeGender = perfume.gender ? perfume.gender.toLowerCase() : 'unisex';
     
     // Add excluded product to used IDs
@@ -1101,71 +1134,76 @@
       usedIds.add(excludeInspiredId);
     }
     
-    // STEP 1: HARDCODED RECOMMENDATIONS
+    // STEP 1: SAME BRAND RECOMMENDATIONS (primary strategy)
+    // Only recommend products from the SAME brand brand
+    const sameBrandProducts = inspiredProducts.filter(p => {
+      if (usedIds.has(p.id)) return false;
+      
+      // Match by brand key (most reliable)
+      const perfumeBrandNorm = normalizeText(perfume.brand);
+      const productBrandNorm = normalizeText(p.brand);
+      
+      if (p.brandKey && perfume.brandKey) {
+        return normalizeText(p.brandKey) === normalizeText(perfume.brandKey);
+      }
+      
+      // Fallback: check if brand names match
+      return productBrandNorm.includes(perfumeBrandNorm) || 
+             perfumeBrandNorm.includes(productBrandNorm);
+    });
+    
+    // Filter by gender (prefer same gender, then unisex)
+    const sameGenderProducts = sameBrandProducts.filter(p => 
+      p.gender === perfumeGender || p.gender === 'unisex'
+    );
+    
+    if (sameGenderProducts.length > 0) {
+      recommendations.push(sameGenderProducts[0]);
+      usedIds.add(sameGenderProducts[0].id);
+      return recommendations;
+    }
+    
+    // If no same gender, just pick first same brand product
+    if (sameBrandProducts.length > 0) {
+      recommendations.push(sameBrandProducts[0]);
+      usedIds.add(sameBrandProducts[0].id);
+      return recommendations;
+    }
+    
+    // STEP 2: HARDCODED RECOMMENDATIONS (if same brand didn't work)
     let hardcodedRecNames = [];
     
     // Find matching hardcoded recommendations
     for (const [key, recs] of Object.entries(HARDCODED_RECOMMENDATIONS)) {
-      if (perfumeName.includes(key) || key.includes(perfumeName) || 
-          normalizeText(perfumeName).includes(normalizeText(key))) {
+      if (perfume.name.includes(key) || key.includes(perfume.name) || 
+          normalizeText(perfume.name).includes(normalizeText(key))) {
         hardcodedRecNames = recs;
         break;
-      }
-    }
-    
-    // If no hardcoded match, try by brand
-    if (hardcodedRecNames.length === 0) {
-      const perfumeBrand = perfume.brand;
-      for (const [key, recs] of Object.entries(HARDCODED_RECOMMENDATIONS)) {
-        if (perfumeBrand.includes(key) || key.includes(perfumeBrand)) {
-          hardcodedRecNames = recs;
-          break;
-        }
       }
     }
     
     // Find inspired products for hardcoded recommendations
     for (const recName of hardcodedRecNames) {
       const product = inspiredProducts.find(p => {
+        if (usedIds.has(p.id)) return false;
         const genderMatch = p.gender === perfumeGender || p.gender === 'unisex';
-        const isNotExcluded = !usedIds.has(p.id);
-        return normalizeText(p.inspiredBy).includes(normalizeText(recName)) && genderMatch && isNotExcluded;
+        return normalizeText(p.inspiredBy).includes(normalizeText(recName)) && genderMatch;
       });
       
-      if (product && !usedIds.has(product.id)) {
+      if (product) {
         recommendations.push(product);
         usedIds.add(product.id);
-        if (recommendations.length >= 1) break;
-      }
-    }
-    
-    // STEP 2: SAME BRAND RECOMMENDATIONS (if hardcoded didn't work)
-    if (recommendations.length < 1) {
-      const sameBrandPerfumes = allPerfumes.filter(p => 
-        normalizeText(p.brand) === normalizeText(perfume.brand) && 
-        p.name !== perfume.name &&
-        (!p.gender || p.gender.toLowerCase() === perfumeGender || perfumeGender === 'unisex')
-      );
-      
-      for (const p of sameBrandPerfumes.slice(0, 3)) {
-        const inspired = findInspiredProduct(p);
-        if (inspired && inspired.gender === perfumeGender && !usedIds.has(inspired.id)) {
-          recommendations.push(inspired);
-          usedIds.add(inspired.id);
-          if (recommendations.length >= 1) break;
-        }
+        return recommendations;
       }
     }
     
     // STEP 3: POPULAR SAME GENDER PRODUCTS (fallback)
-    if (recommendations.length < 1) {
-      const sameGenderProducts = inspiredProducts.filter(p => 
-        p.gender === perfumeGender && !usedIds.has(p.id)
-      );
-      
-      if (sameGenderProducts.length > 0) {
-        recommendations.push(sameGenderProducts[0]);
-      }
+    const sameGenderFallback = inspiredProducts.find(p => 
+      p.gender === perfumeGender && !usedIds.has(p.id)
+    );
+    
+    if (sameGenderFallback) {
+      recommendations.push(sameGenderFallback);
     }
     
     return recommendations;
@@ -1188,8 +1226,10 @@
   }
 
   // ===== RENDER INSPIRED PRODUCT CARD =====
-  function renderInspiredCard(product, badge) {
+  function renderInspiredCard(product, badge, currentBrand = null) {
     const priceFormatted = formatPrice(product.price);
+    const isDifferentBrand = currentBrand && normalizeText(product.brand) !== normalizeText(currentBrand);
+    const otherBrandClass = isDifferentBrand ? 'other-brand' : '';
     
     return `
       <div class="fc-product-card">
@@ -1199,8 +1239,8 @@
           <div class="fc-product-title">${product.title}</div>
           <div class="fc-product-price">${priceFormatted}</div>
           <button class="fc-add-to-cart" onclick="event.stopPropagation(); window.fcAddToCart('${product.url}', event)">Ajouter au panier</button>
-          <div>
-            <span class="fc-view-link" onclick="event.stopPropagation(); window.fcViewDetails('${product.url}')">Voir les détails</span>
+          <div class="fc-view-link-container">
+            <span class="fc-view-link ${otherBrandClass}" onclick="event.stopPropagation(); window.fcViewDetails('${product.url}')" title="Voir les détails de ${product.title}">Voir les détails</span>
           </div>
         </div>
       </div>
@@ -1227,12 +1267,14 @@
     if (inspiredProduct) {
       html += `<div class="fc-section-title">NOTRE VERSION INSPIRÉE</div>`;
       html += `<div class="fc-grid-2col">`;
-      html += renderInspiredCard(inspiredProduct, `Inspiré de ${perfume.name}`);
+      html += renderInspiredCard(inspiredProduct, `Inspiré de ${perfume.name}`, perfume.brand);
       
       // Show recommendation (exclude the main inspired product)
       const filteredRecommendations = recommendations.filter(r => r.id !== inspiredProduct.id);
       if (filteredRecommendations.length > 0) {
-        html += renderInspiredCard(filteredRecommendations[0], 'Vous pourriez aimer');
+        const isDifferentBrand = normalizeText(filteredRecommendations[0].brand) !== normalizeText(perfume.brand);
+        const badgeText = isDifferentBrand ? 'Vous pourriez aimer (autre marque)' : 'Vous pourriez aimer';
+        html += renderInspiredCard(filteredRecommendations[0], badgeText, perfume.brand);
       } else {
         html += `<div class="fc-product-card" style="visibility: hidden;"></div>`;
       }
