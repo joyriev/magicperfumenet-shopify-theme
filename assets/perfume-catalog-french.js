@@ -117,7 +117,7 @@ const PerfumeCatalog = {
       id: "dior_hypnotic_poison",
       name: "Hypnotic Poison",
       brand: "Dior",
-      image: "https://magyx.fr/cdn/shop/files/145W_c.webp?v=1771765712&width=300",
+      image: "https://magyx.fr/cdn/shop/files/Hypnotic_Poison.jpg?v=1772000169",
       top_notes: ["Abricot", "Prune", "Coco"],
       heart_notes: ["Jasmin", "Rose", "Musc"],
       base_notes: ["Vanille", "Amande", "Bois de santal"],
