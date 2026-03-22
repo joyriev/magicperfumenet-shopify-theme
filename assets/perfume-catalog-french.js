@@ -1658,7 +1658,7 @@ const PerfumeCatalog = {
       id: "hugo_boss_deep_red",
       name: "Deep Red",
       brand: "Hugo Boss",
-      image: "https://magyx.fr/cdn/shop/files/022W_c.webp?v=1771385163&width=300",
+      image: "https://magyx.fr/cdn/shop/files/Deep_Red.jpg?v=1772006738",
       top_notes: ["Pomme", "Gingembre", "Mandarine"],
       heart_notes: ["Rose", "Orchidée", "Jasmin"],
       base_notes: ["Santal", "Cèdre", "Vanille"],
