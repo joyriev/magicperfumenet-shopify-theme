@@ -1016,8 +1016,7 @@
     'Oud Wood': ['Tobacco Vanille', 'Fucking Fabulous', 'Sauvage Elixir'],
     'Tobacco Vanille': ['Oud Wood', 'Fucking Fabulous', 'Vanille Fatale'],
     'Hugo': ['Bottled', 'The Scent', 'Boss Bottled'],
-    'Bottled': ['Hugo', 'The Scent', 'Boss Bottled'],
-    'Flower': ['J\'Adore']
+    'Bottled': ['Hugo', 'The Scent', 'Boss Bottled']
   };
 
   // ===== FORMAT PRICE =====
@@ -1391,8 +1390,8 @@
         if (blackOpium) {
           html += renderInspiredCard(blackOpium, 'Vous pourriez aimer', perfume.brand);
         }
-      } else {
-        // Show recommendation (exclude the main inspired product)
+      } else if (perfume.name !== 'Flower by Kenzo') {
+        // Show recommendation (exclude the main inspired product) - but NOT for Flower
         const filteredRecommendations = recommendations.filter(r => r.id !== inspiredProduct.id);
         if (filteredRecommendations.length > 0) {
           const isDifferentBrand = normalizeText(filteredRecommendations[0].brand) !== normalizeText(perfume.brand);
