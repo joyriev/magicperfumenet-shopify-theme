@@ -1432,7 +1432,7 @@ const PerfumeCatalog = {
       id: "kenzo_flower",
       name: "Flower by Kenzo",
       brand: "Kenzo",
-      image: "https://magyx.fr/cdn/shop/files/074W_c.webp?v=1771765712&width=300",
+      image: "https://magyx.fr/cdn/shop/files/Kenzo.jpg?v=1772005805",
       top_notes: ["Rose", "Muguet", "Violette"],
       heart_notes: ["Jasmin", "Iris", "Cannelle"],
       base_notes: ["Vanille", "Ambre", "Musc"],
