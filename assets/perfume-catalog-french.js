@@ -486,7 +486,7 @@ const PerfumeCatalog = {
       id: "tom_ford_lost_cherry",
       name: "Lost Cherry",
       brand: "Tom Ford",
-      image: "https://magyx.fr/cdn/shop/files/438W_c.webp?v=1771765712&width=300",
+      image: "https://magyx.fr/cdn/shop/files/Lost_Cherry.jpg?v=1772009866",
       top_notes: ["Cerise", "Amande", "Liqueur"],
       heart_notes: ["Griotte", "Rose", "Jasmin"],
       base_notes: ["Vanille", "Tonka", "Santal"],
