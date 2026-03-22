@@ -423,7 +423,7 @@ const PerfumeCatalog = {
       id: "tom_ford_tobacco_vanille",
       name: "Tobacco Vanille",
       brand: "Tom Ford",
-      image: "https://magyx.fr/cdn/shop/files/193W_c.webp?v=1771385212&width=300",
+      image: "https://magyx.fr/cdn/shop/files/Tobacco_Vanille.jpg?v=1772001903",
       top_notes: ["Tabac", "Vanille"],
       heart_notes: ["Cacao", "Tonka", "Fruits secs"],
       base_notes: ["Bois", "Vanille", "Ambre"],
