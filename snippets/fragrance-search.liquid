@@ -1384,30 +1384,41 @@
       html += `<div class="fc-grid-2col">`;
       html += renderInspiredCard(inspiredProduct, `Inspiré de ${perfume.name}`, perfume.brand);
       
-      // Show recommendation (exclude the main inspired product)
-      const filteredRecommendations = recommendations.filter(r => r.id !== inspiredProduct.id);
-      if (filteredRecommendations.length > 0) {
-        const isDifferentBrand = normalizeText(filteredRecommendations[0].brand) !== normalizeText(perfume.brand);
-        const badgeText = isDifferentBrand ? 'Vous pourriez aimer (autre marque)' : 'Vous pourriez aimer';
-        html += renderInspiredCard(filteredRecommendations[0], badgeText, perfume.brand);
+      // HARDCODED: For Angel, show Black Opium in the same grid
+      if (perfume.name === 'Angel') {
+        const blackOpium = inspiredProducts.find(p => p.number === '132');
+        if (blackOpium) {
+          html += renderInspiredCard(blackOpium, 'Vous pourriez aimer', perfume.brand);
+        }
       } else {
-        html += `<div class="fc-product-card" style="visibility: hidden;"></div>`;
+        // Show recommendation (exclude the main inspired product)
+        const filteredRecommendations = recommendations.filter(r => r.id !== inspiredProduct.id);
+        if (filteredRecommendations.length > 0) {
+          const isDifferentBrand = normalizeText(filteredRecommendations[0].brand) !== normalizeText(perfume.brand);
+          const badgeText = isDifferentBrand ? 'Vous pourriez aimer (autre marque)' : 'Vous pourriez aimer';
+          html += renderInspiredCard(filteredRecommendations[0], badgeText, perfume.brand);
+        } else {
+          html += `<div class="fc-product-card" style="visibility: hidden;"></div>`;
+        }
       }
       
       html += `</div>`;
       
-      // ===== YOU MIGHT LIKE SECTION (Additional recommendations) =====
-      // HARDCODED: For Angel, show Black Opium
-      if (perfume.name === 'Angel') {
-        const blackOpium = inspiredProducts.find(p => p.number === '132');
-        if (blackOpium) {
+      // ===== YOU MIGHT LIKE SECTION (Additional recommendations for non-Angel products) =====
+      if (perfume.name !== 'Angel') {
+        const filteredRecommendations = recommendations.filter(r => r.id !== inspiredProduct.id);
+        if (filteredRecommendations.length > 1) {
           html += `<div class="fc-section-title" style="margin-top: 24px;">VOUS POURRIEZ AUSSI AIMER</div>`;
           html += `<div class="fc-grid-2col">`;
-          html += renderInspiredCard(blackOpium, 'Alternative', perfume.brand);
+          for (let i = 1; i < Math.min(3, filteredRecommendations.length); i++) {
+            const rec = filteredRecommendations[i];
+            const isDifferentBrand = normalizeText(rec.brand) !== normalizeText(perfume.brand);
+            const badgeText = isDifferentBrand ? 'Alternative' : 'Même marque';
+            html += renderInspiredCard(rec, badgeText, perfume.brand);
+          }
           html += `</div>`;
         }
-      } else if (filteredRecommendations.length > 1) {
-        html += `<div class="fc-section-title" style="margin-top: 24px;">VOUS POURRIEZ AUSSI AIMER</div>`;
+      }
         html += `<div class="fc-grid-2col">`;
         for (let i = 1; i < Math.min(3, filteredRecommendations.length); i++) {
           const rec = filteredRecommendations[i];
