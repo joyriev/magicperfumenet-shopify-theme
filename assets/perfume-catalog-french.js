@@ -96,7 +96,7 @@ const PerfumeCatalog = {
       id: "dior_jadore",
       name: "J'Adore",
       brand: "Dior",
-      image: "https://magyx.fr/cdn/shop/files/159W_c.webp?v=1771765712&width=300",
+      image: "https://magyx.fr/cdn/shop/files/J_Adore.jpg?v=1771999923",
       top_notes: ["Mandarine", "Bergamote", "Ylang-Ylang"],
       heart_notes: ["Rose", "Jasmin", "Orchidée"],
       base_notes: ["Bois de santal", "Vanille", "Musc"],
