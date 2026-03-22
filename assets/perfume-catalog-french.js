@@ -30,6 +30,27 @@ const PerfumeCatalog = {
       }
     },
     {
+      id: "dior_fahrenheit_le_parfum",
+      name: "Fahrenheit Le Parfum",
+      brand: "Dior",
+      image: "https://magyx.fr/cdn/shop/files/350M_c.webp?v=1771765712&width=300",
+      top_notes: ["Lavande", "Bergamote", "Mandarine"],
+      heart_notes: ["Violette", "Cuir", "Cannelle"],
+      base_notes: ["Ambre", "Vanille", "Bois de santal"],
+      description: "Une interprétation plus intense du Fahrenheit original. Un parfum qui marie la puissance du cuir avec la chaleur de l'ambre et de la vanille. Une fragrance audacieuse et sophistiquée pour l'homme qui ose.",
+      year: "2014",
+      gender: "Homme",
+      productNumbers: ["350"],
+      inspiredBy: "Fahrenheit Le Parfum",
+      shopifyProduct: {
+        title: "No. 350 — Senteur Inspirée Fahrenheit Le Parfum",
+        url: "https://magyx.fr/products/magic-perfume-no-350m",
+        price: "€11.99",
+        image: "https://magyx.fr/cdn/shop/files/350M_c.webp?v=1771765712&width=300",
+        variantId: 48142939422872
+      }
+    },
+    {
       id: "dior_sauvage_parfum",
       name: "Sauvage Parfum",
       brand: "Dior",
@@ -54,7 +75,7 @@ const PerfumeCatalog = {
       id: "dior_sauvage_elixir",
       name: "Sauvage Elixir",
       brand: "Dior",
-      image: "https://magyx.fr/cdn/shop/files/366M_c.webp?v=1771765712&width=300",
+      image: "https://magyx.fr/cdn/shop/files/Untitled-design-45-15.png?v=1771998924",
       top_notes: ["Cannelle", "Cardamome", "Lavande"],
       heart_notes: ["Sauge", "Géranium", "Piment"],
       base_notes: ["Bois de santal", "Ambre", "Cèdre"],
