@@ -518,7 +518,7 @@ const PerfumeCatalog = {
       inspiredBy: "Fucking Fabulous",
       shopifyProduct: {
         title: "No. 232 - Senteur Inspirée Fucking Fabulous",
-        url: "https://magyx.fr/products/magic-perfume-no-232m",
+        url: "https://magyx.fr/products/232m-tom-ford-fucking-fabulous-unisex-ersatz",
         price: "€11.99",
         image: "https://magyx.fr/cdn/shop/files/232M_c.webp?v=1771765712&width=300",
         variantId: 48142939422872
