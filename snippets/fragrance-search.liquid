@@ -1,4 +1,4 @@
-{% comment %}
+\{% comment %}
   FRAGRANCE CODE SEARCH POPUP - PREMIUM DESIGN
   - Complete catalog integration with notes, descriptions
   - Shows real perfumes with detailed information FIRST
@@ -1260,16 +1260,21 @@
       p.gender === perfumeGender || p.gender === 'unisex'
     );
     
+    // Add same brand products (up to 3)
     if (sameGenderProducts.length > 0) {
-      recommendations.push(sameGenderProducts[0]);
-      usedIds.add(sameGenderProducts[0].id);
+      for (let i = 0; i < Math.min(3, sameGenderProducts.length); i++) {
+        recommendations.push(sameGenderProducts[i]);
+        usedIds.add(sameGenderProducts[i].id);
+      }
       return recommendations;
     }
     
-    // If no same gender, just pick first same brand product
+    // If no same gender, just pick same brand products
     if (sameBrandProducts.length > 0) {
-      recommendations.push(sameBrandProducts[0]);
-      usedIds.add(sameBrandProducts[0].id);
+      for (let i = 0; i < Math.min(3, sameBrandProducts.length); i++) {
+        recommendations.push(sameBrandProducts[i]);
+        usedIds.add(sameBrandProducts[i].id);
+      }
       return recommendations;
     }
     
@@ -1285,8 +1290,10 @@
       }
     }
     
-    // Find inspired products for hardcoded recommendations
+    // Find inspired products for ALL hardcoded recommendations
     for (const recName of hardcodedRecNames) {
+      if (recommendations.length >= 3) break; // Limit to 3 total
+      
       const product = inspiredProducts.find(p => {
         if (usedIds.has(p.id)) return false;
         const genderMatch = p.gender === perfumeGender || p.gender === 'unisex';
@@ -1296,7 +1303,6 @@
       if (product) {
         recommendations.push(product);
         usedIds.add(product.id);
-        return recommendations;
       }
     }
     
