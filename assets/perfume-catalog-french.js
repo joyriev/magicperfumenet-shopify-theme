@@ -507,7 +507,7 @@ const PerfumeCatalog = {
       id: "tom_ford_fucking_fabulous",
       name: "Fucking Fabulous",
       brand: "Tom Ford",
-      image: "https://magyx.fr/cdn/shop/files/232M_c.webp?v=1771765712&width=300",
+      image: "https://magyx.fr/cdn/shop/files/Fucking_Fabulous.png?v=1771999220",
       top_notes: ["Lavande", "Sauge", "Amande"],
       heart_notes: ["Cèdre", "Cuir", "Vanille"],
       base_notes: ["Ambre", "Musc", "Bois"],
