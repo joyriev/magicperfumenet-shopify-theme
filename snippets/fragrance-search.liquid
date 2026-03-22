@@ -1001,7 +1001,7 @@
     'Äquivalent': ['My Way'],
     'Aventus for Her': ['J\'Adore'],
     'Eternity': ['Light Blue', 'Acqua di Gio'],
-    'Musc Noir For Her': ['Good Girl'],
+    'Musc Noir': ['Good Girl'],
     
     // Male recommendations
     'Sauvage Elixir': ['Sauvage Parfum', 'Bleu de Chanel', 'Le Male'],
@@ -1490,6 +1490,12 @@
         const acquaDiGio = inspiredProducts.find(p => p.number === '221');
         if (acquaDiGio) {
           html += renderInspiredCard(acquaDiGio, 'Vous pourriez aimer', perfume.brand);
+        }
+      } else if (perfume.name === 'Musc Noir') {
+        // HARDCODED: For Musc Noir, show Good Girl in the same grid
+        const goodGirl = inspiredProducts.find(p => p.number === '461');
+        if (goodGirl) {
+          html += renderInspiredCard(goodGirl, 'Vous pourriez aimer', perfume.brand);
         }
       } else {
         // Show recommendation (exclude the main inspired product)
