@@ -1173,7 +1173,7 @@ const PerfumeCatalog = {
       id: "dolce_light_blue",
       name: "Light Blue",
       brand: "Dolce & Gabbana",
-      image: "https://magyx.fr/cdn/shop/files/017W_c.webp?v=1771765712&width=300",
+      image: "https://magyx.fr/cdn/shop/files/375x500.104985.jpg?v=1771999091",
       top_notes: ["Citron", "Pomme", "Cèdre"],
       heart_notes: ["Jasmin", "Rose", "Musc"],
       base_notes: ["Ambre", "Musc", "Cèdre"],
