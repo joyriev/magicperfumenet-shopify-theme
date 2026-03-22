@@ -1595,7 +1595,7 @@ const PerfumeCatalog = {
       id: "hugo_boss_boss_woman",
       name: "Boss Woman",
       brand: "Hugo Boss",
-      image: "https://magyx.fr/cdn/shop/files/060W_c.webp?v=1771385203&width=300",
+      image: "https://magyx.fr/cdn/shop/files/Boss_Woman.webp?v=1772004180",
       top_notes: ["Mandarine", "Pomme", "Poire"],
       heart_notes: ["Jasmin", "Muguet", "Freesia"],
       base_notes: ["Cèdre", "Santal", "Musc"],
