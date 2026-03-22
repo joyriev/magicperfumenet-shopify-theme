@@ -1679,7 +1679,7 @@ const PerfumeCatalog = {
       id: "hugo_boss_the_scent",
       name: "The Scent",
       brand: "Hugo Boss",
-      image: "https://magyx.fr/cdn/shop/files/184W_c.webp?v=1771385182&width=300",
+      image: "https://magyx.fr/cdn/shop/files/The_Scent.jpg?v=1772005604",
       top_notes: ["Gingembre", "Bergamote"],
       heart_notes: ["Lavande", "Homme"],
       base_notes: ["Cuir", "Musc", "Cèdre"],
