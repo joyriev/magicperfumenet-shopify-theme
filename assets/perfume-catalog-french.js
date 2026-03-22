@@ -876,7 +876,7 @@ const PerfumeCatalog = {
       id: "jpg_scandal",
       name: "Scandal",
       brand: "Jean Paul Gaultier",
-      image: "https://magyx.fr/cdn/shop/files/192W_c.webp?v=1771765712&width=300",
+      image: "https://magyx.fr/cdn/shop/files/Scandal.png?v=1771999383",
       top_notes: ["Mandarine", "Poire"],
       heart_notes: ["Jasmin", "Fleur d'oranger"],
       base_notes: ["Miel", "Patchouli", "Musc"],
