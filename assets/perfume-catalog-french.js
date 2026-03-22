@@ -1286,7 +1286,7 @@ const PerfumeCatalog = {
       id: "creed_aventus_femme",
       name: "Aventus for Her",
       brand: "Creed",
-      image: "https://magyx.fr/cdn/shop/files/488W_i.webp?v=1772744253&width=300",
+      image: "https://magyx.fr/cdn/shop/files/aventus.webp?v=1772743476",
       top_notes: ["Pomme", "Bergamote", "Citron", "Poivre Rose"],
       heart_notes: ["Pêche", "Cassis", "Rose", "Jasmin"],
       base_notes: ["Santal", "Musc", "Ambre", "Patchouli"],
