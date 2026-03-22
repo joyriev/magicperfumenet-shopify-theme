@@ -737,6 +737,27 @@ const PerfumeCatalog = {
         image: "https://magyx.fr/cdn/shop/files/024W_c.webp?v=1773222403&width=300",
         variantId: 48142937292952
       }
+    },
+    {
+      id: "armani_ma_vie",
+      name: "Ma Vie",
+      brand: "Giorgio Armani",
+      image: "https://magyx.fr/cdn/shop/files/350W_c.webp?v=1773222350&width=300",
+      top_notes: ["Bergamote", "Poire", "Cassis"],
+      heart_notes: ["Rose", "Jasmin", "Fleur d'oranger"],
+      base_notes: ["Vanille", "Cèdre", "Musc"],
+      description: "Un parfum floral fruité moderne. Une fragrance qui célèbre la vie avec élégance et fraîcheur.",
+      year: "2015",
+      gender: "Femme",
+      productNumbers: ["350"],
+      inspiredBy: "Ma Vie",
+      shopifyProduct: {
+        title: "No. 350— Senteur Inspirée Ma Vie",
+        url: "https://magyx.fr/products/magic-perfume-no-350w",
+        price: "€11.99",
+        image: "https://magyx.fr/cdn/shop/files/350W_c.webp?v=1773222350&width=300",
+        variantId: 48142933754008
+      }
     }
   ],
 
