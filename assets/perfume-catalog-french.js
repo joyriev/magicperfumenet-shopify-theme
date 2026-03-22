@@ -1261,7 +1261,7 @@ const PerfumeCatalog = {
       id: "ck_eternity_men",
       name: "Eternity for Men",
       brand: "Calvin Klein",
-      image: "https://magyx.fr/cdn/shop/files/215M_c.webp?v=1771765712&width=300",
+      image: "https://magyx.fr/cdn/shop/files/Eternity_d4b0819b-1926-4ee5-8d64-b60d10d045ac.png?v=1772008219",
       top_notes: ["Lavande", "Mandarine", "Bergamote"],
       heart_notes: ["Coriandre", "Géranium"],
       base_notes: ["Santal", "Ambre", "Musc"],
