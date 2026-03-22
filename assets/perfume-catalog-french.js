@@ -897,7 +897,7 @@ const PerfumeCatalog = {
       id: "jpg_le_male",
       name: "Le Male",
       brand: "Jean Paul Gaultier",
-      image: "https://magyx.fr/cdn/shop/files/247M_c.webp?v=1771765712&width=300",
+      image: "https://magyx.fr/cdn/shop/files/Le_Male.jpg?v=1771999834",
       top_notes: ["Lavande", "Menthe", "Bergamote"],
       heart_notes: ["Cannelle", "Orange", "Carvi"],
       base_notes: ["Vanille", "Ambre", "Bois"],
