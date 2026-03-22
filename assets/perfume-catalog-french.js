@@ -1265,7 +1265,7 @@ const PerfumeCatalog = {
       id: "creed_aventus_homme",
       name: "Aventus for Him",
       brand: "Creed",
-      image: "https://magyx.fr/cdn/shop/files/288M_i.webp?v=1772744253&width=300",
+      image: "https://magyx.fr/cdn/shop/files/aventus.webp?v=1772743476",
       top_notes: ["Cassis", "Bergamote", "Pomme", "Ananas"],
       heart_notes: ["Rose", "Bouleau", "Jasmin", "Patchouli"],
       base_notes: ["Musc", "Ambre", "Vanille"],
