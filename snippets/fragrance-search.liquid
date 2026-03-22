@@ -1309,7 +1309,15 @@
     
     const stepsEl = document.getElementById('fcSteps');
     const contentEl = document.getElementById('fcContent');
+    const infoSection = document.querySelector('.fc-info-section');
+    const logoSection = document.querySelector('.fc-logo-section');
+    const searchSection = document.querySelector('.fc-search-section');
+    
+    // Hide sidebar sections when showing product detail
     stepsEl.style.display = 'none';
+    if (infoSection) infoSection.style.display = 'none';
+    if (logoSection) logoSection.style.display = 'none';
+    if (searchSection) searchSection.style.display = 'none';
     
     const inspiredProduct = findInspiredProduct(perfume);
     const recommendations = getRecommendations(perfume, inspiredProduct ? inspiredProduct.id : null);
@@ -1446,8 +1454,16 @@
     const stepsEl = document.getElementById('fcSteps');
     const contentEl = document.getElementById('fcContent');
     const searchInput = document.getElementById('fcSearchInput');
+    const infoSection = document.querySelector('.fc-info-section');
+    const logoSection = document.querySelector('.fc-logo-section');
+    const searchSection = document.querySelector('.fc-search-section');
     
+    // Restore sidebar sections when going back
     stepsEl.style.display = 'block';
+    if (infoSection) infoSection.style.display = 'block';
+    if (logoSection) logoSection.style.display = 'block';
+    if (searchSection) searchSection.style.display = 'block';
+    
     if (searchInput.value.trim()) {
       performSearch(searchInput.value.trim());
     } else {
