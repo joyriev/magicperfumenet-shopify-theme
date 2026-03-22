@@ -1073,7 +1073,7 @@ const PerfumeCatalog = {
       id: "lancome_nomade",
       name: "Nomade",
       brand: "Lancôme",
-      image: "https://magyx.fr/cdn/shop/files/049w_c.webp?v=1772083763&width=300",
+      image: "https://magyx.fr/cdn/shop/files/Chloe_Nomade.jpg?v=1772008127",
       top_notes: ["Bergamote", "Framboise", "Prune"],
       heart_notes: ["Rose", "Jasmin", "Freesia"],
       base_notes: ["Mousse de chêne", "Musc", "Vanille"],
