@@ -830,7 +830,7 @@ const PerfumeCatalog = {
       id: "paco_fame",
       name: "Fame",
       brand: "Paco Rabanne",
-      image: "https://magyx.fr/cdn/shop/files/498W_c.webp?v=1771765712&width=300",
+      image: "https://magyx.fr/cdn/shop/files/Fame.webp?v=1772000503",
       top_notes: ["Mangue", "Jasmin"],
       heart_notes: ["Fleur d'oranger", "Vanille"],
       base_notes: ["Santal", "Ambre"],
