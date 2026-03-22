@@ -1359,13 +1359,11 @@
     const contentEl = document.getElementById('fcContent');
     const infoSection = document.querySelector('.fc-info-section');
     const logoSection = document.querySelector('.fc-logo-section');
-    const searchSection = document.querySelector('.fc-search-section');
     
-    // Hide sidebar sections when showing product detail
+    // Hide sidebar sections BUT KEEP SEARCH BAR VISIBLE
     stepsEl.style.display = 'none';
     if (infoSection) infoSection.style.display = 'none';
     if (logoSection) logoSection.style.display = 'none';
-    if (searchSection) searchSection.style.display = 'none';
     
     const inspiredProduct = findInspiredProduct(perfume);
     const recommendations = getRecommendations(perfume, inspiredProduct ? inspiredProduct.id : null);
@@ -1467,11 +1465,11 @@
     const logoSection = document.querySelector('.fc-logo-section');
     const searchSection = document.querySelector('.fc-search-section');
     
-    // Hide all sidebar sections when showing search results
+    // Hide sidebar sections BUT KEEP SEARCH BAR VISIBLE so users can search again
     if (stepsEl) stepsEl.style.display = 'none';
     if (infoSection) infoSection.style.display = 'none';
     if (logoSection) logoSection.style.display = 'none';
-    if (searchSection) searchSection.style.display = 'none';
+    // DO NOT hide searchSection - users need it visible to search again!
     
     contentEl.innerHTML = '<div class="fc-loading">Recherche en cours...</div>';
     
@@ -1498,20 +1496,18 @@
     const stepsEl = document.getElementById('fcSteps');
     const infoSection = document.querySelector('.fc-info-section');
     const logoSection = document.querySelector('.fc-logo-section');
-    const searchSection = document.querySelector('.fc-search-section');
     
     if (query.length < 1) {
       // Restore sidebar sections when search is cleared
       if (stepsEl) stepsEl.style.display = 'block';
       if (infoSection) infoSection.style.display = 'block';
       if (logoSection) logoSection.style.display = 'block';
-      if (searchSection) searchSection.style.display = 'block';
       
       document.getElementById('fcContent').innerHTML = '';
       return;
     }
     
-    // Sidebar sections will be hidden by performSearch
+    // Sidebar sections will be hidden by performSearch (but search bar stays visible)
     clearTimeout(searchTimer);
     searchTimer = setTimeout(() => performSearch(query), 300);
   }
@@ -1523,19 +1519,15 @@
     const searchInput = document.getElementById('fcSearchInput');
     const infoSection = document.querySelector('.fc-info-section');
     const logoSection = document.querySelector('.fc-logo-section');
-    const searchSection = document.querySelector('.fc-search-section');
     
     // Restore sidebar sections when going back
-    stepsEl.style.display = 'block';
+    if (stepsEl) stepsEl.style.display = 'block';
     if (infoSection) infoSection.style.display = 'block';
     if (logoSection) logoSection.style.display = 'block';
-    if (searchSection) searchSection.style.display = 'block';
     
-    if (searchInput.value.trim()) {
-      performSearch(searchInput.value.trim());
-    } else {
-      contentEl.innerHTML = '';
-    }
+    // Clear search input and content
+    searchInput.value = '';
+    contentEl.innerHTML = '';
   };
 
   // ===== ADD TO CART =====
