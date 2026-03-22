@@ -12,7 +12,7 @@ const PerfumeCatalog = {
       id: "dior_fahrenheit",
       name: "Fahrenheit",
       brand: "Dior",
-      image: "https://magyx.fr/cdn/shop/files/206M_c.webp?v=1771765712&width=300",
+      image: "https://magyx.fr/cdn/shop/files/Fahrenheit.jpg?v=1772001718",
       top_notes: ["Lavande", "Muscade", "Bergamote"],
       heart_notes: ["Violette", "Cuir", "Cannelle"],
       base_notes: ["Cèdre", "Vétiver", "Ambre"],
