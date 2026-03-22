@@ -226,7 +226,7 @@ const PerfumeCatalog = {
       id: "chanel_mademoiselle",
       name: "Mademoiselle",
       brand: "Chanel",
-      image: "https://magyx.fr/cdn/shop/files/139W_c.webp?v=1773222437&width=300",
+      image: "https://magyx.fr/cdn/shop/files/Mademoiselle.jpg?v=1771999734",
       top_notes: ["Mandarine", "Bergamote"],
       heart_notes: ["Rose", "Jasmin", "Ylang-Ylang"],
       base_notes: ["Patchouli", "Vanille", "Musc"],
