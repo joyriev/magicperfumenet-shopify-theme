@@ -700,7 +700,7 @@ const PerfumeCatalog = {
       id: "armani_diamonds",
       name: "Armani Diamonds",
       brand: "Giorgio Armani",
-      image: "https://magyx.fr/cdn/shop/files/040Wc.webp?v=1773222338&width=300",
+      image: "https://magyx.fr/cdn/shop/files/Armani_Diamonds.jpg?v=1772005763",
       top_notes: ["Litchi", "Framboise"],
       heart_notes: ["Rose", "Muguet", "Freesia"],
       base_notes: ["Vanille", "Ambre", "Cèdre"],
