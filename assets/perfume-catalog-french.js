@@ -138,7 +138,7 @@ const PerfumeCatalog = {
       id: "dior_miss_cherie",
       name: "Miss Cherie",
       brand: "Dior",
-      image: "https://magyx.fr/cdn/shop/files/082W_c.webp?v=1771385151&width=300",
+      image: "https://magyx.fr/cdn/shop/files/Miss_Cherie.jpg?v=1772008720",
       top_notes: ["Fraise", "Carambole", "Mandarine"],
       heart_notes: ["Jasmin", "Rose", "Pop-corn"],
       base_notes: ["Patchouli", "Caramel", "Musc"],
