@@ -1002,8 +1002,10 @@
     'Aventus for Her': ['J\'Adore'],
     'Eternity': ['Light Blue', 'Acqua di Gio'],
     'Musc Noir': ['Good Girl'],
+    'Born in Roma': ['My Way'],
     
     // Male recommendations
+    'Uomo Born in Roma': ['Bleu de Chanel'],
     'Sauvage Elixir': ['Sauvage Parfum', 'Bleu de Chanel', 'Le Male'],
     'Sauvage Parfum': ['Sauvage Elixir', 'Bleu de Chanel', 'Dior Homme Intense'],
     'Bleu de Chanel': ['Sauvage Elixir', 'Allure Homme Sport', 'Y'],
@@ -1496,6 +1498,18 @@
         const goodGirl = inspiredProducts.find(p => p.number === '461');
         if (goodGirl) {
           html += renderInspiredCard(goodGirl, 'Vous pourriez aimer', perfume.brand);
+        }
+      } else if (perfume.name === 'Born in Roma') {
+        // HARDCODED: For Born in Roma, show My Way in the same grid
+        const myWay = inspiredProducts.find(p => p.number === '140');
+        if (myWay) {
+          html += renderInspiredCard(myWay, 'Vous pourriez aimer', perfume.brand);
+        }
+      } else if (perfume.name === 'Uomo Born in Roma') {
+        // HARDCODED: For Uomo Born in Roma, show Bleu de Chanel in the same grid
+        const bleuDeChanel = inspiredProducts.find(p => p.number === '252');
+        if (bleuDeChanel) {
+          html += renderInspiredCard(bleuDeChanel, 'Vous pourriez aimer', perfume.brand);
         }
       } else {
         // Show recommendation (exclude the main inspired product)
