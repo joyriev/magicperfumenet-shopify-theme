@@ -999,6 +999,7 @@
     'The Scent for Her': ['Boss Woman', 'Alive', 'The Scent'],
     'Äquivalent': ['My Way'],
     'Aventus for Her': ['J\'Adore'],
+    'Eternity': ['Light Blue', 'Acqua di Gio'],
     
     // Male recommendations
     'Sauvage Elixir': ['Sauvage Parfum', 'Bleu de Chanel', 'Le Male'],
@@ -1091,6 +1092,7 @@
     allPerfumes.forEach(perfume => {
       const nameNorm = normalizeText(perfume.name);
       const brandNorm = normalizeText(perfume.brand);
+      const brandKeyNorm = perfume.brandKey ? normalizeText(perfume.brandKey) : '';
       const nameWords = nameNorm.split(/\s+/).filter(w => w.length > 0);
       const brandWords = brandNorm.split(/\s+/).filter(w => w.length > 0);
       let score = 0;
@@ -1101,6 +1103,10 @@
       }
       else if (brandNorm === queryNorm) {
         score = 98;
+      }
+      // ===== BRAND KEY MATCH (e.g., "ck" for Calvin Klein) =====
+      else if (brandKeyNorm === queryNorm && queryNorm.length <= 3) {
+        score = 99; // High priority for brand key abbreviations
       }
       // ===== CONTAINS MATCHES =====
       else if (nameNorm.includes(queryNorm)) {
@@ -1182,6 +1188,17 @@
         addedNames.add(perfume.name);
       }
     });
+    
+    // ===== SPECIAL CONDITION: If query is short (brand key likely), filter to only brand key matches =====
+    if (queryNorm.length <= 3 && results.length > 0) {
+      const brandKeyMatches = results.filter(r => r.score === 99);
+      if (brandKeyMatches.length > 0) {
+        // Only show brand key matches for short queries like "ck", "ysl", etc.
+        console.log(`🔐 Brand key match detected! Filtering to ${brandKeyMatches.length} brand-specific results`);
+        results.length = 0;
+        results.push(...brandKeyMatches);
+      }
+    }
     
     // Sort by score (highest first), then by name
     results.sort((a, b) => {
@@ -1451,6 +1468,18 @@
         const myWay = inspiredProducts.find(p => p.number === '140');
         if (myWay) {
           html += renderInspiredCard(myWay, 'Vous pourriez aimer', perfume.brand);
+        }
+      } else if (perfume.name === 'Eternity') {
+        // HARDCODED: For Eternity (Women's), show Light Blue in the same grid
+        const lightBlue = inspiredProducts.find(p => p.number === '017');
+        if (lightBlue) {
+          html += renderInspiredCard(lightBlue, 'Vous pourriez aimer', perfume.brand);
+        }
+      } else if (perfume.name === 'Eternity for Men') {
+        // HARDCODED: For Eternity for Men, show Acqua di Gio in the same grid
+        const acquaDiGio = inspiredProducts.find(p => p.number === '221');
+        if (acquaDiGio) {
+          html += renderInspiredCard(acquaDiGio, 'Vous pourriez aimer', perfume.brand);
         }
       } else {
         // Show recommendation (exclude the main inspired product)
