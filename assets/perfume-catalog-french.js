@@ -1524,7 +1524,7 @@ const PerfumeCatalog = {
       id: "narciso_musc_noir",
       name: "Musc Noir",
       brand: "Narciso Rodriguez",
-      image: "https://magyx.fr/cdn/shop/files/457W_c.webp?v=1771765712&width=300",
+      image: "https://magyx.fr/cdn/shop/files/Musc_Noir_For_Her.webp?v=1772009330",
       top_notes: ["Fleur d'oranger", "Musc"],
       heart_notes: ["Rose", "Jasmin"],
       base_notes: ["Musc", "Ambre", "Vanille"],
