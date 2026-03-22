@@ -809,7 +809,7 @@ const PerfumeCatalog = {
       id: "paco_one_million",
       name: "One Million",
       brand: "Paco Rabanne",
-      image: "https://magyx.fr/cdn/shop/files/275M_c.webp?v=1771765712&width=300",
+      image: "https://magyx.fr/cdn/shop/files/One_Million.webp?v=1771999491",
       top_notes: ["Pamplemousse", "Mandarine", "Menthe"],
       heart_notes: ["Cannelle", "Rose", "Cuir"],
       base_notes: ["Ambre", "Patchouli", "Cuir"],
