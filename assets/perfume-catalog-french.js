@@ -335,7 +335,7 @@ const PerfumeCatalog = {
       id: "ysl_libre",
       name: "Libre",
       brand: "Yves Saint Laurent",
-      image: "https://magyx.fr/cdn/shop/files/034W_c.webp?v=1771765712&width=300",
+      image: "https://magyx.fr/cdn/shop/files/images_2.jpg?v=1772006839",
       top_notes: ["Mandarine", "Lavande", "Bergamote"],
       heart_notes: ["Fleur d'oranger", "Jasmin"],
       base_notes: ["Vanille", "Musc", "Ambre"],
