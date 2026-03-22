@@ -1019,6 +1019,7 @@
     'Stronger With You': ['Acqua di Gio', 'Code', 'The Scent'],
     'Terre d\'Hermès': ['Bleu de Chanel', 'Dior Homme Intense', 'Fahrenheit'],
     'Fahrenheit': ['Sauvage Elixir', 'Dior Homme Intense', 'Terre d\'Hermès'],
+    'Fahrenheit Le Parfum': ['Sauvage Elixir', 'Dior Homme Intense', 'Bleu de Chanel'],
     'Dior Homme Intense': ['Fahrenheit', 'Sauvage Elixir', 'Bleu de Chanel'],
     'Oud Wood': ['Tobacco Vanille', 'Fucking Fabulous', 'Sauvage Elixir'],
     'Tobacco Vanille': ['Oud Wood', 'Fucking Fabulous', 'Vanille Fatale'],
@@ -1510,6 +1511,12 @@
         const bleuDeChanel = inspiredProducts.find(p => p.number === '252');
         if (bleuDeChanel) {
           html += renderInspiredCard(bleuDeChanel, 'Vous pourriez aimer', perfume.brand);
+        }
+      } else if (perfume.name === 'Fahrenheit Le Parfum') {
+        // HARDCODED: For Fahrenheit Le Parfum, show Sauvage Elixir in the same grid
+        const sauvageElixir = inspiredProducts.find(p => p.number === '366');
+        if (sauvageElixir) {
+          html += renderInspiredCard(sauvageElixir, 'Vous pourriez aimer', perfume.brand);
         }
       } else {
         // Show recommendation (exclude the main inspired product)
