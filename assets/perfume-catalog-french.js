@@ -1127,7 +1127,7 @@ const PerfumeCatalog = {
       id: "carolina_good_girl",
       name: "Good Girl",
       brand: "Carolina Herrera",
-      image: "https://magyx.fr/cdn/shop/files/461W_c.webp?v=1771765712&width=300",
+      image: "https://magyx.fr/cdn/shop/files/Good_Girl.webp?v=1772009496",
       top_notes: ["Amande", "Café"],
       heart_notes: ["Jasmin", "Tubéreuse"],
       base_notes: ["Cacao", "Vanille", "Tonka"],
