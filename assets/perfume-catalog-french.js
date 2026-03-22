@@ -1658,7 +1658,7 @@ const PerfumeCatalog = {
       id: "hugo_boss_boss_orange",
       name: "Boss Orange",
       brand: "Hugo Boss",
-      image: "https://magyx.fr/cdn/shop/files/148W_c.webp?v=1771765712&width=300",
+      image: "https://magyx.fr/cdn/shop/files/Boss_Orange.webp?v=1772005382",
       top_notes: ["Orange", "Bergamote", "Pomme"],
       heart_notes: ["Jasmin", "Rose", "Musc"],
       base_notes: ["Santal", "Vanille", "Cèdre"],
