@@ -1056,7 +1056,7 @@ const PerfumeCatalog = {
       id: "prada_candy",
       name: "Candy",
       brand: "Prada",
-      image: "https://magyx.fr/cdn/shop/files/182W_c.webp?v=1771385187&width=300",
+      image: "https://magyx.fr/cdn/shop/files/Candy.jpg?v=1772006346",
       top_notes: ["Musc", "Benjoin"],
       heart_notes: ["Patchouli"],
       base_notes: ["Caramel", "Vanille", "Musc"],
