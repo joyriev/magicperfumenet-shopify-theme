@@ -1,4 +1,4 @@
-\{% comment %}
+{% comment %}
   FRAGRANCE CODE SEARCH POPUP - PREMIUM DESIGN
   - Complete catalog integration with notes, descriptions
   - Shows real perfumes with detailed information FIRST
@@ -1397,7 +1397,16 @@
       html += `</div>`;
       
       // ===== YOU MIGHT LIKE SECTION (Additional recommendations) =====
-      if (filteredRecommendations.length > 1) {
+      // HARDCODED: For Angel, show Black Opium
+      if (perfume.name === 'Angel') {
+        const blackOpium = inspiredProducts.find(p => p.number === '132');
+        if (blackOpium) {
+          html += `<div class="fc-section-title" style="margin-top: 24px;">VOUS POURRIEZ AUSSI AIMER</div>`;
+          html += `<div class="fc-grid-2col">`;
+          html += renderInspiredCard(blackOpium, 'Alternative', perfume.brand);
+          html += `</div>`;
+        }
+      } else if (filteredRecommendations.length > 1) {
         html += `<div class="fc-section-title" style="margin-top: 24px;">VOUS POURRIEZ AUSSI AIMER</div>`;
         html += `<div class="fc-grid-2col">`;
         for (let i = 1; i < Math.min(3, filteredRecommendations.length); i++) {
