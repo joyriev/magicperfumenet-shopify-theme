@@ -616,7 +616,7 @@ const PerfumeCatalog = {
       id: "armani_si",
       name: "Si",
       brand: "Giorgio Armani",
-      image: "https://magyx.fr/cdn/shop/files/129W_c.webp?v=1771385148&width=300",
+      image: "https://magyx.fr/cdn/shop/files/SI.webp?v=1772008397",
       top_notes: ["Cassis", "Bergamote"],
       heart_notes: ["Rose", "Jasmin", "Freesia"],
       base_notes: ["Vanille", "Patchouli", "Cèdre"],
