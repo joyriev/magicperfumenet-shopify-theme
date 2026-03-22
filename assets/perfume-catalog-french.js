@@ -1081,7 +1081,7 @@ const PerfumeCatalog = {
       id: "givenchy_ange_ou_demon",
       name: "Ange ou Démon",
       brand: "Givenchy",
-      image: "https://magyx.fr/cdn/shop/files/142W_c.webp?v=1771385169&width=300",
+      image: "https://magyx.fr/cdn/shop/files/Ange_Ou_Demon.jpg?v=1772005842",
       top_notes: ["Mandarine", "Thym", "Coriandre"],
       heart_notes: ["Lys", "Orchidée", "Rose"],
       base_notes: ["Vanille", "Tonka", "Santal"],
