@@ -968,7 +968,7 @@ const PerfumeCatalog = {
       id: "lancome_la_vie_est_belle",
       name: "La Vie Est Belle",
       brand: "Lancôme",
-      image: "https://magyx.fr/cdn/shop/files/101W_c.webp?v=1771765712&width=300",
+      image: "https://magyx.fr/cdn/shop/files/la-vie-est-belle___250312.webp?v=1771999004",
       top_notes: ["Cassis", "Poire"],
       heart_notes: ["Iris", "Jasmin", "Fleur d'oranger"],
       base_notes: ["Vanille", "Patchouli", "Praline"],
