@@ -1077,7 +1077,7 @@ const PerfumeCatalog = {
       id: "prada_paradoxe",
       name: "Paradoxe",
       brand: "Prada",
-      image: "https://magyx.fr/cdn/shop/files/437W_c.webp?v=1773222276&width=300",
+      image: "https://magyx.fr/cdn/shop/files/Paradoxe.jpg?v=1772010009",
       top_notes: ["Bergamote", "Mandarine"],
       heart_notes: ["Jasmin", "Fleur d'oranger"],
       base_notes: ["Vanille", "Ambre", "Musc"],
