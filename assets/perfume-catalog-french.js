@@ -704,7 +704,7 @@ const PerfumeCatalog = {
       id: "paco_lady_million",
       name: "Lady Million",
       brand: "Paco Rabanne",
-      image: "https://magyx.fr/cdn/shop/files/023W_c.webp?v=1771385152&width=300",
+      image: "https://magyx.fr/cdn/shop/files/LADY_MILION.jpg?v=1772008831",
       top_notes: ["Neroli", "Amande", "Freesia"],
       heart_notes: ["Jasmin", "Fleur d'oranger", "Gardenia"],
       base_notes: ["Miel", "Patchouli", "Musc"],
