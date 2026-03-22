@@ -1419,15 +1419,6 @@
           html += `</div>`;
         }
       }
-        html += `<div class="fc-grid-2col">`;
-        for (let i = 1; i < Math.min(3, filteredRecommendations.length); i++) {
-          const rec = filteredRecommendations[i];
-          const isDifferentBrand = normalizeText(rec.brand) !== normalizeText(perfume.brand);
-          const badgeText = isDifferentBrand ? 'Alternative' : 'Même marque';
-          html += renderInspiredCard(rec, badgeText, perfume.brand);
-        }
-        html += `</div>`;
-      }
     }
     
     // Detailed catalog information
