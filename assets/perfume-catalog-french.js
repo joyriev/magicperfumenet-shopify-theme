@@ -939,7 +939,7 @@ const PerfumeCatalog = {
       id: "jpg_classique",
       name: "Classique",
       brand: "Jean Paul Gaultier",
-      image: "https://magyx.fr/cdn/shop/files/442W_c.webp?v=1771765712&width=300",
+      image: "https://magyx.fr/cdn/shop/files/Classique_Essence_de_Parfum.jpg?v=1772003026",
       top_notes: ["Rose", "Gingembre"],
       heart_notes: ["Fleur d'oranger", "Ylang-Ylang"],
       base_notes: ["Vanille", "Musc", "Ambre"],
