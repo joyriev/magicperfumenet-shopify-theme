@@ -637,7 +637,7 @@ const PerfumeCatalog = {
       id: "armani_my_way",
       name: "My Way",
       brand: "Giorgio Armani",
-      image: "https://magyx.fr/cdn/shop/files/140W_c.webp?v=1771385219&width=300",
+      image: "https://magyx.fr/cdn/shop/files/My_Way.jpg?v=1772000905",
       top_notes: ["Bergamote", "Fleur d'oranger"],
       heart_notes: ["Tubéreuse", "Jasmin"],
       base_notes: ["Vanille", "Cèdre", "Musc"],
