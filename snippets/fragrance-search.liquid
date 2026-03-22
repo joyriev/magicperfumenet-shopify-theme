@@ -1078,66 +1078,97 @@
     if (!query || query.length < 1) return [];
     
     const queryNorm = normalizeText(query);
+    const queryWords = queryNorm.split(/\s+/).filter(w => w.length > 0);
     const results = [];
     const addedNames = new Set();
     
     // Debug: Log search parameters
-    console.log(`🔍 Searching for: "${query}" (normalized: "${queryNorm}") in ${allPerfumes.length} perfumes`);
+    console.log(`🔍 Searching for: "${query}" (normalized: "${queryNorm}", words: [${queryWords.join(', ')}]) in ${allPerfumes.length} perfumes`);
     
     allPerfumes.forEach(perfume => {
       const nameNorm = normalizeText(perfume.name);
       const brandNorm = normalizeText(perfume.brand);
+      const nameWords = nameNorm.split(/\s+/).filter(w => w.length > 0);
+      const brandWords = brandNorm.split(/\s+/).filter(w => w.length > 0);
       let score = 0;
       
-      // Exact name match
+      // ===== EXACT MATCHES (highest priority) =====
       if (nameNorm === queryNorm) {
         score = 100;
       }
-      // Name contains search
+      else if (brandNorm === queryNorm) {
+        score = 98;
+      }
+      // ===== CONTAINS MATCHES =====
       else if (nameNorm.includes(queryNorm)) {
         score = 95;
       }
-      // Brand contains search
       else if (brandNorm.includes(queryNorm)) {
-        score = 85;
+        score = 90;
       }
-      // Fuzzy match (if query length >= 3)
-      else if (queryNorm.length >= 3) {
-        // Check if any word in name matches
-        const nameWords = nameNorm.split(' ');
-        for (const word of nameWords) {
-          if (word.includes(queryNorm) && word.length >= 3) {
-            score = 80;
-            break;
+      // ===== WORD-LEVEL FUZZY MATCHING (handle typos like "dir" for "dior") =====
+      else if (queryWords.length > 0) {
+        // Try to match query words against name and brand words
+        for (const queryWord of queryWords) {
+          if (queryWord.length < 2) continue; // Skip very short words
+          
+          // Check brand words first
+          for (const brandWord of brandWords) {
+            if (brandWord.includes(queryWord)) {
+              score = Math.max(score, 88); // Strong match
+              break;
+            }
+            // Fuzzy match with Levenshtein distance
+            if (queryWord.length >= 2 && brandWord.length >= 2) {
+              const distance = levenshteinDistance(queryWord, brandWord);
+              const maxLen = Math.max(queryWord.length, brandWord.length);
+              // Allow distance up to 2 for longer words, 1 for shorter
+              const threshold = maxLen >= 5 ? 2 : 1;
+              if (distance <= threshold) {
+                score = Math.max(score, 85); // Typo in brand name
+              }
+            }
           }
-          // Levenshtein distance for typo tolerance (e.g., "tobaco" vs "tobacco")
-          if (word.length >= 3 && queryNorm.length >= 3) {
-            const distance = levenshteinDistance(queryNorm, word);
-            if (distance <= 1 && word.length >= queryNorm.length - 1) {
-              score = Math.max(score, 75);
+          
+          // Check name words
+          for (const nameWord of nameWords) {
+            if (nameWord.includes(queryWord)) {
+              score = Math.max(score, 82);
+              break;
+            }
+            // Fuzzy match with Levenshtein distance
+            if (queryWord.length >= 2 && nameWord.length >= 2) {
+              const distance = levenshteinDistance(queryWord, nameWord);
+              const maxLen = Math.max(queryWord.length, nameWord.length);
+              const threshold = maxLen >= 5 ? 2 : 1;
+              if (distance <= threshold) {
+                score = Math.max(score, 80); // Typo in fragrance name
+              }
             }
           }
         }
         
-        // Check description if no match yet
-        if (score === 0 && perfume.description) {
-          const descNorm = normalizeText(perfume.description);
-          if (descNorm.includes(queryNorm)) {
-            score = 70;
-          }
-        }
-        
-        // Check notes if no match yet
+        // If no match yet, try description and notes
         if (score === 0) {
-          const allNotes = [
-            ...(perfume.top_notes || []),
-            ...(perfume.heart_notes || []),
-            ...(perfume.base_notes || [])
-          ];
-          for (const note of allNotes) {
-            if (normalizeText(note).includes(queryNorm)) {
-              score = 65;
-              break;
+          if (perfume.description) {
+            const descNorm = normalizeText(perfume.description);
+            if (descNorm.includes(queryNorm)) {
+              score = 70;
+            }
+          }
+          
+          // Check notes
+          if (score === 0) {
+            const allNotes = [
+              ...(perfume.top_notes || []),
+              ...(perfume.heart_notes || []),
+              ...(perfume.base_notes || [])
+            ];
+            for (const note of allNotes) {
+              if (normalizeText(note).includes(queryNorm)) {
+                score = 65;
+                break;
+              }
             }
           }
         }
@@ -1149,8 +1180,11 @@
       }
     });
     
-    // Sort by score (highest first)
-    results.sort((a, b) => b.score - a.score);
+    // Sort by score (highest first), then by name
+    results.sort((a, b) => {
+      if (b.score !== a.score) return b.score - a.score;
+      return a.perfume.name.localeCompare(b.perfume.name);
+    });
     
     console.log(`✓ Found ${results.length} results for "${query}"`);
     
