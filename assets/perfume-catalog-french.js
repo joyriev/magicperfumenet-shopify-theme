@@ -1374,7 +1374,7 @@ const PerfumeCatalog = {
       id: "valentino_born_in_roma",
       name: "Born in Roma",
       brand: "Valentino",
-      image: "https://magyx.fr/cdn/shop/files/469W_c.webp?v=1771765712&width=300",
+      image: "https://magyx.fr/cdn/shop/files/Born_in_Roma.jpg?v=1772009001",
       top_notes: ["Fleur d'oranger", "Bergamote"],
       heart_notes: ["Jasmin", "Vanille"],
       base_notes: ["Cèdre", "Musc"],
