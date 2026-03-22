@@ -851,7 +851,7 @@ const PerfumeCatalog = {
       id: "paco_invictus",
       name: "Invictus",
       brand: "Paco Rabanne",
-      image: "https://magyx.fr/cdn/shop/files/228M_c.webp?v=1771765712&width=300",
+      image: "https://magyx.fr/cdn/shop/files/Paco_Rabanne.jpg?v=1772004054",
       top_notes: ["Pamplemousse", "Mandarine"],
       heart_notes: ["Laurier", "Jasmin"],
       base_notes: ["Ambre", "Patchouli", "Bois de gaïac"],
