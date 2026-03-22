@@ -205,7 +205,7 @@ const PerfumeCatalog = {
       id: "chanel_coco",
       name: "Coco",
       brand: "Chanel",
-      image: "https://magyx.fr/cdn/shop/files/079W_c.webp?v=1771385207&width=300",
+      image: "https://magyx.fr/cdn/shop/files/CHANEL_COCO_ERSATZ.webp?v=1772002682",
       top_notes: ["Orange", "Bergamote", "Mandarine"],
       heart_notes: ["Rose", "Jasmin", "Ylang-Ylang"],
       base_notes: ["Patchouli", "Vanille", "Musc"],
