@@ -716,6 +716,27 @@ const PerfumeCatalog = {
         image: "https://magyx.fr/cdn/shop/files/040Wc.webp?v=1773222338&width=300",
         variantId: 48142939422872
       }
+    },
+    {
+      id: "armani_aequivalent",
+      name: "ÄQUIVALENT",
+      brand: "Giorgio Armani",
+      image: "https://magyx.fr/cdn/shop/files/024W_c.webp?v=1773222403&width=300",
+      top_notes: ["Bergamote", "Mandarine", "Pamplemousse"],
+      heart_notes: ["Fleur d'oranger", "Jasmin", "Rose"],
+      base_notes: ["Vanille", "Musc", "Cèdre"],
+      description: "Un parfum floral oriental équilibré. Une fragrance élégante qui combine fraîcheur et chaleur avec une signature moderne.",
+      year: "2010",
+      gender: "Femme",
+      productNumbers: ["024"],
+      inspiredBy: "ÄQUIVALENT",
+      shopifyProduct: {
+        title: "No. 024 — Senteur Inspirée ÄQUIVALENT",
+        url: "https://magyx.fr/products/magic-perfume-no-024w",
+        price: "€11.99",
+        image: "https://magyx.fr/cdn/shop/files/024W_c.webp?v=1773222403&width=300",
+        variantId: 48142937292952
+      }
     }
   ],
 
