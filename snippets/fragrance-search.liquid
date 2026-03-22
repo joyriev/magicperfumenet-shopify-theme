@@ -1125,13 +1125,20 @@
   function findInspiredProduct(perfume) {
     if (!perfume) return null;
     
+    console.log(`[findInspiredProduct] Searching for: ${perfume.name} (Brand: ${perfume.brand}, ProductNumbers: ${perfume.productNumbers?.join(',')})`);
+    
     // STEP 1: EXACT PRODUCT NUMBER MATCH (highest priority)
     if (perfume.productNumbers && perfume.productNumbers.length > 0) {
       for (const num of perfume.productNumbers) {
-        const match = inspiredProducts.find(p => 
-          p.number && p.number === num.toString()
-        );
-        if (match) return match;
+        const numStr = num.toString().padStart(3, '0'); // Ensure leading zeros (e.g., "193")
+        const match = inspiredProducts.find(p => {
+          const pNum = p.number ? p.number.toString().padStart(3, '0') : '';
+          return pNum === numStr;
+        });
+        if (match) {
+          console.log(`  ✓ Found by product number ${num}:`, match.title);
+          return match;
+        }
       }
     }
     
@@ -1173,7 +1180,13 @@
       }
     });
     
-    return bestMatch;
+    if (bestMatch) {
+      console.log(`  ✓ Found by name match: ${bestMatch.title} (score: ${bestScore})`);
+      return bestMatch;
+    }
+    
+    console.log(`  ✗ No product found for ${perfume.name}`);
+    return null;
   }
 
   // ===== GET RECOMMENDATIONS (Same brand first, then hardcoded, then fallback) =====
@@ -1414,6 +1427,17 @@
   
   function performSearch(query) {
     const contentEl = document.getElementById('fcContent');
+    const stepsEl = document.getElementById('fcSteps');
+    const infoSection = document.querySelector('.fc-info-section');
+    const logoSection = document.querySelector('.fc-logo-section');
+    const searchSection = document.querySelector('.fc-search-section');
+    
+    // Hide all sidebar sections when showing search results
+    if (stepsEl) stepsEl.style.display = 'none';
+    if (infoSection) infoSection.style.display = 'none';
+    if (logoSection) logoSection.style.display = 'none';
+    if (searchSection) searchSection.style.display = 'none';
+    
     contentEl.innerHTML = '<div class="fc-loading">Recherche en cours...</div>';
     
     setTimeout(() => {
@@ -1437,14 +1461,22 @@
   function handleSearch() {
     const query = document.getElementById('fcSearchInput').value.trim();
     const stepsEl = document.getElementById('fcSteps');
+    const infoSection = document.querySelector('.fc-info-section');
+    const logoSection = document.querySelector('.fc-logo-section');
+    const searchSection = document.querySelector('.fc-search-section');
     
     if (query.length < 1) {
-      stepsEl.style.display = 'block';
+      // Restore sidebar sections when search is cleared
+      if (stepsEl) stepsEl.style.display = 'block';
+      if (infoSection) infoSection.style.display = 'block';
+      if (logoSection) logoSection.style.display = 'block';
+      if (searchSection) searchSection.style.display = 'block';
+      
       document.getElementById('fcContent').innerHTML = '';
       return;
     }
     
-    stepsEl.style.display = 'none';
+    // Sidebar sections will be hidden by performSearch
     clearTimeout(searchTimer);
     searchTimer = setTimeout(() => performSearch(query), 300);
   }
@@ -1597,7 +1629,17 @@
       clearSearch.addEventListener('click', function() {
         searchInput.value = '';
         searchInput.focus();
-        document.getElementById('fcSteps').style.display = 'block';
+        const stepsEl = document.getElementById('fcSteps');
+        const infoSection = document.querySelector('.fc-info-section');
+        const logoSection = document.querySelector('.fc-logo-section');
+        const searchSection = document.querySelector('.fc-search-section');
+        
+        // Restore all sidebar sections when clearing search
+        if (stepsEl) stepsEl.style.display = 'block';
+        if (infoSection) infoSection.style.display = 'block';
+        if (logoSection) logoSection.style.display = 'block';
+        if (searchSection) searchSection.style.display = 'block';
+        
         document.getElementById('fcContent').innerHTML = '';
       });
     }
