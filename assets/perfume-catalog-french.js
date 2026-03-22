@@ -398,7 +398,7 @@ const PerfumeCatalog = {
       id: "ysl_manifesto",
       name: "Manifesto",
       brand: "Yves Saint Laurent",
-      image: "https://magyx.fr/cdn/shop/files/134W_c.webp?v=1771385190&width=300",
+      image: "https://magyx.fr/cdn/shop/files/Laurent_Manifesto.webp?v=1772006060",
       top_notes: ["Cassis", "Bergamote", "Pomme"],
       heart_notes: ["Jasmin", "Muguet", "Rose"],
       base_notes: ["Vanille", "Tonka", "Cèdre"],
