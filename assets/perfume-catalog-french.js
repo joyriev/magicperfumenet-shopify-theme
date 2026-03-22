@@ -679,7 +679,7 @@ const PerfumeCatalog = {
       id: "armani_emporio_she",
       name: "Emporio She",
       brand: "Giorgio Armani",
-      image: "https://magyx.fr/cdn/shop/files/150W_c.webp?v=1771385147&width=300",
+      image: "https://magyx.fr/cdn/shop/files/Emporio_She.webp?v=1772008301",
       top_notes: ["Fraise", "Pivoine"],
       heart_notes: ["Rose", "Jasmin"],
       base_notes: ["Vanille", "Santal"],
