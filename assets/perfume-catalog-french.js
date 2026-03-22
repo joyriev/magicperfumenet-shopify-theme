@@ -1010,7 +1010,7 @@ const PerfumeCatalog = {
       id: "lancome_tresor",
       name: "Trésor",
       brand: "Lancôme",
-      image: "https://magyx.fr/cdn/shop/files/141W_c.webp?v=1771385201&width=300",
+      image: "https://magyx.fr/cdn/shop/files/Tresor.png?v=1772004443",
       top_notes: ["Rose", "Abricot", "Pêche"],
       heart_notes: ["Muguet", "Iris", "Jasmin"],
       base_notes: ["Santal", "Vanille", "Musc"],
