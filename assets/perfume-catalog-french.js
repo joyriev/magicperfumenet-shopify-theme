@@ -154,6 +154,27 @@ const PerfumeCatalog = {
         image: "https://magyx.fr/cdn/shop/files/082W_c.webp?v=1771385151&width=300",
         variantId: 48142939422872
       }
+    },
+    {
+      id: "dior_miss_dior_le_parfum",
+      name: "Miss Dior Le Parfum",
+      brand: "Dior",
+      image: "https://magyx.fr/cdn/shop/files/Miss_Dior_Le_Parfum.jpg?v=1772000411",
+      top_notes: ["Bergamote", "Mandarine"],
+      heart_notes: ["Rose", "Jasmin", "Patchouli"],
+      base_notes: ["Vanille", "Bois de santal", "Musc"],
+      description: "L'interprétation la plus intense de Miss Dior. Un parfum floral oriental avec une signature ambrée. Une fragrance profonde et envoûtante qui incarne l'élégance et la sensualité.",
+      year: "2022",
+      gender: "Femme",
+      productNumbers: ["196"],
+      inspiredBy: "Miss Dior Le Parfum",
+      shopifyProduct: {
+        title: "No. 196 - Senteur Inspirée Miss Dior Le Parfum",
+        url: "https://magyx.fr/products/magic-perfume-no-196w",
+        price: "€11.99",
+        image: "https://magyx.fr/cdn/shop/files/196W_c.webp?v=1773222422&width=300",
+        variantId: 48142939422872
+      }
     }
   ],
 
