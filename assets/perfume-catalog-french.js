@@ -268,7 +268,7 @@ const PerfumeCatalog = {
       id: "chanel_chance",
       name: "Chance",
       brand: "Chanel",
-      image: "https://magyx.fr/cdn/shop/files/006W_c.webp?v=1771385217&width=300",
+      image: "https://magyx.fr/cdn/shop/files/Chance.jpg?v=1772001206",
       top_notes: ["Pink Pepper", "Citron", "Mandarine"],
       heart_notes: ["Jasmin", "Iris", "Hyacinthe"],
       base_notes: ["Musc", "Patchouli", "Vanille"],
