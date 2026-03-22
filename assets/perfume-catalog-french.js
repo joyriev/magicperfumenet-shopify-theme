@@ -721,7 +721,7 @@ const PerfumeCatalog = {
       id: "armani_aequivalent",
       name: "ÄQUIVALENT",
       brand: "Giorgio Armani",
-      image: "https://magyx.fr/cdn/shop/files/024W_c.webp?v=1773222403&width=300",
+      image: "https://magyx.fr/cdn/shop/files/CHLOE_CHLOE_AQUIVALENT.avif?v=1772002474",
       top_notes: ["Bergamote", "Mandarine", "Pamplemousse"],
       heart_notes: ["Fleur d'oranger", "Jasmin", "Rose"],
       base_notes: ["Vanille", "Musc", "Cèdre"],
