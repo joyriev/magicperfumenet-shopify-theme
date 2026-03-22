@@ -465,7 +465,7 @@ const PerfumeCatalog = {
       id: "tom_ford_oud_wood",
       name: "Oud Wood",
       brand: "Tom Ford",
-      image: "https://magyx.fr/cdn/shop/files/287M_c.webp?v=1771765712&width=300",
+      image: "https://magyx.fr/cdn/shop/files/Oud_Wood.png?v=1772000246",
       top_notes: ["Oud", "Cardamome", "Bois de rose"],
       heart_notes: ["Cèdre", "Santal", "Vétiver"],
       base_notes: ["Ambre", "Musc", "Vanille"],
