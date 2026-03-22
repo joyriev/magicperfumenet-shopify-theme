@@ -444,7 +444,7 @@ const PerfumeCatalog = {
       id: "tom_ford_vanille_fatale",
       name: "Vanille Fatale",
       brand: "Tom Ford",
-      image: "https://magyx.fr/cdn/shop/files/053W_c.webp?v=1771385216&width=300",
+      image: "https://magyx.fr/cdn/shop/files/Vanille_Fatale.jpg?v=1772001292",
       top_notes: ["Crocus", "Coriandre", "Rhum"],
       heart_notes: ["Jasmin", "Fleur d'oranger"],
       base_notes: ["Vanille", "Acajou", "Cuir"],
