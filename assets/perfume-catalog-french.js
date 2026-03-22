@@ -830,7 +830,7 @@ const PerfumeCatalog = {
       id: "paco_one_million_elixir",
       name: "One Million Elixir",
       brand: "Paco Rabanne",
-      image: "https://magyx.fr/cdn/shop/files/334M_c.webp?v=1771765712&width=300",
+      image: "https://magyx.fr/cdn/shop/files/One_Million_Elixir.webp?v=1772007882",
       top_notes: ["Pamplemousse", "Mandarine"],
       heart_notes: ["Cannelle", "Tabac"],
       base_notes: ["Ambre", "Vanille", "Cuir"],
