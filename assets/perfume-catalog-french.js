@@ -742,7 +742,7 @@ const PerfumeCatalog = {
       id: "armani_ma_vie",
       name: "Ma Vie",
       brand: "Giorgio Armani",
-      image: "https://magyx.fr/cdn/shop/files/350W_c.webp?v=1773222350&width=300",
+      image: "https://magyx.fr/cdn/shop/files/images_1.jpg?v=1772006433",
       top_notes: ["Bergamote", "Poire", "Cassis"],
       heart_notes: ["Rose", "Jasmin", "Fleur d'oranger"],
       base_notes: ["Vanille", "Cèdre", "Musc"],
