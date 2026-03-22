@@ -997,6 +997,7 @@
     'Alive': ['Boss Woman', 'Deep Red', 'The Scent for Her'],
     'Deep Red': ['Boss Woman', 'Alive', 'Boss Orange'],
     'The Scent for Her': ['Boss Woman', 'Alive', 'The Scent'],
+    'Aventus for Her': ['J\'Adore'],
     
     // Male recommendations
     'Sauvage Elixir': ['Sauvage Parfum', 'Bleu de Chanel', 'Le Male'],
@@ -1017,6 +1018,7 @@
     'Tobacco Vanille': ['Oud Wood', 'Fucking Fabulous', 'Vanille Fatale'],
     'Hugo': ['Bottled', 'The Scent', 'Boss Bottled'],
     'Bottled': ['Hugo', 'The Scent', 'Boss Bottled'],
+    'Aventus for Him': ['Sauvage Elixir'],
     'Flower': ['J\'Adore']
   };
 
@@ -1430,6 +1432,18 @@
         const jAdore = inspiredProducts.find(p => p.number === '159');
         if (jAdore) {
           html += renderInspiredCard(jAdore, 'Vous pourriez aimer', perfume.brand);
+        }
+      } else if (perfume.name === 'Aventus for Her') {
+        // HARDCODED: For Aventus for Her, show J'Adore in the same grid
+        const jAdore = inspiredProducts.find(p => p.number === '159');
+        if (jAdore) {
+          html += renderInspiredCard(jAdore, 'Vous pourriez aimer', perfume.brand);
+        }
+      } else if (perfume.name === 'Aventus for Him') {
+        // HARDCODED: For Aventus for Him, show Sauvage Elixir in the same grid
+        const sauvageElixir = inspiredProducts.find(p => p.number === '366');
+        if (sauvageElixir) {
+          html += renderInspiredCard(sauvageElixir, 'Vous pourriez aimer', perfume.brand);
         }
       } else {
         // Show recommendation (exclude the main inspired product)
