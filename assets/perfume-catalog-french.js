@@ -1616,7 +1616,7 @@ const PerfumeCatalog = {
       id: "hugo_boss_alive",
       name: "Alive",
       brand: "Hugo Boss",
-      image: "https://magyx.fr/cdn/shop/files/098W_c.webp?v=1771385196&width=300",
+      image: "https://magyx.fr/cdn/shop/files/Alive.webp?v=1772005324",
       top_notes: ["Pomme", "Mandarine", "Cannelle"],
       heart_notes: ["Jasmin", "Rose", "Fleur d'oranger"],
       base_notes: ["Cèdre", "Santal", "Vanille"],
