@@ -314,7 +314,7 @@ const PerfumeCatalog = {
       id: "ysl_black_opium",
       name: "Black Opium",
       brand: "Yves Saint Laurent",
-      image: "https://magyx.fr/cdn/shop/files/132W_c.webp?v=1771385154&width=300",
+      image: "https://magyx.fr/cdn/shop/files/Black_Opium.webp?v=1772009189",
       top_notes: ["Café", "Poire", "Pink Pepper"],
       heart_notes: ["Fleur d'oranger", "Jasmin", "Amande"],
       base_notes: ["Vanille", "Patchouli", "Cèdre"],
