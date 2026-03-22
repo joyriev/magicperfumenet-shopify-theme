@@ -658,7 +658,7 @@ const PerfumeCatalog = {
       id: "armani_code_woman",
       name: "Code for Woman",
       brand: "Giorgio Armani",
-      image: "https://magyx.fr/cdn/shop/files/135W_c.webp?v=1771765712&width=300",
+      image: "https://magyx.fr/cdn/shop/files/Code_for_Woman.webp?v=1772005208",
       top_notes: ["Mandarine", "Bergamote"],
       heart_notes: ["Jasmin", "Fleur d'oranger"],
       base_notes: ["Vanille", "Musc", "Iris"],
