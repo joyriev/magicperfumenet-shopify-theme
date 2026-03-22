@@ -1093,6 +1093,14 @@
       const nameNorm = normalizeText(perfume.name);
       const brandNorm = normalizeText(perfume.brand);
       const brandKeyNorm = perfume.brandKey ? normalizeText(perfume.brandKey) : '';
+      
+      // Generate brand key from first letters if not provided (e.g., "Calvin Klein" -> "ck")
+      let generatedBrandKey = '';
+      if (!perfume.brandKey && perfume.brand) {
+        const brandWords = perfume.brand.split(/\s+/);
+        generatedBrandKey = brandWords.map(w => w.charAt(0).toLowerCase()).join('');
+      }
+      
       const nameWords = nameNorm.split(/\s+/).filter(w => w.length > 0);
       const brandWords = brandNorm.split(/\s+/).filter(w => w.length > 0);
       let score = 0;
@@ -1105,7 +1113,7 @@
         score = 98;
       }
       // ===== BRAND KEY MATCH (e.g., "ck" for Calvin Klein) =====
-      else if (brandKeyNorm === queryNorm && queryNorm.length <= 3) {
+      else if ((brandKeyNorm === queryNorm || generatedBrandKey === queryNorm) && queryNorm.length <= 3) {
         score = 99; // High priority for brand key abbreviations
       }
       // ===== CONTAINS MATCHES =====
