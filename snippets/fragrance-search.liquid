@@ -1636,12 +1636,16 @@
   // ===== TOGGLE SEARCH =====
   window.fcToggleSearch = function() {
     const popup = document.getElementById('fcSearchPopup');
+    if (!popup) return; // Wait if popup not ready yet
     if (popup.classList.contains('active')) {
       popup.classList.remove('active');
     } else {
       popup.classList.add('active');
       document.getElementById('fcSearchInput')?.focus();
-      fetchCartAndUpdate();
+      // Only call fetchCartAndUpdate if it exists
+      if (typeof fetchCartAndUpdate === 'function') {
+        fetchCartAndUpdate();
+      }
     }
   };
 
