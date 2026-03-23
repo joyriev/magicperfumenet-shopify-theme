@@ -873,7 +873,7 @@ const PerfumeCatalog = {
       id: "paco_phantom",
       name: "Phantom",
       brand: "Paco Rabanne",
-      image: "https://magyx.fr/cdn/shop/files/399M_c.webp?v=1771765712&width=300",
+      image: "https://magyx.fr/cdn/shop/files/Paco_Rabanne_PHANTOM.webp?v=1772007775",
       top_notes: ["Citron", "Lavande", "Menthe"],
       heart_notes: ["Pomme", "Jasmin"],
       base_notes: ["Vanille", "Ambre", "Cèdre"],
