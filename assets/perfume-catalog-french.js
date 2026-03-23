@@ -54,7 +54,7 @@ const PerfumeCatalog = {
       id: "dior_sauvage_parfum",
       name: "Sauvage Parfum",
       brand: "Dior",
-      image: "https://magyx.fr/cdn/shop/files/338M_c.webp?v=1771765712&width=300",
+      image: "https://magyx.fr/cdn/shop/files/Sauvage_Parfum.jpg?v=1772007362",
       top_notes: ["Bergamote", "Mandarine"],
       heart_notes: ["Piment", "Lavande", "Géranium"],
       base_notes: ["Ambre", "Bois de santal", "Cuir"],
