@@ -1446,7 +1446,7 @@ const PerfumeCatalog = {
       id: "davidoff_cool_water",
       name: "Cool Water",
       brand: "Davidoff",
-      image: "https://magyx.fr/cdn/shop/files/200M_c.webp?v=1771765712&width=300",
+      image: "https://magyx.fr/cdn/shop/files/images.jpg?v=1772005297",
       top_notes: ["Menthe", "Lavande", "Coriandre"],
       heart_notes: ["Jasmin", "Muguet", "Géranium"],
       base_notes: ["Ambre", "Musc", "Santal"],
