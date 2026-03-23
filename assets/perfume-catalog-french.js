@@ -1631,6 +1631,7 @@
   let searchTimer = null;
   
   function performSearch(query) {
+    console.log('[performSearch DEBUG] Starting search for:', query);
     const contentEl = document.getElementById('fcContent');
     const stepsEl = document.getElementById('fcSteps');
     const infoSection = document.querySelector('.fc-info-section');
@@ -1644,28 +1645,39 @@
     // DO NOT hide searchSection - users need it visible to search again!
     
     contentEl.innerHTML = '<div class="fc-loading">Recherche en cours...</div>';
+    console.log('[performSearch DEBUG] Set loading state');
     
     setTimeout(() => {
+      console.log('[performSearch DEBUG] Calling searchCatalog...');
       const catalogResults = searchCatalog(query);
+      console.log('[performSearch DEBUG] catalogResults:', catalogResults.length, 'results');
       
       // ALSO search in inspiredProducts (hardcoded products) to catch perfumes not in catalog
       const queryNorm = normalizeText(query);
+      console.log('[performSearch DEBUG] queryNorm:', queryNorm);
+      console.log('[performSearch DEBUG] inspiredProducts length:', inspiredProducts?.length);
+      
       const inspiredResults = [];
       const addedTitles = new Set();
       
-      inspiredProducts.forEach(product => {
-        const titleNorm = normalizeText(product.title);
-        const brandNorm = normalizeText(product.brand);
-        const inspirationNorm = normalizeText(product.inspiredBy);
-        
-        if (titleNorm.includes(queryNorm) || brandNorm.includes(queryNorm) || inspirationNorm.includes(queryNorm)) {
-          // Avoid duplicates
-          if (!addedTitles.has(product.title)) {
-            inspiredResults.push(product);
-            addedTitles.add(product.title);
+      if (inspiredProducts && inspiredProducts.length > 0) {
+        inspiredProducts.forEach((product, idx) => {
+          const titleNorm = normalizeText(product.title);
+          const brandNorm = normalizeText(product.brand);
+          const inspirationNorm = normalizeText(product.inspiredBy);
+          
+          if (titleNorm.includes(queryNorm) || brandNorm.includes(queryNorm) || inspirationNorm.includes(queryNorm)) {
+            console.log(`[performSearch DEBUG] Match found (idx ${idx}): ${product.title}`);
+            // Avoid duplicates
+            if (!addedTitles.has(product.title)) {
+              inspiredResults.push(product);
+              addedTitles.add(product.title);
+            }
           }
-        }
-      });
+        });
+      }
+      
+      console.log('[performSearch DEBUG] inspiredResults:', inspiredResults.length);
       
       let html = '';
       
@@ -1687,17 +1699,22 @@
         html = '<div class="fc-no-results">Aucun parfum trouvé pour "' + query + '"</div>';
       }
       
+      console.log('[performSearch DEBUG] Setting innerHTML with html length:', html.length);
       contentEl.innerHTML = html;
+      console.log('[performSearch DEBUG] Search complete');
     }, 300);
   }
   
   function handleSearch() {
+    console.log('[handleSearch] Called');
     const query = document.getElementById('fcSearchInput').value.trim();
+    console.log('[handleSearch] Query:', query);
     const stepsEl = document.getElementById('fcSteps');
     const infoSection = document.querySelector('.fc-info-section');
     const logoSection = document.querySelector('.fc-logo-section');
     
     if (query.length < 1) {
+      console.log('[handleSearch] Query empty, restoring sidebar');
       // Restore sidebar sections when search is cleared
       if (stepsEl) stepsEl.style.display = 'block';
       if (infoSection) infoSection.style.display = 'block';
@@ -1707,9 +1724,13 @@
       return;
     }
     
+    console.log('[handleSearch] Clearing timer and setting new timeout');
     // Sidebar sections will be hidden by performSearch (but search bar stays visible)
     clearTimeout(searchTimer);
-    searchTimer = setTimeout(() => performSearch(query), 300);
+    searchTimer = setTimeout(() => {
+      console.log('[handleSearch] Timeout fired, calling performSearch');
+      performSearch(query);
+    }, 300);
   }
 
   // ===== GO BACK =====
@@ -1849,10 +1870,18 @@
 
   // ===== INITIALIZATION =====
   document.addEventListener('DOMContentLoaded', function() {
+    console.log('[DOMContentLoaded] Initializing search...');
     const searchInput = document.getElementById('fcSearchInput');
     const clearSearch = document.getElementById('fcClearSearch');
     const searchPopup = document.getElementById('fcSearchPopup');
     const stickyButton = document.getElementById('fcStickyButton');
+    
+    console.log('[DOMContentLoaded] Elements found:', {
+      searchInput: !!searchInput,
+      clearSearch: !!clearSearch,
+      searchPopup: !!searchPopup,
+      stickyButton: !!stickyButton
+    });
     
     // ===== MOBILE CART DETECTION =====
     function isMobile() {
@@ -1894,32 +1923,37 @@
     // Detect when user navigates back/forward using popstate
     window.addEventListener('popstate', updateSearchButtonVisibility);
     
-    // Monitor for dynamic page navigation changes (AJAX/SPA)
+    // Monitor for dynamic page navigation changes (AJAX/SPA) - SIMPLIFIED
     let lastPath = window.location.pathname;
     setInterval(function() {
       if (window.location.pathname !== lastPath) {
         lastPath = window.location.pathname;
-        setTimeout(updateSearchButtonVisibility, 100);
+        setTimeout(updateSearchButtonVisibility, 50); // Reduced timeout
       }
-    }, 500);
+    }, 1000); // Check every 1 second instead of 500ms
     
-    // Monitor for dynamic content changes (cart page loading)
-    if (typeof MutationObserver !== 'undefined') {
-      const bodyObserver = new MutationObserver(function() {
-        updateSearchButtonVisibility();
-      });
-      
-      // Only observe main content area to avoid performance issues
-      const mainContent = document.querySelector('main') || document.querySelector('[role="main"]') || document.body;
-      bodyObserver.observe(mainContent, {
-        childList: true,
-        subtree: false,
-        attributes: true,
-        attributeFilter: ['class', 'id']
-      });
+    // Monitor for dynamic content changes (cart page loading) - DISABLED to avoid conflicts
+    // if (typeof MutationObserver !== 'undefined') {
+    //   const bodyObserver = new MutationObserver(function() {
+    //     updateSearchButtonVisibility();
+    //   });
+    //   
+    //   // Only observe main content area to avoid performance issues
+    //   const mainContent = document.querySelector('main') || document.querySelector('[role="main"]') || document.body;
+    //   bodyObserver.observe(mainContent, {
+    //     childList: true,
+    //     subtree: false,
+    //     attributes: true,
+    //     attributeFilter: ['class', 'id']
+    //   });
+    // }
+    
+    if (searchInput) {
+      console.log('[DOMContentLoaded] Attaching keyup event listener to searchInput');
+      searchInput.addEventListener('keyup', handleSearch);
+    } else {
+      console.error('[DOMContentLoaded] ERROR: searchInput not found!');
     }
-    
-    if (searchInput) searchInput.addEventListener('keyup', handleSearch);
     
     if (clearSearch) {
       clearSearch.addEventListener('click', function() {
