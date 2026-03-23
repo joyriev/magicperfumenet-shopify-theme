@@ -331,7 +331,7 @@ const PerfumeCatalog = {
       id: "chanel_bleu",
       name: "Bleu de Chanel",
       brand: "Chanel",
-      image: "https://magyx.fr/cdn/shop/files/252M_c.webp?v=1771765712&width=300",
+      image: "https://magyx.fr/cdn/shop/files/Bleu.jpg?v=1772002232",
       top_notes: ["Pamplemousse", "Citron", "Bergamote"],
       heart_notes: ["Gingembre", "Menthe", "Cèdre"],
       base_notes: ["Santal", "Encens", "Vétiver"],
