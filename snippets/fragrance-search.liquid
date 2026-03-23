@@ -1631,6 +1631,7 @@
   let searchTimer = null;
   
   function performSearch(query) {
+    console.log('[performSearch DEBUG] Starting search for:', query);
     const contentEl = document.getElementById('fcContent');
     const stepsEl = document.getElementById('fcSteps');
     const infoSection = document.querySelector('.fc-info-section');
@@ -1644,9 +1645,39 @@
     // DO NOT hide searchSection - users need it visible to search again!
     
     contentEl.innerHTML = '<div class="fc-loading">Recherche en cours...</div>';
+    console.log('[performSearch DEBUG] Set loading state');
     
     setTimeout(() => {
+      console.log('[performSearch DEBUG] Calling searchCatalog...');
       const catalogResults = searchCatalog(query);
+      console.log('[performSearch DEBUG] catalogResults:', catalogResults.length, 'results');
+      
+      // ALSO search in inspiredProducts (hardcoded products) to catch perfumes not in catalog
+      const queryNorm = normalizeText(query);
+      console.log('[performSearch DEBUG] queryNorm:', queryNorm);
+      console.log('[performSearch DEBUG] inspiredProducts length:', inspiredProducts?.length);
+      
+      const inspiredResults = [];
+      const addedTitles = new Set();
+      
+      if (inspiredProducts && inspiredProducts.length > 0) {
+        inspiredProducts.forEach((product, idx) => {
+          const titleNorm = normalizeText(product.title);
+          const brandNorm = normalizeText(product.brand);
+          const inspirationNorm = normalizeText(product.inspiredBy);
+          
+          if (titleNorm.includes(queryNorm) || brandNorm.includes(queryNorm) || inspirationNorm.includes(queryNorm)) {
+            console.log(`[performSearch DEBUG] Match found (idx ${idx}): ${product.title}`);
+            // Avoid duplicates
+            if (!addedTitles.has(product.title)) {
+              inspiredResults.push(product);
+              addedTitles.add(product.title);
+            }
+          }
+        });
+      }
+      
+      console.log('[performSearch DEBUG] inspiredResults:', inspiredResults.length);
       
       let html = '';
       
@@ -1655,21 +1686,35 @@
         catalogResults.slice(0, 10).forEach(result => {
           html += renderCatalogItem(result.perfume);
         });
-      } else {
+      }
+      
+      if (inspiredResults.length > 0) {
+        html += `<div class="fc-section-title">NOS VERSIONS INSPIRÉES (${inspiredResults.length})</div>`;
+        inspiredResults.slice(0, 10).forEach(product => {
+          html += renderInspiredCard(product, `Inspiré de ${product.inspiredBy}`, product.brand);
+        });
+      }
+      
+      if (catalogResults.length === 0 && inspiredResults.length === 0) {
         html = '<div class="fc-no-results">Aucun parfum trouvé pour "' + query + '"</div>';
       }
       
+      console.log('[performSearch DEBUG] Setting innerHTML with html length:', html.length);
       contentEl.innerHTML = html;
+      console.log('[performSearch DEBUG] Search complete');
     }, 300);
   }
   
   function handleSearch() {
+    console.log('[handleSearch] Called');
     const query = document.getElementById('fcSearchInput').value.trim();
+    console.log('[handleSearch] Query:', query);
     const stepsEl = document.getElementById('fcSteps');
     const infoSection = document.querySelector('.fc-info-section');
     const logoSection = document.querySelector('.fc-logo-section');
     
     if (query.length < 1) {
+      console.log('[handleSearch] Query empty, restoring sidebar');
       // Restore sidebar sections when search is cleared
       if (stepsEl) stepsEl.style.display = 'block';
       if (infoSection) infoSection.style.display = 'block';
@@ -1679,9 +1724,13 @@
       return;
     }
     
+    console.log('[handleSearch] Clearing timer and setting new timeout');
     // Sidebar sections will be hidden by performSearch (but search bar stays visible)
     clearTimeout(searchTimer);
-    searchTimer = setTimeout(() => performSearch(query), 300);
+    searchTimer = setTimeout(() => {
+      console.log('[handleSearch] Timeout fired, calling performSearch');
+      performSearch(query);
+    }, 300);
   }
 
   // ===== GO BACK =====
@@ -1821,12 +1870,98 @@
 
   // ===== INITIALIZATION =====
   document.addEventListener('DOMContentLoaded', function() {
+    console.log('[DOMContentLoaded] Initializing search...');
     const searchInput = document.getElementById('fcSearchInput');
     const clearSearch = document.getElementById('fcClearSearch');
     const searchPopup = document.getElementById('fcSearchPopup');
     const stickyButton = document.getElementById('fcStickyButton');
     
-    if (searchInput) searchInput.addEventListener('keyup', handleSearch);
+    console.log('[DOMContentLoaded] Elements found:', {
+      searchInput: !!searchInput,
+      clearSearch: !!clearSearch,
+      searchPopup: !!searchPopup,
+      stickyButton: !!stickyButton
+    });
+    
+    // ===== MOBILE CART DETECTION =====
+    function isMobile() {
+      return window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
+    
+    function isCartPage() {
+      return window.location.pathname.includes('/cart') || window.location.href.includes('/cart');
+    }
+    
+    function isProductPage() {
+      return window.location.pathname.includes('/products/') || window.location.pathname.includes('/product/');
+    }
+    
+    function updateSearchButtonVisibility() {
+      if (!stickyButton) return;
+      
+      if (isMobile() && (isCartPage() || isProductPage())) {
+        // Hide search button on mobile cart page or product page
+        console.log('[updateSearchButtonVisibility] Hiding search button on mobile', {
+          isCart: isCartPage(),
+          isProduct: isProductPage()
+        });
+        stickyButton.style.display = 'none';
+        if (searchPopup && searchPopup.classList.contains('active')) {
+          searchPopup.classList.remove('active');
+        }
+      } else {
+        // Show search button everywhere else
+        stickyButton.style.display = 'flex';
+      }
+    }
+    
+    // Initial check on page load
+    updateSearchButtonVisibility();
+    
+    // Check visibility on window resize (orientation change or resize)
+    window.addEventListener('resize', updateSearchButtonVisibility);
+    
+    // Check visibility when page becomes visible (mobile back navigation)
+    document.addEventListener('visibilitychange', function() {
+      if (document.visibilityState === 'visible') {
+        updateSearchButtonVisibility();
+      }
+    });
+    
+    // Detect when user navigates back/forward using popstate
+    window.addEventListener('popstate', updateSearchButtonVisibility);
+    
+    // Monitor for dynamic page navigation changes (AJAX/SPA) - SIMPLIFIED
+    let lastPath = window.location.pathname;
+    setInterval(function() {
+      if (window.location.pathname !== lastPath) {
+        lastPath = window.location.pathname;
+        setTimeout(updateSearchButtonVisibility, 50); // Reduced timeout
+      }
+    }, 1000); // Check every 1 second instead of 500ms
+    
+    // Monitor for dynamic content changes (cart page loading) - DISABLED to avoid conflicts
+    // if (typeof MutationObserver !== 'undefined') {
+    //   const bodyObserver = new MutationObserver(function() {
+    //     updateSearchButtonVisibility();
+    //   });
+    //   
+    //   // Only observe main content area to avoid performance issues
+    //   const mainContent = document.querySelector('main') || document.querySelector('[role="main"]') || document.body;
+    //   bodyObserver.observe(mainContent, {
+    //     childList: true,
+    //     subtree: false,
+    //     attributes: true,
+    //     attributeFilter: ['class', 'id']
+    //   });
+    // }
+    
+    if (searchInput) {
+      console.log('[DOMContentLoaded] Attaching keyup event listener to searchInput');
+      searchInput.addEventListener('keyup', handleSearch);
+    } else {
+      console.error('[DOMContentLoaded] ERROR: searchInput not found!');
+    }
     
     if (clearSearch) {
       clearSearch.addEventListener('click', function() {
