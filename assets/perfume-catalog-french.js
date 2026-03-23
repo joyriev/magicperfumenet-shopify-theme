@@ -96,7 +96,7 @@ const PerfumeCatalog = {
       id: "dior_homme_intense",
       name: "Dior Homme Intense",
       brand: "Dior",
-      image: "https://magyx.fr/cdn/shop/files/277M_c.webp?v=1771765712&width=300",
+      image: "https://magyx.fr/cdn/shop/files/Homme_Intense.jpg?v=1772005958",
       top_notes: ["Lavande", "Sauge"],
       heart_notes: ["Iris", "Ambre", "Cacao"],
       base_notes: ["Cuir", "Cèdre", "Vétiver"],
