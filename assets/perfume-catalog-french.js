@@ -939,7 +939,7 @@ const PerfumeCatalog = {
       id: "jpg_ultra_male",
       name: "Ultra Male",
       brand: "Jean Paul Gaultier",
-      image: "https://magyx.fr/cdn/shop/files/349M_c.webp?v=1771765712&width=300",
+      image: "https://magyx.fr/cdn/shop/files/Ultra_Male.jpg?v=1772005489",
       top_notes: ["Poire", "Bergamote", "Lavande"],
       heart_notes: ["Cannelle", "Carvi"],
       base_notes: ["Vanille", "Ambre", "Bois"],
