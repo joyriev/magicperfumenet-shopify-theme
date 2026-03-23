@@ -593,7 +593,7 @@ const PerfumeCatalog = {
     },
     {
       id: "armani_stronger_with_you",
-      name: "Stronger With You",
+      name: "Stronger With You Intensely",
       brand: "Giorgio Armani",
       image: "https://magyx.fr/cdn/shop/files/318M_c.webp?v=1771765712&width=300",
       top_notes: ["Cardamome", "Poivre", "Gingembre"],
