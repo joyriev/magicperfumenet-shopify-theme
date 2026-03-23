@@ -1595,7 +1595,7 @@ const PerfumeCatalog = {
       id: "hugo_boss_bottled",
       name: "Bottled",
       brand: "Hugo Boss",
-      image: "https://magyx.fr/cdn/shop/files/234M_c.webp?v=1771765712&width=300",
+      image: "https://magyx.fr/cdn/shop/files/Bottled.jpg?v=1772000760",
       top_notes: ["Pomme", "Citron", "Bergamote"],
       heart_notes: ["Cannelle", "Oeillet", "Géranium"],
       base_notes: ["Cèdre", "Bois de santal", "Vanille"],
