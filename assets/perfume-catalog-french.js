@@ -628,7 +628,7 @@ const PerfumeCatalog = {
       inspiredBy: "Emporio Armani He",
       shopifyProduct: {
         title: "No. 242 — Senteur Inspirée Emporio Armani He",
-        url: "https://magyx.fr/products/magic-perfume-no-242m",
+        url: "https://magyx.fr/products/magic-perfume-no-293m",
         price: "€11.99",
         image: "https://magyx.fr/cdn/shop/files/242M_c.webp?v=1771385166&width=1200",
         variantId: 48142933950616
