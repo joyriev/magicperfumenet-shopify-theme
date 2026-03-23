@@ -615,9 +615,9 @@ const PerfumeCatalog = {
     },
     {
       id: "armani_emporio_he",
-      name: "Emporio Armani He",
+      name: "Emporio Armani He Substitute",
       brand: "Giorgio Armani",
-      image: "https://magyx.fr/cdn/shop/files/242M_c.webp?v=1771385166&width=1200",
+      image: "https://magyx.fr/cdn/shop/files/Emporio_Armani_He_Substitute.webp?v=1772006208",
       top_notes: ["Bergamote", "Citron", "Mandarine"],
       heart_notes: ["Lavande", "Sauge", "Géranium"],
       base_notes: ["Cèdre", "Musc", "Ambre"],
