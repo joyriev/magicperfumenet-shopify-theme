@@ -1439,7 +1439,7 @@
     if (infoSection) infoSection.style.display = 'none';
     if (logoSection) logoSection.style.display = 'none';
     
-    const inspiredProduct = findInspiredProduct(perfume);
+    let inspiredProduct = findInspiredProduct(perfume);
     
     // HARDCODED: Special handling for Fahrenheit Le Parfum (conflicts with product number)
     if (perfume.name === 'Fahrenheit Le Parfum') {
