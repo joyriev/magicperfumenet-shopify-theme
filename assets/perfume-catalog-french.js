@@ -1614,9 +1614,9 @@ const PerfumeCatalog = {
     },
     {
       id: "hugo_boss_hugo",
-      name: "Hugo",
+      name: "Hugo Substitute",
       brand: "Hugo Boss",
-      image: "https://magyx.fr/cdn/shop/files/223M_c.webp?v=1771385167&width=300",
+      image: "https://magyx.fr/cdn/shop/files/Hugo_Boss_Hugo_Substitute.jpg?v=1772006076",
       top_notes: ["Pomme", "Menthe", "Lavande"],
       heart_notes: ["Oeillet", "Géranium", "Jasmin"],
       base_notes: ["Cèdre", "Santal", "Musc"],
