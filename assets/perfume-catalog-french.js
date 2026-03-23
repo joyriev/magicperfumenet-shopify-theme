@@ -436,27 +436,7 @@ const PerfumeCatalog = {
         variantId: 48142939422872
       }
     },
-    {
-      id: "ysl_y",
-      name: "Y",
-      brand: "Yves Saint Laurent",
-      image: "https://magyx.fr/cdn/shop/files/283M_c.webp?v=1771765712&width=300",
-      top_notes: ["Pamplemousse", "Gingembre", "Bergamote"],
-      heart_notes: ["Sauge", "Géranium", "Pomme"],
-      base_notes: ["Cèdre", "Ambre", "Musc"],
-      description: "Un parfum masculin frais et audacieux. Une fragrance pour l'homme moderne.",
-      year: "2017",
-      gender: "Homme",
-      productNumbers: ["283"],
-      inspiredBy: "Y",
-      shopifyProduct: {
-        title: "No. 283— Senteur Inspirée Y",
-        url: "https://magyx.fr/products/magic-perfume-no-283m",
-        price: "€11.99",
-        image: "https://magyx.fr/cdn/shop/files/283M_c.webp?v=1771765712&width=300",
-        variantId: 48142939422872
-      }
-    }
+    
   ],
 
   // ===== TOM FORD =====
