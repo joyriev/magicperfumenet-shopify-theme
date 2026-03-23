@@ -310,7 +310,7 @@ const PerfumeCatalog = {
       id: "chanel_allure_homme_sport",
       name: "Allure Homme Sport",
       brand: "Chanel",
-      image: "https://magyx.fr/cdn/shop/files/222M_c.webp?v=1771385186&width=300",
+      image: "https://magyx.fr/cdn/shop/files/Allure_Homme_Sport.jpg?v=1772006517",
       top_notes: ["Mandarine", "Bergamote", "Orange"],
       heart_notes: ["Néroli", "Cèdre"],
       base_notes: ["Vanille", "Ambre", "Musc"],
