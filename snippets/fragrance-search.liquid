@@ -1018,6 +1018,7 @@
     'Phantom': ['Invictus', 'One Million', 'Sauvage Elixir'],
     'Acqua di Gio': ['Stronger With You', 'Cool Water', 'Light Blue'],
     'Stronger With You': ['Acqua di Gio', 'Code', 'The Scent'],
+    'Cool Water': ['Acqua di Gio'],
     'Terre d\'Hermès': ['Bleu de Chanel', 'Dior Homme Intense', 'Fahrenheit'],
     'Fahrenheit': ['Sauvage Elixir', 'Dior Homme Intense', 'Terre d\'Hermès'],
     'Fahrenheit Le Parfum': ['Sauvage Elixir', 'Dior Homme Intense', 'Bleu de Chanel'],
@@ -1540,6 +1541,12 @@
         const oneMillionProduct = inspiredProducts.find(p => p.number === '275');
         if (oneMillionProduct) {
           html += renderInspiredCard(oneMillionProduct, 'Vous pourriez aimer', perfume.brand);
+        }
+      } else if (perfume.name === 'Cool Water') {
+        // HARDCODED: For Cool Water, show Acqua di Gio in the same grid
+        const acquaDiGio = inspiredProducts.find(p => p.number === '221');
+        if (acquaDiGio) {
+          html += renderInspiredCard(acquaDiGio, 'Vous pourriez aimer', perfume.brand);
         }
       } else {
         // Show recommendation (exclude the main inspired product)
