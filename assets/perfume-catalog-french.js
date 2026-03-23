@@ -1565,30 +1565,6 @@ const PerfumeCatalog = {
     }
   ],
 
-  // ===== BVLGARI =====
-  bvlgari: [
-    {
-      id: "bvlgari_aqva",
-      name: "Aqva Pour Homme",
-      brand: "Bvlgari",
-      image: "https://magyx.fr/cdn/shop/files/305M_c.webp?v=1771765712&width=300",
-      top_notes: ["Mandarine", "Orange", "Bergamote"],
-      heart_notes: ["Lavande", "Romarin"],
-      base_notes: ["Ambre", "Musc", "Cèdre"],
-      description: "Un parfum aquatique marin. Une fragrance qui évoque la mer.",
-      year: "2005",
-      gender: "Homme",
-      productNumbers: ["305"],
-      inspiredBy: "Aqva Pour Homme",
-      shopifyProduct: {
-        title: "No. 305— Senteur Inspirée Aqva Pour Homme",
-        url: "https://magyx.fr/products/magic-perfume-no-305m",
-        price: "€11.99",
-        image: "https://magyx.fr/cdn/shop/files/305M_c.webp?v=1771765712&width=300",
-        variantId: 48142939422872
-      }
-    }
-  ],
 
   // ===== HUGO BOSS =====
   hugoboss: [
