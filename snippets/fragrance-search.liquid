@@ -1899,19 +1899,24 @@
     function updateSearchButtonVisibility() {
       if (!stickyButton) return;
       
-      if (isMobile() && (isCartPage() || isProductPage())) {
-        // Hide search button on mobile cart page or product page
-        console.log('[updateSearchButtonVisibility] Hiding search button on mobile', {
-          isCart: isCartPage(),
-          isProduct: isProductPage()
-        });
-        stickyButton.style.display = 'none';
+      const mobile = isMobile();
+      const onCart = isCartPage();
+      const onProduct = isProductPage();
+      
+      console.log('[updateSearchButtonVisibility]', { mobile, onCart, onProduct, width: window.innerWidth });
+      
+      // ONLY hide if BOTH: mobile AND (cart OR product)
+      if (mobile && (onCart || onProduct)) {
+        console.log('[updateSearchButtonVisibility] HIDING - mobile on cart/product');
+        stickyButton.setAttribute('style', 'display: none !important;');
         if (searchPopup && searchPopup.classList.contains('active')) {
           searchPopup.classList.remove('active');
         }
       } else {
-        // Show search button everywhere else
-        stickyButton.style.display = 'flex';
+        // ALWAYS show on desktop (>=769px) regardless of page
+        console.log('[updateSearchButtonVisibility] SHOWING - setting display to flex');
+        stickyButton.setAttribute('style', 'display: flex !important; visibility: visible !important;');
+        stickyButton.classList.remove('hidden');
       }
     }
     
@@ -2000,8 +2005,3 @@
     
     if (searchPopup) searchPopup.addEventListener('click', function(e) { e.stopPropagation(); });
     
-    console.log('✓ Recherche initialisée avec', allPerfumes.length, 'parfums');
-    console.log('✓ Produits inspirés:', inspiredProducts.length);
-  });
-})();
-</script>
