@@ -1420,7 +1420,7 @@ const PerfumeCatalog = {
       id: "hermes_terre",
       name: "Terre d'Hermès",
       brand: "Hermès",
-      image: "https://magyx.fr/cdn/shop/files/227M_c.webp?v=1771765712&width=300",
+      image: "https://magyx.fr/cdn/shop/files/Terre.jpg?v=1772004553",
       top_notes: ["Pamplemousse", "Orange"],
       heart_notes: ["Poivre", "Piment"],
       base_notes: ["Cèdre", "Vétiver", "Benjoin"],
