@@ -1471,7 +1471,7 @@ const PerfumeCatalog = {
       id: "joop_homme",
       name: "Joop! Homme",
       brand: "Joop!",
-      image: "https://magyx.fr/cdn/shop/files/211M_c.webp?v=1771765712&width=300",
+      image: "https://magyx.fr/cdn/shop/files/Joop_Homme.jpg?v=1772006185",
       top_notes: ["Orange", "Bergamote", "Mandarine"],
       heart_notes: ["Cannelle", "Jasmin", "Rose"],
       base_notes: ["Vanille", "Patchouli", "Santal"],
