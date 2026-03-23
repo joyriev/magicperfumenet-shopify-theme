@@ -554,7 +554,7 @@ const PerfumeCatalog = {
       id: "armani_acqua_di_gio",
       name: "Acqua di Gio",
       brand: "Giorgio Armani",
-      image: "https://magyx.fr/cdn/shop/files/221M_c.webp?v=1771765712&width=300",
+      image: "https://magyx.fr/cdn/shop/files/Acqua_Di_Gio.jpg?v=1772004313",
       top_notes: ["Bergamote", "Mandarine", "Neroli"],
       heart_notes: ["Jasmin", "Rose", "Géranium"],
       base_notes: ["Cèdre", "Musc", "Vétiver"],
