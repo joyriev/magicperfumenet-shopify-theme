@@ -614,6 +614,27 @@ const PerfumeCatalog = {
       }
     },
     {
+      id: "armani_emporio_he",
+      name: "Emporio Armani He",
+      brand: "Giorgio Armani",
+      image: "https://magyx.fr/cdn/shop/files/242M_c.webp?v=1771385166&width=1200",
+      top_notes: ["Bergamote", "Citron", "Mandarine"],
+      heart_notes: ["Lavande", "Sauge", "Géranium"],
+      base_notes: ["Cèdre", "Musc", "Ambre"],
+      description: "Un parfum masculin frais et élégant. Une fragrance qui incarne la sophistication italienne avec des notes d'agrumes et de bois.",
+      year: "2009",
+      gender: "Homme",
+      productNumbers: ["242"],
+      inspiredBy: "Emporio Armani He",
+      shopifyProduct: {
+        title: "No. 242 — Senteur Inspirée Emporio Armani He",
+        url: "https://magyx.fr/products/magic-perfume-no-242m",
+        price: "€11.99",
+        image: "https://magyx.fr/cdn/shop/files/242M_c.webp?v=1771385166&width=1200",
+        variantId: 48142933950616
+      }
+    },
+    {
       id: "armani_si",
       name: "Si",
       brand: "Giorgio Armani",
