@@ -1648,6 +1648,25 @@
     setTimeout(() => {
       const catalogResults = searchCatalog(query);
       
+      // ALSO search in inspiredProducts (hardcoded products) to catch perfumes not in catalog
+      const queryNorm = normalizeText(query);
+      const inspiredResults = [];
+      const addedTitles = new Set();
+      
+      inspiredProducts.forEach(product => {
+        const titleNorm = normalizeText(product.title);
+        const brandNorm = normalizeText(product.brand);
+        const inspirationNorm = normalizeText(product.inspiredBy);
+        
+        if (titleNorm.includes(queryNorm) || brandNorm.includes(queryNorm) || inspirationNorm.includes(queryNorm)) {
+          // Avoid duplicates
+          if (!addedTitles.has(product.title)) {
+            inspiredResults.push(product);
+            addedTitles.add(product.title);
+          }
+        }
+      });
+      
       let html = '';
       
       if (catalogResults.length > 0) {
@@ -1655,7 +1674,16 @@
         catalogResults.slice(0, 10).forEach(result => {
           html += renderCatalogItem(result.perfume);
         });
-      } else {
+      }
+      
+      if (inspiredResults.length > 0) {
+        html += `<div class="fc-section-title">NOS VERSIONS INSPIRÉES (${inspiredResults.length})</div>`;
+        inspiredResults.slice(0, 10).forEach(product => {
+          html += renderInspiredCard(product, `Inspiré de ${product.inspiredBy}`, product.brand);
+        });
+      }
+      
+      if (catalogResults.length === 0 && inspiredResults.length === 0) {
         html = '<div class="fc-no-results">Aucun parfum trouvé pour "' + query + '"</div>';
       }
       
