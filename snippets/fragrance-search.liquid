@@ -1026,7 +1026,7 @@
     'Tobacco Vanille': ['Oud Wood', 'Fucking Fabulous', 'Vanille Fatale'],
     'Hugo': ['Bottled', 'The Scent', 'Boss Bottled'],
     'Bottled': ['Hugo', 'The Scent', 'Boss Bottled'],
-    'Joop Homme': ['One Million'],
+    'Joop! Homme': ['One Million'],
     'Aventus for Him': ['Sauvage Elixir'],
     'Flower': ['J\'Adore']
   };
@@ -1535,8 +1535,8 @@
         if (bleuDeChanel) {
           html += renderInspiredCard(bleuDeChanel, 'Vous pourriez aimer', perfume.brand);
         }
-      } else if (perfume.name === 'Joop Homme') {
-        // HARDCODED: For Joop Homme, show One Million in the same grid
+      } else if (perfume.name === 'Joop! Homme') {
+        // HARDCODED: For Joop! Homme, show One Million in the same grid
         const oneMillionProduct = inspiredProducts.find(p => p.number === '275');
         if (oneMillionProduct) {
           html += renderInspiredCard(oneMillionProduct, 'Vous pourriez aimer', perfume.brand);
