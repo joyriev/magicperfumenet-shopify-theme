@@ -545,6 +545,27 @@ const PerfumeCatalog = {
         image: "https://magyx.fr/cdn/shop/files/232M_c.webp?v=1771765712&width=300",
         variantId: 48142939422872
       }
+    },
+    {
+      id: "tom_ford_noir_extreme",
+      name: "Noir Extreme",
+      brand: "Tom Ford",
+      image: "https://magyx.fr/cdn/shop/files/Extreme_Ersatz.webp?v=1772005641",
+      top_notes: ["Cardamome", "Muscade", "Safran"],
+      heart_notes: ["Fleur d'oranger", "Rose", "Jasmin"],
+      base_notes: ["Vanille", "Ambre", "Bois de santal"],
+      description: "Un parfum oriental épicé et gourmand. Noir Extreme incarne la dualité entre lumière et obscurité avec une touche de douceur. Une fragrance sensuelle et sophistiquée pour l'homme moderne.",
+      year: "2015",
+      gender: "Homme",
+      productNumbers: ["286"],
+      inspiredBy: "Noir Extreme",
+      shopifyProduct: {
+        title: "No. 286 — Senteur Inspirée Noir Extreme",
+        url: "https://magyx.fr/products/magic-perfume-no-286m",
+        price: "€11.99",
+        image: "https://magyx.fr/cdn/shop/files/286M_c.webp?v=1771385171&width=1200",
+        variantId: 48142934343832
+      }
     }
   ],
 
