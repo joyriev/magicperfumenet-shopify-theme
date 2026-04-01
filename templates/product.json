@@ -22,6 +22,12 @@
             "text": "4,7/5 étoiles (10 000 avis)"
           }
         },
+        "custom_liquid_fep4D7": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'pre-atc-block' %}"
+          }
+        },
         "price_MG94AW": {
           "type": "price",
           "disabled": true,
@@ -194,6 +200,7 @@
       "block_order": [
         "title_DkyBTh",
         "custom_rating_text_ehyqmQ",
+        "custom_liquid_fep4D7",
         "price_MG94AW",
         "variant_picker_hH3Diz",
         "buy_buttons_eXWBwX",
