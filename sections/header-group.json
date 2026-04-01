@@ -11,8 +11,21 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
+    "offer_timebar_WtjQYa": {
+      "type": "offer-timebar",
+      "name": "Offer Timebar",
+      "settings": {
+        "background_color": "#0b0b0b",
+        "forground_color": "#15803d",
+        "prepend_text": "🐣 Offre de Pâques :",
+        "ends_in_minutes": 30,
+        "append_text": "3 achetés, 2 OFFERTS !",
+        "link": ""
+      }
+    },
     "offer_annoucement_4tnBfB": {
       "type": "offer-annoucement",
+      "disabled": true,
       "name": "Offer Announcement",
       "settings": {
         "background_color": "#000000",
@@ -97,6 +110,7 @@
     }
   },
   "order": [
+    "offer_timebar_WtjQYa",
     "offer_annoucement_4tnBfB",
     "blocky_lys_scrolling_text_bar_GLkKNr",
     "header"
