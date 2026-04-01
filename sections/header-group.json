@@ -28,7 +28,7 @@
       "disabled": true,
       "name": "Offer Announcement",
       "settings": {
-        "background_color": "#000000",
+        "background_color": "#4770db",
         "background_color_2": "#e32402",
         "prepend_text": "Zahltagsverkauf.",
         "link_text": "3 achetés, 1 offert",
