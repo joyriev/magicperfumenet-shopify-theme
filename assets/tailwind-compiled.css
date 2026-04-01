@@ -658,6 +658,11 @@
     gap: 5px
 }
 
+.gap-x-3 {
+    -moz-column-gap: 12px;
+         column-gap: 12px
+}
+
 .gap-x-4 {
     -moz-column-gap: 16px;
          column-gap: 16px
@@ -1299,6 +1304,10 @@
     text-transform: uppercase
 }
 
+.lowercase {
+    text-transform: lowercase
+}
+
 .capitalize {
     text-transform: capitalize
 }
@@ -1495,6 +1504,10 @@
     color: rgb(255 255 255 / 0.5)
 }
 
+.underline {
+    text-decoration-line: underline
+}
+
 .line-through {
     text-decoration-line: line-through
 }
@@ -1561,6 +1574,11 @@
 
 .drop-shadow-sm {
     --tw-drop-shadow: drop-shadow(0 1px 1px rgb(0 0 0 / 0.05));
+    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)
+}
+
+.drop-shadow {
+    --tw-drop-shadow: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
     filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)
 }
 
