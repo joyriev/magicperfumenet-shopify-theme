@@ -1229,6 +1229,18 @@
     padding-right: 12px
 }
 
+.pb-3 {
+    padding-bottom: 12px
+}
+
+.pt-4 {
+    padding-top: 16px
+}
+
+.pt-5 {
+    padding-top: 20px
+}
+
 .text-left {
     text-align: left
 }
