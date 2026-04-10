@@ -32,15 +32,13 @@ if (!customElements.get("product-form")) {
 
         const config = fetchConfig("javascript");
         config.headers["X-Requested-With"] = "XMLHttpRequest";
-const config = fetchConfig("javascript");
-config.headers["X-Requested-With"] = "XMLHttpRequest";
-// delete config.headers["Content-Type"];  // COMMENT OUT THIS LINE
+        delete config.headers["Content-Type"];
 
         const formData = new FormData(this.form);
         if (this.cart) {
           formData.append(
             "sections",
-            this.cart.getSectionsToRender().map((section) => section.id)
+            this.cart.getSectionsToRender().map((section) => section.id),
           );
           formData.append("sections_url", window.location.pathname);
           this.cart.setActiveElement(document.activeElement);
@@ -89,7 +87,7 @@ config.headers["X-Requested-With"] = "XMLHttpRequest";
                     this.cart.renderContents(response);
                   });
                 },
-                { once: true }
+                { once: true },
               );
               quickAddModal.hide(true);
             } else {
@@ -118,7 +116,7 @@ config.headers["X-Requested-With"] = "XMLHttpRequest";
         this.errorMessage =
           this.errorMessage ||
           this.errorMessageWrapper.querySelector(
-            ".product-form__error-message"
+            ".product-form__error-message",
           );
 
         this.errorMessageWrapper.toggleAttribute("hidden", !errorMessage);
@@ -141,6 +139,6 @@ config.headers["X-Requested-With"] = "XMLHttpRequest";
       get variantIdInput() {
         return this.form.querySelector("[name=id]");
       }
-    }
+    },
   );
 }
