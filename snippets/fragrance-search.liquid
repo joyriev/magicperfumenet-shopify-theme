@@ -1,793 +1,815 @@
-{% comment %}
-  FRAGRANCE CODE SEARCH POPUP - PREMIUM DESIGN
-  - Complete catalog integration with notes, descriptions
-  - Shows real perfumes with detailed information FIRST
-  - Then shows inspired products from your Shopify store
-  - Hardcoded recommendations for all products
+{% comment %} 
+  FRAGRANCE CODE SEARCH POPUP - PREMIUM DESIGN 
+  - Complete catalog integration with notes, descriptions 
+  - Shows real perfumes with detailed information FIRST 
+  - Then shows inspired products from your Shopify store 
+  - Hardcoded recommendations for all products 
 {% endcomment %}
 
 <!-- Load your French perfume catalog -->
 <script src="{{ 'perfume-catalog-french.js' | asset_url }}"></script>
 
 <style>
-/* ===== PREMIUM FRAGRANCE CODE POPUP ===== */
-.fc-float-wrapper {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  z-index: 9999;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-}
-
-/* ===== FLOATING BUTTON ===== */
-.fc-search-toggle {
-  background: #C41E3A;
-  border-radius: 30px;
-  padding: 14px 28px;
-  cursor: pointer;
-  box-shadow: 0 8px 20px rgba(196, 30, 58, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  transition: all 0.3s ease;
-  border: none;
-  min-width: 130px;
-}
-
-.fc-search-toggle:hover {
-  background: #A51D36;
-  transform: translateY(-3px);
-  box-shadow: 0 12px 25px rgba(165, 29, 54, 0.4);
-}
-
-.fc-search-toggle svg {
-  width: 20px;
-  height: 20px;
-  stroke: #FFFFFF;
-  stroke-width: 2;
-  fill: none;
-}
-
-.fc-toggle-text {
-  color: #FFFFFF;
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-}
-
-/* ===== POPUP CONTAINER ===== */
-.fc-search-popup {
-  position: fixed;
-  bottom: 110px;
-  right: 30px;
-  width: 520px;
-  max-height: 85vh;
-  background: #FFFFFF;
-  border-radius: 24px;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-  padding: 0;
-  overflow-y: auto;
-  transform: translateY(30px);
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  z-index: 10000;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.fc-search-popup.active {
-  transform: translateY(0);
-  opacity: 1;
-  visibility: visible;
-}
-
-/* Premium Scrollbar */
-.fc-search-popup::-webkit-scrollbar {
-  width: 6px;
-}
-.fc-search-popup::-webkit-scrollbar-track {
-  background: #F8F4F0;
-  border-radius: 10px;
-}
-.fc-search-popup::-webkit-scrollbar-thumb {
-  background: #C41E3A;
-  border-radius: 10px;
-}
-
-/* ===== CLOSE BUTTON ===== */
-.fc-close-btn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 36px;
-  height: 36px;
-  background: #F8F4F0;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  font-size: 20px;
-  color: #4A3F39;
-  transition: all 0.2s ease;
-  z-index: 10;
-  border: none;
-  opacity: 0.9;
-}
-
-.fc-close-btn:hover {
-  background: #EDE5DC;
-  color: #C41E3A;
-  transform: rotate(90deg);
-}
-
-/* ===== OFFER BANNER ===== */
-.fc-offer-banner {
-  background: linear-gradient(135deg, #FFF5EB, #FFE8DA);
-  border: 2px solid #C41E3A;
-  border-radius: 16px;
-  padding: 16px 20px;
-  margin: 20px 20px 15px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  box-shadow: 0 8px 15px -5px rgba(196, 30, 58, 0.2);
-  transition: all 0.3s ease;
-}
-
-.fc-offer-banner.qualified {
-  background: linear-gradient(135deg, #E8F5E9, #C8E6C9);
-  border-color: #2E7D32;
-}
-
-.fc-offer-left {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex: 1;
-}
-
-.fc-offer-icon {
-  font-size: 28px;
-  background: #C41E3A;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  box-shadow: 0 5px 10px rgba(196, 30, 58, 0.3);
-  flex-shrink: 0;
-}
-
-.fc-offer-banner.qualified .fc-offer-icon {
-  background: #2E7D32;
-}
-
-.fc-offer-text {
-  flex: 1;
-}
-
-.fc-offer-text strong {
-  display: block;
-  font-size: 15px;
-  color: #C41E3A;
-  font-weight: 800;
-  margin-bottom: 2px;
-  letter-spacing: 0.3px;
-}
-
-.fc-offer-banner.qualified .fc-offer-text strong {
-  color: #2E7D32;
-}
-
-.fc-offer-text span {
-  font-size: 12px;
-  color: #4A3F39;
-  font-weight: 500;
-  display: block;
-  line-height: 1.4;
-}
-
-.fc-offer-status {
-  background: #C41E3A;
-  color: white;
-  font-size: 14px;
-  font-weight: 700;
-  padding: 6px 14px;
-  border-radius: 30px;
-  min-width: 65px;
-  text-align: center;
-  white-space: nowrap;
-  margin-left: 10px;
-}
-
-.fc-offer-banner.qualified .fc-offer-status {
-  background: #2E7D32;
-}
-
-.fc-offer-progress-container {
-  padding: 0 20px 15px 20px;
-}
-
-.fc-offer-progress-bar {
-  height: 6px;
-  background: #EDE5DC;
-  border-radius: 10px;
-  overflow: hidden;
-  width: 100%;
-}
-
-.fc-offer-progress-fill {
-  height: 100%;
-  background: #C41E3A;
-  border-radius: 10px;
-  width: 0%;
-  transition: width 0.3s ease;
-}
-
-.fc-offer-banner.qualified .fc-offer-progress-fill {
-  background: #2E7D32;
-}
-
-.fc-offer-message {
-  font-size: 12px;
-  color: #4A3F39;
-  margin-top: 8px;
-  text-align: right;
-  font-weight: 500;
-  padding-right: 5px;
-}
-
-/* ===== INFO SECTION ===== */
-.fc-info-section {
-  padding: 5px 20px 5px 20px;
-}
-
-.fc-info-label {
-  font-size: 12px;
-  font-weight: 600;
-  color: #8A7A70;
-  letter-spacing: 0.8px;
-  text-transform: uppercase;
-  margin-bottom: 12px;
-}
-
-/* ===== LOGO SECTION ===== */
-.fc-logo-section {
-  padding: 0 20px 15px 20px;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  cursor: pointer;
-  transition: opacity 0.2s ease;
-  text-decoration: none;
-}
-
-.fc-logo-section:hover {
-  opacity: 0.8;
-}
-
-.fc-logo-red {
-  width: 60px;
-  height: 60px;
-  background: #C41E3A;
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 8px 15px rgba(196, 30, 58, 0.25);
-}
-
-.fc-logo-fc {
-  color: white;
-  font-size: 28px;
-  font-weight: 800;
-  letter-spacing: -0.5px;
-}
-
-.fc-brand-text {
-  font-size: 18px;
-  font-weight: 700;
-  color: #2C2420;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
-}
-
-/* ===== SEARCH SECTION ===== */
-.fc-search-section {
-  padding: 0 20px 20px 20px;
-  position: relative;
-}
-
-.fc-search-container {
-  position: relative;
-  border-bottom: 2px solid #EDE5DC;
-  transition: border-color 0.2s ease;
-}
-
-.fc-search-container:focus-within {
-  border-color: #C41E3A;
-}
-
-.fc-search-field {
-  width: 100%;
-  padding: 15px 45px 15px 0;
-  border: none;
-  font-size: 16px;
-  outline: none;
-  background: transparent;
-  color: #2C2420;
-}
-
-.fc-search-field::placeholder {
-  color: #B0A298;
-  font-weight: 400;
-  font-size: 15px;
-}
-
-.fc-clear-search {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 36px;
-  height: 36px;
-  background: #F8F4F0;
-  border: none;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  font-size: 18px;
-  color: #8A7A70;
-  padding: 0;
-  transition: all 0.2s ease;
-}
-
-.fc-clear-search:hover {
-  background: #EDE5DC;
-  color: #C41E3A;
-}
-
-/* ===== STEPS SECTION ===== */
-.fc-steps-section {
-  padding: 0 20px 25px 20px;
-}
-
-.fc-steps-box {
-  background: #FEFCF9;
-  border: 1px solid #EDE5DC;
-  border-radius: 24px;
-  padding: 28px 20px;
-  box-shadow: 0 8px 20px -10px rgba(0, 0, 0, 0.08);
-}
-
-.fc-steps-title {
-  font-size: 22px;
-  font-weight: 800;
-  color: #2C2420;
-  margin-bottom: 25px;
-  line-height: 1.2;
-  letter-spacing: -0.3px;
-}
-
-.fc-steps-title span {
-  display: block;
-  color: #C41E3A;
-  font-size: 24px;
-}
-
-.fc-step-item {
-  font-size: 15px;
-  margin: 20px 0;
-  color: #4A3F39;
-  display: flex;
-  align-items: flex-start;
-  gap: 15px;
-  line-height: 1.5;
-  font-weight: 500;
-}
-
-.fc-step-number {
-  display: inline-block;
-  width: 28px;
-  height: 28px;
-  background: #C41E3A;
-  color: white;
-  border-radius: 8px;
-  text-align: center;
-  line-height: 28px;
-  font-size: 15px;
-  font-weight: 700;
-  flex-shrink: 0;
-  box-shadow: 0 4px 8px rgba(196, 30, 58, 0.2);
-}
-
-/* ===== SECTION TITLES ===== */
-.fc-section-title {
-  font-size: 14px;
-  font-weight: 800;
-  color: #C41E3A;
-  margin: 20px 20px 15px 20px;
-  padding-bottom: 8px;
-  border-bottom: 2px solid #EDE5DC;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
-}
-
-/* ===== CATALOG RESULT ITEM ===== */
-.fc-catalog-item {
-  background: #FFFFFF;
-  padding: 15px 20px;
-  margin: 0;
-  border-bottom: 1px solid #F0E8E0;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  transition: background 0.2s ease;
-}
-
-.fc-catalog-item:hover {
-  background: #FEF9F5;
-}
-
-.fc-catalog-image {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-  border-radius: 12px;
-  background: #FFFFFF;
-  padding: 5px;
-  border: 1px solid #EDE5DC;
-}
-
-.fc-catalog-info {
-  flex: 1;
-}
-
-.fc-catalog-name {
-  font-size: 16px;
-  font-weight: 700;
-  color: #2C2420;
-  margin-bottom: 4px;
-}
-
-.fc-catalog-brand {
-  font-size: 14px;
-  color: #C41E3A;
-  font-weight: 600;
-  margin-bottom: 2px;
-}
-
-.fc-catalog-year {
-  font-size: 12px;
-  color: #8A7A70;
-}
-
-/* ===== PRODUCT GRID ===== */
-.fc-grid-2col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  padding: 0 20px 30px 20px;
-  margin-bottom: 15px;
-}
-
-.fc-product-card {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-}
-
-.fc-badge {
-  background: #F8F4F0;
-  padding: 6px 12px;
-  border-radius: 40px;
-  font-size: 10px;
-  font-weight: 700;
-  color: #4A3F39;
-  margin-bottom: 12px;
-  display: inline-block;
-  text-transform: uppercase;
-  letter-spacing: 0.6px;
-  border: 1px solid #EDE5DC;
-}
-
-.fc-product-inner {
-  background: #FFFFFF;
-  border: 1px solid #EDE5DC;
-  border-radius: 20px;
-  padding: 14px 10px;
-  transition: all 0.2s ease;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.fc-product-inner:hover {
-  border-color: #C41E3A;
-  box-shadow: 0 8px 18px -8px rgba(196, 30, 58, 0.15);
-}
-
-.fc-product-image {
-  width: 100%;
-  height: 140px;
-  object-fit: contain;
-  margin-bottom: 8px;
-  filter: drop-shadow(0 6px 8px rgba(0,0,0,0.1));
-}
-
-.fc-product-title {
-  font-size: 13px;
-  font-weight: 700;
-  margin-bottom: 4px;
-  color: #2C2420;
-  line-height: 1.3;
-}
-
-.fc-product-price {
-  font-size: 14px;
-  font-weight: 800;
-  color: #C41E3A;
-  margin-bottom: 8px;
-}
-
-.fc-add-to-cart {
-  width: 100%;
-  background: #C41E3A;
-  color: white;
-  border: none;
-  padding: 8px;
-  border-radius: 40px;
-  font-size: 12px;
-  font-weight: 700;
-  cursor: pointer;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.6px;
-  transition: background 0.2s ease;
-  margin-top: auto;
-}
-
-.fc-add-to-cart:hover {
-  background: #A51D36;
-}
-
-.fc-view-link-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 8px;
-  border-top: 1px solid #F0E8E0;
-  margin-top: 8px;
-}
-
-.fc-view-link {
-  font-size: 11px;
-  color: #8A7A70;
-  text-decoration: underline;
-  cursor: pointer;
-  font-weight: 500;
-  display: inline-block;
-}
-
-.fc-view-link.other-brand::after {
-  content: ' 🔗';
-  margin-left: 4px;
-  opacity: 0.7;
-}
-
-.fc-view-link:hover {
-  color: #C41E3A;
-}
-
-/* ===== DETAILED VIEW ===== */
-.fc-detailed-view {
-  background: #FEFCF9;
-  border-radius: 24px;
-  padding: 20px;
-  margin: 0 20px 20px 20px;
-  border: 1px solid #EDE5DC;
-}
-
-.fc-back-btn {
-  background: none;
-  border: none;
-  padding: 0 20px 20px 20px;
-  font-size: 13px;
-  color: #8A7A70;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  text-transform: uppercase;
-  letter-spacing: 0.6px;
-  font-weight: 600;
-  margin-bottom: 0;
-}
-
-.fc-back-btn:hover {
-  color: #C41E3A;
-}
-
-.fc-back-btn:before {
-  content: "←";
-  font-size: 16px;
-}
-
-.fc-detailed-header {
-  display: flex;
-  gap: 20px;
-  margin-bottom: 25px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #EDE5DC;
-}
-
-.fc-detailed-image {
-  width: 100px;
-  height: 100px;
-  object-fit: contain;
-  border-radius: 16px;
-  background: #FFFFFF;
-  padding: 10px;
-  border: 1px solid #EDE5DC;
-}
-
-.fc-detailed-info {
-  flex: 1;
-}
-
-.fc-detailed-name {
-  font-size: 20px;
-  font-weight: 800;
-  color: #2C2420;
-  margin-bottom: 6px;
-}
-
-.fc-detailed-brand {
-  font-size: 15px;
-  color: #C41E3A;
-  font-weight: 700;
-  margin-bottom: 4px;
-}
-
-.fc-detailed-year {
-  font-size: 13px;
-  color: #8A7A70;
-  margin-bottom: 4px;
-}
-
-.fc-detailed-gender {
-  font-size: 13px;
-  color: #8A7A70;
-  margin-bottom: 8px;
-}
-
-/* ===== NOTES SECTION ===== */
-.fc-notes-section {
-  margin: 20px 0;
-}
-
-.fc-note-category {
-  margin-bottom: 18px;
-}
-
-.fc-note-category h4 {
-  font-size: 13px;
-  font-weight: 800;
-  color: #C41E3A;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
-}
-
-.fc-note-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.fc-note-tag {
-  background: #FFFFFF;
-  border: 1px solid #EDE5DC;
-  padding: 6px 14px;
-  border-radius: 40px;
-  font-size: 12px;
-  color: #4A3F39;
-  font-weight: 500;
-}
-
-.fc-description {
-  margin: 20px 0 0 0;
-  padding: 18px;
-  background: #FFFFFF;
-  border-radius: 16px;
-  border: 1px solid #EDE5DC;
-  font-size: 13px;
-  line-height: 1.6;
-  color: #4A3F39;
-}
-
-/* ===== NOTIFICATION ===== */
-.fc-notification {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background: #2E7D32;
-  color: white;
-  padding: 12px 24px;
-  border-radius: 40px;
-  font-size: 14px;
-  font-weight: 600;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-  z-index: 10001;
-  opacity: 0;
-  transform: translateY(-20px);
-  transition: all 0.3s ease;
-}
-
-.fc-notification.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ===== LOADING & NO RESULTS ===== */
-.fc-loading, .fc-no-results {
-  text-align: center;
-  padding: 40px;
-  color: #B0A298;
-  background: #FEFCF9;
-  border-radius: 20px;
-  margin: 20px;
-  font-size: 14px;
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 520px) {
+  /* ===== PREMIUM FRAGRANCE CODE POPUP ===== */
+  .fc-float-wrapper {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 999;
+    font-family: 'Inter'
+    , -apple-system
+    , BlinkMacSystemFont
+    , 'Segoe UI'
+    , Roboto
+    , Helvetica
+    , Arial
+    , sans-serif;
+  }
+
+  /* ===== FLOATING BUTTON ===== */
+  .fc-search-toggle {
+    background: #C41E3A;
+    border-radius: 30px;
+    padding: 14px 28px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(196, 30, 58, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    border: none;
+    min-width: 130px;
+  }
+
+  .fc-search-toggle:hover {
+    background: #A51D36;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(165, 29, 54, 0.4);
+  }
+
+  .fc-search-toggle svg {
+    width: 20px;
+    height: 20px;
+    stroke: #FFFFFF;
+    stroke-width: 2;
+    fill: none;
+  }
+
+  .fc-toggle-text {
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  /* ===== POPUP CONTAINER ===== */
   .fc-search-popup {
-    width: 90vw;
-    right: 5vw;
-    left: 5vw;
-    bottom: 100px;
+    position: fixed;
+    bottom: 110px;
+    right: 30px;
+    width: 520px;
+    max-height: 85vh;
+    background: #FFFFFF;
+    border-radius: 24px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    padding: 0;
+    overflow-y: auto;
+    transform: translateY(30px);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 10000;
+    border: 1px solid rgba(0, 0, 0, 0.05);
   }
-  
+
+  .fc-search-popup.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Premium Scrollbar */
+  .fc-search-popup::-webkit-scrollbar {
+    width: 6px;
+  }
+  .fc-search-popup::-webkit-scrollbar-track {
+    background: #F8F4F0;
+    border-radius: 10px;
+  }
+  .fc-search-popup::-webkit-scrollbar-thumb {
+    background: #C41E3A;
+    border-radius: 10px;
+  }
+
+  /* ===== CLOSE BUTTON ===== */
+  .fc-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 36px;
+    height: 36px;
+    background: #F8F4F0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 20px;
+    color: #4A3F39;
+    transition: all 0.2s ease;
+    z-index: 10;
+    border: none;
+    opacity: 0.9;
+  }
+
+  .fc-close-btn:hover {
+    background: #EDE5DC;
+    color: #C41E3A;
+    transform: rotate(90deg);
+  }
+
+  /* ===== OFFER BANNER ===== */
   .fc-offer-banner {
-    margin: 15px;
-    padding: 15px;
+    background: linear-gradient(135deg, #FFF5EB, #FFE8DA);
+    border: 2px solid #C41E3A;
+    border-radius: 16px;
+    padding: 16px 20px;
+    margin: 20px 20px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 8px 15px -5px rgba(196, 30, 58, 0.2);
+    transition: all 0.3s ease;
   }
-  
-  .fc-steps-box {
-    padding: 20px 15px;
+
+  .fc-offer-banner.qualified {
+    background: linear-gradient(135deg, #E8F5E9, #C8E6C9);
+    border-color: #2E7D32;
   }
-  
-  .fc-grid-2col {
+
+  .fc-offer-left {
+    display: flex;
+    align-items: center;
     gap: 12px;
+    flex: 1;
   }
-  
-  .fc-detailed-header {
-    flex-direction: column;
+
+  .fc-offer-icon {
+    font-size: 28px;
+    background: #C41E3A;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 5px 10px rgba(196, 30, 58, 0.3);
+    flex-shrink: 0;
+  }
+
+  .fc-offer-banner.qualified .fc-offer-icon {
+    background: #2E7D32;
+  }
+
+  .fc-offer-text {
+    flex: 1;
+  }
+
+  .fc-offer-text strong {
+    display: block;
+    font-size: 15px;
+    color: #C41E3A;
+    font-weight: 800;
+    margin-bottom: 2px;
+    letter-spacing: 0.3px;
+  }
+
+  .fc-offer-banner.qualified .fc-offer-text strong {
+    color: #2E7D32;
+  }
+
+  .fc-offer-text span {
+    font-size: 12px;
+    color: #4A3F39;
+    font-weight: 500;
+    display: block;
+    line-height: 1.4;
+  }
+
+  .fc-offer-status {
+    background: #C41E3A;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 30px;
+    min-width: 65px;
     text-align: center;
+    white-space: nowrap;
+    margin-left: 10px;
   }
-  
+
+  .fc-offer-banner.qualified .fc-offer-status {
+    background: #2E7D32;
+  }
+
+  .fc-offer-progress-container {
+    padding: 0 20px 15px;
+  }
+
+  .fc-offer-progress-bar {
+    height: 6px;
+    background: #EDE5DC;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .fc-offer-progress-fill {
+    height: 100%;
+    background: #C41E3A;
+    border-radius: 10px;
+    width: 0;
+    transition: width 0.3s ease;
+  }
+
+  .fc-offer-banner.qualified .fc-offer-progress-fill {
+    background: #2E7D32;
+  }
+
+  .fc-offer-message {
+    font-size: 12px;
+    color: #4A3F39;
+    margin-top: 8px;
+    text-align: right;
+    font-weight: 500;
+    padding-right: 5px;
+  }
+
+  /* ===== INFO SECTION ===== */
+  .fc-info-section {
+    padding: 5px 20px;
+  }
+
+  .fc-info-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #8A7A70;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  /* ===== LOGO SECTION ===== */
+  .fc-logo-section {
+    padding: 0 20px 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    text-decoration: none;
+  }
+
+  .fc-logo-section:hover {
+    opacity: 0.8;
+  }
+
+  .fc-logo-red {
+    width: 60px;
+    height: 60px;
+    background: #C41E3A;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 15px rgba(196, 30, 58, 0.25);
+  }
+
+  .fc-logo-fc {
+    color: white;
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+  }
+
+  .fc-brand-text {
+    font-size: 18px;
+    font-weight: 700;
+    color: #2C2420;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+
+  /* ===== SEARCH SECTION ===== */
+  .fc-search-section {
+    padding: 0 20px 20px;
+    position: relative;
+  }
+
+  .fc-search-container {
+    position: relative;
+    border-bottom: 2px solid #EDE5DC;
+    transition: border-color 0.2s ease;
+  }
+
+  .fc-search-container:focus-within {
+    border-color: #C41E3A;
+  }
+
+  .fc-search-field {
+    width: 100%;
+    padding: 15px 45px 15px 0;
+    border: none;
+    font-size: 16px;
+    outline: none;
+    background: transparent;
+    color: #2C2420;
+  }
+
+  .fc-search-field::placeholder {
+    color: #B0A298;
+    font-weight: 400;
+    font-size: 15px;
+  }
+
+  .fc-clear-search {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    background: #F8F4F0;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+    color: #8A7A70;
+    padding: 0;
+    transition: all 0.2s ease;
+  }
+
+  .fc-clear-search:hover {
+    background: #EDE5DC;
+    color: #C41E3A;
+  }
+
+  /* ===== STEPS SECTION ===== */
+  .fc-steps-section {
+    padding: 0 20px 25px;
+  }
+
+  .fc-steps-box {
+    background: #FEFCF9;
+    border: 1px solid #EDE5DC;
+    border-radius: 24px;
+    padding: 28px 20px;
+    box-shadow: 0 8px 20px -10px rgba(0, 0, 0, 0.08);
+  }
+
+  .fc-steps-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: #2C2420;
+    margin-bottom: 25px;
+    line-height: 1.2;
+    letter-spacing: -0.3px;
+  }
+
+  .fc-steps-title span {
+    display: block;
+    color: #C41E3A;
+    font-size: 24px;
+  }
+
+  .fc-step-item {
+    font-size: 15px;
+    margin: 20px 0;
+    color: #4A3F39;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    line-height: 1.5;
+    font-weight: 500;
+  }
+
+  .fc-step-number {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    background: #C41E3A;
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+    line-height: 28px;
+    font-size: 15px;
+    font-weight: 700;
+    flex-shrink: 0;
+    box-shadow: 0 4px 8px rgba(196, 30, 58, 0.2);
+  }
+
+  /* ===== SECTION TITLES ===== */
+  .fc-section-title {
+    font-size: 14px;
+    font-weight: 800;
+    color: #C41E3A;
+    margin: 20px 20px 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #EDE5DC;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+
+  /* ===== CATALOG RESULT ITEM ===== */
+  .fc-catalog-item {
+    background: #FFFFFF;
+    padding: 15px 20px;
+    margin: 0;
+    border-bottom: 1px solid #F0E8E0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    transition: background 0.2s ease;
+  }
+
+  .fc-catalog-item:hover {
+    background: #FEF9F5;
+  }
+
+  .fc-catalog-image {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 12px;
+    background: #FFFFFF;
+    padding: 5px;
+    border: 1px solid #EDE5DC;
+  }
+
+  .fc-catalog-info {
+    flex: 1;
+  }
+
+  .fc-catalog-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: #2C2420;
+    margin-bottom: 4px;
+  }
+
+  .fc-catalog-brand {
+    font-size: 14px;
+    color: #C41E3A;
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+
+  .fc-catalog-year {
+    font-size: 12px;
+    color: #8A7A70;
+  }
+
+  /* ===== PRODUCT GRID ===== */
+  .fc-grid-2col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    padding: 0 20px 30px;
+    margin-bottom: 15px;
+  }
+
+  .fc-product-card {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .fc-badge {
+    background: #F8F4F0;
+    padding: 6px 12px;
+    border-radius: 40px;
+    font-size: 10px;
+    font-weight: 700;
+    color: #4A3F39;
+    margin-bottom: 12px;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    border: 1px solid #EDE5DC;
+  }
+
+  .fc-product-inner {
+    background: #FFFFFF;
+    border: 1px solid #EDE5DC;
+    border-radius: 20px;
+    padding: 14px 10px;
+    transition: all 0.2s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .fc-product-inner:hover {
+    border-color: #C41E3A;
+    box-shadow: 0 8px 18px -8px rgba(196, 30, 58, 0.15);
+  }
+
+  .fc-product-image {
+    width: 100%;
+    height: 140px;
+    object-fit: contain;
+    margin-bottom: 8px;
+    filter: drop-shadow(0 6px 8px rgba(0,0,0,0.1));
+  }
+
+  .fc-product-title {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: #2C2420;
+    line-height: 1.3;
+  }
+
+  .fc-product-price {
+    font-size: 14px;
+    font-weight: 800;
+    color: #C41E3A;
+    margin-bottom: 8px;
+  }
+
+  .fc-add-to-cart {
+    width: 100%;
+    background: #C41E3A;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 40px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    transition: background 0.2s ease;
+    margin-top: auto;
+  }
+
+  .fc-add-to-cart:hover {
+    background: #A51D36;
+  }
+
+  .fc-view-link-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 8px;
+    border-top: 1px solid #F0E8E0;
+    margin-top: 8px;
+  }
+
+  .fc-view-link {
+    font-size: 11px;
+    color: #8A7A70;
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: 500;
+    display: inline-block;
+  }
+
+  .fc-view-link.other-brand::after {
+    content: ' 🔗';
+    margin-left: 4px;
+    opacity: 0.7;
+  }
+
+  .fc-view-link:hover {
+    color: #C41E3A;
+  }
+
+  /* ===== DETAILED VIEW ===== */
+  .fc-detailed-view {
+    background: #FEFCF9;
+    border-radius: 24px;
+    padding: 20px;
+    margin: 0 20px 20px;
+    border: 1px solid #EDE5DC;
+  }
+
+  .fc-back-btn {
+    background: none;
+    border: none;
+    padding: 0 20px 20px;
+    font-size: 13px;
+    color: #8A7A70;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    font-weight: 600;
+    margin-bottom: 0;
+  }
+
+  .fc-back-btn:hover {
+    color: #C41E3A;
+  }
+
+  .fc-back-btn:before {
+    content: "←";
+    font-size: 16px;
+  }
+
+  .fc-detailed-header {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #EDE5DC;
+  }
+
   .fc-detailed-image {
-    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 16px;
+    background: #FFFFFF;
+    padding: 10px;
+    border: 1px solid #EDE5DC;
   }
-}
+
+  .fc-detailed-info {
+    flex: 1;
+  }
+
+  .fc-detailed-name {
+    font-size: 20px;
+    font-weight: 800;
+    color: #2C2420;
+    margin-bottom: 6px;
+  }
+
+  .fc-detailed-brand {
+    font-size: 15px;
+    color: #C41E3A;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .fc-detailed-year {
+    font-size: 13px;
+    color: #8A7A70;
+    margin-bottom: 4px;
+  }
+
+  .fc-detailed-gender {
+    font-size: 13px;
+    color: #8A7A70;
+    margin-bottom: 8px;
+  }
+
+  /* ===== NOTES SECTION ===== */
+  .fc-notes-section {
+    margin: 20px 0;
+  }
+
+  .fc-note-category {
+    margin-bottom: 18px;
+  }
+
+  .fc-note-category h4 {
+    font-size: 13px;
+    font-weight: 800;
+    color: #C41E3A;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+
+  .fc-note-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .fc-note-tag {
+    background: #FFFFFF;
+    border: 1px solid #EDE5DC;
+    padding: 6px 14px;
+    border-radius: 40px;
+    font-size: 12px;
+    color: #4A3F39;
+    font-weight: 500;
+  }
+
+  .fc-description {
+    margin: 20px 0 0;
+    padding: 18px;
+    background: #FFFFFF;
+    border-radius: 16px;
+    border: 1px solid #EDE5DC;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #4A3F39;
+  }
+
+  /* ===== NOTIFICATION ===== */
+  .fc-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #2E7D32;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 40px;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    z-index: 10001;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.3s ease;
+  }
+
+  .fc-notification.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ===== LOADING & NO RESULTS ===== */
+  .fc-loading,
+  .fc-no-results {
+    text-align: center;
+    padding: 40px;
+    color: #B0A298;
+    background: #FEFCF9;
+    border-radius: 20px;
+    margin: 20px;
+    font-size: 14px;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 520px) {
+    .fc-search-popup {
+      width: 90vw;
+      right: 5vw;
+      left: 5vw;
+      bottom: 100px;
+    }
+
+    .fc-offer-banner {
+      margin: 15px;
+      padding: 15px;
+    }
+
+    .fc-steps-box {
+      padding: 20px 15px;
+    }
+
+    .fc-grid-2col {
+      gap: 12px;
+    }
+
+    .fc-detailed-header {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .fc-detailed-image {
+      margin: 0 auto;
+    }
+  }
 </style>
 
 <div class="fc-float-wrapper">
   <!-- Floating Button -->
-  <div class="fc-search-toggle" id="fcStickyButton" onclick="window.fcToggleSearch()">
+  <div
+    class="fc-search-toggle"
+    id="fcStickyButton"
+    onclick="window.fcToggleSearch()">
     <svg viewBox="0 0 24 24">
-      <circle cx="11" cy="11" r="8" stroke="#FFFFFF" fill="none"/>
-      <line x1="21" y1="21" x2="16.65" y2="16.65" stroke="#FFFFFF" stroke-width="2"/>
+      <circle
+        cx="11"
+        cy="11"
+        r="8"
+        stroke="#FFFFFF"
+        fill="none" />
+      <line
+        x1="21"
+        y1="21"
+        x2="16.65"
+        y2="16.65"
+        stroke="#FFFFFF"
+        stroke-width="2" />
     </svg>
     <span class="fc-toggle-text">Recherche</span>
   </div>
@@ -807,11 +829,14 @@
       </div>
       <div class="fc-offer-status" id="fcOfferStatus">0/3</div>
     </div>
-    
+
     <!-- Progress bar -->
     <div class="fc-offer-progress-container">
       <div class="fc-offer-progress-bar">
-        <div class="fc-offer-progress-fill" id="fcOfferProgress" style="width: 0%;"></div>
+        <div
+          class="fc-offer-progress-fill"
+          id="fcOfferProgress"
+          style="width: 0%;"></div>
       </div>
       <div class="fc-offer-message" id="fcOfferMessage">Ajoutez 3 articles pour un cadeau gratuit</div>
     </div>
@@ -822,7 +847,10 @@
     </div>
 
     <!-- Logo Section -->
-    <a href="https://fragrancecode.com" target="_blank" style="text-decoration: none;">
+    <a
+      href="https://fragrancecode.com"
+      target="_blank"
+      style="text-decoration: none;">
       <div class="fc-logo-section">
         <div class="fc-logo-red">
           <span class="fc-logo-fc">FC</span>
@@ -834,11 +862,12 @@
     <!-- Search Input -->
     <div class="fc-search-section">
       <div class="fc-search-container">
-        <input type="text" 
-               id="fcSearchInput" 
-               class="fc-search-field" 
-               placeholder="Rechercher par nom, marque, ou numéro..."
-               autocomplete="off">
+        <input
+          type="text"
+          id="fcSearchInput"
+          class="fc-search-field"
+          placeholder="Rechercher par nom, marque, ou numéro..."
+          autocomplete="off">
         <button class="fc-clear-search" id="fcClearSearch">✕</button>
       </div>
     </div>
@@ -870,7 +899,7 @@
 </div>
 
 <script>
-(function() {
+  (function() {
   // ===== LOAD CATALOG DATA FROM perfume-catalog-french.js =====
   let allPerfumes = [];
   
@@ -976,7 +1005,7 @@
     { id: "product_286", title: "No. 286 — Senteur Inspirée Noir Extreme", image: "https://magyx.fr/cdn/shop/files/286M_c.webp?v=1771385171&width=1200", url: "https://magyx.fr/products/magic-perfume-no-286m", price: 1199, brand: "Tom Ford", brandKey: "tomford", number: "286", gender: "male", inspiredBy: "Noir Extreme", variantId: 48142934343832 },
     { id: "product_222", title: "No. 222 - Senteur Inspirée Allure Homme Sport", image: "https://cdn.shopify.com/s/files/1/0739/7048/3352/files/222M_c.webp?v=1771385186", url: "https://magyx.fr/products/magic-perfume-no-222m", price: 1199, brand: "Chanel", brandKey: "chanel", number: "222", gender: "male", inspiredBy: "Allure Homme Sport" }
   ];
-
+  
   // ===== HARDCODED RECOMMENDATIONS (Based on your inspired products) =====
   const HARDCODED_RECOMMENDATIONS = {
     // Female recommendations
@@ -1031,12 +1060,12 @@
     'Aventus for Him': ['Sauvage Elixir'],
     'Flower': ['J\'Adore']
   };
-
+  
   // ===== FORMAT PRICE =====
   function formatPrice(priceInCents) {
     return '€' + (priceInCents / 100).toFixed(2);
   }
-
+  
   // ===== NORMALIZE TEXT (remove accents, lowercase) =====
   function normalizeText(text) {
     if (!text) return '';
@@ -1062,7 +1091,7 @@
     
     return normalized;
   }
-
+  
   // ===== FUZZY SEARCH IN CATALOG =====
   function levenshteinDistance(str1, str2) {
     const track = Array(str2.length + 1).fill(null).map(() =>
@@ -1085,7 +1114,7 @@
     }
     return track[str2.length][str1.length];
   }
-
+  
   function searchCatalog(query) {
     if (!query || query.length < 1) return [];
     
@@ -1226,7 +1255,7 @@
     
     return results;
   }
-
+  
   // ===== FIND INSPIRED PRODUCT FOR CATALOG PERFUME =====
   function findInspiredProduct(perfume) {
     if (!perfume) return null;
@@ -1294,7 +1323,7 @@
     console.log(`  ✗ No product found for ${perfume.name}`);
     return null;
   }
-
+  
   // ===== GET RECOMMENDATIONS (Same brand first, then hardcoded, then fallback) =====
   function getRecommendations(perfume, excludeInspiredId = null) {
     if (!perfume) return [];
@@ -1388,7 +1417,7 @@
     
     return recommendations;
   }
-
+  
   // ===== RENDER CATALOG LIST ITEM (No product numbers displayed) =====
   function renderCatalogItem(perfume) {
     const imageUrl = perfume.image || 'https://via.placeholder.com/60x60?text=Parfum';
@@ -1404,7 +1433,7 @@
       </div>
     `;
   }
-
+  
   // ===== RENDER INSPIRED PRODUCT CARD =====
   function renderInspiredCard(product, badge, currentBrand = null) {
     const priceFormatted = formatPrice(product.price);
@@ -1426,7 +1455,7 @@
       </div>
     `;
   }
-
+  
   // ===== RENDER DETAILED VIEW =====
   window.fcShowPerfumeDetail = function(perfumeId) {
     const perfume = allPerfumes.find(p => p.id === perfumeId);
@@ -1626,7 +1655,7 @@
     
     contentEl.innerHTML = html;
   };
-
+  
   // ===== PERFORM SEARCH =====
   let searchTimer = null;
   
@@ -1732,7 +1761,7 @@
       performSearch(query);
     }, 300);
   }
-
+  
   // ===== GO BACK =====
   window.fcGoBack = function() {
     const stepsEl = document.getElementById('fcSteps');
@@ -1750,7 +1779,7 @@
     searchInput.value = '';
     contentEl.innerHTML = '';
   };
-
+  
   // ===== ADD TO CART =====
   window.fcAddToCart = function(productUrl, event) {
     if (event) event.stopPropagation();
@@ -1809,12 +1838,12 @@
         }, 2000);
       });
   };
-
+  
   // ===== VIEW DETAILS =====
   window.fcViewDetails = function(url) {
     window.location.href = url;
   };
-
+  
   // ===== TOGGLE SEARCH =====
   window.fcToggleSearch = function() {
     const popup = document.getElementById('fcSearchPopup');
@@ -1830,7 +1859,7 @@
       }
     }
   };
-
+  
   // ===== CART FUNCTIONS =====
   function updateOfferDisplay(itemCount) {
     const offerBanner = document.getElementById('fcOfferBanner');
@@ -1857,7 +1886,7 @@
       if (offerBanner) offerBanner.classList.remove('qualified');
     }
   }
-
+  
   function fetchCartAndUpdate() {
     return fetch('/cart.js')
       .then(res => res.json())
@@ -1867,7 +1896,7 @@
       })
       .catch(() => ({ item_count: 0 }));
   }
-
+  
   // ===== INITIALIZATION =====
   document.addEventListener('DOMContentLoaded', function() {
     console.log('[DOMContentLoaded] Initializing search...');
@@ -2010,5 +2039,5 @@
     console.log('✓ Recherche initialisée avec', allPerfumes.length, 'parfums');
     console.log('✓ Produits inspirés:', inspiredProducts.length);
   });
-})();
+  })();
 </script>
