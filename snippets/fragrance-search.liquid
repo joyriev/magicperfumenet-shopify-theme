@@ -1,9 +1,9 @@
 {% comment %} 
-  FRAGRANCE CODE SEARCH POPUP - PREMIUM DESIGN 
-  - Complete catalog integration with notes, descriptions 
-  - Shows real perfumes with detailed information FIRST 
-  - Then shows inspired products from your Shopify store 
-  - Hardcoded recommendations for all products 
+          FRAGRANCE CODE SEARCH POPUP - PREMIUM DESIGN 
+          - Complete catalog integration with notes, descriptions 
+          - Shows real perfumes with detailed information FIRST 
+          - Then shows inspired products from your Shopify store 
+          - Hardcoded recommendations for all products 
 {% endcomment %}
 
 <!-- Load your French perfume catalog -->
@@ -811,7 +811,7 @@
         stroke="#FFFFFF"
         stroke-width="2" />
     </svg>
-    <span class="fc-toggle-text">Recherche</span>
+    <span class="fc-toggle-text">Search</span>
   </div>
 
   <!-- Search Popup -->
@@ -823,8 +823,8 @@
       <div class="fc-offer-left">
         <span class="fc-offer-icon">🎁</span>
         <div class="fc-offer-text">
-          <strong>ACHETEZ 3 OBTENEZ 1 GRATUIT</strong>
-          <span id="fcOfferSubtext">Ajoutez 3 articles pour un cadeau gratuit</span>
+          <strong>BUY 3 GET 1 FREE</strong>
+          <span id="fcOfferSubtext">Add 3 items for a free gift</span>
         </div>
       </div>
       <div class="fc-offer-status" id="fcOfferStatus">0/3</div>
@@ -838,12 +838,12 @@
           id="fcOfferProgress"
           style="width: 0%;"></div>
       </div>
-      <div class="fc-offer-message" id="fcOfferMessage">Ajoutez 3 articles pour un cadeau gratuit</div>
+      <div class="fc-offer-message" id="fcOfferMessage">Add 3 items for a free gift</div>
     </div>
 
     <!-- INFO SECTION -->
     <div class="fc-info-section">
-      <div class="fc-info-label">INFORMATIONS FOURNIES PAR :</div>
+      <div class="fc-info-label">INFORMATION PROVIDED BY:</div>
     </div>
 
     <!-- Logo Section -->
@@ -915,7 +915,7 @@
         allPerfumes.push(...perfumes);
       }
     }
-    console.log(`✓ Total parfums dans le catalogue: ${allPerfumes.length}`);
+    console.log(`✓ Total perfumes in catalog: ${allPerfumes.length}`);
   } else {
     console.warn('⚠️ French catalog not found. Make sure perfume-catalog-french.js is loaded.');
   }
