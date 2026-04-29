@@ -1,9 +1,9 @@
 {% comment %} 
-          FRAGRANCE CODE SEARCH POPUP - PREMIUM DESIGN 
-          - Complete catalog integration with notes, descriptions 
-          - Shows real perfumes with detailed information FIRST 
-          - Then shows inspired products from your Shopify store 
-          - Hardcoded recommendations for all products 
+                FRAGRANCE CODE SEARCH POPUP - PREMIUM DESIGN 
+                - Complete catalog integration with notes, descriptions 
+                - Shows real perfumes with detailed information FIRST 
+                - Then shows inspired products from your Shopify store 
+                - Hardcoded recommendations for all products 
 {% endcomment %}
 
 <!-- Load your French perfume catalog -->
@@ -1484,105 +1484,105 @@
     const recommendations = getRecommendations(perfume, inspiredProduct ? inspiredProduct.id : null);
     
     let html = `
-      <button class="fc-back-btn" onclick="window.fcGoBack()">Retour</button>
+      <button class="fc-back-btn" onclick="window.fcGoBack()">Back</button>
     `;
     
     // ===== INSPIRED PRODUCTS SECTION - SHOW FIRST =====
     if (inspiredProduct) {
-      html += `<div class="fc-section-title">NOTRE VERSION INSPIRÉE</div>`;
+      html += `<div class="fc-section-title">OUR INSPIRED VERSION</div>`;
       html += `<div class="fc-grid-2col">`;
-      html += renderInspiredCard(inspiredProduct, `Inspiré de ${perfume.name}`, perfume.brand);
+      html += renderInspiredCard(inspiredProduct, `Inspired by ${perfume.name}`, perfume.brand);
       
       // HARDCODED: For Angel, show Black Opium in the same grid
       if (perfume.name === 'Angel') {
         const blackOpium = inspiredProducts.find(p => p.number === '132');
         if (blackOpium) {
-          html += renderInspiredCard(blackOpium, 'Vous pourriez aimer', perfume.brand);
+          html += renderInspiredCard(blackOpium, 'You might like', perfume.brand);
         }
       } else if (perfume.name === 'Flower by Kenzo') {
         // HARDCODED: For Flower, show J'Adore in the same grid
         const jAdore = inspiredProducts.find(p => p.number === '159');
         if (jAdore) {
-          html += renderInspiredCard(jAdore, 'Vous pourriez aimer', perfume.brand);
+          html += renderInspiredCard(jAdore, 'You might like', perfume.brand);
         }
       } else if (perfume.name === 'Aventus for Her') {
         // HARDCODED: For Aventus for Her, show J'Adore in the same grid
         const jAdore = inspiredProducts.find(p => p.number === '159');
         if (jAdore) {
-          html += renderInspiredCard(jAdore, 'Vous pourriez aimer', perfume.brand);
+          html += renderInspiredCard(jAdore, 'You might like', perfume.brand);
         }
       } else if (perfume.name === 'Aventus for Him') {
         // HARDCODED: For Aventus for Him, show Sauvage Elixir in the same grid
         const sauvageElixir = inspiredProducts.find(p => p.number === '366');
         if (sauvageElixir) {
-          html += renderInspiredCard(sauvageElixir, 'Vous pourriez aimer', perfume.brand);
+          html += renderInspiredCard(sauvageElixir, 'You might like', perfume.brand);
         }
       } else if (perfume.name === 'Äquivalent') {
         // HARDCODED: For Äquivalent, show My Way in the same grid
         const myWay = inspiredProducts.find(p => p.number === '140');
         if (myWay) {
-          html += renderInspiredCard(myWay, 'Vous pourriez aimer', perfume.brand);
+          html += renderInspiredCard(myWay, 'You might like', perfume.brand);
         }
       } else if (perfume.name === 'Eternity') {
         // HARDCODED: For Eternity (Women's), show Light Blue in the same grid
         const lightBlue = inspiredProducts.find(p => p.number === '017');
         if (lightBlue) {
-          html += renderInspiredCard(lightBlue, 'Vous pourriez aimer', perfume.brand);
+          html += renderInspiredCard(lightBlue, 'You might like', perfume.brand);
         }
       } else if (perfume.name === 'Eternity for Men') {
         // HARDCODED: For Eternity for Men, show Acqua di Gio in the same grid
         const acquaDiGio = inspiredProducts.find(p => p.number === '221');
         if (acquaDiGio) {
-          html += renderInspiredCard(acquaDiGio, 'Vous pourriez aimer', perfume.brand);
+          html += renderInspiredCard(acquaDiGio, 'You might like', perfume.brand);
         }
       } else if (perfume.name === 'Musc Noir') {
         // HARDCODED: For Musc Noir, show Good Girl in the same grid
         const goodGirl = inspiredProducts.find(p => p.number === '461');
         if (goodGirl) {
-          html += renderInspiredCard(goodGirl, 'Vous pourriez aimer', perfume.brand);
+          html += renderInspiredCard(goodGirl, 'You might like', perfume.brand);
         }
       } else if (perfume.name === 'Born in Roma') {
         // HARDCODED: For Born in Roma, show My Way in the same grid
         const myWay = inspiredProducts.find(p => p.number === '140');
         if (myWay) {
-          html += renderInspiredCard(myWay, 'Vous pourriez aimer', perfume.brand);
+          html += renderInspiredCard(myWay, 'You might like', perfume.brand);
         }
       } else if (perfume.name === 'Uomo Born in Roma') {
         // HARDCODED: For Uomo Born in Roma, show Bleu de Chanel in the same grid
         const bleuDeChanel = inspiredProducts.find(p => p.number === '252');
         if (bleuDeChanel) {
-          html += renderInspiredCard(bleuDeChanel, 'Vous pourriez aimer', perfume.brand);
+          html += renderInspiredCard(bleuDeChanel, 'You might like', perfume.brand);
         }
       } else if (perfume.name === 'Fahrenheit Le Parfum') {
         // HARDCODED: For Fahrenheit Le Parfum, show Sauvage Elixir in the same grid
         const sauvageElixir = inspiredProducts.find(p => p.number === '366');
         if (sauvageElixir) {
-          html += renderInspiredCard(sauvageElixir, 'Vous pourriez aimer', perfume.brand);
+          html += renderInspiredCard(sauvageElixir, 'You might like', perfume.brand);
         }
       } else if (perfume.name === 'Terre d\'Hermès') {
         // HARDCODED: For Terre d'Hermès, show Bleu de Chanel in the same grid
         const bleuDeChanel = inspiredProducts.find(p => p.number === '252');
         if (bleuDeChanel) {
-          html += renderInspiredCard(bleuDeChanel, 'Vous pourriez aimer', perfume.brand);
+          html += renderInspiredCard(bleuDeChanel, 'You might like', perfume.brand);
         }
       } else if (perfume.name === 'Joop! Homme') {
         // HARDCODED: For Joop! Homme, show One Million in the same grid
         const oneMillionProduct = inspiredProducts.find(p => p.number === '275');
         if (oneMillionProduct) {
-          html += renderInspiredCard(oneMillionProduct, 'Vous pourriez aimer', perfume.brand);
+          html += renderInspiredCard(oneMillionProduct, 'You might like', perfume.brand);
         }
       } else if (perfume.name === 'Cool Water') {
         // HARDCODED: For Cool Water, show Acqua di Gio in the same grid
         const acquaDiGio = inspiredProducts.find(p => p.number === '221');
         if (acquaDiGio) {
-          html += renderInspiredCard(acquaDiGio, 'Vous pourriez aimer', perfume.brand);
+          html += renderInspiredCard(acquaDiGio, 'You might like', perfume.brand);
         }
       } else {
         // Show recommendation (exclude the main inspired product)
         const filteredRecommendations = recommendations.filter(r => r.id !== inspiredProduct.id);
         if (filteredRecommendations.length > 0) {
           const isDifferentBrand = normalizeText(filteredRecommendations[0].brand) !== normalizeText(perfume.brand);
-          const badgeText = isDifferentBrand ? 'Vous pourriez aimer (autre marque)' : 'Vous pourriez aimer';
+          const badgeText = isDifferentBrand ? 'You might like (other brand)' : 'You might like';
           html += renderInspiredCard(filteredRecommendations[0], badgeText, perfume.brand);
         } else {
           html += `<div class="fc-product-card" style="visibility: hidden;"></div>`;
@@ -1600,8 +1600,8 @@
           <div class="fc-detailed-info">
             <div class="fc-detailed-name">${perfume.name}</div>
             <div class="fc-detailed-brand">${perfume.brand}</div>
-            ${perfume.year ? `<div class="fc-detailed-year">Année: ${perfume.year}</div>` : ''}
-            ${perfume.gender ? `<div class="fc-detailed-gender">Pour: ${perfume.gender}</div>` : ''}
+            ${perfume.year ? `<div class="fc-detailed-year">Year: ${perfume.year}</div>` : ''}
+            ${perfume.gender ? `<div class="fc-detailed-gender">For: ${perfume.gender}</div>` : ''}
           </div>
         </div>
     `;
@@ -1613,7 +1613,7 @@
       if (perfume.top_notes && perfume.top_notes.length) {
         html += `
           <div class="fc-note-category">
-            <h4>NOTES DE TÊTE</h4>
+            <h4>TOP NOTES</h4>
             <div class="fc-note-tags">
               ${perfume.top_notes.map(note => `<span class="fc-note-tag">${note}</span>`).join('')}
             </div>
@@ -1624,7 +1624,7 @@
       if (perfume.heart_notes && perfume.heart_notes.length) {
         html += `
           <div class="fc-note-category">
-            <h4>NOTES DE CŒUR</h4>
+            <h4>HEART NOTES</h4>
             <div class="fc-note-tags">
               ${perfume.heart_notes.map(note => `<span class="fc-note-tag">${note}</span>`).join('')}
             </div>
@@ -1635,7 +1635,7 @@
       if (perfume.base_notes && perfume.base_notes.length) {
         html += `
           <div class="fc-note-category">
-            <h4>NOTES DE FOND</h4>
+            <h4>BASE NOTES</h4>
             <div class="fc-note-tags">
               ${perfume.base_notes.map(note => `<span class="fc-note-tag">${note}</span>`).join('')}
             </div>
@@ -1673,7 +1673,7 @@
     if (logoSection) logoSection.style.display = 'none';
     // DO NOT hide searchSection - users need it visible to search again!
     
-    contentEl.innerHTML = '<div class="fc-loading">Recherche en cours...</div>';
+    contentEl.innerHTML = '<div class="fc-loading">Searching...</div>';
     console.log('[performSearch DEBUG] Set loading state');
     
     setTimeout(() => {
@@ -1711,21 +1711,21 @@
       let html = '';
       
       if (catalogResults.length > 0) {
-        html += `<div class="fc-section-title">PARFUMS (${catalogResults.length})</div>`;
+        html += `<div class="fc-section-title">PERFUMES (${catalogResults.length})</div>`;
         catalogResults.slice(0, 10).forEach(result => {
           html += renderCatalogItem(result.perfume);
         });
       }
       
       if (inspiredResults.length > 0) {
-        html += `<div class="fc-section-title">NOS VERSIONS INSPIRÉES (${inspiredResults.length})</div>`;
+        html += `<div class="fc-section-title">OUR INSPIRED VERSIONS (${inspiredResults.length})</div>`;
         inspiredResults.slice(0, 10).forEach(product => {
-          html += renderInspiredCard(product, `Inspiré de ${product.inspiredBy}`, product.brand);
+          html += renderInspiredCard(product, `Inspired by ${product.inspiredBy}`, product.brand);
         });
       }
       
       if (catalogResults.length === 0 && inspiredResults.length === 0) {
-        html = '<div class="fc-no-results">Aucun parfum trouvé pour "' + query + '"</div>';
+        html = '<div class="fc-no-results">No perfume found for "' + query + '"</div>';
       }
       
       console.log('[performSearch DEBUG] Setting innerHTML with html length:', html.length);
@@ -1788,7 +1788,7 @@
     const originalText = btn.innerText;
     const originalBackground = btn.style.background;
     
-    btn.innerText = 'Ajout...';
+    btn.innerText = 'Adding...';
     btn.disabled = true;
     
     let handle = '';
@@ -1797,7 +1797,7 @@
     }
     
     if (!handle) {
-      btn.innerText = 'Erreur';
+      btn.innerText = 'Error';
       setTimeout(() => {
         btn.innerText = originalText;
         btn.disabled = false;
@@ -1819,7 +1819,7 @@
       })
       .then(res => res.json())
       .then(() => {
-        btn.innerText = '✓ Ajouté!';
+        btn.innerText = '✓ Added!';
         btn.style.background = '#2E7D32';
         fetchCartAndUpdate();
         setTimeout(() => {
@@ -1829,7 +1829,7 @@
         }, 2000);
       })
       .catch(() => {
-        btn.innerText = 'Erreur';
+        btn.innerText = 'Error';
         btn.style.background = '#c62828';
         setTimeout(() => {
           btn.innerText = originalText;
@@ -1874,15 +1874,15 @@
     if (offerProgress) offerProgress.style.width = percentage + '%';
     
     if (itemCount >= 3) {
-      offerStatus.textContent = '🎉 GRATUIT!';
-      if (offerSubtext) offerSubtext.textContent = 'Vous obtenez un cadeau gratuit!';
-      if (offerMessage) offerMessage.textContent = '🎉 Vous obtenez un CADEAU GRATUIT!';
+      offerStatus.textContent = '🎉 FREE!';
+      if (offerSubtext) offerSubtext.textContent = 'You get a free gift!';
+      if (offerMessage) offerMessage.textContent = '🎉 You get a FREE GIFT!';
       if (offerBanner) offerBanner.classList.add('qualified');
     } else {
       const needed = 3 - itemCount;
       offerStatus.textContent = `${itemCount}/3`;
-      if (offerSubtext) offerSubtext.textContent = `Ajoutez ${needed} de plus pour un cadeau gratuit`;
-      if (offerMessage) offerMessage.textContent = `Ajoutez ${needed} article${needed > 1 ? 's' : ''} de plus pour un cadeau gratuit`;
+      if (offerSubtext) offerSubtext.textContent = `Add ${needed} more for a free gift`;
+      if (offerMessage) offerMessage.textContent = `Add ${needed} more item${needed > 1 ? 's' : ''} for a free gift`;
       if (offerBanner) offerBanner.classList.remove('qualified');
     }
   }
