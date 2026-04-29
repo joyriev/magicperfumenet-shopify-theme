@@ -16,8 +16,8 @@
 {% if product.variants.size > 1 %}
   {% comment %} Variant Selector {% endcomment %}
   <div class="flex justify-between items-center mb-3 !mt-6">
-    <h2 class="m-0 text-base font-semibold">Choisissez votre taille:</h2>
-    <div class="text-sm italic text-gray-500">80% de nos clients choisissent 50 ml ou plus</div>
+    <h2 class="m-0 text-base font-semibold">Choose your size:</h2>
+    <div class="text-sm italic text-gray-500">80% of our customers choose 50 ml or more</div>
   </div>
 
   <div class="flex gap-3" id="variant-selector">
@@ -33,7 +33,7 @@
           <div class="text-base font-semibold">{{ variant.title }}</div>
         </div>
         {% if variant.title contains '50' %}
-          <span class="text-xs italic text-white rounded absolute -top-2.5 left-1/2 [transform:translateX(-50%)] bg-[#c8202f] px-2 py-0.5">Populaire</span>
+          <span class="text-xs italic text-white rounded absolute -top-2.5 left-1/2 [transform:translateX(-50%)] bg-[#c8202f] px-2 py-0.5">Popular</span>
         {% endif %}
         {% if variant.title contains '100' %}
           <span class="text-xs italic text-white rounded absolute -top-2.5 left-1/2 [transform:translateX(-50%)] bg-[#22613a] px-2 py-0.5">Bestseller</span>
@@ -70,7 +70,7 @@
       {% if product.metafields.custom.choose_your_fragrances_options != blank %}
       disabled="disabled"
       {% endif %}>
-      <span>Ajouter au Panier</span>
+      <span>Add to Cart</span>
       <div class="ml-2 pl-2 border-0 border-l flex items-center border-solid border-gray-200/20">
         <div
           class="inline-block text-lg bg-gray-800 px-3 rounded"

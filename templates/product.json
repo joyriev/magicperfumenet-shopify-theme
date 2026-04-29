@@ -52,7 +52,7 @@
         "text_g8FVDr": {
           "type": "text",
           "settings": {
-            "text": "<strong>Notes de Tête: </strong>{{ product.metafields.custom.top_notes.value.heading.value }}",
+            "text": "<strong>Top Notes: </strong>{{ product.metafields.custom.top_notes.value.heading.value }}",
             "text_style": "body"
           }
         },
