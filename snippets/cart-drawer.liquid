@@ -69,12 +69,12 @@
 
             <div class="bc-progress-text" style="color: #000000;">
               {% if cart_count >= 4 %}
-                🎉 Offre 3+1 <br> débloquée!
+                🎉 3+1 Offer <br> unlocked!
               {% else %}
-                Plus que
+                Only
                 <strong>{{ 4 | minus: cart_count }}</strong>
-                bouteilles pour
-                <strong>1 gratuite</strong>!
+                more bottles for
+                <strong>1 free</strong>!
               {% endif %}
             </div>
             <div class="bc-progress-bar" style="background-color: #E2E2E2; margin-bottom: 0;">
@@ -94,11 +94,11 @@
 
             <div class="bc-progress-text" style="color: #000000;">
               {% if cart_total >= 5000 %}
-                🎉 Livraison gratuite activée!
+                🎉 Free shipping offer activated!
               {% else %}
                 <strong>{{ 5000 | minus: cart_total | money }}</strong>
-                pour
-                <strong>Livraison gratuite</strong>!
+                to unlock
+                <strong>Free shipping</strong>!
               {% endif %}
             </div>
             <div class="bc-progress-bar" style="background-color: #E2E2E2; margin-bottom: 0;">
