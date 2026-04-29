@@ -866,7 +866,7 @@
           type="text"
           id="fcSearchInput"
           class="fc-search-field"
-          placeholder="Rechercher par nom, marque, ou numéro..."
+          placeholder="Search by name, brand, or number..."
           autocomplete="off">
         <button class="fc-clear-search" id="fcClearSearch">✕</button>
       </div>
@@ -876,19 +876,19 @@
     <div class="fc-steps-section" id="fcSteps">
       <div class="fc-steps-box">
         <div class="fc-steps-title">
-          COMMENT TROUVER<br><span>VOTRE PARFUM.</span>
+          HOW TO FIND<br><span>YOUR PERFUME.</span>
         </div>
         <div class="fc-step-item">
           <span class="fc-step-number">1</span>
-          <span>DITES-MOI QUEL PARFUM VOUS AIMEZ.</span>
+          <span>TELL ME WHICH PERFUME YOU LIKE.</span>
         </div>
         <div class="fc-step-item">
           <span class="fc-step-number">2</span>
-          <span>JE VOUS LE SERVAIS EN SECONDES...</span>
+          <span>I'LL SERVE IT TO YOU IN SECONDS...</span>
         </div>
         <div class="fc-step-item">
           <span class="fc-step-number">3</span>
-          <span>DÉCOUVREZ VOTRE NOUVEAU PARFUM PRÉFÉRÉ ET PROFITEZ-EN !</span>
+          <span>DISCOVER YOUR NEW FAVORITE PERFUME AND ENJOY IT!</span>
         </div>
       </div>
     </div>
@@ -905,7 +905,7 @@
   
   // Check for French catalog
   if (window.PerfumeCatalog) {
-    console.log('✓ Catalogue français trouvé');
+    console.log('✓ French catalog found');
     
     // Extract all perfumes from the catalog
     for (let brandKey in window.PerfumeCatalog) {
@@ -917,7 +917,7 @@
     }
     console.log(`✓ Total parfums dans le catalogue: ${allPerfumes.length}`);
   } else {
-    console.warn('⚠️ Catalogue français non trouvé. Assurez-vous que perfume-catalog-french.js est chargé.');
+    console.warn('⚠️ French catalog not found. Make sure perfume-catalog-french.js is loaded.');
   }
   
   // ===== YOUR SHOPIFY INSPIRED PRODUCTS (24 FEMALE + 30 MALE) =====

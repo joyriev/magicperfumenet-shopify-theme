@@ -16,7 +16,7 @@
         "background_color": "#161616",
         "background_image": "shopify://shop_images/magic_header_1.png",
         "mobile_background_image": "shopify://shop_images/magic_header_mobile_1.jpg",
-        "title": "Le Scandale du Parfum.Le Luxe. Sans Majoration.",
+        "title": "The Perfume Scandal. Luxury. Without Markup.",
         "title_line_1": "Luxurious perfumes.",
         "title_line_2": "At affordable prices.",
         "subtitle": "Buy 3, Get 1 Free",
@@ -45,32 +45,32 @@
           "type": "perks",
           "settings": {
             "perk_image": "shopify://shop_images/Screenshot_2026-02-03_at_12.00.15_PM.webp",
-            "perk_title": "Livraison offerte dès € 50",
-            "perk_content": "cette semaine seulement"
+            "perk_title": "Free shipping from €50",
+            "perk_content": "this week only"
           }
         },
         "perks_x8n9DF": {
           "type": "perks",
           "settings": {
             "perk_image": "shopify://shop_images/Screenshot_2026-02-03_at_12.04.49_PM.avif",
-            "perk_title": "Récompenses exclusives",
-            "perk_content": "Cartes cadeaux jusqu’à € 100"
+            "perk_title": "Exclusive rewards",
+            "perk_content": "Gift cards up to €100"
           }
         },
         "perks_yTdgqz": {
           "type": "perks",
           "settings": {
             "perk_image": "shopify://shop_images/Screenshot_2026-02-03_at_12.05.39_PM.webp",
-            "perk_title": "Fabriqué en Europe",
-            "perk_content": "avec passion et savoir-faire"
+            "perk_title": "Made in Europe",
+            "perk_content": "with passion and expertise"
           }
         },
         "perks_7zj6gB": {
           "type": "perks",
           "settings": {
             "perk_image": "shopify://shop_images/Screenshot_2026-02-03_at_12.07.45_PM.webp",
-            "perk_title": "Retours gratuits",
-            "perk_content": "sans aucune justification"
+            "perk_title": "Free returns",
+            "perk_content": "no justification needed"
           }
         }
       },
@@ -92,10 +92,10 @@
       "name": "Popular Products",
       "settings": {
         "background_color": "#f7f7f7",
-        "heading": "Meilleures Ventes",
+        "heading": "Best Sellers",
         "subheading": "",
         "collection": "meilleures-ventes",
-        "show_all_button_text": "Alle Bestseller ansehen",
+        "show_all_button_text": "View all best sellers",
         "padding_top": 72,
         "padding_bottom": 72
       }
@@ -106,7 +106,7 @@
         "heading_CcxYji": {
           "type": "heading",
           "settings": {
-            "content": "Pas d'importations bon marché. Fabriqué au sein de l'UE.",
+            "content": "No cheap imports. Made within the EU.",
             "heading_type": "h2",
             "font_size": 40,
             "mobile_font_size": 24,
@@ -116,7 +116,7 @@
         "text_gHnd8C": {
           "type": "text",
           "settings": {
-            "content": "<p>Notre production européenne garantit les plus hauts standards de qualité et nous permet de contrôler chaque étape du processus de fabrication.<br/><br/>De la sélection des matières premières de première qualité au remplissage soigné de chaque bouteille, nous veillons à ce que chaque produit réponde à nos exigences rigoureuses en matière de qualité et de savoir-faire.</p>",
+            "content": "<p>Our European production guarantees the highest quality standards and allows us to control every step of the manufacturing process.<br/><br/>From the selection of premium raw materials to the careful filling of each bottle, we ensure that every product meets our rigorous quality and craftsmanship requirements.</p>",
             "mobile_content": "",
             "font_size": 18,
             "text_color": "#000000"
@@ -188,25 +188,25 @@
         "collection_gRbYPe": {
           "type": "collection",
           "settings": {
-            "tab_title": "🔥Meilleuresventes",
+            "tab_title": "🔥Best Sellers",
             "collection": "meilleures-ventes",
-            "button_text": "Afficher tout"
+            "button_text": "View all"
           }
         },
         "collection_xgUpzQ": {
           "type": "collection",
           "settings": {
-            "tab_title": "Pour Femme",
+            "tab_title": "For Women",
             "collection": "pour-les-femmes",
-            "button_text": "Afficher tout"
+            "button_text": "View all"
           }
         },
         "collection_3WBTm3": {
           "type": "collection",
           "settings": {
-            "tab_title": "Pour Homme",
+            "tab_title": "For Men",
             "collection": "pour-hommes",
-            "button_text": "Afficher tout"
+            "button_text": "View all"
           }
         }
       },
@@ -218,8 +218,8 @@
       "name": "Homepage Products Tab",
       "settings": {
         "background_color": "#f7f7f7",
-        "heading": "Un parfum pour chaque facette de votre personnalité.",
-        "subheading": "Découvrez des parfums qui évoluent avec votre style et l’aura que vous dégagez.",
+        "heading": "A perfume for every facet of your personality.",
+        "subheading": "Discover fragrances that evolve with your style and the aura you project.",
         "padding_top": 72,
         "padding_bottom": 72
       }
@@ -230,45 +230,45 @@
         "collapsible_row_b44n9F": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Pourquoi nos parfums sont-ils si accessibles?",
+            "heading": "Why are our perfumes so affordable?",
             "icon": "none",
-            "row_content": "<p><br/>Nous investissons dans l’essentiel : la fragrance.<br/><br/>Pas de flacon luxueux, pas d’emballage superflu, pas de boutiques coûteuses ni de partenariats d’influenceurs hors de prix — pour vous offrir une senteur haut de gamme sans vous ruiner.<br/></p>",
+            "row_content": "<p><br/>We invest in the essentials: the fragrance.<br/><br/>No luxurious bottle, no superfluous packaging, no expensive boutiques or overpriced influencer partnerships — to offer you a high-end scent without breaking the bank.<br/></p>",
             "page": ""
           }
         },
         "collapsible_row_rCVDnP": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Est-ce de l'eau parfumée?",
+            "heading": "Is this eau de parfum?",
             "icon": "none",
-            "row_content": "<p>Oui, c'est une eau parfumée – elle contient jusqu'à 19 % d'essence. L'eau de toilette, par exemple, contient entre 5 et 8 % d'essence, et la concentration en essence est de 41 % et plus.</p>",
+            "row_content": "<p>Yes, it's an eau de parfum – it contains up to 19% essence. Eau de toilette, for example, contains between 5 and 8% essence, and essence concentration is 41% and more.</p>",
             "page": ""
           }
         },
         "collapsible_row_rNbx6p": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "S’agit-il d’une eau de parfum?",
+            "heading": "Is this an eau de parfum?",
             "icon": "none",
-            "row_content": "<p><br/>Oui. Notre formule contient jusqu’à 19 % de concentration aromatique.</p><p><br/>À titre de comparaison, une Eau de Toilette contient généralement entre 5 et 8 %, tandis que l’extrait de parfum commence à partir de 41 %.<br/><br/></p>",
+            "row_content": "<p><br/>Yes. Our formula contains up to 19% aromatic concentration.</p><p><br/>For comparison, an Eau de Toilette generally contains between 5 and 8%, while perfume extract starts from 41%.<br/><br/></p>",
             "page": ""
           }
         },
         "collapsible_row_irweNa": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Votre parfum inspiré sent-il différemment de l’original?",
+            "heading": "Does your inspired perfume smell different from the original?",
             "icon": "none",
-            "row_content": "<p>Pas du tout. Nos fragrances inspirées sont élaborées avec soin pour recréer une expérience olfactive très proche : même famille de notes, même profondeur et même tenue — à une fraction du prix.</p>",
+            "row_content": "<p>Not at all. Our inspired fragrances are carefully crafted to recreate a very close olfactory experience: same note family, same depth and same longevity — at a fraction of the price.</p>",
             "page": ""
           }
         },
         "collapsible_row_gJVQkB": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Que signifie une concentration de parfum de 19%?",
+            "heading": "What does a 19% perfume concentration mean?",
             "icon": "none",
-            "row_content": "<p>Cela correspond à la quantité d’huiles parfumées pures présente dans chaque flacon.<br/><br/>Avec 19 %, nos parfums se situent pleinement dans la catégorie Eau de Parfum, généralement comprise entre 16 et 21 % de concentration. Autrement dit, vous profitez d’une fragrance intensément concentrée, avec une tenue comparable aux grandes références du marché.<br/></p>",
+            "row_content": "<p>This corresponds to the amount of pure perfume oils present in each bottle.<br/><br/>With 19%, our perfumes fall fully into the Eau de Parfum category, generally between 16 and 21% concentration. In other words, you enjoy an intensely concentrated fragrance, with longevity comparable to the market's leading references.<br/></p>",
             "page": ""
           }
         }
