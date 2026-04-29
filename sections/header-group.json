@@ -17,9 +17,9 @@
       "settings": {
         "background_color": "#0d5daf",
         "forground_color": "#15803d",
-        "prepend_text": "🐣 Offre de Pâques :",
+        "prepend_text": "Payday Sale:",
         "ends_in_minutes": 30,
-        "append_text": "3 achetés, 2 OFFERTS !",
+        "append_text": "Buy 4, get 2 free 🎁",
         "link": ""
       }
     },
