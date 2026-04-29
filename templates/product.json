@@ -19,7 +19,7 @@
         "custom_rating_text_ehyqmQ": {
           "type": "custom_rating_text",
           "settings": {
-            "text": "4,7/5 étoiles (10 000 avis)"
+            "text": "4.7/5 stars (10,000 reviews)"
           }
         },
         "custom_liquid_fep4D7": {
@@ -128,45 +128,45 @@
         "collapsible_tab_bKn87j": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Pourquoi vos parfums sont-ils si accessibles ?",
+            "heading": "Why are your perfumes so accessible?",
             "icon": "none",
-            "content": "<p><br/>Nous nous concentrons sur l’essentiel : le parfum.<br/><br/>Pas de flacon luxueux, pas d’emballage superflu, pas de boutiques coûteuses ni de partenariats d’influenceurs hors de prix — pour sentir le luxe sans dépasser votre budget.</p>",
+            "content": "<p><br/>We focus on the essentials: the perfume.<br/><br/>No luxurious bottles, no excessive packaging, no expensive stores or overpriced influencer partnerships — to experience luxury without exceeding your budget.</p>",
             "page": ""
           }
         },
         "collapsible_tab_T6Fk9z": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "S’agit-il d’une eau de parfum?",
+            "heading": "Is this an eau de parfum?",
             "icon": "none",
-            "content": "<p>Oui. Notre formule contient jusqu’à 19 % de concentration aromatique.<br/><br/>À titre de comparaison, une Eau de Toilette contient généralement entre 5 et 8 %, tandis que l’extrait de parfum commence à partir de 41 %.</p>",
+            "content": "<p>Yes. Our formula contains up to 19% aromatic concentration.<br/><br/>For comparison, an Eau de Toilette generally contains between 5 and 8%, while perfume extract starts from 41%.</p>",
             "page": ""
           }
         },
         "collapsible_tab_GUrz86": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Combien de temps tient le parfum?",
+            "heading": "How long does the perfume last?",
             "icon": "none",
-            "content": "<p>La tenue du parfum varie selon la peau, généralement entre 3 et 8 heures pour un sillage doux mais présent.<br/><br/>Avec le temps, la fragrance s’estompe progressivement.</p>",
+            "content": "<p>Perfume longevity varies by skin type, generally between 3 and 8 hours for a soft but present trail.<br/><br/>Over time, the fragrance gradually fades.</p>",
             "page": ""
           }
         },
         "collapsible_tab_TKfWP3": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Le parfum inspiré est-il différent?",
+            "heading": "Is the inspired perfume different?",
             "icon": "none",
-            "content": "<p>Non. Cette fragrance a été élaborée pour offrir une expérience olfactive très proche, avec la même famille de notes et une tenue comparable.</p>",
+            "content": "<p>No. This fragrance was developed to offer a very similar olfactory experience, with the same note family and comparable longevity.</p>",
             "page": ""
           }
         },
         "collapsible_tab_HiNKBa": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Que signifie 19 % de parfum?",
+            "heading": "What does 19% perfume mean?",
             "icon": "none",
-            "content": "<p>Cela signifie que le contenu du flacon contient jusqu’à 19 % d’huiles parfumées.<br/><br/>À titre de comparaison, une Eau de Parfum contient généralement entre 16 et 21 % de concentration.</p>",
+            "content": "<p>This means the bottle content contains up to 19% perfume oils.<br/><br/>For comparison, an Eau de Parfum generally contains between 16 and 21% concentration.</p>",
             "page": ""
           }
         },
@@ -241,32 +241,32 @@
           "type": "perks",
           "settings": {
             "perk_image": "shopify://shop_images/Screenshot_2026-02-03_at_12.00.15_PM.webp",
-            "perk_title": "Livraison gratuite pour toute commande supérieure à 50 € !",
-            "perk_content": "Seulement cette semaine"
+            "perk_title": "Free shipping for orders over €50!",
+            "perk_content": "Only this week"
           }
         },
         "perks_NV4H3P": {
           "type": "perks",
           "settings": {
             "perk_image": "shopify://shop_images/Screenshot_2026-02-03_at_12.04.49_PM.avif",
-            "perk_title": "Réductions spéciales pour les clients réguliers",
-            "perk_content": "Bons d'achat jusqu'à 100 €"
+            "perk_title": "Special discounts for regular customers",
+            "perk_content": "Vouchers up to €100"
           }
         },
         "perks_qWY7Uy": {
           "type": "perks",
           "settings": {
             "perk_image": "shopify://shop_images/Screenshot_2026-02-03_at_12.05.39_PM.webp",
-            "perk_title": "Emballage cadeau gratuit",
-            "perk_content": "Note personnalisée de 100 caractères"
+            "perk_title": "Free gift wrapping",
+            "perk_content": "Personalized note of 100 characters"
           }
         },
         "perks_HKnHJ8": {
           "type": "perks",
           "settings": {
             "perk_image": "shopify://shop_images/Screenshot_2026-02-03_at_12.07.45_PM.webp",
-            "perk_title": "Service client expert",
-            "perk_content": "8h00 - 20h00, 7 jours sur 7"
+            "perk_title": "Expert customer service",
+            "perk_content": "8:00 - 20:00, 7 days a week"
           }
         }
       },
@@ -298,36 +298,36 @@
         "stack_LGQprc": {
           "type": "stack",
           "settings": {
-            "our_stack": "Tenue longue durée",
-            "other_brands": "Prix élevé à cause du branding"
+            "our_stack": "Long-lasting hold",
+            "other_brands": "High price due to branding"
           }
         },
         "stack_EkfTtL": {
           "type": "stack",
           "settings": {
-            "our_stack": "Des compliments au quotidien dès 10 €",
-            "other_brands": "Souvent produits en masse"
+            "our_stack": "Daily compliments from €10",
+            "other_brands": "Often mass-produced"
           }
         },
         "stack_EwWwij": {
           "type": "stack",
           "settings": {
-            "our_stack": "Sans tests sur les animaux",
-            "other_brands": "Tests sur les animaux possibles"
+            "our_stack": "No animal testing",
+            "other_brands": "Possible animal testing"
           }
         },
         "stack_w3Jyyc": {
           "type": "stack",
           "settings": {
-            "our_stack": "Fabriqué artisanalement en petite manufacture",
-            "other_brands": "Vous payez surtout le nom"
+            "our_stack": "Artisanally made in small manufacture",
+            "other_brands": "You mostly pay for the name"
           }
         },
         "stack_dXbqXq": {
           "type": "stack",
           "settings": {
-            "our_stack": "Vous payez la qualité — pas le marketing",
-            "other_brands": "Forte marge marketing"
+            "our_stack": "You pay for quality — not marketing",
+            "other_brands": "High marketing margin"
           }
         }
       },
@@ -341,8 +341,8 @@
       "name": "Stacks Up",
       "settings": {
         "background_color": "#f7f7f7",
-        "title": "Pourquoi Magisches Parfum?",
-        "subtitle": "L’alternative maline aux marques de luxe hors de prix.",
+        "title": "Why Magic Perfume?",
+        "subtitle": "The smart alternative to overpriced luxury brands.",
         "padding_top": 12,
         "padding_bottom": 72
       }
@@ -353,7 +353,7 @@
         "heading_PJdXGz": {
           "type": "heading",
           "settings": {
-            "content": "Pas d'importations bon marché. Fabriqué au sein de l'UE.",
+            "content": "No cheap imports. Made within the EU.",
             "heading_type": "h2",
             "font_size": 40,
             "mobile_font_size": 24,
@@ -363,7 +363,7 @@
         "text_Mhwr3T": {
           "type": "text",
           "settings": {
-            "content": "<p>Notre production européenne garantit les plus hauts standards de qualité et nous permet de contrôler chaque étape du processus de fabrication.<br/><br/>De la sélection des matières premières de première qualité au remplissage soigné de chaque bouteille, nous veillons à ce que chaque produit réponde à nos exigences rigoureuses en matière de qualité et de savoir-faire.</p>",
+            "content": "<p>Our European production guarantees the highest quality standards and allows us to control every step of the manufacturing process.<br/><br/>From the selection of top-quality raw materials to the careful filling of each bottle, we ensure that every product meets our rigorous requirements for quality and craftsmanship.</p>",
             "mobile_content": "",
             "font_size": 18,
             "text_color": "#000000"
@@ -827,7 +827,7 @@
         "heading": "BESTSELERS",
         "subheading": "",
         "collection": "best-sellers",
-        "show_all_button_text": "Alle Bestseller ansehen",
+        "show_all_button_text": "View all bestsellers",
         "padding_top": 72,
         "padding_bottom": 72
       }
