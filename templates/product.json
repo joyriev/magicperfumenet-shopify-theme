@@ -840,7 +840,6 @@
     },
     "floating_atc_tfqjiE": {
       "type": "floating-atc",
-      "disabled": true,
       "name": "Floating ATC",
       "settings": {}
     }
