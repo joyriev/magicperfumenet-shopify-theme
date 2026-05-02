@@ -576,11 +576,10 @@
 
         <div class="cart__ctas" {{ block.shopify_attributes }}>
           <button
-            type="submit"
+            type="button"
             id="CartDrawer-Checkout"
             class="cart__checkout-button button rounded-full leading-[50px]"
             name="checkout"
-            form="CartDrawer-Form"
             {% if cart == empty %}
             disabled
             {% endif %}>
