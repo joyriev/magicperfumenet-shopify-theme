@@ -107,10 +107,15 @@
       // Hide modal when decline is clicked and proceed to checkout
       modalCancel.addEventListener('click', function() {
         checkoutModal.classList.add('hidden');
-        // Get the cart form and submit without showing modal again
+        // Get the cart form and submit with checkout parameter
         const cartForm = document.getElementById('CartDrawer-Form');
         if (cartForm) {
-          cartForm.classList.add('skip-modal');
+          // Create checkout input to ensure proper redirect
+          const checkoutInput = document.createElement('input');
+          checkoutInput.type = 'hidden';
+          checkoutInput.name = 'checkout';
+          checkoutInput.value = '';
+          cartForm.appendChild(checkoutInput);
           cartForm.submit();
         } else {
           // Fallback: redirect to checkout
@@ -121,10 +126,15 @@
       // Hide modal when close button is clicked and proceed to checkout
       modalClose.addEventListener('click', function() {
         checkoutModal.classList.add('hidden');
-        // Get the cart form and submit without showing modal again
+        // Get the cart form and submit with checkout parameter
         const cartForm = document.getElementById('CartDrawer-Form');
         if (cartForm) {
-          cartForm.classList.add('skip-modal');
+          // Create checkout input to ensure proper redirect
+          const checkoutInput = document.createElement('input');
+          checkoutInput.type = 'hidden';
+          checkoutInput.name = 'checkout';
+          checkoutInput.value = '';
+          cartForm.appendChild(checkoutInput);
           cartForm.submit();
         } else {
           // Fallback: redirect to checkout
