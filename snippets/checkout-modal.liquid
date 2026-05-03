@@ -89,42 +89,55 @@
 
 <script>
   (function() {
-    const checkoutButton = document.getElementById('CartDrawer-Checkout');
     const checkoutModal = document.getElementById('checkout-modal');
     const modalCancel = document.getElementById('checkout-modal-cancel');
     const modalConfirm = document.getElementById('checkout-modal-confirm');
     const modalClose = document.getElementById('checkout-modal-close');
-    const cartForm = document.getElementById('CartDrawer-Form');
 
-    if (checkoutButton && checkoutModal && modalCancel && modalConfirm && modalClose && cartForm) {
-      // Show modal when checkout button is clicked
-      checkoutButton.addEventListener('click', function(e) {
-        e.preventDefault();
-        checkoutModal.classList.remove('hidden');
+    if (checkoutModal && modalCancel && modalConfirm && modalClose) {
+      // Show modal when checkout button is clicked (using event delegation)
+      document.addEventListener('click', function(e) {
+        const checkoutButton = e.target.closest('#CartDrawer-Checkout');
+        if (checkoutButton) {
+          e.preventDefault();
+          checkoutModal.classList.remove('hidden');
+        }
       });
 
       // Hide modal when decline is clicked and proceed to checkout
       modalCancel.addEventListener('click', function() {
         checkoutModal.classList.add('hidden');
-        // Create a hidden input for checkout and submit the form
-        const checkoutInput = document.createElement('input');
-        checkoutInput.type = 'hidden';
-        checkoutInput.name = 'checkout';
-        checkoutInput.value = '';
-        cartForm.appendChild(checkoutInput);
-        cartForm.submit();
+        // Get the cart form dynamically and submit
+        const cartForm = document.getElementById('CartDrawer-Form');
+        if (cartForm) {
+          const checkoutInput = document.createElement('input');
+          checkoutInput.type = 'hidden';
+          checkoutInput.name = 'checkout';
+          checkoutInput.value = '';
+          cartForm.appendChild(checkoutInput);
+          cartForm.submit();
+        } else {
+          // Fallback: redirect to checkout
+          window.location.href = '/checkout';
+        }
       });
 
       // Hide modal when close button is clicked and proceed to checkout
       modalClose.addEventListener('click', function() {
         checkoutModal.classList.add('hidden');
-        // Create a hidden input for checkout and submit the form
-        const checkoutInput = document.createElement('input');
-        checkoutInput.type = 'hidden';
-        checkoutInput.name = 'checkout';
-        checkoutInput.value = '';
-        cartForm.appendChild(checkoutInput);
-        cartForm.submit();
+        // Get the cart form dynamically and submit
+        const cartForm = document.getElementById('CartDrawer-Form');
+        if (cartForm) {
+          const checkoutInput = document.createElement('input');
+          checkoutInput.type = 'hidden';
+          checkoutInput.name = 'checkout';
+          checkoutInput.value = '';
+          cartForm.appendChild(checkoutInput);
+          cartForm.submit();
+        } else {
+          // Fallback: redirect to checkout
+          window.location.href = '/checkout';
+        }
       });
 
       // Hide modal when overlay is clicked
