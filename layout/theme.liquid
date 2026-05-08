@@ -420,6 +420,6 @@ body {
     {% unless template.name == 'product' %}
       {% render 'fragrance-search' %}
     {% endunless %}
-    {% render 'checkout-modal' %}
+    {% comment %} {% render 'checkout-modal' %} {% endcomment %}
   </body>
 </html>
