@@ -189,7 +189,7 @@
           "type": "collection",
           "settings": {
             "tab_title": "🔥Best Sellers",
-            "collection": "meilleures-ventes",
+            "collection": "best-sellers",
             "button_text": "View all"
           }
         },
