@@ -530,9 +530,27 @@
             {%- endif -%}
           </div>
 
-          <div class="totals" role="status">
-            <h2 class="totals__total">{{ 'sections.cart.estimated_total' | t }}</h2>
-            <p class="totals__total-value">{{ cart.total_price | money_with_currency }}</p>
+          {% if cart.total_price != cart.original_total_price %}
+            <div class="totals flex-wrap gap-4 !mb-3" role="status">
+              <h2 class="totals__total">Subtotal:</h2>
+              <p class="totals__total-value">
+                {{ cart.original_total_price | money_with_currency }}
+              </p>
+            </div>
+
+            <div class="totals flex-wrap gap-4 !mb-3" role="status">
+              <h2 class="totals__total">Discount:</h2>
+              <p class="totals__total-value">
+                <span class="text-green-700">-{{ cart.original_total_price | minus: cart.total_price | money_with_currency }}</span>
+              </p>
+            </div>
+          {% endif %}
+
+          <div class="totals flex-wrap gap-4" role="status">
+            <h2 class="totals__total">Total:</h2>
+            <p class="totals__total-value">
+              <span>{{ cart.total_price | money_with_currency }}</span>
+            </p>
           </div>
 
           <small class="tax-note caption-large rte">
@@ -585,8 +603,6 @@
             disabled
             {% endif %}>
             {{ 'sections.cart.checkout' | t }}
-            <span style="color: #6c6c6c; margin: 0 5px;">•</span>
-            {{ cart.total_price | money_with_currency }}
           </button>
         </div>
         <img
