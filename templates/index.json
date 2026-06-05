@@ -14,8 +14,8 @@
       "name": "Homepage Hero",
       "settings": {
         "background_color": "#161616",
-        "background_image": "shopify://shop_images/magic_header_1.png",
-        "mobile_background_image": "shopify://shop_images/magic_header_mobile_1.jpg",
+        "background_image": "shopify://shop_images/magyx_header_desktop.webp",
+        "mobile_background_image": "shopify://shop_images/magyx_header_mobile.webp",
         "title": "The Perfume Scandal. Luxury. Without Markup.",
         "title_line_1": "Luxurious perfumes.",
         "title_line_2": "At affordable prices.",
