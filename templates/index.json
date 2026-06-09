@@ -23,7 +23,7 @@
         "button_text": "FOR MEN",
         "button_link": "shopify://collections/pour-hommes",
         "second_button_text": "FOR WOMEN",
-        "second_button_link": "shopify://collections/pour-les-femmes",
+        "second_button_link": "shopify://collections/for-women",
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -197,7 +197,7 @@
           "type": "collection",
           "settings": {
             "tab_title": "For Women",
-            "collection": "pour-les-femmes",
+            "collection": "for-women",
             "button_text": "View all"
           }
         },
