@@ -21,7 +21,7 @@
         "title_line_2": "EU-crafted Eau de Parfum. 19–21% fragrance oil. From",
         "subtitle": "Buy 3, Get 1 Free",
         "button_text": "FOR MEN",
-        "button_link": "shopify://collections/pour-hommes",
+        "button_link": "shopify://collections/for-men",
         "second_button_text": "FOR WOMEN",
         "second_button_link": "shopify://collections/for-women",
         "padding_top": 36,
@@ -205,7 +205,7 @@
           "type": "collection",
           "settings": {
             "tab_title": "For Men",
-            "collection": "pour-hommes",
+            "collection": "for-men",
             "button_text": "View all"
           }
         }
