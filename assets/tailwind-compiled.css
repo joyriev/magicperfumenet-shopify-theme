@@ -440,6 +440,11 @@
     height: 32px
 }
 
+.\!size-8 {
+    width: 32px !important;
+    height: 32px !important
+}
+
 .h-10 {
     height: 40px
 }
@@ -1126,6 +1131,11 @@
     background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1))
 }
 
+.bg-\[\#FAF8F3\] {
+    --tw-bg-opacity: 1;
+    background-color: rgb(250 248 243 / var(--tw-bg-opacity, 1))
+}
+
 .bg-cover {
     background-size: cover
 }
@@ -1654,6 +1664,10 @@
     color: rgb(31 41 55 / var(--tw-text-opacity, 1))
 }
 
+.text-inherit {
+    color: inherit
+}
+
 .underline {
     text-decoration-line: underline
 }
@@ -1927,6 +1941,10 @@
 
 .hover\:opacity-90:hover {
     opacity: 0.9
+}
+
+.disabled\:\!pointer-events-auto:disabled {
+    pointer-events: auto !important
 }
 
 .group:hover .group-hover\:invert {
@@ -2230,10 +2248,22 @@
     line-height: 28px !important
 }
 
+.\[\&\]\:after\:\!text-sm::after {
+    content: var(--tw-content);
+    font-size: 14px !important;
+    line-height: 20px !important
+}
+
 .\[\&\]\:after\:text-gray-900::after {
     content: var(--tw-content);
     --tw-text-opacity: 1;
     color: rgb(17 24 39 / var(--tw-text-opacity, 1))
+}
+
+.\[\&\]\:after\:text-black::after {
+    content: var(--tw-content);
+    --tw-text-opacity: 1;
+    color: rgb(0 0 0 / var(--tw-text-opacity, 1))
 }
 
 .\[\&_br\]\:hidden br {
@@ -2242,6 +2272,18 @@
 
 .\[\&_button\]\:font-\[\'Oswald\'\] button {
     font-family: 'Oswald'
+}
+
+.\[\&_form\]\:flex form {
+    display: flex
+}
+
+.\[\&_p\:first-child\]\:mt-0 p:first-child {
+    margin-top: 0px
+}
+
+.\[\&_p\:last-child\]\:mb-0 p:last-child {
+    margin-bottom: 0px
 }
 
 .\[\&_p\]\:leading-snug p {
