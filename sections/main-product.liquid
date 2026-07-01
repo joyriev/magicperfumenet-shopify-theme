@@ -262,6 +262,8 @@
                 </p>
               {%- when 'custom_liquid' -%}
                 {{ block.settings.custom_liquid }}
+              {% when 'expanded_notes' %}
+                {% render 'expanded-notes' %}
               {%- when 'collapsible_tab' -%}
                 <div class="product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
                   <details id="Details-{{ block.id }}-{{ section.id }}">
@@ -1062,6 +1064,10 @@
     {
       "type": "dialect_notes",
       "name": "Dialect Notes"
+    },
+    {
+      "type": "expanded_notes",
+      "name": "Expanded Notes"
     },
     {
       "type": "text",

@@ -194,6 +194,11 @@
     margin-bottom: 24px !important
 }
 
+.my-4 {
+    margin-top: 16px;
+    margin-bottom: 16px
+}
+
 .\!mb-0 {
     margin-bottom: 0px !important
 }
@@ -312,6 +317,18 @@
 
 .mt-8 {
     margin-top: 32px
+}
+
+.ml-1\.5 {
+    margin-left: 6px
+}
+
+.mr-1\.5 {
+    margin-right: 6px
+}
+
+.mt-0\.5 {
+    margin-top: 2px
 }
 
 .line-clamp-1 {
@@ -467,6 +484,14 @@
     height: 64px
 }
 
+.h-3\.5 {
+    height: 14px
+}
+
+.h-4 {
+    height: 16px
+}
+
 .max-h-full {
     max-height: 100%
 }
@@ -517,6 +542,18 @@
 
 .w-full {
     width: 100%
+}
+
+.w-3\.5 {
+    width: 14px
+}
+
+.w-4 {
+    width: 16px
+}
+
+.min-w-0 {
+    min-width: 0px
 }
 
 .max-w-16 {
@@ -651,6 +688,10 @@
     align-items: flex-start
 }
 
+.items-end {
+    align-items: flex-end
+}
+
 .items-center {
     align-items: center
 }
@@ -717,6 +758,11 @@
     row-gap: 16px
 }
 
+.gap-x-6 {
+    -moz-column-gap: 24px;
+         column-gap: 24px
+}
+
 .space-y-1 > :not([hidden]) ~ :not([hidden]) {
     --tw-space-y-reverse: 0;
     margin-top: calc(4px * calc(1 - var(--tw-space-y-reverse)));
@@ -747,6 +793,12 @@
     margin-bottom: calc(24px * var(--tw-space-y-reverse))
 }
 
+.space-y-3 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(12px * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(12px * var(--tw-space-y-reverse))
+}
+
 .overflow-hidden {
     overflow: hidden
 }
@@ -762,6 +814,10 @@
 .truncate {
     overflow: hidden;
     text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.whitespace-nowrap {
     white-space: nowrap
 }
 
@@ -816,6 +872,10 @@
 
 .border-2 {
     border-width: 2px
+}
+
+.\!border-0 {
+    border-width: 0px !important
 }
 
 .border-b {
@@ -1214,6 +1274,11 @@
 .\!py-3 {
     padding-top: 12px !important;
     padding-bottom: 12px !important
+}
+
+.py-1\.5 {
+    padding-top: 6px;
+    padding-bottom: 6px
 }
 
 .\!pb-3 {
@@ -1745,6 +1810,10 @@
 
 .\[filter\:grayscale\(1\)\] {
     filter: grayscale(1)
+}
+
+.\[filter\:grayscale\(100\%\)\] {
+    filter: grayscale(100%)
 }
 
 .\[font-family\:\'Plus_Jakarta_Sans\'\] {
