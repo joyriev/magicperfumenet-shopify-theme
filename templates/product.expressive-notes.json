@@ -110,12 +110,13 @@
           "settings": {
             "heading": "Why are your perfumes so accessible?",
             "icon": "none",
-            "content": "<p><br/>We focus on the essentials: the perfume.<br/><br/>No luxurious bottles, no excessive packaging, no expensive stores or overpriced influencer partnerships — to experience luxury without exceeding your budget.</p>",
+            "content": "<p>We focus on the essentials: the perfume.<br/><br/>No luxurious bottles, no excessive packaging, no expensive stores or overpriced influencer partnerships — to experience luxury without exceeding your budget.</p>",
             "page": ""
           }
         },
         "collapsible_tab_T6Fk9z": {
           "type": "collapsible_tab",
+          "disabled": true,
           "settings": {
             "heading": "Is this an eau de parfum?",
             "icon": "none",
@@ -128,7 +129,7 @@
           "settings": {
             "heading": "How long does the perfume last?",
             "icon": "none",
-            "content": "<p>Perfume longevity varies by skin type, generally between 3 and 8 hours for a soft but present trail.<br/><br/>Over time, the fragrance gradually fades.</p>",
+            "content": "<p>Perfume longevity varies by skin type, generally between 8 and 12 hours for a soft but present trail.<br/><br/>Over time, the fragrance gradually fades.</p>",
             "page": ""
           }
         },
@@ -144,9 +145,9 @@
         "collapsible_tab_HiNKBa": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "What does 19% perfume mean?",
+            "heading": "Disclaimer",
             "icon": "none",
-            "content": "<p>This means the bottle content contains up to 19% perfume oils.<br/><br/>For comparison, an Eau de Parfum generally contains between 16 and 21% concentration.</p>",
+            "content": "<p>It is important for our visitors to understand that our website's product references are purely for guidance purposes. These references should never be seen as actual products from well-known high street, designer, or niche brands. The ownership of all names and copyrights, whether explicitly used in our content or not, resides with the respective original manufacturers and/or designers.</p><p>The items we showcase are based on inspiration and are in no way exact duplicates of other fragrances or original products.</p><p>We wish to clarify that MAGYX is an independent entity and does not have any connections with the creators of the designer brands that remain unnamed on our platform.</p><p>Ownership of all 'Trademarks', whether they are directly used in our content or not, is with their respective owners. Our platform is not officially connected to, endorsed by, supported by, authorized by, or sponsored by any trademark holder, whether they are mentioned or not on our website.</p><p>The mention of any product name on our site is solely for identification and reference and should not be interpreted as having any association with the owner of the trademark.</p>",
             "page": ""
           }
         },
