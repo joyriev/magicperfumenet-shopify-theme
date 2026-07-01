@@ -916,6 +916,11 @@
     border-color: rgb(15 23 42 / var(--tw-border-opacity, 1))
 }
 
+.border-\[\#3b82f6\] {
+    --tw-border-opacity: 1;
+    border-color: rgb(59 130 246 / var(--tw-border-opacity, 1))
+}
+
 .bg-\[\#0F172A\] {
     --tw-bg-opacity: 1;
     background-color: rgb(15 23 42 / var(--tw-bg-opacity, 1))
@@ -1545,6 +1550,11 @@
 
 .text-white\/50 {
     color: rgb(255 255 255 / 0.5)
+}
+
+.text-\[\#3b82f6\] {
+    --tw-text-opacity: 1;
+    color: rgb(59 130 246 / var(--tw-text-opacity, 1))
 }
 
 .underline {
