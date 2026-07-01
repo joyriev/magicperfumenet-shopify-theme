@@ -60,59 +60,6 @@
             </div>
           </div>
         </div>
-      {%- else -%}
-
-        <div class="bc-rewards-bars-wrap" style="flex-direction: row;">
-          <div class="bc-progress-wrap">
-            {% assign cart_count = cart.item_count %}
-            {% assign progress_percentage = cart_count | times: 25 | at_most: 100 %}
-
-            <div class="bc-progress-text" style="color: #000000;">
-              {% if cart_count >= 4 %}
-                🎉 3+1 Offer <br> unlocked!
-              {% else %}
-                Only
-                <strong>{{ 4 | minus: cart_count }}</strong>
-                more bottles for
-                <strong>1 free</strong>!
-              {% endif %}
-            </div>
-            <div class="bc-progress-bar" style="background-color: #E2E2E2; margin-bottom: 0;">
-              <div class="bc-progress-fill" style="width: {{ progress_percentage }}%; background-color: #93D3FF;"></div>
-              <div class="bc-checkpoints">
-                <div class="bc-checkpoint {% if cart_count >= 4 %}is-reached{% endif %}" style="left: 100%; 
-               background-color: {% if cart_count >= 4 %}#93D3FF{% else %}#E2E2E2{% endif %};
-               color: #000000;">
-                  {{ 'icon-gift.svg' | inline_asset_content }}
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="bc-progress-wrap">
-            {% assign cart_total = cart.total_price %}
-            {% assign progress_percentage = cart_total | times: 100.0 | divided_by: 5000 | at_most: 100 %}
-
-            <div class="bc-progress-text" style="color: #000000;">
-              {% if cart_total >= 5000 %}
-                🎉 Free shipping offer activated!
-              {% else %}
-                <strong>{{ 5000 | minus: cart_total | money }}</strong>
-                to unlock
-                <strong>Free shipping</strong>!
-              {% endif %}
-            </div>
-            <div class="bc-progress-bar" style="background-color: #E2E2E2; margin-bottom: 0;">
-              <div class="bc-progress-fill" style="width: {{ progress_percentage }}%; background-color: #93D3FF;"></div>
-              <div class="bc-checkpoints">
-                <div class="bc-checkpoint {% if cart_total >= 5000 %}is-reached{% endif %}" style="left: 100%; 
-               background-color: {% if cart_total >= 5000 %}#93D3FF{% else %}#E2E2E2 {% endif %};
-               color: #000000;">
-                  {{ 'icon-truck.svg' | inline_asset_content }}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       {% endif %}
 
       <cart-drawer-items
@@ -122,7 +69,7 @@
         <form
           action="{{ routes.cart_url }}"
           id="CartDrawer-Form"
-          class="cart__contents cart-drawer__form"
+          class="cart__contents cart-drawer__form border-0 border-t border-gray-200 border-solid"
           method="post">
           <div id="CartDrawer-CartItems" class="drawer__contents js-contents">
             {%- if cart != empty -%}
@@ -416,17 +363,19 @@
                                 {%- if item.variant.quantity_price_breaks.size > 0 -%}
                                   <volume-pricing class="parent-display">
                                     <ul class="list-unstyled">
+                                      {%- capture item_variant_each_price -%}{{ item.variant.price | money_with_currency }}{%- endcapture -%}
                                       <li>
                                         <span>{{ item.variant.quantity_rule.min }}+</span>
-                                        <span>{{ item.variant.price | money_with_currency }}/ea</span>
+                                        <span>{{ 'sections.quick_order_list.each' | t: money: item_variant_each_price }}</span>
                                       </li>
                                       {%- for price_break in item.variant.quantity_price_breaks -%}
+                                        {%- capture price_break_each_price -%}{{ price_break.price | money_with_currency }}{%- endcapture -%}
                                         <li>
                                           <span>
                                             {{- price_break.minimum_quantity -}}
                                             <span aria-hidden="true">+</span>
                                           </span>
-                                          <span>{{ price_break.price | money_with_currency }}/ea</span>
+                                          <span>{{ 'sections.quick_order_list.each' | t: money: price_break_each_price }}</span>
                                         </li>
                                       {%- endfor -%}
                                     </ul>
@@ -592,7 +541,7 @@
 
         <!-- CTAs -->
 
-        <div class="cart__ctas" {{ block.shopify_attributes }}>
+        <div class="cart__ctas [&_.gfgPageWrapper]:!mb-0" {{ block.shopify_attributes }}>
           <button
             type="submit"
             id="CartDrawer-Checkout"
