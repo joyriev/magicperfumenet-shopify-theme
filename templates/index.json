@@ -44,33 +44,33 @@
         "perks_dXcKFz": {
           "type": "perks",
           "settings": {
-            "perk_image": "shopify://shop_images/Screenshot_2026-02-03_at_12.00.15_PM.webp",
-            "perk_title": "Free shipping from €50",
-            "perk_content": "this week only"
+            "perk_image": "shopify://shop_images/eu_made.webp",
+            "perk_title": "Made in the EU",
+            "perk_content": "Vegan, cruelty-free and made in the EU."
           }
         },
         "perks_x8n9DF": {
           "type": "perks",
           "settings": {
-            "perk_image": "shopify://shop_images/Screenshot_2026-02-03_at_12.04.49_PM.avif",
-            "perk_title": "Exclusive rewards",
-            "perk_content": "Gift cards up to €100"
+            "perk_image": "shopify://shop_images/quality_check.webp",
+            "perk_title": "French Fragrance Quality",
+            "perk_content": "Made with the same care as leading luxury brands."
           }
         },
         "perks_yTdgqz": {
           "type": "perks",
           "settings": {
-            "perk_image": "shopify://shop_images/Screenshot_2026-02-03_at_12.05.39_PM.webp",
-            "perk_title": "Made in Europe",
-            "perk_content": "with passion and expertise"
+            "perk_image": "shopify://shop_images/money_back_g.webp",
+            "perk_title": "60-Day Money-Back Guarantee",
+            "perk_content": "Not convinced? Send your order back within 60 days and get your money back"
           }
         },
         "perks_7zj6gB": {
           "type": "perks",
           "settings": {
-            "perk_image": "shopify://shop_images/Screenshot_2026-02-03_at_12.07.45_PM.webp",
-            "perk_title": "Free returns",
-            "perk_content": "no justification needed"
+            "perk_image": "shopify://shop_images/long_lasting.webp",
+            "perk_title": "Long-Lasting Scent",
+            "perk_content": "Lasts over 12 hours on the skin (some report even longer lasting wear)."
           }
         }
       },
