@@ -92,6 +92,10 @@
           "type": "dialect_notes",
           "settings": {}
         },
+        "expanded_notes_jDQeQC": {
+          "type": "expanded_notes",
+          "settings": {}
+        },
         "collapsible_tab_FAAFhb": {
           "type": "collapsible_tab",
           "settings": {
@@ -184,6 +188,7 @@
         "quantity_selector_WT7P8d",
         "icon_with_text_ytpGUH",
         "dialect_notes_kwwVkN",
+        "expanded_notes_jDQeQC",
         "collapsible_tab_FAAFhb",
         "collapsible_tab_bKn87j",
         "collapsible_tab_T6Fk9z",
