@@ -25,35 +25,7 @@
         "custom_liquid_fep4D7": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "{% render 'pre-atc-block' %}"
-          }
-        },
-        "price_MG94AW": {
-          "type": "price",
-          "disabled": true,
-          "settings": {}
-        },
-        "variant_picker_hH3Diz": {
-          "type": "variant_picker",
-          "disabled": true,
-          "settings": {
-            "picker_type": "button",
-            "swatch_shape": "circle"
-          }
-        },
-        "buy_buttons_eXWBwX": {
-          "type": "buy_buttons",
-          "disabled": true,
-          "settings": {
-            "show_dynamic_checkout": false,
-            "show_gift_card_recipient": true
-          }
-        },
-        "text_g8FVDr": {
-          "type": "text",
-          "settings": {
-            "text": "<strong>Top Notes: </strong>{{ product.metafields.custom.main_notes | metafield_text: field: 'name' }}",
-            "text_style": "body"
+            "custom_liquid": "{% render 'scent-profiling' %}"
           }
         },
         "reactive_atc_LBDQE9": {
@@ -205,10 +177,6 @@
         "title_DkyBTh",
         "custom_rating_text_ehyqmQ",
         "custom_liquid_fep4D7",
-        "price_MG94AW",
-        "variant_picker_hH3Diz",
-        "buy_buttons_eXWBwX",
-        "text_g8FVDr",
         "reactive_atc_LBDQE9",
         "custom_liquid_QcxgR4",
         "payment_badges_FkCwVc",
