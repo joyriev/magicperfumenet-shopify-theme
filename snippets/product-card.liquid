@@ -22,13 +22,13 @@
     {% comment %} <div class="line-clamp-3 text-sm [&_br]:hidden mt-2">
         {{ product.metafields.custom.short_description | metafield_tag }}
     </div> {% endcomment %}
-    <h3 class="mb-0 text-base">
+    <h3 class="mb-3 text-base">
         <a class="no-underline text-black font-semibold" href="{{product.url}}">
         {{ product.title }}
         </a>
     </h3>
     {% unless product.handle == 'gift-set' or product.handle == 'gift-set-for-gentlemen' %}
-        <div class="my-3">
+        <div class="mb-3">
             {%- render 'price'
             , product: product
             , use_variant: true
