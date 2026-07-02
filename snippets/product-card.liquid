@@ -27,14 +27,16 @@
         {{ product.title }}
         </a>
     </h3>
-    <div class="my-3">
-        {%- render 'price'
-        , product: product
-        , use_variant: true
-        , show_badges: false
-        , price_class: 'price--large'
-        -%}
-    </div>
+    {% unless product.handle == 'gift-set' or product.handle == 'gift-set-for-gentlemen' %}
+        <div class="my-3">
+            {%- render 'price'
+            , product: product
+            , use_variant: true
+            , show_badges: false
+            , price_class: 'price--large'
+            -%}
+        </div>
+    {% endunless %}
     <div class="mt-auto">
         <a class="hover:bg-[#17803d] bg-[#146b32] text-white uppercase text-sm font-semibold tracking-[2px] py-3 px-4 rounded-lg no-underline w-full text-center block" href="{{ product.url }}">
         Shop now
