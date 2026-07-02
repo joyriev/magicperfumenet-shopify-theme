@@ -14,8 +14,16 @@
     "footer": {
       "type": "footer",
       "blocks": {
+        "link_list_PbHiJW": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Quick links",
+            "menu": "main-menu"
+          }
+        },
         "text_x89MfR": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "heading": "Magyx",
             "subtext": "<p>Magyx is a perfume brand dedicated to helping you discover your signature scent. We offer premium perfumes in convenient trial formats — so you can fall in love before you commit.<br/><br/></p>"
@@ -37,6 +45,7 @@
         }
       },
       "block_order": [
+        "link_list_PbHiJW",
         "text_x89MfR",
         "link_list_Fhdw8K",
         "text_RP9BNp"
