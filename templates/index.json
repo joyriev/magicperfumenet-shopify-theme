@@ -720,6 +720,15 @@
         "padding_top": 72,
         "padding_bottom": 72
       }
+    },
+    "our_bestsellers_FDEkmb": {
+      "type": "our-bestsellers",
+      "name": "Our Bestsellers",
+      "settings": {
+        "background_color": "#226139",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -731,6 +740,7 @@
     "bigger_then_a_shave_nJQJzw",
     "home_tabs_fcxFYG",
     "collapsible_content_JWRDn8",
-    "massive_review_kTc3WW"
+    "massive_review_kTc3WW",
+    "our_bestsellers_FDEkmb"
   ]
 }
