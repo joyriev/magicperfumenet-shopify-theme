@@ -60,16 +60,10 @@
           "type": "shopify://apps/eb-easy-bundle-builder/blocks/app-block-productBundle/05b1325c-6303-4da5-8e2f-b13ab2a50e1a",
           "settings": {}
         },
-        "reactive_atc_LBDQE9": {
-          "type": "reactive_atc",
-          "disabled": true,
-          "settings": {}
-        },
         "custom_liquid_QcxgR4": {
           "type": "custom_liquid",
-          "disabled": true,
           "settings": {
-            "custom_liquid": "<img \nstyle=\"width: 100%;\" \nsrc=\"https://cdn.shopify.com/s/files/1/0086/7932/5753/files/Zrzut-ekranu-2025-03-19-095755-1024x294.png?v=1770100462\" alt=\"Benefits\">"
+            "custom_liquid": "<div>\n  <img\n    class=\"max-w-[400px] mx-auto mt-8 block [filter:grayscale(1)]\"\n    src=\"{{ 'payment-badge.svg' | asset_url }}\"\n    alt=\"Payment methods\"\n    width=\"100%\"\n    height=\"auto\"\n    loading=\"lazy\">\n</div>\n\n<div class=\"!my-6\">\n  <p class=\"my-0 text-center font-semibold tracking-normal\">\n    Delivered to\n    <span class=\"shipping_location\">Worldwide</span>\n    in 5 business days.\n  </p>\n</div>\n\n<script>\n  (function() {\n    // Update shipping location under ATC\n    const shippingLocation = document.querySelector('.shipping_location');\n    if (shippingLocation) {\n    fetch('https://ipapi.co/country_name/')\n      .then((response) => {\n        if (!response.ok) throw new Error(`HTTP ${response.status}`);\n        return response.text();\n      })\n      .then((countryName) => {\n        shippingLocation.textContent = countryName.trim();\n      })\n      .catch(() => {\n        // Leave existing text in place if lookup fails\n      });\n    }\n  })();\n</script>"
           }
         },
         "payment_badges_FkCwVc": {
@@ -215,7 +209,6 @@
         "buy_buttons_eXWBwX",
         "text_g8FVDr",
         "eb_easy_bundle_builder_app_block_product_bundle_WQBTdA",
-        "reactive_atc_LBDQE9",
         "custom_liquid_QcxgR4",
         "payment_badges_FkCwVc",
         "delivery_deadline_CQHJwz",
