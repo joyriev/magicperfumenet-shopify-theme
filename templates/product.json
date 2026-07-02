@@ -56,10 +56,6 @@
             "text_style": "body"
           }
         },
-        "eb_easy_bundle_builder_app_block_product_bundle_WQBTdA": {
-          "type": "shopify://apps/eb-easy-bundle-builder/blocks/app-block-productBundle/05b1325c-6303-4da5-8e2f-b13ab2a50e1a",
-          "settings": {}
-        },
         "reactive_atc_LBDQE9": {
           "type": "reactive_atc",
           "settings": {}
@@ -213,7 +209,6 @@
         "variant_picker_hH3Diz",
         "buy_buttons_eXWBwX",
         "text_g8FVDr",
-        "eb_easy_bundle_builder_app_block_product_bundle_WQBTdA",
         "reactive_atc_LBDQE9",
         "custom_liquid_QcxgR4",
         "payment_badges_FkCwVc",
