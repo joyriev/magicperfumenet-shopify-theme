@@ -233,33 +233,33 @@
         "perks_MLz9YK": {
           "type": "perks",
           "settings": {
-            "perk_image": "shopify://shop_images/Screenshot_2026-02-03_at_12.00.15_PM.webp",
-            "perk_title": "Free shipping for orders over €50!",
-            "perk_content": "Only this week"
+            "perk_image": "shopify://shop_images/eu_made.webp",
+            "perk_title": "Made in the EU",
+            "perk_content": "Vegan, cruelty-free and made in the EU."
           }
         },
         "perks_NV4H3P": {
           "type": "perks",
           "settings": {
-            "perk_image": "shopify://shop_images/Screenshot_2026-02-03_at_12.04.49_PM.avif",
-            "perk_title": "Special discounts for regular customers",
-            "perk_content": "Vouchers up to €100"
+            "perk_image": "shopify://shop_images/quality_check.webp",
+            "perk_title": "French Fragrance Quality",
+            "perk_content": "Made with the same care as leading luxury brands."
           }
         },
         "perks_qWY7Uy": {
           "type": "perks",
           "settings": {
-            "perk_image": "shopify://shop_images/Screenshot_2026-02-03_at_12.05.39_PM.webp",
-            "perk_title": "Free gift wrapping",
-            "perk_content": "Personalized note of 100 characters"
+            "perk_image": "shopify://shop_images/money_back_g.webp",
+            "perk_title": "60-Day Money-Back Guarantee",
+            "perk_content": "Not convinced? Send your order back within 60 days and get your money back"
           }
         },
         "perks_HKnHJ8": {
           "type": "perks",
           "settings": {
-            "perk_image": "shopify://shop_images/Screenshot_2026-02-03_at_12.07.45_PM.webp",
-            "perk_title": "Expert customer service",
-            "perk_content": "8:00 - 20:00, 7 days a week"
+            "perk_image": "shopify://shop_images/long_lasting.webp",
+            "perk_title": "Long-Lasting Scent",
+            "perk_content": "Lasts over 12 hours on the skin (some report even longer lasting wear)."
           }
         }
       },
