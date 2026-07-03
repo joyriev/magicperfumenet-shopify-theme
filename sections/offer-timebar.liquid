@@ -178,22 +178,33 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-  function getNextMidnightTimestamp() {
-    const now = new Date();
-    const nextMidnight = new Date();
+    function getNextMidnightTimestamp() {
+      const nextMidnight = new Date();
 
-    nextMidnight.setHours(24, 0, 0, 0); // next day 00:00:00
+      nextMidnight.setHours(24, 0, 0, 0); // next day 00:00:00
 
-    return Math.floor(nextMidnight.getTime() / 1000);
-  }
+      return Math.floor(nextMidnight.getTime() / 1000);
+    }
 
-  const deadline = getNextMidnightTimestamp();
+    function getCountdownDeadline() {
+      const configuredDate = {{ section.settings.countdown_date | json }};
 
-  new FlipDown(deadline)
-    .start()
-    .ifEnded(() => {
-      console.log('Countdown ended');
-    });
+      if (!configuredDate) {
+        return getNextMidnightTimestamp();
+      }
+
+      const configuredTimestamp = Math.floor(new Date(configuredDate).getTime() / 1000);
+
+      return Number.isNaN(configuredTimestamp) ? getNextMidnightTimestamp() : configuredTimestamp;
+    }
+
+    const deadline = getCountdownDeadline();
+
+    new FlipDown(deadline)
+      .start()
+      .ifEnded(() => {
+        console.log('Countdown ended');
+      });
   });
 </script>
 
@@ -220,10 +231,10 @@
         "default": "Exclusive Offer"
       },
       {
-        "type": "number",
-        "id": "ends_in_minutes",
-        "label": "Ends in (in minutes)",
-        "default": 30
+        "type": "text",
+        "id": "countdown_date",
+        "label": "End Date and Time",
+        "info": "Format: YYYY/MM/DD HH:MM:SS (e.g., 2026/12/25 23:59:59)"
       }, {
         "type": "text",
         "id": "append_text",
