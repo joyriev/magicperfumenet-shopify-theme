@@ -31,10 +31,6 @@
     padding-right: 12px;
   }
 
-  .flipdown .rotor-group:first-child {
-    display: none;
-  }
-
   .flipdown .rotor-group:last-child {
     padding-right: 0;
   }
@@ -146,6 +142,14 @@
   #copyCodeText {
     font-weight: 600;
   }
+  {% if section.settings.countdown_date == blank %}
+    .flipdown {
+      width: 200px !important;
+    }
+    .flipdown .rotor-group:first-child {
+      display: none;
+    }
+  {% endif %}
 </style>
 
 <div class="py-2" style="background-color: {{ section.settings.background_color }};">
