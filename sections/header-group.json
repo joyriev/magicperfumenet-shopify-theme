@@ -18,7 +18,7 @@
         "background_color": "#0d5daf",
         "forground_color": "#15803d",
         "prepend_text": "Payday Sale:",
-        "ends_in_minutes": 30,
+        "countdown_date": "2026/12/25 23:59:59",
         "append_text": "Buy 3, get 1 free 🎁",
         "link": ""
       }
