@@ -299,7 +299,7 @@
         "stack_EkfTtL": {
           "type": "stack",
           "settings": {
-            "our_stack": "Daily compliments from €10",
+            "our_stack": "Daily compliments",
             "other_brands": "Often mass-produced"
           }
         },
