@@ -2,7 +2,14 @@
   <span>{{ product.metafields.custom.bundle_product_content }}</span>
 </div>
 
-{% if product.metafields.custom.choose_your_fragrances_options != blank %}
+{% assign bundle_collection = collections['best-sellers'] %}
+{% assign product_count = product.metafields.custom.bundle_product_count %}
+{% assign dropdown_ml = product.metafields.custom.select_bundle_dropdown_ml | default: "50" %}
+{% assign bundle_ml = dropdown_ml | append: "ml" %}
+{% assign selected_variant = product.selected_or_first_available_variant %}
+
+
+{% if product_count != blank %}
   <div
     id="price-{{ section.id }}"
     class="bundle-price-pdp"
@@ -26,21 +33,15 @@
 
       {% if product.compare_at_price > product.price %}
         <span class="text-gray-500 font-semibold line-through compare-price">
-          Designerpreis: {{ product.compare_at_price | money }}
+          Original price: {{ product.compare_at_price | money }}
         </span>
       {% endif %}
     </div>
     <div class="text-lg font-semibold text-black leading-normal">
-      Das entspricht nur {{ product.price | divided_by: product.metafields.custom.choose_your_fragrances_options | money }} pro Flasche.
+      That's only {{ product.price | divided_by: product_count | money }} per bottle.
     </div>
   </div>
 {% endif %}
-
-{% assign bundle_collection = collections['best-sellers'] %}
-{% assign product_count = product.metafields.custom.bundle_product_content %}
-{% assign dropdown_ml = product.metafields.custom.select_bundle_dropdown_ml | default: "50" %}
-{% assign bundle_ml = dropdown_ml | append: "ml" %}
-{% assign selected_variant = product.selected_or_first_available_variant %}
 
 <style>
   [x-cloak] {
@@ -114,7 +115,7 @@
         {% endif %}
         {% render 'perfume-icon' %}
         <div class="text-base">
-          Wählen Sie Ihr Parfüm
+          Choose your perfume
         </div>
         <span class="inline-block ml-auto">{% render 'arrow-down' %}</span>
       </button>
@@ -130,8 +131,8 @@
         'cursor-pointer hover:bg-[#368856]': $store.bundleBuilder.selectedProducts.length >= {{ product_count }}
       }"
     class="w-full flex flex-wrap items-center !mb-0 text-2xl !pb-3 !pt-3 rounded-lg button bg-[#22613a] transition-colors shadow-xl tracking-normal button--full-width">
-    <span x-show="$store.bundleBuilder.selectedProducts.length < {{ product_count }}" x-text="'NOCH ' + ({{ product_count }} - $store.bundleBuilder.selectedProducts.length) + ' AUSWÄHLEN'"></span>
-    <div class="flex" x-show="$store.bundleBuilder.selectedProducts.length === {{ product_count }}">JETZT KAUFEN
+    <span x-show="$store.bundleBuilder.selectedProducts.length < {{ product_count }}" x-text="'SELECT ' + ({{ product_count }} - $store.bundleBuilder.selectedProducts.length) + ' MORE'"></span>
+    <div class="flex" x-show="$store.bundleBuilder.selectedProducts.length === {{ product_count }}">BUY NOW
       <div class="ml-2 pl-2 border-0 border-l flex items-center border-solid border-gray-200/20">
         <div
           class="inline-block text-lg bg-[#1E5834] px-3 rounded"
@@ -294,8 +295,8 @@
       width="40"
       height="40" />
     <div class="text-slate-900">
-      <strong class="font-semibold">Teste es 60 Tage lang – völlig risikofrei.</strong>
-      <div class="[display:none] md:block">Sollten Sie nicht absolut begeistert sein, erstatten wir Ihnen den vollen Betrag zurück!</div>
+      <strong class="font-semibold">Try it for 60 days — completely risk-free.</strong>
+      <div class="[display:none] md:block">If you're not completely satisfied, we'll refund your full purchase price!</div>
     </div>
   </div>
 </div>
