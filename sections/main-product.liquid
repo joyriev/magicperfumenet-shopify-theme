@@ -1043,6 +1043,10 @@
   </div>
 </product-info>
 
+{% if product.template_suffix == 'custom-bundle' %}
+  {% render 'custom-offer-bundle-modal' %}
+{% endif %}
+
 {% schema %}
 {
   "name": "t:sections.main-product.name",
