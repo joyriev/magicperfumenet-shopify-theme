@@ -28,6 +28,51 @@
         "padding_bottom": 36
       }
     },
+    "blocky_lys_scrolling_text_bar_ixCgNK": {
+      "type": "blocky-lys-scrolling-text-bar",
+      "blocks": {
+        "text_fDfb9f": {
+          "type": "text",
+          "settings": {
+            "text": "🌿 Vegan & Cruelty-Free"
+          }
+        },
+        "text_dbL7NN": {
+          "type": "text",
+          "settings": {
+            "text": "⭐ 10,000+ Five-Star Reviews"
+          }
+        },
+        "text_FMeEU4": {
+          "type": "text",
+          "settings": {
+            "text": "🚚 FREE SHIPPING $65"
+          }
+        },
+        "text_RRFPyc": {
+          "type": "text",
+          "settings": {
+            "text": "🛡️ 90-Day Money-Back Guarantee"
+          }
+        }
+      },
+      "block_order": [
+        "text_fDfb9f",
+        "text_dbL7NN",
+        "text_FMeEU4",
+        "text_RRFPyc"
+      ],
+      "name": "Scrolling Text Bar",
+      "settings": {
+        "text_size": "1.75",
+        "background_color": "#000000",
+        "text_color": "#FFFFFF",
+        "speed": 1,
+        "text_spacing": 3,
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
+    },
     "home_hero_banner_YetQDJ": {
       "type": "home-hero-banner",
       "disabled": true,
@@ -728,51 +773,6 @@
         "background_color": "#226139",
         "padding_top": 36,
         "padding_bottom": 36
-      }
-    },
-    "blocky_lys_scrolling_text_bar_ixCgNK": {
-      "type": "blocky-lys-scrolling-text-bar",
-      "blocks": {
-        "text_fDfb9f": {
-          "type": "text",
-          "settings": {
-            "text": "Scrolling Text Bar"
-          }
-        },
-        "text_dbL7NN": {
-          "type": "text",
-          "settings": {
-            "text": "Scrolling Text Bar"
-          }
-        },
-        "text_FMeEU4": {
-          "type": "text",
-          "settings": {
-            "text": "Scrolling Text Bar"
-          }
-        },
-        "text_RRFPyc": {
-          "type": "text",
-          "settings": {
-            "text": "Scrolling Text Bar"
-          }
-        }
-      },
-      "block_order": [
-        "text_fDfb9f",
-        "text_dbL7NN",
-        "text_FMeEU4",
-        "text_RRFPyc"
-      ],
-      "name": "Scrolling Text Bar",
-      "settings": {
-        "text_size": "1.75",
-        "background_color": "#000000",
-        "text_color": "#FFFFFF",
-        "speed": 1,
-        "text_spacing": 3,
-        "padding_top": 16,
-        "padding_bottom": 16
       }
     }
   },
