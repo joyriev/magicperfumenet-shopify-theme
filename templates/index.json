@@ -86,14 +86,13 @@
     },
     "home_category_x4dqJF": {
       "type": "home-category",
-      "disabled": true,
       "blocks": {
         "item_JnTbBp": {
           "type": "item",
           "settings": {
             "image": "shopify://shop_images/223.png",
             "heading": "Men",
-            "collection_url": "shopify://collections/for-men"
+            "collection": ""
           }
         },
         "item_knQh7b": {
@@ -101,7 +100,7 @@
           "settings": {
             "image": "shopify://shop_images/004.png",
             "heading": "Women",
-            "collection_url": "shopify://collections/for-women"
+            "collection": ""
           }
         },
         "item_Lq6Nz3": {
@@ -109,7 +108,7 @@
           "settings": {
             "image": "shopify://shop_images/113.png",
             "heading": "Unisex",
-            "collection_url": "shopify://collections/unisex"
+            "collection": ""
           }
         }
       },
@@ -118,6 +117,7 @@
         "item_knQh7b",
         "item_Lq6Nz3"
       ],
+      "disabled": true,
       "name": "Home Category",
       "settings": {
         "background_color": "#fcfbf9",
@@ -382,78 +382,6 @@
         "background_color": "#f7f7f7",
         "heading": "From boardrooms to ballrooms, we've got you covered.",
         "subheading": "Luxury-inspired fragrances that fit your style, your mood, and your budget.",
-        "padding_top": 72,
-        "padding_bottom": 72
-      }
-    },
-    "collapsible_content_JWRDn8": {
-      "type": "collapsible-content",
-      "blocks": {
-        "collapsible_row_b44n9F": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Why are our perfumes so affordable?",
-            "icon": "none",
-            "row_content": "<p><br/>We invest in the essentials: the fragrance.<br/><br/>No luxurious bottle, no superfluous packaging, no expensive boutiques or overpriced influencer partnerships — to offer you a high-end scent without breaking the bank.<br/></p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_rCVDnP": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Is this eau de parfum?",
-            "icon": "none",
-            "row_content": "<p>Yes, it's an eau de parfum – it contains up to 19% essence. Eau de toilette, for example, contains between 5 and 8% essence, and essence concentration is 41% and more.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_rNbx6p": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Is this an eau de parfum?",
-            "icon": "none",
-            "row_content": "<p><br/>Yes. Our formula contains up to 19% aromatic concentration.</p><p><br/>For comparison, an Eau de Toilette generally contains between 5 and 8%, while perfume extract starts from 41%.<br/><br/></p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_irweNa": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Does your inspired perfume smell different from the original?",
-            "icon": "none",
-            "row_content": "<p>Not at all. Our inspired fragrances are carefully crafted to recreate a very close olfactory experience: same note family, same depth and same longevity — at a fraction of the price.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_gJVQkB": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "What does a 19% perfume concentration mean?",
-            "icon": "none",
-            "row_content": "<p>This corresponds to the amount of pure perfume oils present in each bottle.<br/><br/>With 19%, our perfumes fall fully into the Eau de Parfum category, generally between 16 and 21% concentration. In other words, you enjoy an intensely concentrated fragrance, with longevity comparable to the market's leading references.<br/></p>",
-            "page": ""
-          }
-        }
-      },
-      "block_order": [
-        "collapsible_row_b44n9F",
-        "collapsible_row_rCVDnP",
-        "collapsible_row_rNbx6p",
-        "collapsible_row_irweNa",
-        "collapsible_row_gJVQkB"
-      ],
-      "name": "t:sections.collapsible_content.presets.name",
-      "settings": {
-        "caption": "",
-        "heading": "FAQ",
-        "heading_size": "h1",
-        "heading_alignment": "center",
-        "layout": "none",
-        "color_scheme": "",
-        "container_color_scheme": "",
-        "open_first_collapsible_row": false,
-        "image_ratio": "adapt",
-        "desktop_layout": "image_second",
         "padding_top": 72,
         "padding_bottom": 72
       }
@@ -883,6 +811,78 @@
         "padding_bottom": 72
       }
     },
+    "collapsible_content_JWRDn8": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_b44n9F": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Why are our perfumes so affordable?",
+            "icon": "none",
+            "row_content": "<p><br/>We invest in the essentials: the fragrance.<br/><br/>No luxurious bottle, no superfluous packaging, no expensive boutiques or overpriced influencer partnerships — to offer you a high-end scent without breaking the bank.<br/></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_rCVDnP": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Is this eau de parfum?",
+            "icon": "none",
+            "row_content": "<p>Yes, it's an eau de parfum – it contains up to 19% essence. Eau de toilette, for example, contains between 5 and 8% essence, and essence concentration is 41% and more.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_rNbx6p": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Is this an eau de parfum?",
+            "icon": "none",
+            "row_content": "<p><br/>Yes. Our formula contains up to 19% aromatic concentration.</p><p><br/>For comparison, an Eau de Toilette generally contains between 5 and 8%, while perfume extract starts from 41%.<br/><br/></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_irweNa": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Does your inspired perfume smell different from the original?",
+            "icon": "none",
+            "row_content": "<p>Not at all. Our inspired fragrances are carefully crafted to recreate a very close olfactory experience: same note family, same depth and same longevity — at a fraction of the price.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_gJVQkB": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What does a 19% perfume concentration mean?",
+            "icon": "none",
+            "row_content": "<p>This corresponds to the amount of pure perfume oils present in each bottle.<br/><br/>With 19%, our perfumes fall fully into the Eau de Parfum category, generally between 16 and 21% concentration. In other words, you enjoy an intensely concentrated fragrance, with longevity comparable to the market's leading references.<br/></p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_b44n9F",
+        "collapsible_row_rCVDnP",
+        "collapsible_row_rNbx6p",
+        "collapsible_row_irweNa",
+        "collapsible_row_gJVQkB"
+      ],
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "caption": "",
+        "heading": "FAQ",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "color_scheme": "",
+        "container_color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
     "our_bestsellers_FDEkmb": {
       "type": "our-bestsellers",
       "name": "Our Bestsellers",
@@ -904,8 +904,8 @@
     "stacks_up_frVVB4",
     "bigger_then_a_shave_nJQJzw",
     "home_tabs_fcxFYG",
-    "collapsible_content_JWRDn8",
     "massive_review_kTc3WW",
+    "collapsible_content_JWRDn8",
     "our_bestsellers_FDEkmb"
   ]
 }
