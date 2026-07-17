@@ -41,15 +41,14 @@
       "blocks": {
         "text_KwnK4Y": {
           "type": "text",
-          "disabled": true,
           "settings": {
-            "text": "ENGINEERED FOR A CLEANER SHAVE"
+            "text": "🌿 Vegan & Cruelty-Free"
           }
         },
         "text_39tt9p": {
           "type": "text",
           "settings": {
-            "text": "MADE IN THE EU"
+            "text": "⭐ 10,000+ Five-Star Reviews"
           }
         },
         "text_DiPtyi": {
@@ -61,13 +60,7 @@
         "text_7Mhc9j": {
           "type": "text",
           "settings": {
-            "text": "60-DAY GUARANTEE"
-          }
-        },
-        "text_QD7JEH": {
-          "type": "text",
-          "settings": {
-            "text": "SAFE & SECURE CHECKOUT"
+            "text": "🛡️ 90-Day Money-Back Guarantee"
           }
         }
       },
@@ -75,10 +68,8 @@
         "text_KwnK4Y",
         "text_39tt9p",
         "text_DiPtyi",
-        "text_7Mhc9j",
-        "text_QD7JEH"
+        "text_7Mhc9j"
       ],
-      "disabled": true,
       "settings": {
         "text_size": "1.5",
         "background_color": "#000000",
