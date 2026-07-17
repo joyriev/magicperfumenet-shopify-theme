@@ -86,6 +86,7 @@
     },
     "home_category_x4dqJF": {
       "type": "home-category",
+      "disabled": true,
       "blocks": {
         "item_JnTbBp": {
           "type": "item",

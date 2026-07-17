@@ -17,16 +17,29 @@
   class="section-{{ section.id }}-padding bg-cover bg-center"
   style="background-color: {{ section.settings.background_color }}; background-image: url('{{ section.settings.background_image | image_url }}');">
   <div class="page-width">
-    <h2 class="text-3xl md:text-4xl font-black mt-0 !mb-12 text-center">{{ section.settings.title }}</h2>
-    <div class="grid grid-cols-1 gap-12 md:grid-cols-2">
+    <h2 class="text-3xl md:text-4xl font-black my-0">{{ section.settings.title }}</h2>
 
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-6">
       {% for block in section.blocks %}
         <a
-          href="{{ block.settings.collection_url }}"
-          class="rounded-xl overflow-hidden h-full flex no-underline"
-          style="background-image: url('{{ block.settings.image |  image_url  }}');">
-          <div class="w-full min-h-[200px] p-6 flex flex-col justify-end bg-black/50">
-            <h3 class="text-3xl font-bold text-white !my-0">{{ block.settings.heading }}</h3>
+          href="{{ block.settings.collection.url }}"
+          class="group relative flex overflow-hidden rounded-xl text-white no-underline"
+          {{ block.shopify_attributes }}>
+          {% if block.settings.image != blank %}
+            {{ block.settings.image | image_url: width: 1200 | image_tag: class: 'absolute inset-0 -z-1 h-full w-full object-cover transition duration-500 ease-out group-hover:scale-[1.045]', loading: 'lazy', widths: '400, 600, 800, 1200', sizes: '(min-width: 750px) 33vw, 100vw', alt: block.settings.heading }}
+          {% else %}
+            <div class="absolute inset-0 -z-20 bg-black"></div>
+          {% endif %}
+
+          <div class="!block absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent"></div>
+          <span class="absolute right-5 top-5 rounded-full border border-white/70 bg-white/10 px-4 py-2 text-sm font-bold leading-tight backdrop-blur-sm">{{ block.settings.collection.all_products_count }}</span>
+
+          <div class="flex w-full flex-col items-start justify-end p-7 md:p-9">
+            <p class="!mb-2 text-[1.3rem] font-bold uppercase leading-tight tracking-[0.1em] text-white/90">Collection</p>
+            <h3 class="!mt-0 !mb-9 text-[clamp(3.4rem,3vw,5rem)] font-black leading-none tracking-[-0.045em] text-white">{{ block.settings.heading }}</h3>
+            <span class="inline-flex min-h-[4.8rem] items-center gap-2 rounded-full border border-white/80 px-5 py-2 text-[1.5rem] font-bold leading-none text-white transition duration-200 group-hover:bg-white group-hover:text-black">Shop now
+              <span class="text-[2rem] font-normal leading-[0.7]" aria-hidden="true">→</span>
+            </span>
           </div>
         </a>
       {% endfor %}
@@ -93,9 +106,9 @@
             "id": "heading",
             "label": "Heading"
           }, {
-            "type": "url",
-            "id": "collection_url",
-            "label": "Collection Url"
+            "type": "collection",
+            "id": "collection",
+            "label": "Collection"
           }
         ]
       }
