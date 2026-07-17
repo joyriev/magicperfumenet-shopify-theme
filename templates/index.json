@@ -84,6 +84,47 @@
         "link": "shopify://collections/meilleures-ventes"
       }
     },
+    "home_category_x4dqJF": {
+      "type": "home-category",
+      "blocks": {
+        "item_JnTbBp": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/223.png",
+            "heading": "Men",
+            "collection_url": "shopify://collections/for-men"
+          }
+        },
+        "item_knQh7b": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/004.png",
+            "heading": "Women",
+            "collection_url": "shopify://collections/for-women"
+          }
+        },
+        "item_Lq6Nz3": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/113.png",
+            "heading": "Unisex",
+            "collection_url": "shopify://collections/unisex"
+          }
+        }
+      },
+      "block_order": [
+        "item_JnTbBp",
+        "item_knQh7b",
+        "item_Lq6Nz3"
+      ],
+      "name": "Home Category",
+      "settings": {
+        "background_color": "#fcfbf9",
+        "title": "Shop by Collection",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
     "feature_heighlights_EpJcyT": {
       "type": "feature-heighlights",
       "blocks": {
@@ -126,6 +167,7 @@
         "perks_yTdgqz",
         "perks_7zj6gB"
       ],
+      "disabled": true,
       "name": "Feature Highlights",
       "settings": {
         "background_color": "#ffffff",
@@ -854,6 +896,7 @@
     "home_hero_UyHN7k",
     "blocky_lys_scrolling_text_bar_ixCgNK",
     "home_hero_banner_YetQDJ",
+    "home_category_x4dqJF",
     "feature_heighlights_EpJcyT",
     "popular_products_3gqnEi",
     "image_and_text_TQajG3",
