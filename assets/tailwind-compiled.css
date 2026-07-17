@@ -800,6 +800,14 @@
     gap: 5px
 }
 
+.gap-0 {
+    gap: 0px
+}
+
+.gap-1\.5 {
+    gap: 6px
+}
+
 .gap-x-3 {
     -moz-column-gap: 12px;
          column-gap: 12px
@@ -817,6 +825,10 @@
 
 .gap-y-4 {
     row-gap: 16px
+}
+
+.gap-y-3 {
+    row-gap: 12px
 }
 
 .space-y-1 > :not([hidden]) ~ :not([hidden]) {
@@ -916,6 +928,16 @@
 .rounded-t-lg {
     border-top-left-radius: 8px;
     border-top-right-radius: 8px
+}
+
+.rounded-b-xl {
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px
+}
+
+.rounded-t-xl {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px
 }
 
 .rounded-tr-md {
@@ -1077,6 +1099,10 @@
     border-color: rgb(255 255 255 / var(--tw-border-opacity, 1))
 }
 
+.border-\[\#12121233\] {
+    border-color: #12121233
+}
+
 .bg-\[\#0F172A\] {
     --tw-bg-opacity: 1;
     background-color: rgb(15 23 42 / var(--tw-bg-opacity, 1))
@@ -1218,6 +1244,15 @@
 .bg-white {
     --tw-bg-opacity: 1;
     background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1))
+}
+
+.bg-\[\#137c44\] {
+    --tw-bg-opacity: 1;
+    background-color: rgb(19 124 68 / var(--tw-bg-opacity, 1))
+}
+
+.bg-\[\#ffffff1a\] {
+    background-color: #ffffff1a
 }
 
 .bg-opacity-50 {
@@ -1813,6 +1848,16 @@
     color: rgb(255 184 0 / var(--tw-text-opacity, 1))
 }
 
+.text-\[\#137c44\] {
+    --tw-text-opacity: 1;
+    color: rgb(19 124 68 / var(--tw-text-opacity, 1))
+}
+
+.text-\[\#8dffcf\] {
+    --tw-text-opacity: 1;
+    color: rgb(141 255 207 / var(--tw-text-opacity, 1))
+}
+
 .underline {
     text-decoration-line: underline
 }
@@ -1988,6 +2033,10 @@
     font-family: 'Plus Jakarta Sans'
 }
 
+.\[overflow-wrap\:anywhere\] {
+    overflow-wrap: anywhere
+}
+
 .\[rotate\:-45deg\] {
     rotate: -45deg
 }
@@ -2006,6 +2055,10 @@
 
 .\[transform\:translateY\(100\%\)\] {
     transform: translateY(100%)
+}
+
+.\[word-break\:break-word\] {
+    word-break: break-word
 }
 
 .animate-move-left {
@@ -2149,6 +2202,11 @@
     background-color: rgb(15 23 42 / var(--tw-bg-opacity, 1))
 }
 
+.hover\:bg-\[\#02491c\]:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(2 73 28 / var(--tw-bg-opacity, 1))
+}
+
 .hover\:text-white:hover {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity, 1))
@@ -2250,6 +2308,10 @@
 
     .md\:block {
         display: block
+    }
+
+    .md\:inline-block {
+        display: inline-block
     }
 
     .md\:flex {
@@ -2396,6 +2458,11 @@
     .md\:py-20 {
         padding-top: 80px;
         padding-bottom: 80px
+    }
+
+    .md\:px-4 {
+        padding-left: 16px;
+        padding-right: 16px
     }
 
     .md\:pb-6 {
