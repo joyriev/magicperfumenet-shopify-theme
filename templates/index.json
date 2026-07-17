@@ -173,6 +173,7 @@
         "heading_CcxYji",
         "text_gHnd8C"
       ],
+      "disabled": true,
       "name": "Image and Text",
       "settings": {
         "background_color": "#ffffff",
@@ -190,6 +191,78 @@
         "padding_bottom": 72,
         "mobile_padding_top": 40,
         "mobile_padding_bottom": 40
+      }
+    },
+    "stacks_up_frVVB4": {
+      "type": "stacks-up",
+      "blocks": {
+        "stack_3Uw49j": {
+          "type": "stack",
+          "settings": {
+            "stack_heading": "Fragrance concentration",
+            "stack_subheading": "More oil = longer-lasting scent"
+          }
+        },
+        "stack_VXPxTQ": {
+          "type": "stack",
+          "settings": {
+            "stack_heading": "Lasts 8–12 hours on the skin",
+            "stack_subheading": "Lasts longer than most designer EDTs"
+          }
+        },
+        "stack_GPUEXG": {
+          "type": "stack",
+          "settings": {
+            "stack_heading": "90% less than the designer price",
+            "stack_subheading": "Without compromising on quality"
+          }
+        },
+        "stack_xJGLda": {
+          "type": "stack",
+          "settings": {
+            "stack_heading": "Exactly the same scent as the original",
+            "stack_subheading": "Created with the same fragrance accords"
+          }
+        },
+        "stack_eifmRx": {
+          "type": "stack",
+          "settings": {
+            "stack_heading": "Ships within 24 hours",
+            "stack_subheading": "No waiting in store"
+          }
+        },
+        "stack_HULL4L": {
+          "type": "stack",
+          "settings": {
+            "stack_heading": "Cruelty-free formula",
+            "stack_subheading": "Clean ingredients, safe for skin"
+          }
+        },
+        "stack_8A8LTr": {
+          "type": "stack",
+          "settings": {
+            "stack_heading": "60-day money-back guarantee",
+            "stack_subheading": "Love it or receive a full refund — no questions asked"
+          }
+        }
+      },
+      "block_order": [
+        "stack_3Uw49j",
+        "stack_VXPxTQ",
+        "stack_GPUEXG",
+        "stack_xJGLda",
+        "stack_eifmRx",
+        "stack_HULL4L",
+        "stack_8A8LTr"
+      ],
+      "name": "Stacks Up",
+      "settings": {
+        "background_color": "#fcfbf9",
+        "title": "How Magyx Compares",
+        "btn_text": "Browse Best Fragrances",
+        "btn_url": "shopify://collections/best-sellers",
+        "padding_top": 60,
+        "padding_bottom": 60
       }
     },
     "bigger_then_a_shave_nJQJzw": {
@@ -784,6 +857,7 @@
     "feature_heighlights_EpJcyT",
     "popular_products_3gqnEi",
     "image_and_text_TQajG3",
+    "stacks_up_frVVB4",
     "bigger_then_a_shave_nJQJzw",
     "home_tabs_fcxFYG",
     "collapsible_content_JWRDn8",
