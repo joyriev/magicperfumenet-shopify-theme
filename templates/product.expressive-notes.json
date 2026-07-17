@@ -286,105 +286,76 @@
         "padding_bottom": 72
       }
     },
-    "stacks_up_WR4y4d": {
+    "stacks_up_bzFEM3": {
       "type": "stacks-up",
       "blocks": {
-        "stack_LGQprc": {
+        "stack_UiGPic": {
           "type": "stack",
           "settings": {
-            "our_stack": "Long-lasting hold",
-            "other_brands": "High price due to branding"
+            "stack_heading": "Fragrance concentration",
+            "stack_subheading": "More oil = longer-lasting scent"
           }
         },
-        "stack_EkfTtL": {
+        "stack_gaHB7b": {
           "type": "stack",
           "settings": {
-            "our_stack": "Daily compliments",
-            "other_brands": "Often mass-produced"
+            "stack_heading": "Lasts 8–12 hours on the skin",
+            "stack_subheading": "Lasts longer than most designer EDTs"
           }
         },
-        "stack_EwWwij": {
+        "stack_hNR4jf": {
           "type": "stack",
           "settings": {
-            "our_stack": "No animal testing",
-            "other_brands": "Possible animal testing"
+            "stack_heading": "90% less than the designer price",
+            "stack_subheading": "Without compromising on quality"
           }
         },
-        "stack_w3Jyyc": {
+        "stack_mPFjC4": {
           "type": "stack",
           "settings": {
-            "our_stack": "Artisanally made in small manufacture",
-            "other_brands": "You mostly pay for the name"
+            "stack_heading": "Exactly the same scent as the original",
+            "stack_subheading": "Created with the same fragrance accords"
           }
         },
-        "stack_dXbqXq": {
+        "stack_Q4jCqF": {
           "type": "stack",
           "settings": {
-            "our_stack": "You pay for quality — not marketing",
-            "other_brands": "High marketing margin"
+            "stack_heading": "Ships within 24 hours",
+            "stack_subheading": "No waiting in store"
+          }
+        },
+        "stack_L7ppnX": {
+          "type": "stack",
+          "settings": {
+            "stack_heading": "Cruelty-free formula",
+            "stack_subheading": "Clean ingredients, safe for skin"
+          }
+        },
+        "stack_tgJdVE": {
+          "type": "stack",
+          "settings": {
+            "stack_heading": "60-day money-back guarantee",
+            "stack_subheading": "Love it or receive a full refund — no questions asked"
           }
         }
       },
       "block_order": [
-        "stack_LGQprc",
-        "stack_EkfTtL",
-        "stack_EwWwij",
-        "stack_w3Jyyc",
-        "stack_dXbqXq"
+        "stack_UiGPic",
+        "stack_gaHB7b",
+        "stack_hNR4jf",
+        "stack_mPFjC4",
+        "stack_Q4jCqF",
+        "stack_L7ppnX",
+        "stack_tgJdVE"
       ],
       "name": "Stacks Up",
       "settings": {
-        "background_color": "#f7f7f7",
-        "title": "Why Magyx Perfume?",
-        "subtitle": "The smart alternative to overpriced luxury brands.",
-        "padding_top": 12,
-        "padding_bottom": 72
-      }
-    },
-    "image_and_text_EFE4gB": {
-      "type": "image-and-text",
-      "blocks": {
-        "heading_PJdXGz": {
-          "type": "heading",
-          "settings": {
-            "content": "No cheap imports. Made within the EU.",
-            "heading_type": "h2",
-            "font_size": 40,
-            "mobile_font_size": 24,
-            "text_color": "#000000"
-          }
-        },
-        "text_Mhwr3T": {
-          "type": "text",
-          "settings": {
-            "content": "<p>Our European production guarantees the highest quality standards and allows us to control every step of the manufacturing process.<br/><br/>From the selection of top-quality raw materials to the careful filling of each bottle, we ensure that every product meets our rigorous requirements for quality and craftsmanship.</p>",
-            "mobile_content": "",
-            "font_size": 18,
-            "text_color": "#000000"
-          }
-        }
-      },
-      "block_order": [
-        "heading_PJdXGz",
-        "text_Mhwr3T"
-      ],
-      "name": "Image and Text",
-      "settings": {
-        "background_color": "#ffffff",
-        "image": "shopify://shop_images/WhatsApp_Image_2026-01-17_at_10.59.01.webp",
-        "rounded_image": true,
-        "image_placement": "0",
-        "mobile_image_placement": "under_heading",
-        "button_text": "",
-        "button_url": "",
-        "columns_gap": 40,
-        "rows_gap": 20,
-        "content_alignment": "center",
-        "blocks_gap": 24,
-        "padding_top": 72,
-        "padding_bottom": 72,
-        "mobile_padding_top": 40,
-        "mobile_padding_bottom": 40
+        "background_color": "#fcfbf9",
+        "title": "How Magyx Compares",
+        "btn_text": "Browse Best Fragrances",
+        "btn_url": "shopify://collections/best-sellers",
+        "padding_top": 60,
+        "padding_bottom": 60
       }
     },
     "massive_review_DxPiQk": {
@@ -843,8 +814,7 @@
     "you_may_like_Laaqqx",
     "feature_heighlights_fCUG3E",
     "scent_breakdown_pqKDL9",
-    "stacks_up_WR4y4d",
-    "image_and_text_EFE4gB",
+    "stacks_up_bzFEM3",
     "massive_review_DxPiQk",
     "popular_products_BptEUV",
     "1770288371f70b6dc1",
