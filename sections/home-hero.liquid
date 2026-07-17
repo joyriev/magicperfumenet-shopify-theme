@@ -3,7 +3,9 @@
     padding-top: 60px;
     padding-bottom: 450px;
     {% if section.settings.mobile_background_image != blank %}
-      background-image: url('{{ section.settings.mobile_background_image | image_url }}');
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.80) 0%, rgba(255, 255, 255, 0.60) 39%, rgba(255, 255, 255, 0.30) 61%, rgba(255, 255, 255, 0.02) 100%)
+      , url('{{ section.settings.mobile_background_image | image_url }}') center right / cover no-repeat
+      , #edf7f5;
     {% endif %}
     {% if section.settings.background_color != blank %}
       background-color: {{ section.settings.background_color }};
@@ -15,7 +17,9 @@
       padding-top: 120px;
       padding-bottom: 120px;
       {% if section.settings.background_image != blank %}
-        background-image: url('{{ section.settings.background_image | image_url }}');
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0.80) 0%, rgba(255, 255, 255, 0.60) 39%, rgba(255, 255, 255, 0.30) 61%, rgba(255, 255, 255, 0.02) 100%)
+        , url('{{ section.settings.background_image | image_url }}') center right / cover no-repeat
+        , #edf7f5;
       {% endif %}
     }
   }
@@ -24,10 +28,15 @@
 <div id="{{ section.id }}" class="section-{{ section.id }}-padding bg-cover bg-center">
   <div class="page-width">
     <div class="max-w-[550px] text-center md:text-left">
-      {% comment %} <h1 class="text-3xl !leading-tight md:text-6xl font-black text-white mt-0">{{ section.settings.title }}</h1> {% endcomment %}
-      <h1 class="text-3xl !leading-tight md:text-5xl font-black text-black mt-0">
-        {{ section.settings.title_line_1 }} <br>{{ section.settings.title_line_2 }}</h1>
-      <div class="text-3xl !leading-tight md:text-5xl font-black text-[#f4c41d] pt-8 mb-8 border-0 border-t-2 border-solid border-[#f4c41d] [text-shadow:3px_3px_#000]">{{ section.settings.subtitle }}</div>
+      <h1 class="m-0 text-3xl !leading-tight md:text-5xl font-black text-black tracking-tight">
+        {{ section.settings.title_line_1 }}{% if section.settings.title_line_2 != blank %}<br>{{ section.settings.title_line_2 }}{% endif %}
+      </h1>
+      <h2 class="mt-5 mb-0 text-xl !leading-snug md:text-2xl font-bold text-black tracking-tight">
+        {{ section.settings.subtitle }}
+      </h2>
+      {% if section.settings.description != blank %}
+        <p class="mt-4 mb-8 text-base !leading-relaxed md:text-lg text-black">{{ section.settings.description }}</p>
+      {% endif %}
       <div class="flex gap-4 items-center justify-center md:justify-start">
         <a href="{{ section.settings.button_link }}" class="py-4 px-6 no-underline leading-tight bg-black text-white tracking-tight rounded-full">{{ section.settings.button_text }}</a>
         {% if section.settings.second_button_text != blank %}
@@ -78,7 +87,12 @@
         "type": "text",
         "id": "subtitle",
         "label": "Subtitle",
-        "default": "Homepage Hero"
+        "default": "The world's No. 1 designer-inspired fragrances."
+      }, {
+        "type": "textarea",
+        "id": "description",
+        "label": "Description",
+        "default": "Made by the same experts behind some of the world's best-known perfumes."
       }, {
         "type": "text",
         "id": "button_text",
