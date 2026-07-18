@@ -34,6 +34,7 @@
         },
         "videos_hgU7cm": {
           "type": "videos",
+          "disabled": true,
           "settings": {
             "video1": "shopify://files/videos/Daria Kononenko.mov",
             "video_poster_1": "shopify://shop_images/kadesh.png",
