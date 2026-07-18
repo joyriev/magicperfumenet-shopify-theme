@@ -121,6 +121,10 @@
     top: 24px
 }
 
+.top-\[7px\] {
+    top: 7px
+}
+
 .isolate {
     isolation: isolate
 }
@@ -365,6 +369,10 @@
 
 .mt-auto {
     margin-top: auto
+}
+
+.mr-auto {
+    margin-right: auto
 }
 
 .line-clamp-1 {
@@ -646,6 +654,10 @@
 
 .max-w-\[600px\] {
     max-width: 600px
+}
+
+.max-w-xl {
+    max-width: 576px
 }
 
 .flex-1 {
@@ -948,6 +960,10 @@
     border-width: 2px
 }
 
+.border-\[1\.5px\] {
+    border-width: 1.5px
+}
+
 .border-b {
     border-bottom-width: 1px
 }
@@ -1093,6 +1109,16 @@
 
 .border-white\/80 {
     border-color: rgb(255 255 255 / 0.8)
+}
+
+.border-\[\#22613A\] {
+    --tw-border-opacity: 1;
+    border-color: rgb(34 97 58 / var(--tw-border-opacity, 1))
+}
+
+.border-\[\#e3e8e5\] {
+    --tw-border-opacity: 1;
+    border-color: rgb(227 232 229 / var(--tw-border-opacity, 1))
 }
 
 .bg-\[\#0F172A\] {
@@ -1245,6 +1271,11 @@
     background-color: rgb(255 255 255 / 0.5)
 }
 
+.bg-\[\#f1f4f2\] {
+    --tw-bg-opacity: 1;
+    background-color: rgb(241 244 242 / var(--tw-bg-opacity, 1))
+}
+
 .bg-opacity-50 {
     --tw-bg-opacity: 0.5
 }
@@ -1282,6 +1313,10 @@
 
 .fill-green-700 {
     fill: #15803d
+}
+
+.fill-\[\#22613A\] {
+    fill: #22613A
 }
 
 .object-contain {
@@ -1502,6 +1537,14 @@
 
 .pt-6 {
     padding-top: 24px
+}
+
+.pt-0 {
+    padding-top: 0px
+}
+
+.pt-5 {
+    padding-top: 20px
 }
 
 .text-left {
@@ -1868,6 +1911,11 @@
     color: rgb(255 255 255 / 0.9)
 }
 
+.text-\[\#22613A\] {
+    --tw-text-opacity: 1;
+    color: rgb(34 97 58 / var(--tw-text-opacity, 1))
+}
+
 .underline {
     text-decoration-line: underline
 }
@@ -2180,6 +2228,16 @@
     color: rgb(255 255 255 / var(--tw-text-opacity, 1))
 }
 
+.hover\:\!text-white:hover {
+    --tw-text-opacity: 1 !important;
+    color: rgb(255 255 255 / var(--tw-text-opacity, 1)) !important
+}
+
+.hover\:text-\[\#22613A\]:hover {
+    --tw-text-opacity: 1;
+    color: rgb(34 97 58 / var(--tw-text-opacity, 1))
+}
+
 .hover\:underline:hover {
     text-decoration-line: underline
 }
@@ -2199,6 +2257,11 @@
 .focus\:border-green-700:focus {
     --tw-border-opacity: 1;
     border-color: rgb(21 128 61 / var(--tw-border-opacity, 1))
+}
+
+.focus\:border-\[\#22613A\]:focus {
+    --tw-border-opacity: 1;
+    border-color: rgb(34 97 58 / var(--tw-border-opacity, 1))
 }
 
 .focus\:shadow-none:focus {
@@ -2245,6 +2308,14 @@
 
     .md\:-top-2 {
         top: -8px
+    }
+
+    .md\:right-2 {
+        right: 8px
+    }
+
+    .md\:top-2 {
+        top: 8px
     }
 
     .md\:-order-1 {
