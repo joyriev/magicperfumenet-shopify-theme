@@ -448,6 +448,7 @@
         "review_aThE8h": {
           "type": "review",
           "settings": {
+            "review_image": "shopify://shop_images/067_reviw.png",
             "content": "<p>\"One of my favorite perfumes. It arrived really quickly. It smells so good.\"</p>",
             "author": "Alex W.",
             "date": "2 days ago",
