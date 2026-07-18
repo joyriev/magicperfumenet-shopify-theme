@@ -48,7 +48,7 @@
                   width="216"
                   class="w-full h-full object-cover">
               </a>
-              <p class="text-xs text-gray-500 m-0 mb-1 line-clamp-1">Inspired By: {{ product.metafields.custom.inspired_by.value.title }}</p>
+              <p class="text-xs text-gray-500 m-0 mb-1 line-clamp-1">Inspired By: {{ product.metafields.custom.inspiration.value.title }}</p>
               <h3 class="text-sm font-semibold m-0 mb-2 line-clamp-1">
                 <a class="text-black no-underline" href="{{ product.url }}">{{ product.title }}</a>
               </h3>
@@ -144,29 +144,24 @@
         "type": "richtext",
         "id": "description",
         "label": "Description"
-      },
-      {
+      }, {
         "type": "collection",
         "id": "collection",
         "label": "Collection"
-      },
-      {
+      }, {
         "type": "text",
         "id": "button_text",
         "label": "Button Text",
         "default": "View All"
-      },
-      {
+      }, {
         "type": "url",
         "id": "button_link",
         "label": "Button Link",
         "default": "/collections/all"
-      },
-      {
+      }, {
         "type": "header",
         "content": "Section Padding"
-      },
-      {
+      }, {
         "type": "range",
         "id": "padding_top",
         "min": 0,
@@ -175,8 +170,7 @@
         "unit": "px",
         "label": "Padding Top",
         "default": 36
-      },
-      {
+      }, {
         "type": "range",
         "id": "padding_bottom",
         "min": 0,
