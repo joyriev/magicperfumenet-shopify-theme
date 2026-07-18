@@ -834,6 +834,7 @@
         },
         "collapsible_row_rNbx6p": {
           "type": "collapsible_row",
+          "disabled": true,
           "settings": {
             "heading": "Is this an eau de parfum?",
             "icon": "none",
@@ -853,9 +854,9 @@
         "collapsible_row_gJVQkB": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "What does a 19% perfume concentration mean?",
+            "heading": "What does a 21% perfume concentration mean?",
             "icon": "none",
-            "row_content": "<p>This corresponds to the amount of pure perfume oils present in each bottle.<br/><br/>With 19%, our perfumes fall fully into the Eau de Parfum category, generally between 16 and 21% concentration. In other words, you enjoy an intensely concentrated fragrance, with longevity comparable to the market's leading references.<br/></p>",
+            "row_content": "<p>This corresponds to the amount of pure perfume oils present in each bottle.<br/><br/>With 21%, our perfumes fall fully into the Eau de Parfum category, generally between 16 and 21% concentration. In other words, you enjoy an intensely concentrated fragrance, with longevity comparable to the market's leading references.<br/></p>",
             "page": ""
           }
         }
