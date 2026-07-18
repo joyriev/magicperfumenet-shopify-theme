@@ -403,6 +403,7 @@
         "review_UPwGBF": {
           "type": "review",
           "settings": {
+            "review_image": "shopify://shop_images/196lady.png",
             "content": "<p>\"This is the best perfume I've smelled in a very long time, the notes make me crazy with happiness. I'll keep this one in my rotation forever.\"</p>",
             "author": "Jenniffer W.",
             "date": "2 days ago",
