@@ -32,6 +32,17 @@
           "type": "reactive_atc",
           "settings": {}
         },
+        "videos_hgU7cm": {
+          "type": "videos",
+          "settings": {
+            "video1": "shopify://files/videos/Daria Kononenko.mov",
+            "video_poster_1": "shopify://shop_images/kadesh.png",
+            "video2": "shopify://files/videos/Bemigho Mike-Ifeta beautyxxbemi.mp4",
+            "video_poster_2": "shopify://shop_images/dhie.png",
+            "video3": "shopify://files/videos/Taylor Reid.mp4",
+            "video_poster_3": "shopify://shop_images/htb.png"
+          }
+        },
         "custom_liquid_QcxgR4": {
           "type": "custom_liquid",
           "disabled": true,
@@ -183,6 +194,7 @@
         "custom_rating_text_ehyqmQ",
         "custom_liquid_fep4D7",
         "reactive_atc_LBDQE9",
+        "videos_hgU7cm",
         "custom_liquid_QcxgR4",
         "payment_badges_FkCwVc",
         "delivery_deadline_CQHJwz",
