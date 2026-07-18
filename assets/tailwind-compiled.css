@@ -61,10 +61,6 @@
     bottom: 0px
 }
 
-.bottom-6 {
-    bottom: 24px
-}
-
 .left-0 {
     left: 0px
 }
@@ -463,6 +459,11 @@
 .size-14 {
     width: 56px;
     height: 56px
+}
+
+.size-2 {
+    width: 8px;
+    height: 8px
 }
 
 .size-20 {
@@ -931,10 +932,6 @@
     border-top-right-radius: 12px
 }
 
-.rounded-tr-md {
-    border-top-right-radius: 6px
-}
-
 .\!border-0 {
     border-width: 0px !important
 }
@@ -985,6 +982,11 @@
 
 .border-none {
     border-style: none
+}
+
+.\!border-\[\#22613A\] {
+    --tw-border-opacity: 1 !important;
+    border-color: rgb(34 97 58 / var(--tw-border-opacity, 1)) !important
 }
 
 .border-\[\#0F172A\] {
@@ -1113,11 +1115,6 @@
     background-color: rgb(20 107 50 / var(--tw-bg-opacity, 1))
 }
 
-.bg-\[\#1E5834\] {
-    --tw-bg-opacity: 1;
-    background-color: rgb(30 88 52 / var(--tw-bg-opacity, 1))
-}
-
 .bg-\[\#22613A\] {
     --tw-bg-opacity: 1;
     background-color: rgb(34 97 58 / var(--tw-bg-opacity, 1))
@@ -1131,11 +1128,6 @@
 .bg-\[\#FAF8F3\] {
     --tw-bg-opacity: 1;
     background-color: rgb(250 248 243 / var(--tw-bg-opacity, 1))
-}
-
-.bg-\[\#b72f33\] {
-    --tw-bg-opacity: 1;
-    background-color: rgb(183 47 51 / var(--tw-bg-opacity, 1))
 }
 
 .bg-\[\#c8202f\] {
@@ -1247,6 +1239,10 @@
 
 .bg-white\/10 {
     background-color: rgb(255 255 255 / 0.1)
+}
+
+.bg-white\/50 {
+    background-color: rgb(255 255 255 / 0.5)
 }
 
 .bg-opacity-50 {
@@ -1440,14 +1436,6 @@
     padding-bottom: 32px
 }
 
-.\!pb-3 {
-    padding-bottom: 12px !important
-}
-
-.\!pt-3 {
-    padding-top: 12px !important
-}
-
 .pb-2 {
     padding-bottom: 8px
 }
@@ -1470,10 +1458,6 @@
 
 .pl-1 {
     padding-left: 4px
-}
-
-.pl-10 {
-    padding-left: 40px
 }
 
 .pl-12 {
@@ -1560,6 +1544,10 @@
 
 .text-\[1\.5rem\] {
     font-size: 24px
+}
+
+.text-\[23px\] {
+    font-size: 23px
 }
 
 .text-\[2rem\] {
@@ -1733,11 +1721,6 @@
     color: rgb(19 124 68 / var(--tw-text-opacity, 1))
 }
 
-.text-\[\#22613A\] {
-    --tw-text-opacity: 1;
-    color: rgb(34 97 58 / var(--tw-text-opacity, 1))
-}
-
 .text-\[\#297af4\] {
     --tw-text-opacity: 1;
     color: rgb(41 122 244 / var(--tw-text-opacity, 1))
@@ -1746,6 +1729,11 @@
 .text-\[\#3b82f6\] {
     --tw-text-opacity: 1;
     color: rgb(59 130 246 / var(--tw-text-opacity, 1))
+}
+
+.text-\[\#6b7280\] {
+    --tw-text-opacity: 1;
+    color: rgb(107 114 128 / var(--tw-text-opacity, 1))
 }
 
 .text-\[\#888888\] {
@@ -2072,6 +2060,10 @@
     rotate: -45deg
 }
 
+.\[text-overflow\:ellipsis\] {
+    text-overflow: ellipsis
+}
+
 .\[transform\:rotate\(-3deg\)\] {
     transform: rotate(-3deg)
 }
@@ -2132,61 +2124,15 @@
   }
 }
 
-.before\:absolute::before {
-    content: var(--tw-content);
-    position: absolute
-}
-
-.before\:bottom-6::before {
-    content: var(--tw-content);
-    bottom: 24px
-}
-
-.before\:left-3::before {
-    content: var(--tw-content);
-    left: 12px
-}
-
-.before\:top-6::before {
-    content: var(--tw-content);
-    top: 24px
-}
-
-.before\:w-\[0px\]::before {
-    content: var(--tw-content);
-    width: 0px
-}
-
-.before\:border-0::before {
-    content: var(--tw-content);
-    border-width: 0px
-}
-
-.before\:border-r::before {
-    content: var(--tw-content);
-    border-right-width: 1px
-}
-
-.before\:border-dashed::before {
-    content: var(--tw-content);
-    border-style: dashed
-}
-
-.before\:border-green-700::before {
-    content: var(--tw-content);
-    --tw-border-opacity: 1;
-    border-color: rgb(21 128 61 / var(--tw-border-opacity, 1))
-}
-
-.before\:content-\[\'\'\]::before {
-    --tw-content: '';
-    content: var(--tw-content)
-}
-
 .hover\:scale-105:hover {
     --tw-scale-x: 1.05;
     --tw-scale-y: 1.05;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+}
+
+.hover\:border-\[\#22613A\]:hover {
+    --tw-border-opacity: 1;
+    border-color: rgb(34 97 58 / var(--tw-border-opacity, 1))
 }
 
 .hover\:bg-\[\#02491c\]:hover {
@@ -2530,6 +2476,14 @@
     .md\:text-5xl {
         font-size: 48px;
         line-height: 1
+    }
+
+    .md\:text-\[19px\] {
+        font-size: 19px
+    }
+
+    .md\:text-\[27px\] {
+        font-size: 27px
     }
 
     .md\:text-base {

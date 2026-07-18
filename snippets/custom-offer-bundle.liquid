@@ -7,41 +7,7 @@
 {% assign dropdown_ml = product.metafields.custom.select_bundle_dropdown_ml | default: "50" %}
 {% assign bundle_ml = dropdown_ml | append: "ml" %}
 {% assign selected_variant = product.selected_or_first_available_variant %}
-
-
-{% if product_count != blank %}
-  <div
-    id="price-{{ section.id }}"
-    class="bundle-price-pdp"
-    role="status"
-    {{ block.shopify_attributes }}>
-    {% if product.compare_at_price > product.price %}
-      {% assign discount = product.compare_at_price | minus: product.price %}
-      {% assign discount_percent = discount | times: 100 | divided_by: product.compare_at_price | round %}
-    {% endif %}
-
-    <div class="flex flex-wrap items-center gap-x-3 text-xl">
-      {% if product.compare_at_price > product.price %}
-        <span class="text-red-600 font-bold discount-percent">
-          -{{ discount_percent }}%
-        </span>
-      {% endif %}
-
-      <span class="text-black font-bold product-price">
-        {{ product.price | money }}
-      </span>
-
-      {% if product.compare_at_price > product.price %}
-        <span class="text-gray-500 font-semibold line-through compare-price">
-          Original price: {{ product.compare_at_price | money }}
-        </span>
-      {% endif %}
-    </div>
-    <div class="text-lg font-semibold text-black leading-normal">
-      That's only {{ product.price | divided_by: product_count | money }} per bottle.
-    </div>
-  </div>
-{% endif %}
+{% assign fixed_bundle_products = product.metafields.custom.fixed_bundle_products.value %}
 
 <style>
   [x-cloak] {
@@ -54,7 +20,7 @@
   assign next_bundle = product.metafields.custom.next_bundle
   if next_bundle != blank
     assign next_bundle_product = next_bundle.value
-    assign next_size = next_bundle_product.metafields.custom.select_bundle_dropdown_ml
+    assign next_size = next_bundle_product.metafields.custom.bundle_bottle_size
     assign price_difference = next_bundle_product.price | minus: product.price | money
   endif
 -%}
@@ -74,77 +40,91 @@
           d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
       </svg>
       <span>Upgrade to
-        <a href="{{ next_bundle_product.url }}" class="ml-auto font-medium text-[#22613A] whitespace-nowrap transition-colors">
-          {{ next_size }}ML for {{ price_difference }} more.</a>
+        <a href="{{ next_bundle_product.url }}" class="ml-auto font-medium text-red-600 whitespace-nowrap transition-colors">
+          {{ next_size }}ML for only {{ price_difference }} more.</a>
       </span>
     </div>
   </div>
 {% endif %}
 
+<div id="price-{{ section.id }}" class="bundle-price-pdp" role="status" {{ block.shopify_attributes }}>
+  <div class="flex flex-wrap items-center gap-x-3">
+    {% if product.compare_at_price > product.price %}
+      <span class="text-gray-500 font-semibold line-through text-base md:text-[19px]">
+        {{ product.compare_at_price | money }}
+      </span>
+    {% endif %}
+    <span class="text-black font-bold text-[23px] md:text-[27px]">
+      {{ product.price | money }}
+    </span>
+    {% if product.compare_at_price > product.price %}
+      {% assign discount = product.compare_at_price | minus: product.price %}
+      {% assign discount_percent = discount | times: 100 | divided_by: product.compare_at_price | round %}
+      <span class="bg-red-600 text-white font-bold px-2 text-xs md:text-base">
+        -{{ discount_percent }}%
+      </span>
+    {% endif %}
+  </div>
+  <div class="text-lg font-semibold text-black leading-normal">
+    Only {{ product.price | divided_by: product_count | money }} per bottle
+  </div>
+</div>
+
 <div x-data>
-  <div class="flex flex-col gap-3 mb-6 relative pl-10 before:content-[''] before:absolute before:left-3 before:top-6 before:bottom-6 before:w-[0px] before:border-0 before:border-r before:border-dashed before:border-green-700">
-    <div class="absolute top-6 left-0 bottom-6 flex flex-col justify-between">
-      {% for i in (1..product_count) %}
-        <div class="text-white size-7 bg-[#22613A] rounded flex items-center justify-center">{{ i }}</div>
-      {% endfor %}
-    </div>
-    <template x-for="(product, index) in $store.bundleBuilder.selectedProducts" :key="product.id">
-      <div class="bg-white border border-solid border-green-700 w-full p-[7px] flex items-center gap-2 justify-between rounded-lg relative">
-        {% if product.tags contains 'bogo' %}
-          <div x-show="index + 1 === {{ product_count }}" class="bg-[#b72f33] text-white px-2 py-1 font-semibold absolute top-0 right-0 rounded-tr-md leading-none text-sm">Free Bottle</div>
-        {% endif %}
-        <img
-          class="object-cover rounded"
-          :src="product.image"
-          :alt="product.name"
-          width="60"
-          height="60">
-        <div class="text-left flex flex-col gap-1">
-          <div class="font-bold text-lg leading-tight text-black line-clamp-1" x-text="product.name"></div>
-          <div class="text-sm line-clamp-1" x-text="product.nuta"></div>
+  <div class="grid grid-cols-1 gap-2 mb-4">
+    <template x-for="index in ({{ product_count }})" :key="index">
+      <div
+        @click="$store.bundleBuilder.showModal = true"
+        class="bg-white border-2 border-solid border-gray-200 flex items-center p-[7px] rounded-xl gap-2 cursor-pointer relative transition duration-300 hover:border-[#22613A]"
+        :class="{ '!border-[#22613A]' : typeof $store.bundleBuilder.selectedProducts[index - 1] !== 'undefined'}">
+        <div x-text="index" class="bg-[#22613A] size-6 rounded-lg text-white font-bold text-xs flex items-center justify-center shrink-0"></div>
+        <div x-show="!$store.bundleBuilder.selectedProducts[index - 1]" class="flex min-w-0 gap-2 items-center flex-grow">
+            {% render 'perfume-icon'
+            , size: 40 %}
+            <div class="min-w-0 flex-1">
+              <div class="text-sm text-[#6b7280] overflow-hidden whitespace-nowrap [text-overflow:ellipsis]">
+                Choose your fragrance
+              </div>
+            </div>
+            <span class="ml-auto shrink-0 text-[#6b7280]"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg></span>
         </div>
-        <button @click="$store.bundleBuilder.removeProduct(index)" class="ml-auto size-8 bg-red-50 flex items-center justify-center rounded text-xs cursor-pointer border-0">
-          {% render 'icon-trash' %}
-        </button>
+        <div x-show="$store.bundleBuilder.selectedProducts[index - 1]" class="flex min-w-0 gap-2 items-center flex-grow">
+            <img
+                class="object-cover rounded"
+                :src="$store.bundleBuilder.selectedProducts[index - 1].image"
+                :alt="$store.bundleBuilder.selectedProducts[index - 1].name"
+                width="40"
+                height="40"
+            >
+            <div class="text-left min-w-0 flex-1 flex flex-col gap-1">
+                <div class="font-bold text-sm leading-tight text-black line-clamp-1" x-text="$store.bundleBuilder.selectedProducts[index - 1].name"></div>
+                <div class="text-xs line-clamp-1 text-[#6b7280]"><span x-text="$store.bundleBuilder.selectedProducts[index - 1].inspiration_name"></span> - <span x-text="$store.bundleBuilder.selectedProducts[index - 1].variant.title"></span></div>
+            </div>
+            {% unless product.tags contains 'fixed_bundle' %}
+              <button @click.stop.prevent="$store.bundleBuilder.removeProduct(index - 1)" class="ml-auto size-7 shrink-0 bg-red-50 flex items-center justify-center rounded text-xs cursor-pointer border-0">
+                  {% render 'icon-trash' %}
+              </button>
+            {% else %}
+            {% endunless %}
+        </div>
       </div>
-    </template>
-    <template x-for="i in ({{ product_count }} - $store.bundleBuilder.selectedProducts.length)" :key="i">
-      <button @click="$store.bundleBuilder.showModal = true" class="bg-white border border-solid border-gray-200 flex items-center p-[7px] rounded-lg gap-2 pr-4 cursor-pointer relative">
-        {% if product.tags contains 'bogo' %}
-          <div x-show="i === {{ product_count }} - $store.bundleBuilder.selectedProducts.length" class="bg-[#b72f33] text-white px-2 py-1 font-semibold absolute top-0 right-0 rounded-tr-md">Free Bottle</div>
-        {% endif %}
-        {% render 'perfume-icon' %}
-        <div class="text-base">
-          Choose your perfume
-        </div>
-        <span class="inline-block ml-auto">{% render 'arrow-down' %}</span>
-      </button>
     </template>
   </div>
 
   <button
     x-data
-    @click="{% if product.tags contains 'bogo' %}$store.bundleBuilder.doCheckout(){% else %}$store.bundleBuilder.doATCandCheckout(){% endif %}"
+    @click="$store.bundleBuilder.doATCandCheckout()"
     :disabled="$store.bundleBuilder.selectedProducts.length < {{ product_count }} || $store.bundleBuilder.addingToCart"
     :class="{
         'opacity-50 cursor-not-allowed': $store.bundleBuilder.selectedProducts.length < {{ product_count }},
         'cursor-pointer hover:bg-[#368856]': $store.bundleBuilder.selectedProducts.length >= {{ product_count }}
       }"
-    class="w-full flex flex-wrap items-center !mb-0 text-2xl !pb-3 !pt-3 rounded-lg button bg-[#22613a] transition-colors shadow-xl tracking-normal button--full-width">
-    <span x-show="$store.bundleBuilder.selectedProducts.length < {{ product_count }}" x-text="'SELECT ' + ({{ product_count }} - $store.bundleBuilder.selectedProducts.length) + ' MORE'"></span>
-    <div class="flex" x-show="$store.bundleBuilder.selectedProducts.length === {{ product_count }}">BUY NOW
-      <div class="ml-2 pl-2 border-0 border-l flex items-center border-solid border-gray-200/20">
-        <div
-          class="inline-block text-lg bg-[#1E5834] px-3 rounded"
-          id="product-price"
-          role="status">
-          {% if selected_variant.compare_at_price > selected_variant.price %}
-            <span class="compare-price line-through text-white/50 text-base">{{ selected_variant.compare_at_price | money }}</span>
-          {% endif %}
-          <span class="current-price">{{ selected_variant.price | money }}</span>
-        </div>
-      </div>
-    </div>
+    class="w-full flex gap-2 flex-wrap items-center !mb-0 text-lg font-bold !py-3 !px-2 rounded-full button bg-[#22613a] transition-colors shadow-xl tracking-normal button--full-width"
+  >
+    <span x-show="$store.bundleBuilder.selectedProducts.length < {{ product_count }}" x-text="'Select ' + ({{ product_count }} - $store.bundleBuilder.selectedProducts.length) + ' more'"></span>
+    <span x-show="$store.bundleBuilder.selectedProducts.length === {{ product_count }}">Buy now</span>
+    <span class="size-2 rounded-full inline-block bg-white/50"></span>
+    <span class="current-price">{{ selected_variant.price | money }}</span>
     <div x-show="$store.bundleBuilder.addingToCart" class="loading__spinner">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -162,6 +142,14 @@
   </button>
 </div>
 
+<div class="!my-6">
+  <p class="my-0 text-center text-sm font-semibold tracking-normal">
+    Delivered to
+    <span class="shipping_location">{{ localization.country.name }}</span>
+    within 5 business days. No customs fees.
+  </p>
+</div>
+
 <script>
   document.addEventListener('alpine:init', function() {
     Alpine.store('bundleBuilder', {
@@ -171,45 +159,62 @@
       activeCategory: "All",
       searchText: "",
       addingToCart: false,
-      selectedProducts: [],
+      selectedProducts: [
+        {% if product.tags contains 'fixed_bundle' %}
+          {% for fixed_var in fixed_bundle_products %}
+            {
+              id: {{ fixed_var.product.id }},
+              name: "{{ fixed_var.product.title }}",
+              image: "{{ fixed_var.product.featured_image | image_url }}",
+              inspiration_name: "{% if fixed_var.product.metafields.custom.inspired_by.value %}{{ fixed_var.product.metafields.custom.inspired_by.value.title }}{% endif %}",
+              variant: {
+                id: "{{ fixed_var.id }}",
+                title: "{{ fixed_var.title }}"
+              }
+            },
+          {% endfor %}
+        {% endif %}
+      ],
       availableProducts: [
         {% for bundle_product in bundle_collection.products %}
+          {% liquid
+            assign collection_handles = ''
+            for collection in bundle_product.collections
+              assign collection_handles = collection_handles | append: collection.handle
+              if forloop.last == false
+                assign collection_handles = collection_handles | append: ','
+              endif
+            endfor
+          %}
           {
             id: {{ bundle_product.id }},
             name: "{{ bundle_product.title }}",
             image: "{{ bundle_product.featured_image | image_url: width: 120, height: 120 }}",
-            nuta: "{{ bundle_product.metafields.custom.nuta |  replace: ',', '' }}",
-            inspiration_image: "{{ bundle_product.metafields.custom.inspiration.value.image | image_url: width: 90, height: 90 }}",
-            inspiration_name: "{{ bundle_product.metafields.custom.inspiration.value.name }}",
+            nuta: "{% if bundle_product.metafields.custom.inspired_by.value %}{{ bundle_product.metafields.custom.inspired_by.value.title }}{% endif %}",
+            inspiration_image: "{% if bundle_product.metafields.custom.inspired_by.value %}{{ bundle_product.metafields.custom.inspired_by.value.image | image_url: width: 90, height: 90 }}{% endif %}",
+            inspiration_name: "{% if bundle_product.metafields.custom.inspired_by.value %}{{ bundle_product.metafields.custom.inspired_by.value.title }}{% endif %}",
             tags: {{ bundle_product.tags | json }},
+            collections: "{{ collection_handles }}",
             variants: {
               {% for variant in bundle_product.variants %}
-                "{{ variant.title | downcase | replace: ' ml', 'ml' }}": {
-                  id: {{ variant.id }}
+                "{{ variant.title | downcase |  replace: ' ml', 'ml' }}": {
+                  title: "{{ variant.title }}",
+                  id: "{{ variant.id }}"
                 },
               {% endfor %}
             }
           },
         {% endfor %}
       ],
-      isProductVisible(product) {
-        const matchesCategory = product.tags.some(tag => {
-          return tag === this.activeCategory;
-        }) || this.activeCategory === 'All';
-        const matchesSearch = this.searchText === '' || product.name.toLowerCase().includes(this.searchText.toLowerCase()) || (product.inspiration_name && product.inspiration_name.toLowerCase().includes(this.searchText.toLowerCase()));
-        return matchesCategory && matchesSearch;
-      },
       addRemoveProduct(product) {
         if (this.selectedProducts.length < {{ product_count }} && !this.isProductSelected(product.id)) {
+          product.variant = product.variants[this.selectedVariant]
           this.selectedProducts.push(product);
+
           if (this.selectedProducts.length === {{ product_count }}) {
             this.showModal = false;
             // Do auto ATC and redirect to checkout
-            {% if product.tags contains 'bogo' %}
-              this.doCheckout();
-            {% else %}
-              this.doATCandCheckout();
-            {% endif %}
+            this.doATCandCheckout();
           }
         } else {
           this.removeProduct(this.selectedProducts.findIndex(item => item.id === product.id));
@@ -221,17 +226,6 @@
       isProductSelected(productId) {
         return this.selectedProducts.some(product => product.id === productId);
       },
-      doCheckout() {
-
-        this.addingToCart = true;
-
-        const items = this.selectedProducts.map(product => {
-          const variantId = product.variants[this.selectedVariant].id;
-          return `${variantId}:1`;
-        }).join(',');
-
-        window.location = `https://tryscent.co/cart/${items}`;
-      },
       doATCandCheckout() {
         // Set loading state
         this.addingToCart = true;
@@ -239,13 +233,13 @@
         // Create properties object with bundle items
         const properties = {
           "_bundle_items": this.selectedProducts.map(product => 
-            product.variants[this.selectedVariant].id
+            product.variant.id
           ).join(',')
         };
         // Add each selected product as a separate property
         this.selectedProducts.forEach((product, index) => {
           properties[`Bottle ${index + 1}`] = 
-            `${product.name} Inspired by ${product.nuta} - ${this.selectedVariant}`;
+            `${product.name} Inspired by ${product.inspiration_name} - ${product.variant.title}`;
         });
         // Prepare cart items
         const items = {
