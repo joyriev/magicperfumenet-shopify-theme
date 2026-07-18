@@ -482,6 +482,7 @@
         "review_wbXdLy": {
           "type": "review",
           "settings": {
+            "review_image": "shopify://shop_images/287_review.png",
             "content": "<p>\"It smells very good, but it doesn't last as long as it should.\"</p>",
             "author": "Terence M.",
             "date": "2 months ago",
