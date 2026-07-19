@@ -87,34 +87,34 @@
     "home_category_x4dqJF": {
       "type": "home-category",
       "blocks": {
-        "item_JnTbBp": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/223.png",
-            "heading": "Men",
-            "collection": ""
-          }
-        },
         "item_knQh7b": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/004.png",
+            "image": "shopify://shop_images/women_collection.png",
             "heading": "Women",
-            "collection": ""
+            "collection": "for-women"
+          }
+        },
+        "item_JnTbBp": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/mens_collection.png",
+            "heading": "Men",
+            "collection": "for-men"
           }
         },
         "item_Lq6Nz3": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/113.png",
+            "image": "shopify://shop_images/unisex_collection.png",
             "heading": "Unisex",
-            "collection": ""
+            "collection": "unisex"
           }
         }
       },
       "block_order": [
-        "item_JnTbBp",
         "item_knQh7b",
+        "item_JnTbBp",
         "item_Lq6Nz3"
       ],
       "disabled": true,
