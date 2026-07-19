@@ -392,8 +392,10 @@
         "review_8jw9Px": {
           "type": "review",
           "settings": {
+            "review_image": "shopify://shop_images/3_bottle_review.png",
             "content": "<p>\"This is my first purchase and I'm delighted. I'll never buy my perfume anywhere else again. I had never found a perfume alternative that smells truly authentic and consistent.\"</p>",
             "author": "Killian P.",
+            "author_image": "shopify://shop_images/3_bottle_review.png",
             "date": "1 day ago",
             "rating": 5,
             "show_verified_badge": true,
@@ -426,6 +428,7 @@
         "review_icFmQQ": {
           "type": "review",
           "settings": {
+            "review_image": "shopify://shop_images/196_review.png",
             "content": "<p>\"I had tried in vain to find perfumes that smell expensive and last a long time. This is exactly what I was looking for.\"</p>",
             "author": "Tiana N.",
             "date": "2 days ago",
@@ -516,6 +519,7 @@
         "review_639hbA": {
           "type": "review",
           "settings": {
+            "review_image": "shopify://shop_images/223_review.png",
             "content": "<p>\"Perfumes with perfect scents, the fragrances last a very long time, excellent quality.\"</p>",
             "author": "Kamila G.",
             "date": "3 months ago",
@@ -560,6 +564,7 @@
         "review_6Bhttk": {
           "type": "review",
           "settings": {
+            "review_image": "shopify://shop_images/270_review.png",
             "content": "<p>\"The product arrived well packaged. The perfume wasn't broken, hadn't leaked and was in good condition. The perfume is perfect and didn't smell bad. I love it, high quality.\"</p>",
             "author": "Anne E.",
             "date": "4 months ago",
