@@ -440,6 +440,7 @@
         "review_RnXXg9": {
           "type": "review",
           "settings": {
+            "review_image": "shopify://shop_images/4b84f603-cd35-4662-bb2a-c505fd9be20c.png",
             "content": "<p>\"I didn't really know what to expect, but it really impressed me. It smells super fresh and honestly quite close to Aventus. It holds well and the price is much better.\"</p>",
             "author": "Michael T.",
             "date": "2 days ago",
