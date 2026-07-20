@@ -27,6 +27,24 @@
         {{ product.title }}
         </a>
     </h3>
+
+      {% if product.metafields.custom.inspired_by != blank %}
+        <div class="flex items-center gap-2 mt-2">
+        <img 
+            style="filter: blur(2px);" 
+            class="object-contain object-center bg-white"
+            src="{{ product.metafields.custom.inspired_by.value.image | image_url }}"
+            alt="{{ product.metafields.custom.inspired_by.value.image.alt | escape }}"
+            width="35" 
+            height="35"
+        >
+        <div>
+            <p class="text-xs my-0">Inspired By:</p>
+            <h4 class="text-sm font-semibold my-0 line-clamp-1 inspiration_heading">{{ product.metafields.custom.inspired_by.value.name }}</h4>
+        </div>
+        </div>
+    {% endif %}
+
     {% unless product.handle == 'gift-set' or product.handle == 'gift-set-for-gentlemen' %}
         <div class="mb-3">
             {%- render 'price'
