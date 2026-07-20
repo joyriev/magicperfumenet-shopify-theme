@@ -41,14 +41,6 @@
             "swatch_shape": "circle"
           }
         },
-        "buy_buttons_eXWBwX": {
-          "type": "buy_buttons",
-          "disabled": true,
-          "settings": {
-            "show_dynamic_checkout": false,
-            "show_gift_card_recipient": true
-          }
-        },
         "text_g8FVDr": {
           "type": "text",
           "settings": {
@@ -56,8 +48,24 @@
             "text_style": "body"
           }
         },
+        "magyx_bundle_bundle_contents_pxFa8B": {
+          "type": "shopify://apps/magyx-bundle/blocks/bundle-contents/019f7e14-34c0-741d-9783-6f038a0182a2",
+          "settings": {
+            "heading": "What's inside",
+            "show_prices": false,
+            "accent_color": "#1a1a1a"
+          }
+        },
+        "buy_buttons_eXWBwX": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true
+          }
+        },
         "reactive_atc_LBDQE9": {
           "type": "reactive_atc",
+          "disabled": true,
           "settings": {}
         },
         "custom_liquid_QcxgR4": {
@@ -207,8 +215,9 @@
         "custom_liquid_fep4D7",
         "price_MG94AW",
         "variant_picker_hH3Diz",
-        "buy_buttons_eXWBwX",
         "text_g8FVDr",
+        "magyx_bundle_bundle_contents_pxFa8B",
+        "buy_buttons_eXWBwX",
         "reactive_atc_LBDQE9",
         "custom_liquid_QcxgR4",
         "payment_badges_FkCwVc",
