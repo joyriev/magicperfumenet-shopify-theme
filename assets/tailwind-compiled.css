@@ -365,6 +365,10 @@
     margin-top: auto
 }
 
+.mt-3 {
+    margin-top: 12px
+}
+
 .line-clamp-1 {
     overflow: hidden;
     display: -webkit-box;
