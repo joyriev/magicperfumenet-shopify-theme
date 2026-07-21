@@ -74,15 +74,16 @@
   style="background-color: {{ section.settings.background_color }}">
   <div class="page-width">
     <div class="flex items-center justify-between mb-6">
-      <h2 class="text-xl md:text-2xl font-bold text-slate-900 my-0">{{ section.settings.heading }}</h2>
-      <div class="flex flex-wrap justify-end text-right items-center gap-2">
-        <img
-          src="{{ 'rating-stars.svg' |  asset_url }}"
-          alt="*****"
-          width="80"
-          height="16">
-        <span class="text-sm font-medium text-slate-600">{{ section.settings.review_text }}</span>
-      </div>
+      <h2 class="text-center text-2xl md:text-4xl font-bold max-w-2xl mx-auto mt-0 mb-8">
+        {{ section.settings.heading }}
+        <span class="relative z-10">{{ section.settings.review_text }}
+          <span class="absolute top-1/2 left-1/2 [transform:translate(-50%,-50%)] text-[#22613A] z-[-1]">
+            <svg class="max-w-[180px]" width="226" height="92" viewBox="0 0 226 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M223.164 36.9069C223.618 42.3287 221.306 47.9316 216.296 53.4861C211.282 59.0442 203.693 64.3996 193.997 69.2175C174.617 78.8478 147.203 86.1414 116.362 88.7259C85.521 91.3104 57.2753 88.6811 36.5628 82.4106C26.2005 79.2735 17.8263 75.2559 11.9575 70.6097C6.09246 65.9666 2.87988 60.8266 2.42553 55.4048C1.97118 49.983 4.2835 44.3801 9.29397 38.8255C14.3077 33.2675 21.8964 27.9121 31.592 23.0942C50.9721 13.4639 78.3863 6.17031 109.227 3.58582C140.068 1.00133 168.314 3.63062 189.027 9.90111C199.389 13.0382 207.763 17.0558 213.632 21.702C219.497 26.3451 222.71 31.4851 223.164 36.9069Z" stroke="currentColor" stroke-width="4"></path>
+            </svg>
+          </span>
+        </span>
+      </h2>
     </div>
 
     <div id="reviews-source-{{ section.id }}" class="hidden">

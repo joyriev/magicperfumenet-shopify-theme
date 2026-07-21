@@ -153,6 +153,14 @@
     z-index: 9999
 }
 
+.-z-\[1\] {
+    z-index: -1
+}
+
+.z-\[-1\] {
+    z-index: -1
+}
+
 .col-span-1 {
     grid-column: span 1 / span 1
 }
@@ -652,6 +660,10 @@
 
 .max-w-xl {
     max-width: 576px
+}
+
+.max-w-\[180px\] {
+    max-width: 180px
 }
 
 .flex-1 {
@@ -1297,6 +1309,10 @@
 
 .fill-\[\#22613A\] {
     fill: #22613A
+}
+
+.stroke-\[4px\] {
+    stroke-width: 4px
 }
 
 .object-contain {
@@ -2100,6 +2116,10 @@
 
 .\[transform\:rotate\(-3deg\)\] {
     transform: rotate(-3deg)
+}
+
+.\[transform\:translate\(-50\%\2c -50\%\)\] {
+    transform: translate(-50%,-50%)
 }
 
 .\[transform\:translateX\(-50\%\)\] {
