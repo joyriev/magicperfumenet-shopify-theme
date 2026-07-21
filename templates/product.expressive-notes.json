@@ -34,7 +34,6 @@
         },
         "videos_hgU7cm": {
           "type": "videos",
-          "disabled": true,
           "settings": {
             "video1": "shopify://files/videos/TryScent-UGC-DESIGNER-ANATOMY---UK-BEHUMAN-video-9x16-35s (1).mp4",
             "video_poster_1": "shopify://shop_images/kadesh.png",
