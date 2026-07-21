@@ -1,0 +1,153 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  .feature-highlight-card-{{ section.id }} {
+    background-color: {{ section.settings.card_background_color }};
+  }
+{%- endstyle -%}
+
+<div
+  id="{{ section.id }}"
+  class="section-{{ section.id }}-padding"
+  style="background-color: {{ section.settings.background_color }}">
+  <div class="page-width">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 pt-6 md:pt-10">
+      {% for block in section.blocks %}
+        <div
+          class="feature-highlight-card-{{ section.id }} relative flex items-center rounded-2xl p-5 md:p-7 h-[130px] md:h-[150px]"
+          {{ block.shopify_attributes }}>
+          <div class="relative z-10 max-w-[68%] md:max-w-[65%]">
+            <p class="font-recoleta text-sm md:text-base my-0 text-gray-700">{{ block.settings.perk_label }}</p>
+            <h3 class="text-lg md:text-2xl my-0 font-bold text-black leading-tight">{{ block.settings.perk_title }}</h3>
+            <p class="text-xs md:text-sm mt-2 mb-0 text-gray-500">{{ block.settings.perk_content }}</p>
+          </div>
+          {% if block.settings.perk_image != blank %}
+            <img
+              class="absolute right-0 bottom-0 h-[130%] md:h-[145%] w-auto max-w-[45%] object-contain z-0 pointer-events-none select-none"
+              src="{{ block.settings.perk_image | image_url: width: 300 }}"
+              loading="lazy"
+              height="{{ block.settings.perk_image.height }}"
+              width="{{ block.settings.perk_image.width }}"
+              alt="{{ block.settings.perk_title | escape }}">
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Feature Highlight Cards",
+    "class": "feature-highlight-cards",
+    "settings": [
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color",
+        "default": "#ffffff"
+      }, {
+        "type": "color",
+        "id": "card_background_color",
+        "label": "Card Background Color",
+        "default": "#f2f1ee"
+      }, {
+        "type": "header",
+        "content": "t:sections.all.padding.section_padding_heading"
+      }, {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 36
+      }, {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_bottom",
+        "default": 36
+      }
+    ],
+    "blocks": [
+      {
+        "type": "perks",
+        "name": "Perk Card",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "perk_image",
+            "label": "Perk Image",
+            "info": "Use a transparent PNG so it can bleed past the top-right edge of the card."
+          }, {
+            "type": "text",
+            "id": "perk_label",
+            "label": "Small Label (first line)",
+            "default": "Ships from"
+          }, {
+            "type": "text",
+            "id": "perk_title",
+            "label": "Bold Title (second line)",
+            "default": "Dallas"
+          }, {
+            "type": "text",
+            "id": "perk_content",
+            "label": "Description",
+            "default": "Fast 1–4 day delivery."
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Feature Highlight Cards",
+        "blocks": [
+          {
+            "type": "perks",
+            "settings": {
+              "perk_label": "Ships from",
+              "perk_title": "Dallas",
+              "perk_content": "Fast 1–4 day delivery."
+            }
+          }, {
+            "type": "perks",
+            "settings": {
+              "perk_label": "Free",
+              "perk_title": "Returns",
+              "perk_content": "No hassle, no questions."
+            }
+          }, {
+            "type": "perks",
+            "settings": {
+              "perk_label": "80,000+",
+              "perk_title": "Daily Users",
+              "perk_content": "Trusted worldwide."
+            }
+          }, {
+            "type": "perks",
+            "settings": {
+              "perk_label": "10,000,000+",
+              "perk_title": "Likes",
+              "perk_content": "Loved across socials."
+            }
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
