@@ -37,10 +37,13 @@
           "settings": {
             "video1": "shopify://files/videos/TryScent-UGC-DESIGNER-ANATOMY---UK-BEHUMAN-video-9x16-35s (1).mp4",
             "video_poster_1": "shopify://shop_images/kadesh.png",
+            "title_1": "No Designer Mark-up",
             "video2": "shopify://files/videos/Bemigho Mike-Ifeta beautyxxbemi.mp4",
             "video_poster_2": "shopify://shop_images/dhie.png",
+            "title_2": "Same Scent, Smarter Price",
             "video3": "shopify://files/videos/TryScent-STREET-INTERVIEW-2-H2-BEHUMAN-video-9x16-21s.mp4",
             "video_poster_3": "shopify://shop_images/htb.png",
+            "title_3": "approved by strangers - smells like Money",
             "video4": "shopify://files/videos/TryScent-STREET-INTERVIEW-2-H2-BEHUMAN-video-9x16-21s.mp4"
           }
         },
@@ -240,18 +243,10 @@
         "padding_bottom": 72
       }
     },
-    "feature_heighlights_fCUG3E": {
-      "type": "feature-heighlights",
+    "feature_ships_from_qQTK9w": {
+      "type": "feature-ships-from",
       "blocks": {
-        "perks_MLz9YK": {
-          "type": "perks",
-          "settings": {
-            "perk_image": "shopify://shop_images/eu_made.webp",
-            "perk_title": "Made in the EU",
-            "perk_content": "Vegan, cruelty-free and made in the EU."
-          }
-        },
-        "perks_NV4H3P": {
+        "perks_RLkwWV": {
           "type": "perks",
           "settings": {
             "perk_image": "shopify://shop_images/quality_check.webp",
@@ -259,15 +254,15 @@
             "perk_content": "Made with the same care as leading luxury brands."
           }
         },
-        "perks_qWY7Uy": {
+        "perks_m7aiz9": {
           "type": "perks",
           "settings": {
             "perk_image": "shopify://shop_images/money_back_g.webp",
             "perk_title": "90-day money-back guarantee",
-            "perk_content": "Not convinced? Send your order back within 90 days and get your money back"
+            "perk_content": "Not convinced? Send your order back within 60 days and get your money back"
           }
         },
-        "perks_HKnHJ8": {
+        "perks_KUXzw7": {
           "type": "perks",
           "settings": {
             "perk_image": "shopify://shop_images/long_lasting.webp",
@@ -277,10 +272,9 @@
         }
       },
       "block_order": [
-        "perks_MLz9YK",
-        "perks_NV4H3P",
-        "perks_qWY7Uy",
-        "perks_HKnHJ8"
+        "perks_RLkwWV",
+        "perks_m7aiz9",
+        "perks_KUXzw7"
       ],
       "name": "Feature Highlights",
       "settings": {
@@ -860,7 +854,7 @@
   "order": [
     "main",
     "you_may_like_Laaqqx",
-    "feature_heighlights_fCUG3E",
+    "feature_ships_from_qQTK9w",
     "scent_breakdown_pqKDL9",
     "stacks_up_bzFEM3",
     "massive_review_4FRDnB",
