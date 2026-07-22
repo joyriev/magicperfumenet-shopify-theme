@@ -305,7 +305,7 @@
         "stack_eifmRx": {
           "type": "stack",
           "settings": {
-            "stack_heading": "Ships within 1-2 days",
+            "stack_heading": "Ships within 5 days",
             "stack_subheading": "No waiting in store"
           }
         },
