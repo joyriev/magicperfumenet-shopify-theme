@@ -140,16 +140,8 @@
       }
     },
     "feature_heighlights_EpJcyT": {
-      "type": "feature-heighlights",
+      "type": "feature-ships-from",
       "blocks": {
-        "perks_dXcKFz": {
-          "type": "perks",
-          "settings": {
-            "perk_image": "shopify://shop_images/Screenshot_2026-02-03_at_12.00.15_PM.webp",
-            "perk_title": "Made in the EU",
-            "perk_content": "Vegan, cruelty-free and made in the EU."
-          }
-        },
         "perks_x8n9DF": {
           "type": "perks",
           "settings": {
@@ -176,7 +168,6 @@
         }
       },
       "block_order": [
-        "perks_dXcKFz",
         "perks_x8n9DF",
         "perks_yTdgqz",
         "perks_7zj6gB"

@@ -12,12 +12,38 @@
   }
 {%- endstyle -%}
 
+{% liquid
+  assign ships_from = 'Savannah 🇺🇸'
+
+  case localization.country.iso_code
+    when 'AU'
+      assign ships_from = 'Sydney 🇦🇺'
+    when 'CA'
+      assign ships_from = 'Toronto 🇨🇦'
+    when 'NZ'
+      assign ships_from = 'Auckland 🇳🇿'
+    when 'GB'
+      assign ships_from = 'London 🇬🇧'
+  endcase
+%}
+
 <div
   id="{{ section.id }}"
   class="section-{{ section.id }}-padding"
   style="background-color: {{ section.settings.background_color }}">
   <div class="page-width">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+      <div class="flex flex-col items-center gap-1">
+        <img
+          class="h-7 md:h-10 w-auto"
+          src="/cdn/shop/files/Screenshot_2026-02-03_at_12.00.15_PM.webp?v=1771402872&amp;width=150"
+          loading="lazy"
+          height="110"
+          width="150"
+          alt="Perk Image">
+        <h3 class="text-base md:text-lg my-0 text-center font-semibold text-black">Ships from {{ ships_from }}</h3>
+        <p class="text-sm md:text-base my-0 text-center text-slate-700">Carefully packed and delivered to your door in just 5 business days.</p>
+      </div>
       {% for block in section.blocks %}
         <div class="flex flex-col items-center gap-1" {{ block.shopify_attributes }}>
           <img
