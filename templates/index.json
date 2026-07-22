@@ -126,13 +126,26 @@
         "padding_bottom": 60
       }
     },
+    "popular_products_3gqnEi": {
+      "type": "popular-products",
+      "name": "Popular Products",
+      "settings": {
+        "background_color": "#f7f7f7",
+        "heading": "Best Sellers",
+        "subheading": "",
+        "collection": "best-sellers",
+        "show_all_button_text": "View all best sellers",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
     "feature_heighlights_EpJcyT": {
       "type": "feature-heighlights",
       "blocks": {
         "perks_dXcKFz": {
           "type": "perks",
           "settings": {
-            "perk_image": "shopify://shop_images/eu_made.webp",
+            "perk_image": "shopify://shop_images/Screenshot_2026-02-03_at_12.00.15_PM.webp",
             "perk_title": "Made in the EU",
             "perk_content": "Vegan, cruelty-free and made in the EU."
           }
@@ -168,25 +181,11 @@
         "perks_yTdgqz",
         "perks_7zj6gB"
       ],
-      "disabled": true,
       "name": "Feature Highlights",
       "settings": {
         "background_color": "#ffffff",
         "padding_top": 36,
         "padding_bottom": 36
-      }
-    },
-    "popular_products_3gqnEi": {
-      "type": "popular-products",
-      "name": "Popular Products",
-      "settings": {
-        "background_color": "#f7f7f7",
-        "heading": "Best Sellers",
-        "subheading": "",
-        "collection": "best-sellers",
-        "show_all_button_text": "View all best sellers",
-        "padding_top": 72,
-        "padding_bottom": 72
       }
     },
     "feature_highlight_cards_HJEfXp": {
@@ -1010,8 +1009,8 @@
     "blocky_lys_scrolling_text_bar_ixCgNK",
     "home_hero_banner_YetQDJ",
     "home_category_x4dqJF",
-    "feature_heighlights_EpJcyT",
     "popular_products_3gqnEi",
+    "feature_heighlights_EpJcyT",
     "feature_highlight_cards_HJEfXp",
     "image_and_text_TQajG3",
     "stacks_up_frVVB4",
