@@ -478,10 +478,9 @@
         "review_XfwcAY": {
           "type": "review",
           "settings": {
-            "review_image": "shopify://shop_images/3_16.png",
             "content": "<p>\"I had the opportunity to try their perfumes, they have a great price, a wide range of fragrances but above all their perfumes are persistent and long-lasting highly recommended!\"</p>",
             "author": "Clara P.",
-            "date": "1 week ago",
+            "date": "3 days ago",
             "rating": 5,
             "show_verified_badge": true,
             "product": ""
@@ -493,7 +492,7 @@
             "review_image": "shopify://shop_images/6_14.png",
             "content": "<p>\"High quality product for only $29! The perfume smells exactly like the original and it last for hours!<br/>Recommended \"</p>",
             "author": "Adele S.",
-            "date": "2 weeks ago",
+            "date": "2 Weeks ago",
             "rating": 5,
             "show_verified_badge": true,
             "product": ""
@@ -527,7 +526,7 @@
           "settings": {
             "content": "<p>\"I love it. I love it, one of my favourite!\"</p>",
             "author": "Michael T.",
-            "date": "1 Month ago",
+            "date": "2 Weeks ago",
             "rating": 4,
             "show_verified_badge": true,
             "product": ""
@@ -561,7 +560,7 @@
           "settings": {
             "content": "<p>\"Woow this is my second order I love it \"</p>",
             "author": "Lionel M.",
-            "date": "7 days ago",
+            "date": "3 Weeks ago",
             "rating": 5,
             "show_verified_badge": true,
             "product": ""
@@ -606,7 +605,7 @@
           "settings": {
             "content": "<p>\"Very good! I am going to recommend this yo all my friend \"</p>",
             "author": "Kamila G.",
-            "date": "3 months ago",
+            "date": "3 Months ago",
             "rating": 5,
             "show_verified_badge": true,
             "product": ""
@@ -615,6 +614,7 @@
         "review_G3HzBj": {
           "type": "review",
           "settings": {
+            "review_image": "shopify://shop_images/3_16.png",
             "content": "<p>\"I love your perfumes♥️♥️\"</p>",
             "author": "Robinson D.",
             "date": "4 months ago",
