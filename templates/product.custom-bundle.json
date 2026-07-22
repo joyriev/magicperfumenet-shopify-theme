@@ -290,60 +290,76 @@
         "padding_bottom": 72
       }
     },
-    "stacks_up_WR4y4d": {
+    "stacks_up_zn36ai": {
       "type": "stacks-up",
       "blocks": {
-        "stack_LGQprc": {
+        "stack_dEdRAg": {
           "type": "stack",
           "settings": {
-            "stack_heading": "Longevity",
-            "stack_subheading": "12 +Hours"
+            "stack_heading": "Fragrance concentration",
+            "stack_subheading": "More oil = longer-lasting scent"
           }
         },
-        "stack_EkfTtL": {
+        "stack_MYQxgJ": {
           "type": "stack",
           "settings": {
-            "stack_heading": "Longevity",
-            "stack_subheading": "12 +Hours"
+            "stack_heading": "Lasts 12+ hours on the skin",
+            "stack_subheading": "Lasts longer than most designer EDTs"
           }
         },
-        "stack_EwWwij": {
+        "stack_pQjaBL": {
           "type": "stack",
           "settings": {
-            "stack_heading": "Longevity",
-            "stack_subheading": "12 +Hours"
+            "stack_heading": "90% less than the designer price",
+            "stack_subheading": "Without compromising on quality"
           }
         },
-        "stack_w3Jyyc": {
+        "stack_anL3wf": {
           "type": "stack",
           "settings": {
-            "stack_heading": "Longevity",
-            "stack_subheading": "12 +Hours"
+            "stack_heading": "Exactly the same scent as the original",
+            "stack_subheading": "Created with the same fragrance accords"
           }
         },
-        "stack_dXbqXq": {
+        "stack_QgRYWn": {
           "type": "stack",
           "settings": {
-            "stack_heading": "Longevity",
-            "stack_subheading": "12 +Hours"
+            "stack_heading": "Ships within 1-2 days",
+            "stack_subheading": "No waiting in store"
+          }
+        },
+        "stack_bbMXdg": {
+          "type": "stack",
+          "settings": {
+            "stack_heading": "Cruelty-free formula",
+            "stack_subheading": "Clean ingredients, safe for skin"
+          }
+        },
+        "stack_kYFfew": {
+          "type": "stack",
+          "settings": {
+            "stack_heading": "90-day money-back guarantee",
+            "stack_subheading": "Love it or receive a full refund — no questions asked"
           }
         }
       },
       "block_order": [
-        "stack_LGQprc",
-        "stack_EkfTtL",
-        "stack_EwWwij",
-        "stack_w3Jyyc",
-        "stack_dXbqXq"
+        "stack_dEdRAg",
+        "stack_MYQxgJ",
+        "stack_pQjaBL",
+        "stack_anL3wf",
+        "stack_QgRYWn",
+        "stack_bbMXdg",
+        "stack_kYFfew"
       ],
       "name": "Stacks Up",
       "settings": {
-        "background_color": "#f7f7f7",
-        "title": "Why Magic Perfume?",
-        "btn_text": "View All",
-        "btn_url": "shopify://collections/all",
-        "padding_top": 12,
-        "padding_bottom": 72
+        "background_color": "#fcfbf9",
+        "title": "How Magyx Compares",
+        "btn_text": "Browse Best Fragrances",
+        "btn_url": "shopify://collections/best-sellers",
+        "padding_top": 60,
+        "padding_bottom": 60
       }
     },
     "image_and_text_EFE4gB": {
@@ -882,7 +898,7 @@
     "main",
     "feature_heighlights_fCUG3E",
     "scent_breakdown_pqKDL9",
-    "stacks_up_WR4y4d",
+    "stacks_up_zn36ai",
     "image_and_text_EFE4gB",
     "massive_review_UpMKRe",
     "popular_products_BptEUV",
