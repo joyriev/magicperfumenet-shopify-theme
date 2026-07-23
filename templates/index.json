@@ -90,7 +90,7 @@
         "item_knQh7b": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/women_collection.png",
+            "image": "shopify://shop_images/Magyx_Women_Collection.png",
             "heading": "Women",
             "collection": "for-women"
           }
@@ -98,7 +98,7 @@
         "item_JnTbBp": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/mens_collection.png",
+            "image": "shopify://shop_images/Magyx_Men_Collection.png",
             "heading": "Men",
             "collection": "for-men"
           }
@@ -106,7 +106,7 @@
         "item_Lq6Nz3": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/unisex_collection.png",
+            "image": "shopify://shop_images/Magyx_Unisex_Collection.png",
             "heading": "Unisex",
             "collection": "unisex"
           }
