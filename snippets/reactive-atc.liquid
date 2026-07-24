@@ -3,13 +3,13 @@
 
   case localization.country.iso_code
     when 'AU'
-      assign ships_from = 'Ships from Sydney 🇦🇺'
+      assign ships_from = 'Ships Next Day from Sydney 🇦🇺'
     when 'CA'
-      assign ships_from = 'Ships from Toronto 🇨🇦'
+      assign ships_from = 'Ships Next Day from Toronto 🇨🇦'
     when 'NZ'
-      assign ships_from = 'Ships from Auckland 🇳🇿'
+      assign ships_from = 'Ships Next Day from Auckland 🇳🇿'
     when 'GB'
-      assign ships_from = 'Ships from London 🇬🇧'
+      assign ships_from = 'Ships Next Day from London 🇬🇧'
   endcase
 
   assign product_form_id = 'product-form-' | append: section.id
@@ -136,9 +136,9 @@
   </svg>
   <div>
     <p class="m-0 font-semibold tracking-normal text-black leading-snug">{{ ships_from }}</p>
-    {% unless localization.country.iso_code == 'US' %}
-      <p class="m-0 text-gray-500 tracking-normal text-sm">Delivered in 3-7 business days.</p>
-    {% endunless %}
+  {% comment %} {% unless localization.country.iso_code == 'US' %}
+              <p class="m-0 text-gray-500 tracking-normal text-sm">Delivered in 3-7 business days.</p>
+        {% endunless %} {% endcomment %}
   </div>
 </div>
 

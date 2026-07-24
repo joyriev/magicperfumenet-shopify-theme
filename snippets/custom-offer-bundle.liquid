@@ -21,13 +21,13 @@
 
   case localization.country.iso_code
     when 'AU'
-      assign ships_from = 'Ships from Sydney 🇦🇺'
+      assign ships_from = 'Ships Next Day from Sydney 🇦🇺'
     when 'CA'
-      assign ships_from = 'Ships from Toronto 🇨🇦'
+      assign ships_from = 'Ships Next Day from Toronto 🇨🇦'
     when 'NZ'
-      assign ships_from = 'Ships from Auckland 🇳🇿'
+      assign ships_from = 'Ships Next Day from Auckland 🇳🇿'
     when 'GB'
-      assign ships_from = 'Ships from London 🇬🇧'
+      assign ships_from = 'Ships Next Day from London 🇬🇧'
   endcase
 
   assign next_bundle = product.metafields.custom.next_bundle
