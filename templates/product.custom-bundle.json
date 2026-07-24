@@ -12,6 +12,14 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "social_proof_review_U8WJ7E": {
+          "type": "social_proof_review",
+          "settings": {
+            "image": "shopify://shop_images/Color-Adapting-Foundation-for-Flawless-Skin-Smooche-07-24-2026_05_56_PM.png",
+            "author_name": "Deborah",
+            "review_text": "and 10,000+ others purchased"
+          }
+        },
         "title_DkyBTh": {
           "type": "title",
           "settings": {}
@@ -195,6 +203,7 @@
         }
       },
       "block_order": [
+        "social_proof_review_U8WJ7E",
         "title_DkyBTh",
         "custom_rating_text_ehyqmQ",
         "custom_liquid_fep4D7",
