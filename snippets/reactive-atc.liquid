@@ -136,7 +136,9 @@
   </svg>
   <div>
     <p class="m-0 font-semibold tracking-normal text-black leading-snug">{{ ships_from }}</p>
-    <p class="m-0 text-gray-500 tracking-normal text-sm">Delivered in 3-7 business days.</p>
+    {% unless localization.country.iso_code == 'US' %}
+      <p class="m-0 text-gray-500 tracking-normal text-sm">Delivered in 3-7 business days.</p>
+    {% endunless %}
   </div>
 </div>
 
