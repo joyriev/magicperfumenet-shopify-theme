@@ -12,12 +12,42 @@
         </div>
     {% endif %}
     <a href="{{ product.url }}" class="flex">
-        <img
-        class="w-full h-auto"
-        src="{{ product.images.first |  image_url: width: 300 }}"
-        alt="{{ product.title }}"
-        height="{{ product.images.first.height }}"
-        width="{{ product.images.first.width }}">
+        {% if product.tags contains 'local_image' %}
+          {% assign image_found = false %}
+          {% for image in product.images %}
+            {% assign curr_currency = localization.country.iso_code | prepend: "bundle_" | downcase %}
+            {% assign img_alt = image.alt | downcase %}
+            {% if img_alt contains "bundle_" and img_alt == curr_currency %}
+              {% assign image_found = true %}
+              <img
+                src="{{ image.src | image_url: width: 300 }}"
+                alt="{{ image.alt }}"
+                height="{{ image.height }}"
+                width="{{ image.width }}"
+                class="w-full h-auto">
+            {% endif %}
+          {% endfor %}
+          {% if image_found == false %}
+            {% for image in product.images %}
+              {% assign img_alt = image.alt | downcase %}
+              {% if img_alt contains "bundle_usd" %}
+                <img
+                  src="{{ image.src | image_url: width: 300 }}"
+                  alt="{{ image.alt }}"
+                  height="{{ image.height }}"
+                  width="{{ image.width }}"
+                  class="w-full h-auto">
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+        {% else %}  
+            <img
+            class="w-full h-auto"
+            src="{{ product.images.first |  image_url: width: 300 }}"
+            alt="{{ product.title }}"
+            height="{{ product.images.first.height }}"
+            width="{{ product.images.first.width }}">
+        {% endif %}
     </a>
     {% comment %} <div class="line-clamp-3 text-sm [&_br]:hidden mt-2">
         {{ product.metafields.custom.short_description | metafield_tag }}
