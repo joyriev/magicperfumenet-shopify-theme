@@ -126,31 +126,7 @@
                 </a>
               {%- when 'title' -%}
                 <div class="product__title relative" {{ block.shopify_attributes }}>
-                  {%- if product.tags contains 'bestseller' or product.tags contains 'onsale' or product.template_suffix == 'expressive-notes' -%}
-                    <div class="absolute top-0 left-0">
-                      {% if product.tags contains 'onsale' and product.compare_at_price > product.price %}
-                        {%- assign discount_percent = product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round -%}
-                        <span class="inline-block bg-red-600 text-white text-sm font-bold px-3 py-1">
-                          {{ discount_percent }}% Off
-                        </span>
-                      {% endif %}
-                      {% if product.tags contains 'bestseller' %}
-                        <span class="inline-block bg-[#22613A] text-white text-sm font-bold px-3 py-1 mr-2">
-                          Bestseller
-                        </span>
-                      {% endif %}
-                      {% if product.template_suffix == 'expressive-notes' %}
-                        <span class="inline-flex items-center px-3 py-1 rounded-md border border-solid border-[#3b82f6] text-[#3b82f6] text-sm font-medium bg-white">
-                          {% if product.tags contains 'Woman' or product.tags contains 'fuer-frauen' %}
-                          Women
-                          {% else %}
-                          Men
-                          {% endif %}
-                        </span>
-                      {% endif %}
-                    </div>
-                  {%- endif -%}  
-                  <h1 class="font-[700] leading-tight capitalize !tracking-normal flex flex-col {% if product.tags contains 'bestseller' or product.tags contains 'onsale' or product.template_suffix == 'expressive-notes'  %}pt-12{% endif %}">
+                  <h1 class="font-[700] leading-tight capitalize !tracking-normal">
                       {{ product.title }}
                   </h1>
                 </div>
@@ -858,6 +834,28 @@
                     <span class="alert-text-dot"></span>
                     <span class="alert-text-text">{{ block.settings.text }}</span>
                   </div>
+                </div>
+              {%- when 'social_proof_review' -%}
+                <div class="flex items-center gap-2" {{ block.shopify_attributes }}>
+                  {%- if block.settings.image != blank -%}
+                    <img
+                      src="{{ block.settings.image | image_url: width: 64 }}"
+                      alt="{{ block.settings.author_name | escape }}"
+                      width=""
+                      height=""
+                      loading="lazy"
+                      class="rounded-full object-cover flex-shrink-0 h-8 w-auto"
+                      style="width: 32px; height: 32px;"
+                    >
+                  {%- endif -%}
+                  <p class="text-sm text-gray-800 leading-snug m-0">
+                    <span class="font-bold">{{ block.settings.author_name }}</span>
+                    <svg class="inline-block" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true">
+                      <path fill="#1d9bf0" d="M12 0l2.845 1.9 3.42-.397 1.026 3.281 3.281 1.026-.397 3.42L24 12l-1.925 2.77.397 3.42-3.281 1.026-1.026 3.281-3.42-.397L12 24l-2.845-1.9-3.42.397-1.026-3.281-3.281-1.026.397-3.42L0 12l1.925-2.77-.397-3.42 3.281-1.026 1.026-3.281 3.42.397z"/>
+                      <path fill="#fff" d="M9.7 16.7l-4-4 1.4-1.4 2.6 2.6 6-6 1.4 1.4z"/>
+                    </svg>
+                    {{ block.settings.review_text }}
+                  </p>
                 </div>
                 {% when 'reactive_atc' %}
                   {% render 'reactive-atc' %}
@@ -3584,8 +3582,30 @@
             }
           ],
           "default": "pulse"
+        }
+      ]
+    },
+    {
+      "name": "Social Proof Review",
+      "type": "social_proof_review",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
         },
-
+        {
+          "type": "text",
+          "id": "author_name",
+          "label": "Author name",
+          "default": "Hilda"
+        },
+        {
+          "type": "text",
+          "id": "review_text",
+          "label": "Review text",
+          "default": "and 100.000+ others purchased"
+        }
       ]
     }
   ],
