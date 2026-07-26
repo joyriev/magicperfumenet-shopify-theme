@@ -18,7 +18,7 @@
   for variant in product.variants
     assign variant_title_down = variant.title | downcase
 
-    if variant_title_down contains '50'
+    if variant_title_down contains '30'
       assign selected_variant = variant
       break
     endif
@@ -137,8 +137,8 @@
   <div>
     <p class="m-0 font-semibold tracking-normal text-black leading-snug">{{ ships_from }}</p>
   {% comment %} {% unless localization.country.iso_code == 'US' %}
-              <p class="m-0 text-gray-500 tracking-normal text-sm">Delivered in 3-7 business days.</p>
-        {% endunless %} {% endcomment %}
+                  <p class="m-0 text-gray-500 tracking-normal text-sm">Delivered in 3-7 business days.</p>
+          {% endunless %} {% endcomment %}
   </div>
 </div>
 
