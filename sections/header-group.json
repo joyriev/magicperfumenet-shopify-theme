@@ -17,7 +17,7 @@
       "settings": {
         "background_color": "#0d5daf",
         "forground_color": "#15803d",
-        "prepend_text": "Payday Sale:",
+        "prepend_text": "Summer Sale:",
         "countdown_date": "",
         "append_text": "Buy 3, get 1 free 🎁",
         "link": "shopify://collections/bundle-save"
